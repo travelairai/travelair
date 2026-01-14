@@ -3,124 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TravelAir.ai – The Future of AI-Driven Travel</title>
-  <meta name="description" content="Discover the next era of travel with AI-powered planning, personalized itineraries, smart bookings, and unbeatable deals."/>
+  <title>TravelAir.ai — Leading AI-Powered Luxury Travel Innovation</title>
+  <meta name="description" content="TravelAir.ai pioneers the future of intelligent, seamless, ultra-luxury travel. AI-driven private aviation, exclusive experiences, and bespoke journeys for the world's elite."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0a5c7a;       /* Deep ocean blue */
-      --secondary: #00aaff;     /* Bright sky blue */
-      --accent: #ff6b35;        /* Warm coral */
-      --dark: #111827;
-      --light: #f9fafb;
-      --gray: #6b7280;
+      --bg: #0a0a0a;
+      --text: #f8f8f8;
+      --gold: #c9a96e;
+      --gold-dark: #a68c4e;
+      --accent: #e0c080;
+      --navy: #0d1b2a;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      color: var(--dark);
-      background: var(--light);
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
     }
     header {
-      background: linear-gradient(135deg, var(--primary) 0%, #0e7490 100%);
-      color: white;
+      height: 100vh;
+      min-height: 820px;
+      background: linear-gradient(rgba(10,10,10,0.72), rgba(13,27,42,0.78)),
+                  url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=90') center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 120px 20px 100px;
+      padding: 0 6%;
     }
     header h1 {
-      font-size: 3.8rem;
-      margin-bottom: 1rem;
-      font-weight: 800;
+      font-size: 6.2rem;
+      letter-spacing: 6px;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+      text-shadow: 0 6px 30px rgba(0,0,0,0.8);
     }
-    header p {
-      font-size: 1.5rem;
-      max-width: 800px;
-      margin: 0 auto 2.5rem;
-      opacity: 0.95;
+    header .subtitle {
+      font-size: 2.4rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+      max-width: 1000px;
+      opacity: 0.94;
+      margin-bottom: 4rem;
     }
     .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: 1rem 2.2rem;
-      border-radius: 50px;
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      padding: 1.3rem 4rem;
+      border-radius: 60px;
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 2px;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      transition: all 0.3s;
-      box-shadow: 0 10px 25px rgba(255,107,53,0.3);
+      transition: all 0.4s ease;
     }
     .btn:hover {
-      background: #e55a2d;
-      transform: translateY(-4px);
-      box-shadow: 0 15px 35px rgba(255,107,53,0.4);
+      background: var(--gold);
+      color: #0a0a0a;
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(201,169,110,0.3);
     }
     section {
-      padding: 100px 20px;
-      max-width: 1200px;
+      padding: 160px 8% 140px;
+      max-width: 1440px;
       margin: 0 auto;
     }
     h2 {
+      font-size: 4.8rem;
       text-align: center;
-      font-size: 3rem;
-      margin-bottom: 3rem;
-      color: var(--primary);
+      color: var(--gold);
+      margin-bottom: 5rem;
+      letter-spacing: 2.5px;
+    }
+    .intro-text {
+      font-size: 1.5rem;
+      max-width: 960px;
+      margin: 0 auto 6rem;
+      text-align: center;
+      font-weight: 300;
+      opacity: 0.9;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 2.5rem;
+      margin: 7rem 0;
+    }
+    .gallery img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      transition: transform 0.7s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
     }
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 5rem;
     }
-    .feature-card {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    .feature {
       text-align: center;
-      transition: transform 0.3s;
     }
-    .feature-card:hover {
-      transform: translateY(-12px);
-    }
-    .feature-card h3 {
-      color: var(--primary);
-      margin: 1.2rem 0 1rem;
-      font-size: 1.6rem;
-    }
-    .vision {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      border-radius: 24px;
-      padding: 5rem 2rem;
-      margin: 4rem auto;
-      max-width: 1000px;
+    .feature h3 {
+      color: var(--gold);
+      font-size: 2.4rem;
+      margin: 2rem 0 1.2rem;
     }
     footer {
-      background: var(--dark);
-      color: white;
+      background: #000;
+      padding: 10rem 8% 6rem;
       text-align: center;
-      padding: 5rem 20px 3rem;
+      border-top: 1px solid rgba(201,169,110,0.18);
     }
-    .contact-box {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 16px;
-      padding: 3rem;
-      max-width: 700px;
-      margin: 0 auto 3rem;
+    .contact {
+      background: rgba(201,169,110,0.06);
+      border: 1px solid rgba(201,169,110,0.22);
+      border-radius: 28px;
+      padding: 5rem 6%;
+      max-width: 900px;
+      margin: 0 auto 6rem;
     }
     .email-link {
-      color: var(--secondary);
-      font-weight: bold;
+      color: var(--gold);
+      font-size: 2.1rem;
+      font-weight: 500;
       text-decoration: none;
-      font-size: 1.4rem;
     }
-    .email-link:hover { text-decoration: underline; }
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.8rem; }
-      header p { font-size: 1.3rem; }
-      h2 { font-size: 2.4rem; }
+    .email-link:hover { color: var(--accent); text-decoration: underline; }
+    @media (max-width: 1100px) {
+      header h1 { font-size: 4.8rem; }
+      header .subtitle { font-size: 2rem; }
+      h2 { font-size: 4rem; }
     }
   </style>
 </head>
@@ -128,53 +155,53 @@
 
   <header>
     <h1>TravelAir.ai</h1>
-    <p>The Future of AI-Driven Travel Innovation</p>
-    <p style="font-size:1.3rem; max-width:900px;">
-      Experience smarter, faster, and more personalized travel with cutting-edge AI — from predictive deal-finding and custom itineraries to seamless bookings and real-time recommendations.
-    </p>
-    <a href="mailto:travelair.ai@outlook.com?subject=Inquiry%20about%20TravelAir.ai" class="btn">Get in Touch →</a>
+    <div class="subtitle">Pioneering the Future of Intelligent Luxury Travel</div>
+    <a href="mailto:travelair.ai@outlook.com?subject=Corporate%20Inquiry%20%E2%80%93%20TravelAir.ai" class="btn">Connect With Our Team</a>
   </header>
 
   <section>
-    <h2>Why TravelAir.ai?</h2>
-    <div class="features">
-      <div class="feature-card">
-        <h3>AI-Powered Personalization</h3>
-        <p>Tell us your dream trip — budget, vibe, interests, dietary needs — and get a fully tailored itinerary in seconds.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Smart Deal Prediction</h3>
-        <p>Our AI scans millions of options in real-time to find and predict the best prices on flights, hotels, and experiences.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Seamless Booking</h3>
-        <p>One-click reservations with dynamic pricing, virtual previews, and eco-conscious options built-in.</p>
-      </div>
+    <h2>Defining the Next Era of Travel</h2>
+    <p class="intro-text">
+      TravelAir.ai is the world's leading AI-powered travel innovation company — redefining ultra-luxury journeys through predictive intelligence, seamless orchestration, and unparalleled exclusivity. From private aviation to bespoke global experiences, we set the standard for what intelligent travel can be.
+    </p>
+
+    <div class="gallery">
+      <img src="https://thumbs.dreamstime.com/b/luxurious-private-jet-interior-design-image-showcases-opulent-featuring-seating-stylish-table-elegant-gold-368499621.jpg" alt="Opulent Private Jet Cabin">
+      <img src="https://media.cntraveler.com/photos/684af6ee87c5aa8d6e1331e7/16:9/w_1280,c_limit/Etihad-pr-cabins-the-residence-1.jpg" alt="Ultra-Premium First Class Suite">
+      <img src="https://www.joali.com/media/bxxhqlqe/joali_sunsetluxuryvilla_18_2000.jpg?format=webp&v=1698418377" alt="Sunset Overwater Luxury Villa">
+      <img src="https://thumbs.dreamstime.com/b/luxurious-yacht-gliding-calm-waters-sunset-vibrant-sky-reflects-off-sea-experience-tranquility-stunning-425967981.jpg" alt="Superyacht at Golden Hour">
     </div>
   </section>
 
-  <section class="vision">
-    <h2 style="color:white; margin-bottom:1.5rem;">Our Vision</h2>
-    <p style="font-size:1.4rem; max-width:800px; margin:0 auto;">
-      We're building the next generation of travel: where artificial intelligence doesn't just assist — it anticipates, optimizes, and elevates every moment of your journey. The future of travel is here.
-    </p>
+  <section>
+    <h2>Our Core Innovations</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>AI-Driven Private Aviation</h3>
+        <p>Real-time optimization of charters, empty legs, and fleet access — delivering unmatched efficiency and exclusivity.</p>
+      </div>
+      <div class="feature">
+        <h3>Bespoke Experience Orchestration</h3>
+        <p>Predictive personalization across residences, yachts, rare events, and global concierge services.</p>
+      </div>
+      <div class="feature">
+        <h3>Intelligent Journey Intelligence</h3>
+        <p>Anticipatory planning, dynamic pricing, sustainability integration — the pinnacle of modern luxury travel technology.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <div class="contact-box">
-      <h2 style="color:white; margin-bottom:1.5rem;">Ready to Collaborate or Learn More?</h2>
-      <p style="margin-bottom:2rem; font-size:1.2rem;">
-        Whether you're interested in partnerships, investment, early access, or just want to say hello — we'd love to hear from you!
+    <div class="contact">
+      <h2 style="color:var(--gold); font-size:3.8rem; margin-bottom:2rem;">Let's Shape the Future Together</h2>
+      <p style="font-size:1.5rem; max-width:720px; margin:0 auto 3rem; opacity:0.9;">
+        Whether you're exploring strategic partnerships, investment opportunities, enterprise solutions, or executive access — TravelAir.ai welcomes visionary collaborations.
       </p>
-      <p>
-        Send your inquiry to:<br><br>
-        <a href="mailto:travelair.ai@outlook.com" class="email-link">travelair.ai@outlook.com</a>
-      </p>
+      <a href="mailto:travelair.ai@outlook.com" class="email-link">travelair.ai@outlook.com</a>
     </div>
 
-    <p style="opacity:0.7; font-size:0.95rem;">
-      © 2026 TravelAir.ai – All rights reserved.<br>
-      Coming soon – The pinnacle of AI-powered travel experiences.
+    <p style="font-size:1.2rem; opacity:0.7; letter-spacing:1.5px;">
+      © 2026 TravelAir.ai — The Global Leader in AI-Powered Luxury Travel
     </p>
   </footer>
 
