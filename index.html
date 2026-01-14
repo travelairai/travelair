@@ -1,444 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TravelAir.AI - The Future of AI-Driven Travel Innovation</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            color: #fff;
-            background: linear-gradient(to bottom, #000000, #1a1a1a);
-            overflow-x: hidden;
-        }
-
-        header {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .background-animation {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://source.unsplash.com/random/1920x1080/?luxury,jet,sky') no-repeat center center/cover;
-            animation: fly 30s linear infinite;
-            opacity: 0.6;
-        }
-
-        @keyframes fly {
-            0% { transform: translateX(0) scale(1); }
-            50% { transform: translateX(-25%) scale(1.05); }
-            100% { transform: translateX(-50%) scale(1); }
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 6rem;
-            letter-spacing: 0.3rem;
-            text-transform: uppercase;
-            color: #d4af37;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
-            animation: glow 3s ease-in-out infinite alternate;
-            position: relative;
-            z-index: 1;
-            max-width: 90vw; /* Limit to viewport width */
-            overflow: hidden; /* Prevent overflow */
-            text-overflow: ellipsis; /* Add ellipsis if still too long */
-            white-space: nowrap; /* Keep on one line by default */
-            font-size-adjust: 0.5; /* Help with scaling */
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
-            to { text-shadow: 0 0 25px rgba(212, 175, 55, 1); }
-        }
-
-        .tagline {
-            font-size: 1.8rem;
-            margin-top: 1.5rem;
-            max-width: 900px;
-            position: relative;
-            z-index: 1;
-            font-style: italic;
-        }
-
-        section {
-            padding: 6rem 2rem;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: #d4af37;
-            text-align: center;
-            margin-bottom: 2.5rem;
-            text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
-        }
-
-        p {
-            font-size: 1.3rem;
-            line-height: 1.9;
-            margin-bottom: 1.8rem;
-        }
-
-        .vision-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .vision-item {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 2.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .vision-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-        }
-
-        .partnerships-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .partnerships-list li {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            padding-left: 2.5rem;
-            position: relative;
-        }
-
-        .partnerships-list li::before {
-            content: '✈️';
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 1.5rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 3rem;
-            background: #000;
-            font-size: 1.2rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        a {
-            color: #d4af37;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #fff;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 1.5rem;
-            padding-left: 2.5rem;
-            position: relative;
-        }
-
-        ul li::before {
-            content: '✈️';
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 1.5rem;
-        }
-
-        h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: #d4af37;
-            margin-bottom: 1.2rem;
-        }
-
-        /* New Additions for Stand-Out Features */
-        .cta-button {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            background: #d4af37;
-            color: #000;
-            font-weight: 600;
-            border-radius: 5px;
-            text-transform: uppercase;
-            transition: background 0.3s ease;
-            z-index: 1;
-            position: relative;
-        }
-
-        .cta-button:hover {
-            background: #fff;
-            color: #d4af37;
-        }
-
-        .widget-section {
-            text-align: center;
-            margin: 4rem 0;
-        }
-
-        .widget {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 10px;
-            max-width: 600px;
-            margin: 0 auto;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .widget h3 {
-            margin-bottom: 1rem;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        input, button {
-            padding: 1rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        button {
-            background: #d4af37;
-            color: #000;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        button:hover {
-            background: #fff;
-            color: #d4af37;
-        }
-
-        .highlight-name {
-            color: #d4af37;
-            font-weight: bold;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .map-embed {
-            margin-top: 2rem;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        /* Enhanced Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 3rem; /* Smaller logo */
-                letter-spacing: 0.05rem; /* Reduce spacing */
-                white-space: normal; /* Allow wrapping */
-                word-break: break-word; /* Break words if needed */
-                hyphens: auto; /* Hyphenate */
-            }
-
-            .tagline {
-                font-size: 1.2rem;
-                padding: 0 1rem;
-            }
-
-            h2 {
-                font-size: 2.5rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            .vision-grid {
-                grid-template-columns: 1fr; /* Stack vertically */
-            }
-
-            .cta-button {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-            }
-
-            section {
-                padding: 4rem 1rem;
-            }
-
-            .widget {
-                max-width: 90%;
-            }
-
-            header {
-                height: auto; /* Flexible height */
-                padding: 4rem 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 2.5rem; /* Even smaller */
-                letter-spacing: 0rem; /* No spacing */
-            }
-
-            .tagline {
-                font-size: 1rem;
-            }
-
-            .cta-button {
-                width: 80%; /* Fit button */
-            }
-        }
-
-        /* New FAQ Styles */
-        .faq-item {
-            margin-bottom: 2rem;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding-bottom: 1rem;
-        }
-
-        .faq-question {
-            font-weight: 600;
-            color: #d4af37;
-        }
-
-        /* Social Sharing Styles */
-        .social-icons {
-            margin-top: 1rem;
-        }
-
-        .social-icons a {
-            margin: 0 0.5rem;
-            font-size: 1.5rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TravelAir.ai – The Future of AI-Driven Travel</title>
+  <meta name="description" content="Discover the next era of travel with AI-powered planning, personalized itineraries, smart bookings, and unbeatable deals."/>
+  <style>
+    :root {
+      --primary: #0a5c7a;       /* Deep ocean blue */
+      --secondary: #00aaff;     /* Bright sky blue */
+      --accent: #ff6b35;        /* Warm coral */
+      --dark: #111827;
+      --light: #f9fafb;
+      --gray: #6b7280;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      color: var(--dark);
+      background: var(--light);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, #0e7490 100%);
+      color: white;
+      text-align: center;
+      padding: 120px 20px 100px;
+    }
+    header h1 {
+      font-size: 3.8rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+    header p {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      opacity: 0.95;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+      box-shadow: 0 10px 25px rgba(255,107,53,0.3);
+    }
+    .btn:hover {
+      background: #e55a2d;
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(255,107,53,0.4);
+    }
+    section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      color: var(--primary);
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+    .feature-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .feature-card:hover {
+      transform: translateY(-12px);
+    }
+    .feature-card h3 {
+      color: var(--primary);
+      margin: 1.2rem 0 1rem;
+      font-size: 1.6rem;
+    }
+    .vision {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      border-radius: 24px;
+      padding: 5rem 2rem;
+      margin: 4rem auto;
+      max-width: 1000px;
+    }
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 5rem 20px 3rem;
+    }
+    .contact-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      padding: 3rem;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+    .email-link {
+      color: var(--secondary);
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.4rem;
+    }
+    .email-link:hover { text-decoration: underline; }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.8rem; }
+      header p { font-size: 1.3rem; }
+      h2 { font-size: 2.4rem; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="background-animation"></div>
-        <div class="logo">TravelAir.AI</div>
-        <p class="tagline">The Pinnacle of AI Innovation: Redefining Travel for the Modern Era</p>
-        <a href="#vision" class="cta-button">Explore the Vision</a>
-    </header>
 
-    <section id="vision">
-        <h2>Our Grand Vision</h2>
-        <p>TravelAir.AI is a premium domain with extraordinary potential to fuel a travel tech venture. In the rapidly evolving global travel industry, this domain serves as the ideal foundation for an AI-powered platform that could revolutionize how people plan, book, and experience journeys worldwide.</p>
-        <p>As a versatile asset, TravelAir.AI invites innovative minds to build a system that harnesses AI for personalized, efficient travel solutions—without any current operations, affiliations, or partnerships. It's a blank slate ready for your vision to create the next big disruptor in travel.</p>
-        <div class="vision-grid">
-            <div class="vision-item">
-                <h3>Scalable Potential</h3>
-                <p>Envision starting from a strong foundation and scaling through diverse models like premium subscriptions, affiliate commissions, targeted advertising, and data insights. A proprietary AI could process vast data to identify opportunities, driving growth in the travel sector.</p>
-            </div>
-            <div class="vision-item">
-                <h3>Technological Edge</h3>
-                <p>Powered by future AI models analyzing real-time data on weather, events, and preferences, TravelAir.AI could offer VR previews, automated processing, and eco-friendly options. This creates engaging, recurring user interactions through innovative features.</p>
-            </div>
-            <div class="vision-item">
-                <h3>Market Opportunities</h3>
-                <p>By tapping into the luxury travel market, TravelAir.AI unlocks potential. Expansion into private aviation, charters, and emerging tourism could position it as a premier platform, attracting users and investors alike.</p>
-            </div>
-        </div>
-    </section>
+  <header>
+    <h1>TravelAir.ai</h1>
+    <p>The Future of AI-Driven Travel Innovation</p>
+    <p style="font-size:1.3rem; max-width:900px;">
+      Experience smarter, faster, and more personalized travel with cutting-edge AI — from predictive deal-finding and custom itineraries to seamless bookings and real-time recommendations.
+    </p>
+    <a href="mailto:travelair.ai@outlook.com?subject=Inquiry%20about%20TravelAir.ai" class="btn">Get in Touch →</a>
+  </header>
 
-    <section id="opportunities">
-        <h2>Endless Opportunities</h2>
-        <p>TravelAir.AI is primed to become the next major player in travel tech. This domain's strong branding opens pathways to develop a platform with features like:</p>
-        <ul>
-            <li>AI-driven bookings with dynamic pricing for efficient reservations.</li>
-            <li>AI predictions for deals and comprehensive planning.</li>
-            <li>Custom AI packages with smart recommendations.</li>
-            <li>AI-enhanced search aggregation for real-time deals.</li>
-            <li>AI analysis of reviews to build community trust.</li>
-        </ul>
-        <div class="widget-section">
-            <div class="widget">
-                <h3>Inquire About <span class="highlight-name">TravelAir.AI</span></h3>
-                <p>Interested in this premium domain? Submit your details for partnership or acquisition discussions. Limited opportunity – inquire today.</p>
-                <form action="mailto:travelair.ai@outlook.com" method="post" enctype="text/plain">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <input type="text" name="message" placeholder="Your Message" required>
-                    <button type="submit">Send Inquiry</button>
-                </form>
-            </div>
-        </div>
-    </section>
+  <section>
+    <h2>Why TravelAir.ai?</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3>AI-Powered Personalization</h3>
+        <p>Tell us your dream trip — budget, vibe, interests, dietary needs — and get a fully tailored itinerary in seconds.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Smart Deal Prediction</h3>
+        <p>Our AI scans millions of options in real-time to find and predict the best prices on flights, hotels, and experiences.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Seamless Booking</h3>
+        <p>One-click reservations with dynamic pricing, virtual previews, and eco-conscious options built-in.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="partnerships">
-        <h2>Envisioned Partnership Ecosystem</h2>
-        <p>While currently unaffiliated, TravelAir.AI holds vast potential for future collaborations that could accelerate growth in travel innovation. Explore possibilities such as:</p>
-        <ul class="partnerships-list">
-            <li>AI routing and deals to enhance travel offerings.</li>
-            <li>Personalized integrations and marketing to affluent audiences.</li>
-            <li>Scalable infrastructure for AI developments.</li>
-            <li>AI-enhanced payments for secure transactions.</li>
-            <li>Integrations for comprehensive travel experiences.</li>
-            <li>Tools for eco-conscious planning.</li>
-        </ul>
-        <div class="widget-section">
-            <div class="widget">
-                <h3>Global Travel Inspiration</h3>
-                <p>Imagine the possibilities with TravelAir.AI—explore a world map for potential destinations.</p>
-                <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147703055!2d-74.11976314309273!3d40.69740344223377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sus!4v1549319219169" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-            </div>
-        </div>
-    </section>
+  <section class="vision">
+    <h2 style="color:white; margin-bottom:1.5rem;">Our Vision</h2>
+    <p style="font-size:1.4rem; max-width:800px; margin:0 auto;">
+      We're building the next generation of travel: where artificial intelligence doesn't just assist — it anticipates, optimizes, and elevates every moment of your journey. The future of travel is here.
+    </p>
+  </section>
 
-    <section id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <p class="faq-question">What is included with TravelAir.AI?</p>
-            <p>The domain name itself, ready for immediate transfer and development into your AI travel vision.</p>
-        </div>
-        <div class="faq-item">
-            <p class="faq-question">How can this domain be used?</p>
-            <p>Ideal for AI-powered booking platforms, predictive travel apps, or luxury experience curators—limitless potential in travel tech.</p>
-        </div>
-        <div class="faq-item">
-            <p class="faq-question">Is there any existing business or traffic?</p>
-            <p>Currently a premium domain asset with no operations, perfect for a fresh start.</p>
-        </div>
-        <div class="faq-item">
-            <p class="faq-question">How do I inquire?</p>
-            <p>Use the form above or email us directly for confidential discussions.</p>
-        </div>
-    </section>
+  <footer>
+    <div class="contact-box">
+      <h2 style="color:white; margin-bottom:1.5rem;">Ready to Collaborate or Learn More?</h2>
+      <p style="margin-bottom:2rem; font-size:1.2rem;">
+        Whether you're interested in partnerships, investment, early access, or just want to say hello — we'd love to hear from you!
+      </p>
+      <p>
+        Send your inquiry to:<br><br>
+        <a href="mailto:travelair.ai@outlook.com" class="email-link">travelair.ai@outlook.com</a>
+      </p>
+    </div>
 
-    <footer>
-        <p>Inquire about partnership opportunities or domain acquisition: <a href="mailto:travelair.ai@outlook.com">travelair.ai@outlook.com</a></p>
-        <p>&copy; 2026 TravelAir.AI. All rights reserved.</p>
-    </footer>
+    <p style="opacity:0.7; font-size:0.95rem;">
+      © 2026 TravelAir.ai – All rights reserved.<br>
+      Coming soon – The pinnacle of AI-powered travel experiences.
+    </p>
+  </footer>
+
 </body>
 </html>
