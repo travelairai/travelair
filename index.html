@@ -116,690 +116,590 @@ body{
   <!-- Open Graph -->
   <meta property="og:title" content="Travelair.ai — Premium AI Travel Brand" />
   <meta property="og:description" content="A premium, brand-ready AI travel intelligence asset positioned for acquisition, partnership, or licensing." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.travelair.ai" />
+  <meta property=…
+[8:22 PM, 1/13/2026] .: <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Travelair.ai — Premium AI Travel Brand Asset</title>
+<meta name="description" content="Travelair.ai is a premium, brand-ready AI travel intelligence asset positioned for acquisition, partnership, or licensing. A category-defining name designed for scale." />
 
-  <style>
-    :root{
-      --bg0:#05070c;
-      --bg1:#070a12;
-      --bg2:#0b1022;
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.085);
-      --border: rgba(255,255,255,.12);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --muted2: rgba(255,255,255,.58);
-      --shadow: 0 14px 70px rgba(0,0,0,.45);
-      --glow: 0 0 0 1px rgba(255,255,255,.08), 0 30px 120px rgba(0,0,0,.55);
-      --r: 22px;
-    }
+<meta property="og:title" content="Travelair.ai — Premium AI Travel Brand Asset" />
+<meta property="og:description" content="Brand-ready AI travel intelligence asset positioned for acquisition, partnership, or licensing." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.travelair.ai" />
 
-    *{ box-sizing:border-box }
-    html,body{ height:100% }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text);
-      background: radial-gradient(1200px 600px at 20% 10%, rgba(120,180,255,.14), transparent 60%),
-                  radial-gradient(900px 420px at 80% 30%, rgba(180,120,255,.12), transparent 55%),
-                  radial-gradient(600px 380px at 50% 90%, rgba(80,220,200,.10), transparent 60%),
-                  linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
-      overflow-x:hidden;
-    }
+<style>
+:root{
+  --bg:#05070c;
+  --card:#0c1320;
+  --card2:#0a101a;
+  --glass:rgba(255,255,255,.06);
+  --stroke:rgba(255,255,255,.12);
+  --stroke2:rgba(255,255,255,.08);
+  --text:#eaf1ff;
+  --muted:rgba(234,241,255,.72);
+  --muted2:rgba(234,241,255,.55);
+  --grad:linear-gradient(135deg,#6cf2ff,#7a8cff,#b86cff);
+  --grad2:linear-gradient(135deg,rgba(108,242,255,.9),rgba(122,140,255,.9),rgba(184,108,255,.9));
+  --shadow: 0 20px 80px rgba(0,0,0,.45);
+  --radius: 26px;
+  --radius2: 18px;
+  --max: 1200px;
+}
 
-    /* ✅ SAFE BACKGROUND LAYERS (NO opacity overlay bug) */
-    .bg{
-      position:fixed; inset:0;
-      z-index:0;
-      pointer-events:none;
-    }
-    .bg::before{
-      content:"";
-      position:absolute; inset:-40px;
-      background:
-        radial-gradient(1000px 520px at 15% 20%, rgba(70,160,255,.14), transparent 60%),
-        radial-gradient(900px 520px at 85% 25%, rgba(185,90,255,.12), transparent 60%),
-        radial-gradient(700px 520px at 45% 85%, rgba(70,220,210,.10), transparent 65%);
-      filter: blur(0px);
-    }
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,Inter,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
 
-    /* Animated “AI airflow” ribbons */
-    .ribbon{
-      position:absolute;
-      width:1200px;
-      height:1200px;
-      left:50%;
-      top:50%;
-      transform:translate(-50%,-50%);
-      filter: blur(22px);
-      opacity:1; /* ok here because it's ONLY the ribbon, not the whole page */
-      mix-blend-mode: screen;
-    }
-    .ribbon::before,
-    .ribbon::after{
-      content:"";
-      position:absolute; inset:0;
-      border-radius:999px;
-      background:
-        conic-gradient(from 180deg,
-          rgba(120,180,255,.00),
-          rgba(120,180,255,.28),
-          rgba(185,90,255,.22),
-          rgba(70,220,210,.18),
-          rgba(120,180,255,.00));
-      animation: spin 16s linear infinite;
-    }
-    .ribbon::after{
-      inset:120px;
-      filter: blur(8px);
-      opacity:.75;
-      animation-duration: 22s;
-      animation-direction: reverse;
-    }
-    @keyframes spin{
-      from{ transform:rotate(0deg) }
-      to{ transform:rotate(360deg) }
-    }
+/* ===== Background Layer (behind all content) ===== */
+.bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+}
 
-    /* subtle grain (safe via rgba, not opacity on container) */
-    .grain{
-      position:absolute; inset:0;
-      background-image:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.03) 0 1px, transparent 1px),
-        radial-gradient(circle at 80% 30%, rgba(255,255,255,.025) 0 1px, transparent 1px),
-        radial-gradient(circle at 40% 70%, rgba(255,255,255,.02) 0 1px, transparent 1px);
-      background-size: 120px 120px, 160px 160px, 200px 200px;
-    }
+/* Aurora blobs */
+.bgGlow{
+  position:absolute;
+  width:900px;height:900px;border-radius:50%;
+  filter: blur(70px);
+  opacity:.22;
+  transform: translateZ(0);
+  animation: floaty 12s ease-in-out infinite;
+}
+.bgGlow.one{left:-260px;top:-240px;background:radial-gradient(circle, rgba(108,242,255,.95), transparent 60%);}
+.bgGlow.two{right:-280px;bottom:-320px;background:radial-gradient(circle, rgba(184,108,255,.95), transparent 60%);animation-delay:-4s;}
+.bgGlow.three{left:35%;top:55%;width:750px;height:750px;background:radial-gradient(circle, rgba(122,140,255,.9), transparent 62%);opacity:.14;animation-delay:-7s;}
 
-    .wrap{
-      position:relative;
-      z-index:2;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 28px 18px 90px;
-    }
+@keyframes floaty{
+  0%,100%{transform: translate(0,0) scale(1);}
+  50%{transform: translate(45px,25px) scale(1.05);}
+}
 
-    .nav{
-      position: sticky;
-      top: 14px;
-      z-index: 9;
-      margin: 10px auto 22px;
-      display:flex;
-      justify-content:center;
-    }
+/* Subtle animated gradient drift */
+.bgWash{
+  position:absolute; inset:-30%;
+  background:
+    radial-gradient(circle at 18% 25%, rgba(108,242,255,.14), transparent 40%),
+    radial-gradient(circle at 82% 60%, rgba(184,108,255,.14), transparent 45%),
+    radial-gradient(circle at 55% 85%, rgba(122,140,255,.10), transparent 45%),
+    linear-gradient(120deg,#04060b,#070e1a,#04060b);
+  opacity:.75;
+  animation: drift 18s linear infinite;
+}
+@keyframes drift{
+  0%{transform: translate3d(0,0,0) scale(1);}
+  50%{transform: translate3d(-2%,1%,0) scale(1.02);}
+  100%{transform: translate3d(0,0,0) scale(1);}
+}
 
-    .navInner{
-      width:min(980px,100%);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding: 12px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      backdrop-filter: blur(14px);
-      box-shadow: var(--glow);
-    }
+/* Grid overlay */
+.bgGrid{
+  position:absolute; inset:-40%;
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0px, rgba(255,255,255,.035) 1px, transparent 1px, transparent 28px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.028) 0px, rgba(255,255,255,.028) 1px, transparent 1px, transparent 28px);
+  opacity:.22;
+  mask-image: radial-gradient(circle at 50% 40%, rgba(0,0,0,1), rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 72%);
+}
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:800;
-      letter-spacing:.2px;
-      padding-left:4px;
-      white-space:nowrap;
-    }
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(120,180,255,.65));
-      box-shadow: 0 0 18px rgba(120,180,255,.45);
-    }
+/* Stars / particles */
+.bgNoise{
+  position:absolute; inset:0;
+  background-image: radial-gradient(rgba(255,255,255,.25) 1px, transparent 1px);
+  background-size: 140px 140px;
+  opacity:.10;
+  filter: blur(.2px);
+  transform: rotate(10deg) scale(1.2);
+}
 
-    .navLinks{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .navLinks a{
-      color: var(--muted);
-      text-decoration:none;
-      font-size: 13px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-    }
-    .navLinks a:hover{
-      color: var(--text);
-      border-color: rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-    }
+/* ===== Content Layer ===== */
+.app{ position:relative; z-index:2; }
 
-    .hero{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap: 16px;
-      align-items: stretch;
-    }
+.wrap{
+  max-width:var(--max);
+  margin:auto;
+  padding: 34px 18px 120px;
+}
 
-    .card{
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
-    }
+/* Nav */
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:14px;
+  padding:14px 18px;border-radius:999px;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--stroke);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0,0,0,.25);
+}
 
-    .heroMain{
-      padding: 22px 22px 18px;
-      position:relative;
-      overflow:hidden;
-    }
-    .pill{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      font-size: 12px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-      color: var(--muted);
-    }
+.brand{
+  display:flex;align-items:center;gap:10px;
+  font-weight:800; letter-spacing:.3px;
+}
+.dot{
+  width:10px;height:10px;border-radius:50%;
+  background: var(--grad2);
+  box-shadow: 0 0 18px rgba(108,242,255,.5);
+}
 
-    h1{
-      margin: 12px 0 10px;
-      font-size: 54px;
-      line-height: 1.05;
-      letter-spacing:-.8px;
-    }
-    .sub{
-      margin: 0 0 16px;
-      color: var(--muted);
-      max-width: 62ch;
-      font-size: 16px;
-      line-height: 1.5;
-    }
+.navlinks a{
+  color:var(--muted);
+  text-decoration:none;
+  margin-left:16px;
+  font-size:14px;
+}
+.navlinks a:hover{color:var(--text)}
 
-    .ctaRow{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top: 14px;
-      align-items:center;
-    }
+/* Hero */
+.hero{
+  margin-top:28px;
+  border:1px solid var(--stroke);
+  border-radius: var(--radius);
+  padding: 42px 40px;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  position:relative;
+}
+.hero::after{
+  content:"";
+  position:absolute; inset:-2px;
+  background: radial-gradient(circle at 18% 25%, rgba(108,242,255,.16), transparent 40%),
+              radial-gradient(circle at 82% 60%, rgba(184,108,255,.14), transparent 45%);
+  opacity:.55;
+  pointer-events:none;
+}
 
-    .btn{
-      appearance:none;
-      border:none;
-      cursor:pointer;
-      text-decoration:none;
-      font-weight:700;
-      font-size: 14px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      color: var(--text);
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.12);
-    }
-    .btn:hover{ background: rgba(255,255,255,.10) }
+.pillRow{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:2}
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 14px;border-radius:999px;
+  background: rgba(255,255,255,.06);
+  border:1px solid var(--stroke);
+  font-size:12px;color:var(--muted);
+}
+.pill strong{color:var(--text);font-weight:700}
 
-    .btnPrimary{
-      background: linear-gradient(90deg, rgba(70,160,255,.95), rgba(185,90,255,.90));
-      border: 1px solid rgba(255,255,255,.14);
-      box-shadow: 0 14px 40px rgba(90,140,255,.20);
-      color: #0b1022;
-    }
-    .btnPrimary:hover{
-      filter: brightness(1.02);
-    }
+.hgrid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:22px;
+  align-items:stretch;
+  margin-top:18px;
+  position:relative; z-index:2;
+}
 
-    .miniRow{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top: 14px;
-    }
-    .mini{
-      font-size: 12px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      color: var(--muted);
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-    }
+h1{font-size:58px;line-height:1.03;margin:14px 0 10px}
+.sub{max-width:780px;color:var(--muted);font-size:18px;line-height:1.6;margin:0}
 
-    .heroSide{
-      padding: 16px;
-      display:flex;
-      flex-direction:column;
-      gap: 10px;
-      justify-content:space-between;
-    }
+.ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;align-items:center}
+.btn{
+  padding:13px 18px;border-radius:14px;
+  border:1px solid var(--stroke);
+  background: rgba(255,255,255,.06);
+  color:#fff;text-decoration:none;font-weight:700;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.btn:hover{transform: translateY(-1px)}
+.btn.primary{background:var(--grad);border:none;color:#071018}
+.btn.ghost{background:transparent}
+.btn.small{padding:10px 14px;border-radius:12px;font-size:14px}
 
-    .sideTitle{
-      font-weight:800;
-      font-size: 14px;
-      color: var(--text);
-      opacity:.95;
-    }
-    .sideText{
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height:1.45;
-    }
+.kpis{
+  background: rgba(10,16,26,.62);
+  border:1px solid var(--stroke2);
+  border-radius: var(--radius2);
+  padding: 22px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 60px rgba(0,0,0,.28);
+}
+.kpis h3{margin:0 0 10px}
+.kpis p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+.klist{margin-top:16px;display:grid;gap:10px}
+.kitem{
+  display:flex;gap:10px;align-items:flex-start;
+  padding:10px 12px;
+  background: rgba(255,255,255,.04);
+  border:1px solid var(--stroke2);
+  border-radius:14px;
+}
+.check{
+  width:18px;height:18px;border-radius:6px;
+  background: linear-gradient(135deg, rgba(108,242,255,.95), rgba(184,108,255,.85));
+  box-shadow: 0 0 16px rgba(108,242,255,.25);
+  flex:0 0 auto;
+}
+.kitem div{color:var(--muted);font-size:14px;line-height:1.35}
+.kitem strong{color:var(--text)}
 
-    .sideList{
-      display:grid;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .sideItem{
-      padding: 12px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.09);
-      display:flex;
-      gap: 10px;
-      align-items:flex-start;
-    }
-    .check{
-      width:18px;height:18px;border-radius:999px;
-      background: rgba(120,180,255,.20);
-      border: 1px solid rgba(120,180,255,.35);
-      box-shadow: 0 0 18px rgba(120,180,255,.16);
-      flex: 0 0 auto;
-      margin-top: 2px;
-      position:relative;
-    }
-    .check:after{
-      content:"";
-      position:absolute;
-      left:5px; top:4px;
-      width:6px; height:9px;
-      border-right:2px solid rgba(255,255,255,.9);
-      border-bottom:2px solid rgba(255,255,255,.9);
-      transform:rotate(40deg);
-    }
-    .sideItem b{ display:block; font-size: 13px; }
-    .sideItem span{ display:block; color: var(--muted2); font-size: 12px; margin-top:3px; line-height:1.35; }
+/* Sections */
+.section{margin-top:70px}
+.section h2{font-size:34px;margin:0 0 12px}
+.section .lead{color:var(--muted);max-width:860px;line-height:1.7;margin:0 0 18px}
 
-    .section{
-      margin-top: 16px;
-      padding: 20px;
-    }
-    .section h2{
-      margin:0 0 10px;
-      font-size: 22px;
-      letter-spacing:-.2px;
-    }
-    .section p{
-      margin: 8px 0;
-      color: var(--muted);
-      line-height:1.6;
-      font-size: 14.5px;
-    }
+/* Cards grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+  margin-top:18px;
+}
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border:1px solid var(--stroke2);
+  border-radius: 20px;
+  padding:22px;
+  box-shadow: 0 18px 70px rgba(0,0,0,.22);
+  backdrop-filter: blur(10px);
+}
+.card h3{margin:0 0 8px}
+.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.tagRow{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.tag{
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--stroke2);
+  background: rgba(255,255,255,.04);
+  color: var(--muted);
+}
 
-    .grid4{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 14px;
-    }
-    .uc{
-      padding: 14px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.09);
-      min-height: 120px;
-    }
-    .uc h3{
-      margin:0 0 6px;
-      font-size: 15px;
-    }
-    .uc p{
-      margin:0;
-      font-size: 12.5px;
-      color: var(--muted2);
-      line-height:1.55;
-    }
-    .tag{
-      display:inline-flex;
-      margin-top: 10px;
-      font-size: 11px;
-      padding: 6px 9px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-      color: var(--muted);
-    }
+/* Two-column detail blocks */
+.split{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:18px;
+  margin-top:18px;
+}
+.panel{
+  border-radius: 22px;
+  border:1px solid var(--stroke2);
+  background: rgba(10,16,26,.58);
+  padding:22px;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+.panel h3{margin:0 0 10px}
+.panel ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.75}
+.panel li{margin:8px 0}
 
-    .twoCol{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 12px;
-    }
-    .box{
-      padding: 14px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.09);
-    }
-    .box h3{ margin:0 0 6px; font-size: 15px; }
-    .box ul{
-      margin: 8px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height:1.55;
-    }
-    .box li{ margin: 6px 0; }
+/* FAQ */
+.faq{margin-top:10px;display:grid;gap:12px}
+details{
+  background: rgba(255,255,255,.04);
+  border:1px solid var(--stroke2);
+  border-radius: 18px;
+  padding:14px 16px;
+}
+summary{
+  cursor:pointer;
+  font-weight:800;
+  color:var(--text);
+}
+details p{color:var(--muted);line-height:1.7;margin:10px 0 0}
 
-    .contactRow{
-      display:flex;
-      gap: 10px;
-      flex-wrap:wrap;
-      align-items:center;
-      margin-top: 12px;
-    }
-    .input{
-      flex: 1 1 260px;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.20);
-      color: var(--text);
-      outline:none;
-      font-size: 14px;
-    }
+/* Contact */
+.contactBox{
+  margin-top:18px;
+  display:flex;gap:12px;flex-wrap:wrap;align-items:center;
+  padding:16px;
+  border-radius: 20px;
+  border:1px solid var(--stroke2);
+  background: rgba(10,16,26,.55);
+  backdrop-filter: blur(12px);
+}
+.code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  padding:10px 12px;border-radius:14px;
+  background: rgba(255,255,255,.04);
+  border:1px solid var(--stroke2);
+  color:var(--text);
+}
 
-    .note{
-      margin-top: 10px;
-      font-size: 12px;
-      color: var(--muted2);
-      border-top: 1px dashed rgba(255,255,255,.12);
-      padding-top: 10px;
-    }
+/* Footer */
+.footer{
+  margin-top:80px;
+  padding-top:22px;
+  border-top:1px solid var(--stroke2);
+  color:var(--muted2);
+  font-size:13px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px
+}
 
-    .footer{
-      margin-top: 18px;
-      color: rgba(255,255,255,.55);
-      font-size: 12px;
-      text-align:center;
-    }
-
-    /* responsive */
-    @media (max-width: 920px){
-      .hero{ grid-template-columns: 1fr; }
-      h1{ font-size: 44px; }
-      .grid4{ grid-template-columns: 1fr 1fr; }
-      .twoCol{ grid-template-columns: 1fr; }
-      .navInner{ justify-content:space-between; }
-    }
-    @media (max-width: 520px){
-      h1{ font-size: 38px; }
-      .grid4{ grid-template-columns: 1fr; }
-      .btn{ width: 100%; justify-content:center; }
-      .navLinks{ gap:6px; }
-      .navLinks a{ padding: 7px 9px; }
-    }
-  </style>
+/* Mobile */
+@media (max-width: 980px){
+  .hgrid{grid-template-columns:1fr}
+  h1{font-size:46px}
+  .hero{padding:32px 20px}
+  .split{grid-template-columns:1fr}
+  .navlinks a{margin-left:12px}
+}
+</style>
 </head>
 
 <body>
-  <!-- ✅ background -->
-  <div class="bg">
-    <div class="ribbon"></div>
-    <div class="grain"></div>
-  </div>
 
-  <div class="wrap" id="top">
+<!-- Background Layer -->
+<div class="bg" aria-hidden="true">
+  <div class="bgWash"></div>
+  <div class="bgGlow one"></div>
+  <div class="bgGlow two"></div>
+  <div class="bgGlow three"></div>
+  <div class="bgGrid"></div>
+  <div class="bgNoise"></div>
+</div>
 
-    <!-- ✅ nav -->
+<!-- Content Layer -->
+<div class="app">
+  <div class="wrap">
+
     <div class="nav">
-      <div class="navInner">
-        <div class="brand">
-          <span class="dot"></span>
-          <span>Travelair.ai</span>
-        </div>
-        <div class="navLinks">
-          <a href="#vision">Vision</a>
-          <a href="#usecases">Use Cases</a>
-          <a href="#asset">Asset</a>
-          <a href="#transfer">Transfer</a>
-          <a href="#contact">Contact</a>
-        </div>
+      <div class="brand"><span class="dot"></span>Travelair.ai</div>
+      <div class="navlinks">
+        <a href="#overview">Overview</a>
+        <a href="#vision">Vision</a>
+        <a href="#usecases">Use Cases</a>
+        <a href="#included">What’s Included</a>
+        <a href="#acquisition">Acquisition</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
 
-    <!-- ✅ hero -->
-    <div class="hero">
-      <div class="card heroMain">
-        <span class="pill">Premium AI Travel Brand • Acquisition / Partnership</span>
-
-        <h1>Travelair.ai</h1>
-
-        <p class="sub">
-          A brand-ready AI travel intelligence asset positioned for acquisition, partnership, or licensing.
-          Built to sit at the intersection of <b>planning</b>, <b>pricing</b>, <b>booking</b>, and <b>trip optimization</b>.
-          This is not a “tool name.” It’s a category-defining brand you can build into a platform — or acquire as a strategic advantage.
-        </p>
-
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="#contact">Acquisition inquiry</a>
-          <a class="btn" href="#vision">View vision</a>
-          <a class="btn" href="mailto:travelair.ai@outlook.com?subject=Travelair.ai%20Acquisition%20Inquiry&body=Hi%20Austin%2C%0A%0AI%27d%20like%20to%20discuss%20Travelair.ai%20(acquisition%20or%20partnership).%0A%0ACompany%3A%0ARole%3A%0ABudget%20range%3A%0ATimeline%3A%0A%0AThanks%2C" rel="nofollow">Email</a>
-        </div>
-
-        <div class="miniRow">
-          <span class="mini">Clean, premium, memorable</span>
-          <span class="mini">Global / brandable .ai</span>
-          <span class="mini">Consumer + enterprise fit</span>
-          <span class="mini">Fast transfer (domain + repo)</span>
-        </div>
+    <section id="overview" class="hero">
+      <div class="pillRow">
+        <span class="pill"><strong>Premium AI Travel Brand</strong></span>
+        <span class="pill">Acquisition · Licensing · Partnership</span>
+        <span class="pill">Clean transfer ready</span>
       </div>
 
-      <div class="card heroSide">
+      <div class="hgrid">
         <div>
-          <div class="sideTitle">Why buyers pay for names like this</div>
-          <p class="sideText">
-            Strategic acquirers buy momentum: a premium name + narrative + positioning that removes “brand risk,”
-            reduces launch time, and improves conversion in pitch decks, PR, partnerships, and enterprise sales.
+          <h1>Travelair.ai</h1>
+          <p class="sub">
+            A brand-ready AI travel intelligence asset positioned for acquisition, partnership, or licensing.
+            Built to sit at the intersection of <strong>planning</strong>, <strong>pricing</strong>, <strong>booking</strong>,
+            and <strong>trip optimization</strong> — with a clean, memorable name designed for scale.
           </p>
 
-          <div class="sideList">
-            <div class="sideItem">
-              <div class="check"></div>
-              <div>
-                <b>Brand Asset</b>
-                <span>Short, global, AI-native domain with enterprise-grade positioning.</span>
-              </div>
-            </div>
-            <div class="sideItem">
-              <div class="check"></div>
-              <div>
-                <b>Strategic Optionality</b>
-                <span>Consumer travel, B2B booking ops, pricing intelligence, or platform play.</span>
-              </div>
-            </div>
-            <div class="sideItem">
-              <div class="check"></div>
-              <div>
-                <b>Clean Transfer</b>
-                <span>Domain + landing page + brand narrative included for a smooth handoff.</span>
-              </div>
-            </div>
+          <div class="ctaRow">
+            <a class="btn primary" href="mailto:travelair.ai@outlook.com?subject=Travelair.ai%20Acquisition%20Inquiry&body=Hi%20-%20I%27m%20interested%20in%20Travelair.ai.%20Can%20you%20share%20terms%2C%20price%20range%2C%20and%20next%20steps%3F">Acquisition inquiry</a>
+            <a class="btn" href="#vision">View vision</a>
+            <button class="btn ghost" id="copyEmailBtn" type="button">Copy email</button>
+            <a class="btn ghost" href="#contact">Contact</a>
+          </div>
+
+          <div class="tagRow">
+            <span class="tag">Short · Global · Pronounceable</span>
+            <span class="tag">Category brand (not a tool name)</span>
+            <span class="tag">Consumer + Enterprise ready</span>
           </div>
         </div>
 
-        <div class="note">
-          If you’re evaluating acquisition: request the deal structure and a short buyer summary (budget, timeline, intended use).
-        </div>
-      </div>
-    </div>
+        <aside class="kpis">
+          <h3>Why this can be a “million-dollar” asset</h3>
+          <p>
+            Premium domains win when they’re: memorable, expandable, and aligned with a large market.
+            Travel is one of the largest markets on earth — and AI is reshaping how trips are priced, planned, and booked.
+          </p>
 
-    <!-- ✅ vision -->
-    <section class="card section" id="vision">
+          <div class="klist">
+            <div class="kitem"><span class="check"></span><div><strong>Brandable:</strong> short, clean, easy to say, easy to remember.</div></div>
+            <div class="kitem"><span class="check"></span><div><strong>Strategic:</strong> fits consumer travel, enterprise travel ops, and marketplaces.</div></div>
+            <div class="kitem"><span class="check"></span><div><strong>Flexible:</strong> acquisition, licensing, partnership, or platform build.</div></div>
+            <div class="kitem"><span class="check"></span><div><strong>Transfer-ready:</strong> domain + landing + narrative packaged for a clean handoff.</div></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="vision" class="section">
       <h2>Vision</h2>
-      <p>
-        Travelair.ai is designed as a category-defining AI travel brand — not a feature tool.
+      <p class="lead">
+        Travelair.ai is designed as a <strong>category-defining AI travel brand</strong> — not a feature tool.
         The name supports scale, partnerships, and long-term platform expansion across consumer and enterprise markets.
       </p>
-      <p>
-        The strongest buyers are companies that already have distribution (travel platforms, booking marketplaces, airlines,
-        hotel groups, fintech/loyalty programs, or B2B travel ops) and want a premium AI identity they can attach to
-        a product suite — quickly and credibly.
-      </p>
-      <p>
-        <b>Positioning thesis:</b> “Travel + Air” is universal, memorable, and instantly understood across languages.
-        It creates the perception of a real company — not a side project — and increases close-rate in enterprise conversations.
-      </p>
+
+      <div class="split">
+        <div class="panel">
+          <h3>What “Travelair” signals</h3>
+          <ul>
+            <li><strong>Travel</strong> + <strong>Air</strong>: instantly understood, globally relevant.</li>
+            <li>Premium “umbrella brand” positioning (not limited to one feature).</li>
+            <li>Expandable into flights, hotels, itineraries, pricing intelligence, and trip optimization.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>What a buyer gets</h3>
+          <ul>
+            <li>A clean domain that can be marketed as a platform brand.</li>
+            <li>Immediate acquisition-ready landing page (this site).</li>
+            <li>A story that fits strategic buyers: OTAs, travel tech, AI startups, marketplaces.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <!-- ✅ use cases -->
-    <section class="card section" id="usecases">
+    <section id="usecases" class="section">
       <h2>Strategic Use Cases</h2>
-      <p>
-        Buyers should view this as an AI travel umbrella brand that can sit above multiple monetization paths.
-        Here are high-value use cases that fit the name and market demand:
+      <p class="lead">
+        Position Travelair.ai around the highest-value travel workflows — planning, pricing, booking, and automation.
+        These map cleanly to monetization: subscriptions, licensing, affiliate, B2B contracts, and API partnerships.
       </p>
 
-      <div class="grid4">
-        <div class="uc">
+      <div class="grid">
+        <div class="card">
           <h3>Itinerary Intelligence</h3>
-          <p>AI-driven trip planning, personalization, and optimization.</p>
-          <span class="tag">AI planning</span>
+          <p>AI trip planning, personalization, and optimization across destinations and budgets.</p>
+          <div class="tagRow"><span class="tag">AI planning</span><span class="tag">personalization</span><span class="tag">assistant UX</span></div>
         </div>
-
-        <div class="uc">
+        <div class="card">
           <h3>Pricing & Optimization</h3>
-          <p>Dynamic pricing intelligence, revenue logic, and deal optimization.</p>
-          <span class="tag">Revenue logic</span>
+          <p>Dynamic pricing intelligence, deal scoring, and trip cost optimization logic.</p>
+          <div class="tagRow"><span class="tag">revenue logic</span><span class="tag">price alerts</span><span class="tag">deal engine</span></div>
         </div>
-
-        <div class="uc">
+        <div class="card">
           <h3>Booking Automation</h3>
-          <p>Travel ops automation for consumer and B2B platforms.</p>
-          <span class="tag">Travel ops</span>
+          <p>Workflow automation for consumer and B2B travel platforms — reduce friction and operational cost.</p>
+          <div class="tagRow"><span class="tag">travel ops</span><span class="tag">automation</span><span class="tag">conversion</span></div>
         </div>
-
-        <div class="uc">
+        <div class="card">
           <h3>Enterprise Licensing</h3>
-          <p>Brand + domain positioned for acquisition or licensing by travel tech leaders.</p>
-          <span class="tag">B2B licensing</span>
+          <p>Brand + domain positioned for acquisition or licensing by travel technology leaders and operators.</p>
+          <div class="tagRow"><span class="tag">licensing</span><span class="tag">white-label</span><span class="tag">B2B</span></div>
         </div>
       </div>
     </section>
 
-    <!-- ✅ asset -->
-    <section class="card section" id="asset">
-      <h2>Brand Asset Overview</h2>
-      <p>
-        This landing page is intentionally designed to be acquisition-ready: clear positioning, clean UI,
-        and direct conversion paths (inquiry + email). A serious buyer should understand what they’re buying in under 60 seconds.
+    <section id="included" class="section">
+      <h2>What’s Included</h2>
+      <p class="lead">
+        The goal is a clean, buyer-ready package. This page is intentionally written to help a serious buyer understand
+        what the asset is, what it can become, and how a transfer works.
       </p>
 
-      <div class="twoCol">
-        <div class="box">
-          <h3>What’s included</h3>
-          <ul>
-            <li>Premium domain: <b>Travelair.ai</b></li>
-            <li>Acquisition landing page (this page) + messaging</li>
-            <li>Clean transfer process (domain + repo + DNS)</li>
-            <li>Direct inquiry channel via email</li>
-          </ul>
+      <div class="grid">
+        <div class="card">
+          <h3>Domain Asset</h3>
+          <p>Travelair.ai — premium, brandable, AI-native, globally relevant naming.</p>
         </div>
-
-        <div class="box">
-          <h3>Who this fits best</h3>
-          <ul>
-            <li>Travel platforms & booking marketplaces</li>
-            <li>B2B travel ops / expense / itinerary software</li>
-            <li>Hotel, airline, and loyalty ecosystems</li>
-            <li>AI product studios wanting a premium travel brand</li>
-          </ul>
+        <div class="card">
+          <h3>Buyer-Ready Landing</h3>
+          <p>High-end positioning, clean sections, and direct contact CTA for acquisition talks.</p>
+        </div>
+        <div class="card">
+          <h3>Brand Narrative</h3>
+          <p>A coherent story: “AI travel intelligence” across planning, pricing, booking, and optimization.</p>
+        </div>
+        <div class="card">
+          <h3>Clean Transfer</h3>
+          <p>Domain + repo + landing handoff structured for a smooth acquisition or licensing close.</p>
         </div>
       </div>
     </section>
 
-    <!-- ✅ transfer -->
-    <section class="card section" id="transfer">
-      <h2>Transfer & Transparency</h2>
-      <p>
-        The goal is a clean, professional handoff. Serious buyers want speed, clarity, and no surprises.
+    <section id="acquisition" class="section">
+      <h2>Acquisition</h2>
+      <p class="lead">
+        This is positioned for serious buyers. If you’re evaluating Travelair.ai for acquisition or licensing,
+        the fastest path is to reach out by email with a short note (intended use + timeline + offer range).
       </p>
 
-      <div class="twoCol">
-        <div class="box">
-          <h3>Typical process</h3>
+      <div class="split">
+        <div class="panel">
+          <h3>Best-fit buyers</h3>
           <ul>
-            <li>Intro email with buyer details + intended use</li>
-            <li>High-level deal terms + timeline confirmation</li>
-            <li>Escrow (recommended) or mutually agreed transfer method</li>
-            <li>Domain transfer + repo handoff + DNS verification</li>
+            <li>Travel tech platforms building AI assistants (planning + booking).</li>
+            <li>OTAs, marketplaces, metasearch, travel ops tooling.</li>
+            <li>AI startups that need a premium brand instantly.</li>
           </ul>
         </div>
-
-        <div class="box">
-          <h3>Buyer-ready clarity</h3>
+        <div class="panel">
+          <h3>Transparent next steps</h3>
           <ul>
-            <li>No traffic claims, no fake revenue — just a premium asset</li>
-            <li>Designed for acquisition, partnership, or licensing</li>
-            <li>Positioning supports long-term platform expansion</li>
-            <li>Fast conversion: clear CTA + direct contact</li>
+            <li>1) Email interest + intended use + timeline.</li>
+            <li>2) We align on structure: acquisition vs licensing.</li>
+            <li>3) Transfer: domain + assets + repo handoff.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- ✅ contact -->
-    <section class="card section" id="contact">
+    <section id="faq" class="section">
+      <h2>FAQ</h2>
+      <p class="lead">Common questions serious buyers ask when evaluating a premium domain / brand asset.</p>
+
+      <div class="faq">
+        <details>
+          <summary>Is this a live product?</summary>
+          <p>This is currently positioned as a premium brand asset (domain + narrative + acquisition-ready landing). A buyer can build a platform, use it for licensing, or integrate it into an existing product line.</p>
+        </details>
+
+        <details>
+          <summary>Why does the name matter this much?</summary>
+          <p>In travel, trust and memorability are everything. A short brand name improves click-through, recall, referrals, and long-term expansion. This is the same reason top travel brands are short and global.</p>
+        </details>
+
+        <details>
+          <summary>What’s the clean transfer process?</summary>
+          <p>Once terms are agreed, the domain is transferred to the buyer’s registrar account and the repository/assets are handed off. This landing can remain active during transition or be replaced by the buyer.</p>
+        </details>
+
+        <details>
+          <summary>Can this be licensed instead of sold?</summary>
+          <p>Yes — licensing can be structured for a buyer who wants to operate under the brand without a full acquisition upfront.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
       <h2>Contact</h2>
-      <p>
-        For acquisition inquiries, partnership, or licensing discussions:
-      </p>
+      <p class="lead">For acquisition, partnership, or licensing discussions:</p>
 
-      <div class="contactRow">
-        <input class="input" id="emailField" value="travelair.ai@outlook.com" readonly />
-        <button class="btn btnPrimary" onclick="copyEmail()">Copy email</button>
-        <a class="btn" href="mailto:travelair.ai@outlook.com?subject=Travelair.ai%20Acquisition%20Inquiry&body=Hi%20Austin%2C%0A%0AI%27d%20like%20to%20discuss%20Travelair.ai%20(acquisition%20or%20partnership).%0A%0ACompany%3A%0ARole%3A%0ABudget%20range%3A%0ATimeline%3A%0A%0AThanks%2C">Open email</a>
-      </div>
-
-      <div class="note">
-        Tip: When you reach out, include <b>Company</b>, <b>role</b>, <b>budget range</b>, and <b>timeline</b>. Serious buyers get priority replies.
-      </div>
-
-      <div class="footer">
-        © <span id="y"></span> Travelair.ai — premium domain & brand asset.
+      <div class="contactBox">
+        <span class="code" id="emailText">travelair.ai@outlook.com</span>
+        <a class="btn primary" href="mailto:travelair.ai@outlook.com?subject=Travelair.ai%20Acquisition%20Inquiry&body=Hi%20-%20I%27m%20interested%20in%20Travelair.ai.%20Use%20case%3A%20%5B...%5D%0ATimeline%3A%20%5B...%5D%0AOffer%20range%3A%20%5B...%5D%0ANext%20steps%3A%20%5B...%5D">Email now</a>
+        <button class="btn" id="copyEmailBtn2" type="button">Copy email</button>
       </div>
     </section>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Travelair.ai</div>
+      <div>Premium brand asset · Domain · Landing · Narrative</div>
+    </div>
 
   </div>
+</div>
 
-  <script>
-    function copyEmail(){
-      const input = document.getElementById('emailField');
-      input.select();
-      input.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(input.value).then(()=>{
-        alert("Copied: " + input.value);
-      }).catch(()=>{
-        // fallback
-        document.execCommand('copy');
-        alert("Copied: " + input.value);
-      });
-    }
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+
+function copyEmail(){
+  const email = "travelair.ai@outlook.com";
+  navigator.clipboard.writeText(email).then(()=>{
+    const btns = [document.getElementById("copyEmailBtn"), document.getElementById("copyEmailBtn2")].filter(Boolean);
+    btns.forEach(b=>{
+      const old = b.textContent;
+      b.textContent = "Copied ✓";
+      setTimeout(()=>b.textContent = old, 1200);
+    });
+  }).catch(()=>{ alert("Copy failed. Email: " + email); });
+}
+
+document.getElementById("copyEmailBtn")?.addEventListener("click", copyEmail);
+document.getElementById("copyEmailBtn2")?.addEventListener("click", copyEmail);
+</script>
+
 </body>
 </html
