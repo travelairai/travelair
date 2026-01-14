@@ -173,6 +173,87 @@
             color: #d4af37;
             margin-bottom: 1.2rem;
         }
+
+        /* New Additions for Stand-Out Features */
+        .cta-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: #d4af37;
+            color: #000;
+            font-weight: 600;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+            z-index: 1;
+            position: relative;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            color: #d4af37;
+        }
+
+        .widget-section {
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .widget {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .widget h3 {
+            margin-bottom: 1rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input, button {
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            background: #d4af37;
+            color: #000;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #fff;
+            color: #d4af37;
+        }
+
+        .highlight-name {
+            color: #d4af37;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .map-embed {
+            margin-top: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
@@ -180,24 +261,25 @@
         <div class="background-animation"></div>
         <div class="logo">TravelAir.AI</div>
         <p class="tagline">The Pinnacle of AI Innovation: Redefining Travel for the Modern Era</p>
+        <a href="#vision" class="cta-button">Explore the Vision</a>
     </header>
 
     <section id="vision">
         <h2>Our Grand Vision</h2>
-        <p>TravelAir.AI is a premium domain with extraordinary potential to fuel a $100M to $1B travel tech venture. In the rapidly evolving $2T global travel industry, this domain serves as the ideal foundation for an AI-powered platform that could revolutionize how people plan, book, and experience journeys worldwide.</p>
+        <p>TravelAir.AI is a premium domain with extraordinary potential to fuel a travel tech venture. In the rapidly evolving global travel industry, this domain serves as the ideal foundation for an AI-powered platform that could revolutionize how people plan, book, and experience journeys worldwide.</p>
         <p>As a versatile asset, TravelAir.AI invites innovative minds to build a system that harnesses AI for personalized, efficient travel solutions—without any current operations, affiliations, or partnerships. It's a blank slate ready for your vision to create the next big disruptor in travel.</p>
         <div class="vision-grid">
             <div class="vision-item">
-                <h3>Scalable Revenue Potential</h3>
-                <p>Envision starting from a strong foundation and scaling to $1B through diverse models like premium subscriptions, affiliate commissions, targeted advertising, and data insights. A proprietary AI could process vast data to identify opportunities, driving exponential growth in the travel sector.</p>
+                <h3>Scalable Potential</h3>
+                <p>Envision starting from a strong foundation and scaling through diverse models like premium subscriptions, affiliate commissions, targeted advertising, and data insights. A proprietary AI could process vast data to identify opportunities, driving growth in the travel sector.</p>
             </div>
             <div class="vision-item">
                 <h3>Technological Edge</h3>
                 <p>Powered by future AI models analyzing real-time data on weather, events, and preferences, TravelAir.AI could offer VR previews, automated processing, and eco-friendly options. This creates engaging, recurring user interactions through innovative features.</p>
             </div>
             <div class="vision-item">
-                <h3>Billion-Dollar Opportunities</h3>
-                <p>By tapping into even 5% of the $1.5T luxury travel market, TravelAir.AI unlocks massive potential. Expansion into private aviation, charters, and emerging tourism could position it as a premier platform, attracting users and investors alike.</p>
+                <h3>Market Opportunities</h3>
+                <p>By tapping into the luxury travel market, TravelAir.AI unlocks potential. Expansion into private aviation, charters, and emerging tourism could position it as a premier platform, attracting users and investors alike.</p>
             </div>
         </div>
     </section>
@@ -212,6 +294,18 @@
             <li><strong>Like Kayak:</strong> AI-enhanced search aggregation for real-time deals, with affiliate monetization potential.</li>
             <li><strong>Like TripAdvisor:</strong> AI analysis of reviews to build community trust and brand advertising streams.</li>
         </ul>
+        <div class="widget-section">
+            <div class="widget">
+                <h3>Inquire About <span class="highlight-name">TravelAir.AI</span></h3>
+                <p>Interested in this premium domain? Submit your details for partnership or acquisition discussions.</p>
+                <form action="mailto:travelair.ai@outlook.com" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="message" placeholder="Your Message" required>
+                    <button type="submit">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <section id="partnerships">
@@ -225,6 +319,13 @@
             <li><strong>Future Mobility (e.g., Tesla &amp; Uber):</strong> Integrations for comprehensive travel experiences.</li>
             <li><strong>Sustainability Organizations (e.g., UNWTO &amp; Eco-Initiatives):</strong> Tools for eco-conscious planning to attract modern travelers.</li>
         </ul>
+        <div class="widget-section">
+            <div class="widget">
+                <h3>Global Travel Inspiration</h3>
+                <p>Imagine the possibilities with TravelAir.AI—explore a world map for potential destinations.</p>
+                <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147703055!2d-74.11976314309273!3d40.69740344223377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sus!4v1549319219169" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
     </section>
 
     <footer>
