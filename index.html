@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[7:32 PM, 1/13/2026] .: <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -23,169 +23,217 @@ body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Inter,Helvetica,Arial,sans-serif;
   color:var(--text);
-  background:radial-gradient(1200px 600px at 20% -10%,#0f1c3a33,transparent),
-             radial-gradient(800px 500px at 90% 10%,#3a1f5f33,transparent),
-             var(--bg);
-  overflow-x:hidden;
+  background:radial-gradient(1200px 600px at 20%…
+[7:38 PM, 1/13/2026] .: <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Travelair.ai — AI Travel Intelligence Platform</title>
+
+<meta name="description" content="Travelair.ai is a brand-ready AI travel intelligence platform positioned for acquisition, partnership, or licensing across consumer and enterprise markets." />
+
+<meta property="og:title" content="Travelair.ai — AI Travel Intelligence Platform" />
+<meta property="og:description" content="A premium AI-native travel brand designed for long-term platform scale, acquisition, or licensing." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.travelair.ai" />
+
+<link rel="canonical" href="https://www.travelair.ai" />
+
+<style>
+:root{
+  --bg:#06080d;
+  --panel:#0d1220;
+  --panel2:#0f172a;
+  --border:rgba(255,255,255,.08);
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent1:#60a5fa;
+  --accent2:#a78bfa;
 }
 
-/* animated background */
-.bg{
-  position:fixed; inset:0; z-index:-1;
-  background:
-    radial-gradient(circle at 10% 20%, #5ee7ff22, transparent 40%),
-    radial-gradient(circle at 80% 10%, #8b7bff22, transparent 40%),
-    radial-gradient(circle at 50% 80%, #2dd4bf22, transparent 40%);
-  animation: float 18s linear infinite alternate;
-}
-@keyframes float{
-  from{transform:translateY(0)}
-  to{transform:translateY(-40px)}
-}
+*{box-sizing:border-box}
+html,body{margin:0;background:radial-gradient(1200px 600px at 30% -10%, #0b1a3a, transparent),
+radial-gradient(800px 400px at 80% 10%, #1b0f3a, transparent),
+var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
 
-.wrap{max-width:1100px;margin:0 auto;padding:48px 20px 96px}
+.wrap{max-width:1200px;margin:auto;padding:64px 24px 120px}
 
-/* nav */
-.nav{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:14px 22px;border:1px solid var(--border);
-  border-radius:999px;background:#0a0e16cc;backdrop-filter:blur(12px)
-}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--border);backdrop-filter:blur(10px)}
 .brand{font-weight:700}
-.links a{margin-left:18px;color:var(--muted);text-decoration:none;font-size:14px}
-.links a:hover{color:var(--text)}
+.navlinks a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+.navlinks a:hover{color:#fff}
 
-/* cards */
-.card{
-  background:linear-gradient(180deg,#0c1220,#070b13);
-  border:1px solid var(--border);
-  border-radius:18px;padding:28px;
-  box-shadow:0 30px 80px rgba(0,0,0,.4);
-}
+.hero{margin-top:80px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
 
-/* hero */
-.hero{margin-top:60px}
-.hero h1{font-size:56px;line-height:1.05;margin:12px 0}
-.sub{max-width:680px;color:var(--muted);font-size:18px}
-.pill{
-  display:inline-block;padding:6px 14px;border-radius:999px;
-  background:rgba(255,255,255,.08);font-size:12px;color:#cbd5ff
-}
-.cta{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
-.btn{
-  padding:14px 22px;border-radius:12px;
-  border:1px solid var(--border);background:#0a0f18;color:#fff;
-  text-decoration:none;font-weight:600
-}
-.btn.primary{background:var(--grad);border:none;color:#05070b}
+.panel{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:28px;padding:36px}
 
-/* grid */
-.grid{display:grid;grid-template-columns:1.4fr .9fr;gap:24px}
-@media(max-width:900px){.grid{grid-template-columns:1fr}.hero h1{font-size:42px}}
+.pill{display:inline-block;background:rgba(255,255,255,.06);border:1px solid var(--border);padding:6px 14px;border-radius:999px;font-size:12px;color:var(--muted)}
+h1{font-size:52px;line-height:1.05;margin:16px 0}
+.sub{font-size:18px;color:var(--muted);max-width:720px}
 
-.section{margin-top:80px}
+.cta{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:14px 22px;border-radius:14px;text-decoration:none;font-weight:600}
+.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#020617}
+.secondary{border:1px solid var(--border);color:#fff}
+
+.section{margin-top:96px}
 .section h2{font-size:34px;margin-bottom:12px}
+.section p{color:var(--muted);max-width:900px}
 
-/* feature cards */
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
-@media(max-width:900px){.features{grid-template-columns:1fr}}
-.feature h3{margin:0 0 6px}
-.feature span{font-size:12px;color:#9ae6ff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
 
-/* contact */
-.contact input{
-  width:100%;padding:12px 14px;border-radius:10px;
-  background:#060b14;border:1px solid var(--border);color:#fff
-}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:22px;padding:26px}
 
-footer{margin-top:80px;color:var(--muted);font-size:13px;text-align:center}
+.card h3{margin-top:0}
+.card p{color:var(--muted)}
+
+.note{margin-top:24px;color:var(--muted);font-size:14px}
+
+.footer{margin-top:120px;padding-top:32px;border-top:1px solid var(--border);color:var(--muted);font-size:14px}
 </style>
 </head>
 
 <body>
-<div class="bg"></div>
-
 <div class="wrap">
 
-  <div class="nav">
-    <div class="brand">● Travelair.ai</div>
-    <div class="links">
-      <a href="#vision">Vision</a>
-      <a href="#usecases">Use Cases</a>
-      <a href="#contact">Contact</a>
-    </div>
+<nav>
+  <div class="brand">Travelair.ai</div>
+  <div class="navlinks">
+    <a href="#vision">Vision</a>
+    <a href="#usecases">Use Cases</a>
+    <a href="#asset">Asset</a>
+    <a href="#contact">Contact</a>
   </div>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero card">
+<section class="hero">
+  <div class="panel">
     <span class="pill">Premium AI Travel Brand</span>
     <h1>Travelair.ai</h1>
     <p class="sub">
-      A brand-ready AI travel intelligence platform positioned for acquisition,
-      partnership, or licensing. Built to sit at the intersection of planning,
-      pricing, booking, and trip optimization.
+      Travelair.ai is a brand-ready AI travel intelligence platform positioned for acquisition,
+      partnership, or licensing. Designed to sit at the intersection of planning, pricing,
+      booking, and trip optimization — with long-term platform scale in mind.
     </p>
+
     <div class="cta">
       <a class="btn primary" href="#contact">Acquisition inquiry</a>
-      <a class="btn" href="#vision">View vision</a>
+      <a class="btn secondary" href="#vision">View vision</a>
     </div>
-  </section>
+  </div>
 
-  <!-- VISION -->
-  <section id="vision" class="section">
+  <div class="panel">
+    <h3>Why this matters</h3>
+    <p class="note">
+      Most travel startups lead with features. Travelair.ai leads with a **category-defining name,
+      platform-level positioning, and strategic optionality**. This is an asset designed to be shaped
+      by the buyer — not constrained by an early product roadmap.
+    </p>
+  </div>
+</section>
+
+<section id="vision" class="section">
+  <h2>Vision</h2>
+  <p>
+    Travelair.ai is designed as a category-defining AI travel brand — not a feature tool.
+    The name supports scale, partnerships, and long-term platform expansion across consumer
+    and enterprise markets.
+  </p>
+  <p>
+    The vision is to become the intelligence layer behind modern travel:
+    powering planning, pricing logic, booking workflows, and automation —
+    whether embedded into consumer products, enterprise systems, or licensed
+    as strategic infrastructure.
+  </p>
+</section>
+
+<section id="usecases" class="section">
+  <h2>Strategic Use Cases</h2>
+  <div class="grid">
     <div class="card">
-      <h2>Vision</h2>
-      <p class="sub">
-        Travelair.ai is designed as a category-defining AI travel brand — not a feature
-        or single product. The vision is to become the intelligence layer of global travel,
-        supporting scale, partnerships, and long-term platform expansion across consumer
-        and enterprise markets.
+      <h3>Itinerary Intelligence</h3>
+      <p>
+        AI-driven trip planning, personalization, and optimization.
+        Designed for consumer travel experiences and premium planning products.
       </p>
     </div>
-  </section>
 
-  <!-- USE CASES -->
-  <section id="usecases" class="section">
-    <h2>Core Use Cases</h2>
-    <div class="features">
-      <div class="card feature">
-        <span>AI Planning</span>
-        <h3>Itinerary Intelligence</h3>
-        <p class="sub">Adaptive trip planning and decision-making powered by AI.</p>
-      </div>
-      <div class="card feature">
-        <span>Revenue Logic</span>
-        <h3>Pricing & Optimization</h3>
-        <p class="sub">Dynamic pricing intelligence for travel platforms and operators.</p>
-      </div>
-      <div class="card feature">
-        <span>Travel Ops</span>
-        <h3>Booking Automation</h3>
-        <p class="sub">Workflow automation across booking and trip execution.</p>
-      </div>
+    <div class="card">
+      <h3>Pricing & Optimization</h3>
+      <p>
+        Dynamic pricing intelligence, revenue logic, and deal optimization —
+        applicable to marketplaces, booking engines, and enterprise travel ops.
+      </p>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="card contact">
-      <h2>Contact</h2>
-      <p class="sub">For acquisition, partnership, or licensing discussions:</p>
-      <input value="travelair.ai@outlook.com" readonly />
-      <div class="cta">
-        <a class="btn primary" href="mailto:travelair.ai@outlook.com">Email</a>
-      </div>
+    <div class="card">
+      <h3>Booking Automation</h3>
+      <p>
+        Workflow automation for travel operations across consumer and B2B platforms,
+        reducing friction and operational cost.
+      </p>
     </div>
-  </section>
 
-  <footer>
-    © <span id="y"></span> Travelair.ai · Brand asset & acquisition-ready platform
-  </footer>
+    <div class="card">
+      <h3>Enterprise Licensing</h3>
+      <p>
+        Brand and domain positioned for acquisition or licensing by travel technology
+        leaders, platforms, or global operators.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="asset" class="section">
+  <h2>Brand Asset Overview</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Domain Strength</h3>
+      <p>
+        Short, global, AI-native domain with enterprise-grade brand positioning.
+        Easy to remember, pronounce, and scale internationally.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Strategic Optionality</h3>
+      <p>
+        Suitable for consumer travel, B2B booking ops, pricing intelligence,
+        or full platform development — without repositioning.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Clean Transfer</h3>
+      <p>
+        Domain, repository, brand narrative, and landing page structured
+        for a clean handoff to the acquiring party.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <p>
+    For acquisition inquiries, partnerships, or licensing discussions:
+  </p>
+  <p style="font-size:18px">
+    <strong>travelair.ai@outlook.com</strong>
+  </p>
+</section>
+
+<div class="footer">
+  © <span id="year"></span> Travelair.ai — Brand asset & AI travel platform opportunity.
+</div>
 
 </div>
 
 <script>
-document.getElementById("y").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html
