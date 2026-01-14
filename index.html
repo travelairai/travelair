@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TravelAir.AI - The Future of AI-Driven Travel Innovation</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
@@ -54,9 +54,11 @@
             animation: glow 3s ease-in-out infinite alternate;
             position: relative;
             z-index: 1;
-            word-break: break-all; /* Allow breaking if too long */
-            max-width: 90vw; /* Limit width to viewport */
-            overflow-wrap: break-word;
+            max-width: 90vw; /* Limit to viewport width */
+            overflow: hidden; /* Prevent overflow */
+            text-overflow: ellipsis; /* Add ellipsis if still too long */
+            white-space: nowrap; /* Keep on one line by default */
+            font-size-adjust: 0.5; /* Help with scaling */
         }
 
         @keyframes glow {
@@ -262,7 +264,10 @@
         @media (max-width: 768px) {
             .logo {
                 font-size: 3rem; /* Smaller logo */
-                letter-spacing: 0.05rem; /* Reduce spacing to fit */
+                letter-spacing: 0.05rem; /* Reduce spacing */
+                white-space: normal; /* Allow wrapping */
+                word-break: break-word; /* Break words if needed */
+                hyphens: auto; /* Hyphenate */
             }
 
             .tagline {
@@ -303,9 +308,8 @@
 
         @media (max-width: 480px) {
             .logo {
-                font-size: 2rem; /* Even smaller for very small screens */
-                letter-spacing: 0rem; /* No spacing to prevent overflow */
-                hyphens: auto; /* Allow hyphenation if needed */
+                font-size: 2.5rem; /* Even smaller */
+                letter-spacing: 0rem; /* No spacing */
             }
 
             .tagline {
@@ -313,7 +317,7 @@
             }
 
             .cta-button {
-                width: 80%; /* Make button fit better */
+                width: 80%; /* Fit button */
             }
         }
     </style>
@@ -374,12 +378,12 @@
         <h2>Envisioned Partnership Ecosystem</h2>
         <p>While currently unaffiliated, TravelAir.AI holds vast potential for future collaborations that could accelerate growth in travel innovation. Explore possibilities with industry leaders to bring this vision to life:</p>
         <ul class="partnerships-list">
-            <li><strong>Major Airlines (e.g., Delta &amp; Emirates):</strong> Future opportunities for AI routing and deals to enhance travel offerings.</li>
-            <li><strong>Luxury Hospitality (e.g., Marriott &amp; Hilton):</strong> Potential for personalized integrations and marketing to affluent audiences.</li>
-            <li><strong>Tech Giants (e.g., Google &amp; AWS):</strong> Scalable infrastructure for AI developments, streamlining innovations.</li>
-            <li><strong>Financial Innovators (e.g., Fintech Leaders):</strong> AI-enhanced payments for secure, convenient transactions.</li>
-            <li><strong>Future Mobility (e.g., Tesla &amp; Uber):</strong> Integrations for comprehensive travel experiences.</li>
-            <li><strong>Sustainability Organizations (e.g., UNWTO &amp; Eco-Initiatives):</strong> Tools for eco-conscious planning to attract modern travelers.</li>
+            <li><strong>Major Airlines:</strong> Future opportunities for AI routing and deals to enhance travel offerings.</li>
+            <li><strong>Luxury Hospitality:</strong> Potential for personalized integrations and marketing to affluent audiences.</li>
+            <li><strong>Tech Giants:</strong> Scalable infrastructure for AI developments, streamlining innovations.</li>
+            <li><strong>Financial Innovators:</strong> AI-enhanced payments for secure, convenient transactions.</li>
+            <li><strong>Future Mobility:</strong> Integrations for comprehensive travel experiences.</li>
+            <li><strong>Sustainability Organizations:</strong> Tools for eco-conscious planning to attract modern travelers.</li>
         </ul>
         <div class="widget-section">
             <div class="widget">
@@ -396,3 +400,4 @@
     </footer>
 </body>
 </html>
+```-grid {
