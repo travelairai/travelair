@@ -54,6 +54,9 @@
             animation: glow 3s ease-in-out infinite alternate;
             position: relative;
             z-index: 1;
+            word-break: break-all; /* Allow breaking if too long */
+            max-width: 90vw; /* Limit width to viewport */
+            overflow-wrap: break-word;
         }
 
         @keyframes glow {
@@ -253,6 +256,65 @@
             margin-top: 2rem;
             border-radius: 10px;
             overflow: hidden;
+        }
+
+        /* Enhanced Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3rem; /* Smaller logo */
+                letter-spacing: 0.05rem; /* Reduce spacing to fit */
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+                padding: 0 1rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .vision-grid {
+                grid-template-columns: 1fr; /* Stack vertically */
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .widget {
+                max-width: 90%;
+            }
+
+            header {
+                height: auto; /* Flexible height */
+                padding: 4rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2rem; /* Even smaller for very small screens */
+                letter-spacing: 0rem; /* No spacing to prevent overflow */
+                hyphens: auto; /* Allow hyphenation if needed */
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                width: 80%; /* Make button fit better */
+            }
         }
     </style>
 </head>
