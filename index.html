@@ -2,196 +2,254 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Travelair.ai — Premium AI Travel Brand</title>
+<meta name="description" content="Travelair.ai is a brand-ready AI travel intelligence platform positioned for acquisition, partnership, or licensing." />
 
 <style>
 :root{
-  --bg1:#0b1220;
-  --bg2:#0f1b2d;
-  --accent:#6ae3ff;
-  --accent2:#8b5cff;
+  --bg:#07090c;
   --glass:rgba(255,255,255,.08);
-  --border:rgba(255,255,255,.14);
-  --text:#e9eef6;
-  --muted:#9fb0c8;
+  --stroke:rgba(255,255,255,.12);
+  --accent:#6cf2ff;
+  --accent2:#8b7cff;
+  --text:#e9eef4;
+  --muted:#9aa4b2;
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Inter,Segoe UI,Roboto;background:#000;color:var(--text);}
-
-/* Animated AI background */
-body::before{
-  content:"";
-  position:fixed;
-  inset:-40%;
-  background:
-    radial-gradient(600px at 20% 30%, #1d3cff33, transparent 60%),
-    radial-gradient(800px at 80% 40%, #8b5cff44, transparent 65%),
-    radial-gradient(700px at 50% 80%, #00e5ff33, transparent 60%);
-  animation:float 22s linear infinite;
-  z-index:-1;
-}
-@keyframes float{
-  0%{transform:translateY(0) rotate(0deg)}
-  50%{transform:translateY(-120px) rotate(2deg)}
-  100%{transform:translateY(0) rotate(0deg)}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+  color:var(--text);
+  background:radial-gradient(1200px 600px at 20% -10%,#0e1622,#07090c 60%);
+  overflow-x:hidden;
 }
 
-.wrap{max-width:1200px;margin:auto;padding:80px 24px}
+/* NAV */
+.navwrap{display:flex;justify-content:center;padding:24px}
 .nav{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:14px 22px;border-radius:999px;
-  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
-  backdrop-filter:blur(14px);border:1px solid var(--border);
+  display:flex;gap:26px;align-items:center;
+  padding:14px 28px;border-radius:999px;
+  background:var(--glass);
+  backdrop-filter:blur(18px);
+  border:1px solid var(--stroke);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
 }
-.brand{font-weight:700;font-size:18px;display:flex;align-items:center;gap:10px}
-.dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2))}
-.nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+.nav strong{display:flex;gap:10px;align-items:center}
+.nav strong::before{
+  content:"";width:10px;height:10px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 0 20px rgba(108,242,255,.6)
+}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px}
 .nav a:hover{color:var(--text)}
 
-.hero{
-  margin-top:80px;
-  display:grid;grid-template-columns:1.2fr .8fr;gap:40px;
-}
+/* LAYOUT */
+.wrap{max-width:1100px;margin:auto;padding:60px 24px}
+.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+
 .card{
-  background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
-  border:1px solid var(--border);
-  border-radius:28px;
-  padding:36px;
+  background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
+  border:1px solid var(--stroke);
+  border-radius:26px;
+  padding:34px;
   backdrop-filter:blur(18px);
+  box-shadow:0 30px 80px rgba(0,0,0,.45);
 }
-.pill{
+
+/* HERO */
+.badge{
   display:inline-block;
   padding:6px 14px;
   border-radius:999px;
-  background:rgba(255,255,255,.12);
+  background:rgba(255,255,255,.10);
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:14px;
+}
+h1{font-size:52px;line-height:1.05;margin:0 0 14px}
+.sub{font-size:18px;color:var(--muted);max-width:640px}
+
+/* BUTTONS */
+.ctaRow{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.btn{
+  padding:14px 22px;
+  border-radius:14px;
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+  text-decoration:none;
+}
+.btn.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#05070a;
+  border:none;
+  font-weight:600;
+}
+
+/* TAGS */
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.tag{
+  padding:8px 12px;border-radius:999px;
+  background:rgba(255,255,255,.08);
   font-size:12px;color:var(--muted)
 }
-h1{font-size:52px;line-height:1.05;margin:16px 0}
-.sub{font-size:18px;color:var(--muted);max-width:620px}
 
-.ctaRow{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
-.btn{
-  padding:14px 22px;border-radius:14px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#000;font-weight:600;text-decoration:none;
-}
-.btn.ghost{
-  background:transparent;color:var(--text);
-  border:1px solid var(--border)
+/* SECTIONS */
+.section{margin-top:70px}
+.section h2{font-size:28px;margin-bottom:12px}
+.section p{color:var(--muted);max-width:760px}
+
+/* LIST */
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:20px}
+.item{
+  padding:18px;border-radius:18px;
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--stroke)
 }
 
-.widgets{display:grid;gap:18px}
-.widget{
-  padding:20px;border-radius:18px;
-  background:rgba(255,255,255,.08);
-  border:1px solid var(--border);
-}
-.widget h3{margin:0 0 6px;font-size:16px}
-.widget p{margin:0;color:var(--muted);font-size:14px}
-
-.section{margin-top:90px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.1);font-size:12px;margin:4px}
-
-.contact{
-  margin-top:90px;
-  text-align:center;
-}
+/* CONTACT */
 .emailBox{
-  margin-top:18px;
-  display:inline-flex;gap:12px;
-  padding:14px 18px;
-  border-radius:14px;
-  background:rgba(255,255,255,.08);
-  border:1px solid var(--border)
+  display:flex;gap:12px;flex-wrap:wrap;margin-top:16px
 }
-.emailBox code{font-size:15px}
-.footer{margin-top:60px;color:var(--muted);font-size:13px}
+.emailBox code{
+  padding:12px 16px;border-radius:12px;
+  background:rgba(0,0,0,.4);
+  border:1px solid var(--stroke);
+  font-size:14px
+}
 
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr}
-  h1{font-size:40px}
-  .grid3{grid-template-columns:1fr}
+/* FOOTER */
+.footer{margin:80px 0 20px;text-align:center;color:var(--muted);font-size:13px}
+
+/* BACKGROUNDS */
+canvas,svg{position:fixed;inset:0;z-index:-2;pointer-events:none}
+.flight path{
+  fill:none;
+  stroke-width:2;
+  stroke-dasharray:10 18;
+  animation:dash 14s linear infinite
 }
+.flight path:nth-child(1){stroke:rgba(108,242,255,.35)}
+.flight path:nth-child(2){stroke:rgba(139,124,255,.3);animation-duration:18s}
+.flight path:nth-child(3){stroke:rgba(108,242,255,.18);animation-duration:24s}
+
+@keyframes dash{to{stroke-dashoffset:-260}}
 </style>
 </head>
 
 <body>
-<div class="wrap">
 
+<div class="navwrap">
   <div class="nav">
-    <div class="brand"><span class="dot"></span>Travelair.ai</div>
-    <div>
-      <a href="#vision">Vision</a>
-      <a href="#use">Use Cases</a>
-      <a href="#contact">Contact</a>
-    </div>
+    <strong>Travelair.ai</strong>
+    <a href="#vision">Vision</a>
+    <a href="#usecases">Use Cases</a>
+    <a href="#contact">Contact</a>
   </div>
+</div>
 
-  <section class="hero">
+<div class="wrap">
+  <div class="grid">
     <div class="card">
-      <span class="pill">Premium AI Travel Brand</span>
+      <span class="badge">Premium AI Travel Brand</span>
       <h1>Travelair.ai</h1>
       <p class="sub">
         A brand-ready AI travel intelligence platform positioned for acquisition,
-        partnership, or licensing. Built to sit at the intersection of planning,
+        partnership, or licensing — built at the intersection of planning,
         pricing, booking, and trip optimization.
       </p>
+
       <div class="ctaRow">
-        <a class="btn" href="#contact">Acquisition inquiry</a>
-        <a class="btn ghost" href="#vision">View vision</a>
+        <a href="#contact" class="btn primary">Acquisition inquiry</a>
+        <a href="#vision" class="btn">View vision</a>
+      </div>
+
+      <div class="tags">
+        <span class="tag">Clean & memorable</span>
+        <span class="tag">AI-native domain</span>
+        <span class="tag">Enterprise-ready</span>
       </div>
     </div>
 
-    <div class="widgets">
-      <div class="widget">
-        <h3>Brand Asset</h3>
-        <p>Short, global, AI-native domain with enterprise-grade positioning.</p>
-      </div>
-      <div class="widget">
-        <h3>Strategic Optionality</h3>
-        <p>Consumer travel, B2B booking ops, pricing intelligence, or platform play.</p>
-      </div>
-      <div class="widget">
-        <h3>Clean Transfer</h3>
-        <p>Domain, repository, brand narrative, and landing included.</p>
+    <div class="card">
+      <h3>Why this brand sells</h3>
+      <p class="sub">
+        Travelair.ai is not a tool name — it’s a category-defining brand.
+        Short, global, and instantly credible across consumer and enterprise
+        travel markets.
+      </p>
+      <div class="list">
+        <div class="item">Premium .ai domain with broad applicability</div>
+        <div class="item">Clear positioning for buyers or partners</div>
+        <div class="item">Built for fast acquisition or licensing transfer</div>
+        <div class="item">Neutral brand adaptable to multiple verticals</div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section id="vision" class="section card">
+  <div id="vision" class="section">
     <h2>Vision</h2>
-    <p class="sub">
-      Travelair.ai is designed as a category-defining AI travel brand —
-      not a feature tool. The name supports scale, partnerships, and long-term
-      platform expansion across consumer and enterprise markets.
+    <p>
+      Travelair.ai is designed to become the intelligence layer behind modern
+      travel — connecting itinerary logic, pricing signals, booking automation,
+      and trip optimization into a single brand that scales globally.
     </p>
-  </section>
+  </div>
 
-  <section id="use" class="section grid3">
-    <div class="card"><h3>Itinerary Intelligence</h3><span class="tag">AI planning</span></div>
-    <div class="card"><h3>Pricing & Optimization</h3><span class="tag">Revenue logic</span></div>
-    <div class="card"><h3>Booking Automation</h3><span class="tag">Travel ops</span></div>
-  </section>
+  <div id="usecases" class="section">
+    <h2>Use cases</h2>
+    <div class="list">
+      <div class="item">AI itinerary generation</div>
+      <div class="item">Dynamic pricing intelligence</div>
+      <div class="item">Booking & marketplace automation</div>
+      <div class="item">Enterprise travel ops</div>
+      <div class="item">White-label licensing</div>
+    </div>
+  </div>
 
-  <section id="contact" class="contact">
+  <div id="contact" class="section">
     <h2>Contact</h2>
-    <p class="sub">For acquisition, partnership, or licensing discussions:</p>
+    <p>For acquisition, partnership, or licensing discussions:</p>
     <div class="emailBox">
       <code>travelair.ai@outlook.com</code>
-      <a class="btn ghost" href="mailto:travelair.ai@outlook.com">Email</a>
+      <a class="btn primary" href="mailto:travelair.ai@outlook.com">Email</a>
     </div>
-    <div class="footer">
-      © <span id="y"></span> Travelair.ai — premium brand asset
-    </div>
-  </section>
+  </div>
 
+  <div class="footer">
+    © <span id="y"></span> Travelair.ai — brand asset & acquisition opportunity
+  </div>
 </div>
 
+<!-- FLIGHT PATHS -->
+<svg class="flight" viewBox="0 0 1200 800" preserveAspectRatio="none">
+  <path d="M-50,520 C200,340 380,650 620,500 C860,360 980,260 1300,300"/>
+  <path d="M-80,260 C160,420 360,120 600,240 C840,380 960,620 1280,520"/>
+  <path d="M-60,680 C220,520 400,780 660,660 C900,540 980,420 1280,360"/>
+</svg>
+
+<!-- PARTICLES -->
+<canvas id="p"></canvas>
 <script>
+const c=document.getElementById("p"),x=c.getContext("2d");let w,h,a=[];
+function r(){w=c.width=innerWidth;h=c.height=innerHeight}
+addEventListener("resize",r);r();
+for(let i=0;i<80;i++)a.push({x:Math.random()w,y:Math.random()*h,vx:(Math.random()-.5).4,vy:(Math.random()-.5)*.4});
+(function t(){
+x.clearRect(0,0,w,h);
+a.forEach(p=>{
+p.x+=p.vx;p.y+=p.vy;
+if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;
+x.fillStyle="rgba(108,242,255,.45)";
+x.beginPath();x.arc(p.x,p.y,1.6,0,6.28);x.fill()
+});
+requestAnimationFrame(t)
+})();
 document.getElementById("y").textContent=new Date().getFullYear();
 </script>
+
 </body>
-</html>
+</html
