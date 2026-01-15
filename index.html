@@ -3,139 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TravelAir.ai — The Future of Intelligent Luxury Travel</title>
-  <meta name="description" content="AI-powered bookings, predictive flights, weather-smart itineraries, exclusive resorts & private aviation — seamless luxury for the modern traveler."/>
+  <title>TravelAir.ai - Book Flights, Hotels & More</title>
+  <meta name="description" content="Search and book cheap flights, hotels, vacation packages and more with TravelAir.ai - your smart travel companion."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #000000;
-      --text: #ffffff;
-      --gold: #e5c07a;
-      --accent: #f0d4a8;
-      --overlay: rgba(0,0,0,0.65);
+      --primary: #006ce4;     /* Expedia-like blue */
+      --dark: #001f3f;
+      --light: #ffffff;
+      --accent: #ff6b00;
+      --gray: #f5f7fa;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      color: var(--dark);
+      background: var(--light);
       line-height: 1.6;
     }
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 900;
-      color: var(--gold);
-    }
     header {
-      min-height: 85vh;
-      background: linear-gradient(var(--overlay), var(--overlay)),
-                  url('https://thumbs.dreamstime.com/b/beautiful-sunset-over-ocean-large-swimming-pool-house-background-372400358.jpg') center/cover no-repeat;
+      position: relative;
+      height: 85vh;
+      min-height: 600px;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+                  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80') center/cover no-repeat;
+      color: white;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 2rem 5%;
+      padding: 0 5%;
     }
     header h1 {
-      font-size: clamp(3.5rem, 10vw, 7rem);
-      letter-spacing: clamp(3px, 1.2vw, 10px);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 8vw, 5rem);
       margin-bottom: 1rem;
     }
-    header .tagline {
-      font-size: clamp(1.4rem, 5vw, 2.5rem);
-      font-weight: 300;
-      max-width: 90%;
-      margin-bottom: 3rem;
+    header p {
+      font-size: clamp(1.1rem, 4vw, 1.6rem);
+      max-width: 800px;
+      margin-bottom: 2.5rem;
       opacity: 0.95;
     }
-    .btn {
-      background: transparent;
-      border: 2px solid var(--gold);
-      color: var(--gold);
-      padding: clamp(1rem, 3.5vw, 1.4rem) clamp(2.5rem, 6vw, 4rem);
-      border-radius: 60px;
-      font-size: clamp(1.1rem, 4vw, 1.4rem);
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.4s ease;
+    .search-tabs {
+      display: flex;
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+      max-width: 900px;
+      width: 100%;
     }
-    .btn:hover {
-      background: var(--gold);
-      color: #000;
-      transform: translateY(-5px);
+    .tab {
+      flex: 1;
+      padding: 1.2rem;
+      text-align: center;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      color: var(--dark);
+      background: var(--gray);
+    }
+    .tab.active {
+      background: white;
+      color: var(--primary);
+    }
+    .search-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      max-width: 900px;
+      width: 100%;
+    }
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    input, select {
+      flex: 1;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      min-width: 200px;
+    }
+    .btn-search {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+    }
+    .btn-search:hover {
+      background: #0055b3;
     }
     section {
-      padding: clamp(6rem, 12vw, 12rem) 6%;
-      max-width: 1700px;
+      padding: 5rem 5%;
+      max-width: 1400px;
       margin: 0 auto;
     }
     h2 {
-      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
+      color: var(--dark);
     }
-    .intro {
-      font-size: clamp(1.1rem, 3.5vw, 1.6rem);
-      max-width: 1100px;
-      margin: 0 auto 4rem;
-      text-align: center;
-      font-weight: 300;
-      opacity: 0.92;
-    }
-    .gallery {
+    .inspiration-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
-      margin: 4rem 0;
     }
-    .gallery img {
+    .card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+    }
+    .card img {
       width: 100%;
-      height: clamp(300px, 55vw, 480px);
+      height: 240px;
       object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-      transition: transform 0.6s ease;
     }
-    .gallery img:hover {
-      transform: scale(1.05);
+    .card-content {
+      padding: 1.5rem;
+      background: white;
     }
-    .widget-container {
-      background: rgba(229,192,122,0.08);
-      border: 1px solid rgba(229,192,122,0.25);
-      border-radius: 18px;
-      padding: 2.5rem;
-      margin: 4rem auto;
-      max-width: 800px;
-      text-align: center;
+    .card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
     }
     footer {
-      background: #000;
-      padding: 8rem 6% 5rem;
+      background: var(--dark);
+      color: white;
       text-align: center;
-      border-top: 1px solid rgba(229,192,122,0.2);
+      padding: 4rem 5% 2rem;
     }
-    .contact-box {
-      background: rgba(229,192,122,0.07);
-      border: 1px solid rgba(229,192,122,0.22);
-      border-radius: 22px;
-      padding: 5rem 7%;
-      max-width: 1000px;
-      margin: 0 auto 5rem;
-    }
-    .email {
-      color: var(--gold);
-      font-size: clamp(1.6rem, 5vw, 2.2rem);
-      text-decoration: none;
-    }
-    .email:hover { color: var(--accent); text-decoration: underline; }
-
-    @media (max-width: 480px) {
-      header { min-height: 70vh; padding: 1.8rem 4%; }
-      .gallery img { height: 280px; }
-      section { padding: 5rem 5% 7rem; }
+    @media (max-width: 768px) {
+      header { min-height: 70vh; }
+      .form-row { flex-direction: column; }
     }
   </style>
 </head>
@@ -143,65 +162,70 @@
 
   <header>
     <h1>TravelAir.ai</h1>
-    <div class="tagline">Intelligent Luxury Travel • Flights • Resorts • Weather-Smart Journeys</div>
-    <a href="mailto:travelair.ai@outlook.com?subject=Inquiry" class="btn">Discover More</a>
+    <p>Search hundreds of airlines, hotels & destinations — book smarter, travel better.</p>
+
+    <div class="search-tabs">
+      <div class="tab active">Flights</div>
+      <div class="tab">Hotels</div>
+      <div class="tab">Packages</div>
+      <div class="tab">Cars</div>
+    </div>
+
+    <div class="search-form">
+      <div class="form-row">
+        <input type="text" placeholder="From (city or airport)">
+        <input type="text" placeholder="To (city or airport)">
+      </div>
+      <div class="form-row">
+        <input type="date" placeholder="Depart">
+        <input type="date" placeholder="Return">
+        <select>
+          <option>1 adult, 0 children</option>
+          <option>2 adults</option>
+          <option>1 adult, 1 child</option>
+        </select>
+      </div>
+      <button class="btn-search">Search</button>
+    </div>
   </header>
 
   <section>
-    <h2>Tropical Paradise Awaits</h2>
-    <p class="intro">Crystal-clear waters, pristine beaches, endless horizons — the world's most breathtaking destinations.</p>
-    <div class="gallery">
-      <img src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-ocean-large-swimming-pool-house-background-372400358.jpg" alt="Sunset over ocean pool villa">
-      <img src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-ocean-pool-villa-background-water-calm-sky-filled-warm-colors-372399864.jpg" alt="Vibrant sunset ocean bungalow">
-      <img src="https://thumbs.dreamstime.com/b/idyllic-tropical-beach-sunset-hanging-chair-scene-featuring-beautifully-decorated-wicker-pristine-white-sand-palm-409221504.jpg" alt="Tropical beach sunset with palm">
-      <img src="https://thumbs.dreamstime.com/b/serene-overwater-bungalow-sits-stilts-above-crystal-clear-turquoise-waters-connected-419215075.jpg" alt="Serene overwater bungalow turquoise">
-      <img src="https://www.shutterstock.com/image-photo/aerial-view-idyllic-tropical-beach-600nw-2569043369.jpg" alt="Aerial tropical beach paradise">
-      <img src="https://www.shutterstock.com/image-photo/breathtaking-aerial-view-tropical-coastline-260nw-2685583929.jpg" alt="Aerial view crystal clear ocean">
-    </div>
-  </section>
-
-  <section>
-    <h2>Exclusive Beach Resorts</h2>
-    <p class="intro">Oceanfront luxury, infinity pools, private sanctuaries — pure indulgence by the sea.</p>
-    <div class="gallery">
-      <img src="https://media.vrbo.com/lodging/24000000/23270000/23267600/23267508/4c911944.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Luxury beach estate pool view">
-      <img src="https://media.vrbo.com/lodging/118000000/118000000/117994500/117994401/f3ce4182.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Designer pool beachfront villa">
-      <img src="https://belleescapes.com.au/wp-content/uploads/2025/10/Trinity-Beach-Palace-2.webp" alt="Elegant beachfront palace resort">
-      <img src="https://media-cdn.tripadvisor.com/media/photo-s/31/dc/d1/2f/the-cove-pool.jpg" alt="Stunning cove infinity pool beach">
-    </div>
-  </section>
-
-  <section>
-    <h2>Private Aviation Elegance</h2>
-    <p class="intro">Sleek jets, luxurious cabins, seamless skies — travel redefined.</p>
-    <div class="gallery">
-      <img src="https://thumbs.dreamstime.com/b/luxurious-plane-interior-comfortable-white-leather-seats-passengers-cabin-wooden-tables-ready-flight-modern-private-414572536.jpg" alt="Bright luxurious private jet interior">
-      <img src="https://www.shutterstock.com/image-photo/private-jet-ready-boarding-against-260nw-2640302855.jpg" alt="Private jet on tarmac golden light">
-      <img src="https://thumbs.dreamstime.com/b/airplane-preparing-takeoff-sunset-positioned-runway-ready-as-sun-sets-background-lights-illuminated-426950526.jpg" alt="Jet takeoff at vibrant sunset">
-      <img src="https://thumbs.dreamstime.com/b/private-jet-airplane-landing-runway-vibrant-golden-sunset-country-light-illuminating-landscape-419880883.jpg" alt="Private jet landing golden hour">
-    </div>
-  </section>
-
-  <section>
-    <h2>Weather-Smart Journeys</h2>
-    <p class="intro">Real-time intelligence to keep every moment perfect.</p>
-    <div class="widget-container">
-      <h3>Live Global Weather</h3>
-      <a id="ww_d41d8cd98f" href="https://weatherwidget.io/" target="_blank" style="display:none;">Weather</a>
-      <script async src="https://app3.weatherwidget.org/js/?id=ww_d41d8cd98f"></script>
-      <div id="ww_d41d8cd98f" v='1.3' loc='id' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one","sl_sot":"fahrenheit","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'></div>
+    <h2>Explore Dream Destinations</h2>
+    <div class="inspiration-gallery">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef7e?auto=format&fit=crop&q=80" alt="Tropical beach paradise">
+        <div class="card-content">
+          <h3>Maldives Overwater Bliss</h3>
+          <p>Crystal waters & luxury villas</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80" alt="Sunny beach resort">
+        <div class="card-content">
+          <h3>Bali Beach Escape</h3>
+          <p>From $299/night</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80" alt="Private jet over ocean">
+        <div class="card-content">
+          <h3>Private Jet to Santorini</h3>
+          <p>Exclusive & seamless</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80" alt="Luxury resort infinity pool">
+        <div class="card-content">
+          <h3>Hawaii Resort Retreat</h3>
+          <p>Infinity views & relaxation</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer>
-    <div class="contact-box">
-      <h2 style="color:var(--gold);">The Future of Travel Starts Here</h2>
-      <p class="intro" style="margin-bottom:2.5rem;">Bookings • Flights • Resorts • Weather Intelligence • Exclusive Experiences</p>
-      <a href="mailto:travelair.ai@outlook.com" class="email">travelair.ai@outlook.com</a>
-    </div>
-    <p style="opacity:0.75; font-size: clamp(1rem, 3vw, 1.2rem);">
-      © 2026 TravelAir.ai — Elevating Every Journey
-    </p>
+    <p>© 2026 TravelAir.ai — Book smarter, travel farther.</p>
+    <p>Find deals on flights, hotels, cars, packages and more.</p>
   </footer>
 
 </body>
