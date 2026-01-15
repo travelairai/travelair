@@ -39,6 +39,20 @@
       max-width: 960px;
       margin: 0 auto;
       padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 40px);
+      position: relative;
+    }
+
+    .acquisition-badge {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(200,169,106,0.08);
+      border: 1px solid rgba(200,169,106,0.2);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.82rem;
+      color: #c8a96a;
+      letter-spacing: 0.5px;
     }
 
     h1 {
@@ -47,7 +61,16 @@
       font-weight: 700;
       letter-spacing: -0.02em;
       text-align: center;
-      margin-bottom: 0.6em;
+      margin-bottom: 0.3em;
+    }
+
+    .tagline {
+      color: #c8a96a;
+      font-size: clamp(1.35rem, 4.5vw, 2rem);
+      font-weight: 500;
+      text-align: center;
+      margin: 0 0 3rem;
+      opacity: 0.95;
     }
 
     .subtitle {
@@ -159,6 +182,12 @@
         padding-left: 5%;
         padding-right: 5%;
       }
+      .acquisition-badge {
+        top: 1rem;
+        right: 1rem;
+        font-size: 0.78rem;
+        padding: 5px 10px;
+      }
       h1 { line-height: 0.95; }
     }
   </style>
@@ -166,7 +195,10 @@
 <body>
 
   <div class="container">
+    <div class="acquisition-badge">Available for Acquisition</div>
+
     <h1>TravelAir</h1>
+    <p class="tagline">The next intelligent horizon in luxury travel</p>
     
     <div class="subtitle">
       The definitive foundation for the future of intelligent global travel
@@ -210,6 +242,9 @@
     <div class="divider"></div>
 
     <h2>Serious Inquiries Only</h2>
+    <p class="note" style="text-align:center; margin: 1.5rem 0; font-size: 0.94rem;">
+      All discussions are strictly confidential and direct.
+    </p>
 
     <div class="form-box">
       <form action="https://formspree.io/f/xnjjngql" method="POST">
