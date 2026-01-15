@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TravelAir.ai — The Next Era of AI-Powered Ultra-Luxury Travel</title>
-  <meta name="description" content="TravelAir.ai: Predictive AI for private jets, yachts, hotels & bespoke itineraries. Smarter than Hopper, more exclusive than Expedia — the future of intelligent luxury travel."/>
+  <title>TravelAir.ai — AI-Powered Ultra-Luxury Travel Revolution</title>
+  <meta name="description" content="Predictive pricing, autonomous bookings, weather-smart itineraries — private jets, yachts, exclusive villas. The next generation of luxury travel."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #000000;
@@ -30,7 +30,7 @@
     header {
       min-height: 80vh;
       background: linear-gradient(var(--overlay), var(--overlay)),
-                  url('https://thumbs.dreamstime.com/b/luxury-private-jet-parked-tarmac-against-vibrant-sunset-sky-airport-setting-sleek-rests-as-sun-sets-casting-warm-370394609.jpg') center/cover no-repeat;
+                  url('https://static.vecteezy.com/system/resources/thumbnails/041/053/820/small/ai-generated-interior-of-a-luxury-business-jet-airplane-luxury-travel-ai-generative-photo.jpeg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -39,125 +39,114 @@
       padding: 2rem 5%;
     }
     header h1 {
-      font-size: clamp(3.5rem, 10vw, 7rem);
-      letter-spacing: clamp(4px, 1.5vw, 12px);
+      font-size: clamp(3.2rem, 9vw, 6.5rem);
+      letter-spacing: clamp(3px, 1.2vw, 10px);
       color: var(--gold);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
     header .tagline {
-      font-size: clamp(1.4rem, 5vw, 2.6rem);
+      font-size: clamp(1.3rem, 4.5vw, 2.4rem);
       font-weight: 300;
-      letter-spacing: clamp(2px, 0.8vw, 5px);
       max-width: 90%;
-      margin-bottom: 3rem;
-      opacity: 0.97;
+      margin-bottom: 2.5rem;
+      opacity: 0.96;
     }
     .btn {
       background: transparent;
       border: 2px solid var(--gold);
       color: var(--gold);
-      padding: clamp(0.9rem, 3vw, 1.4rem) clamp(1.8rem, 5vw, 4rem);
-      border-radius: 60px;
-      font-size: clamp(1rem, 4vw, 1.4rem);
-      font-weight: 700;
-      letter-spacing: 2px;
+      padding: clamp(0.9rem, 3vw, 1.3rem) clamp(2rem, 5vw, 3.5rem);
+      border-radius: 50px;
+      font-size: clamp(1rem, 3.5vw, 1.3rem);
+      font-weight: 600;
       text-decoration: none;
-      transition: all 0.4s ease;
+      transition: all 0.4s;
     }
     .btn:hover {
       background: var(--gold);
       color: #000;
-      transform: translateY(-6px);
+      transform: translateY(-4px);
     }
     section {
-      padding: clamp(6rem, 12vw, 12rem) 6% clamp(4rem, 10vw, 10rem);
+      padding: clamp(5rem, 10vw, 10rem) 5% clamp(3rem, 8vw, 8rem);
       max-width: 1600px;
       margin: 0 auto;
     }
     h2 {
-      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-size: clamp(2.8rem, 7vw, 5rem);
       text-align: center;
       color: var(--gold);
-      margin-bottom: 4rem;
-      letter-spacing: 3px;
+      margin-bottom: 3.5rem;
     }
     .intro {
-      font-size: clamp(1.1rem, 3.5vw, 1.6rem);
-      max-width: 1100px;
-      margin: 0 auto 5rem;
+      font-size: clamp(1.1rem, 3.2vw, 1.5rem);
+      max-width: 1000px;
+      margin: 0 auto 4rem;
       text-align: center;
       font-weight: 300;
-      opacity: 0.94;
+      opacity: 0.93;
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin: 4rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+      margin: 3rem 0;
     }
     .gallery img {
       width: 100%;
-      height: 400px;
+      height: clamp(280px, 50vw, 420px);
       object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.7);
-      transition: transform 0.6s ease;
+      border-radius: 16px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.7);
+      transition: transform 0.5s;
     }
     .gallery img:hover {
-      transform: scale(1.04);
+      transform: scale(1.03);
+    }
+    .widget-container {
+      background: rgba(212,185,120,0.07);
+      border: 1px solid rgba(212,185,120,0.22);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 3rem auto;
+      max-width: 700px;
+      text-align: center;
     }
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 4rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
     }
     .feature h3 {
       color: var(--gold);
-      font-size: clamp(1.8rem, 5vw, 2.6rem);
-      margin: 1.5rem 0 1rem;
-    }
-    .widget-container {
-      background: rgba(212,185,120,0.08);
-      border: 1px solid rgba(212,185,120,0.25);
-      border-radius: 20px;
-      padding: 2rem;
-      margin: 4rem auto;
-      max-width: 600px;
-      text-align: center;
-    }
-    .ai-vision {
-      background: linear-gradient(135deg, #000, #0a0a0a);
-      border-radius: 32px;
-      padding: 6rem 7%;
-      text-align: center;
-      margin: 6rem auto;
+      font-size: clamp(1.7rem, 4.5vw, 2.3rem);
+      margin: 1.2rem 0 0.8rem;
     }
     footer {
       background: #000;
-      padding: 8rem 6% 5rem;
+      padding: 7rem 5% 4rem;
       text-align: center;
-      border-top: 1px solid rgba(212,185,120,0.2);
+      border-top: 1px solid rgba(212,185,120,0.18);
     }
     .contact-box {
-      background: rgba(212,185,120,0.08);
-      border: 1px solid rgba(212,185,120,0.25);
-      border-radius: 28px;
-      padding: 5rem 7%;
-      max-width: 1000px;
-      margin: 0 auto 5rem;
+      background: rgba(212,185,120,0.07);
+      border: 1px solid rgba(212,185,120,0.22);
+      border-radius: 20px;
+      padding: 4rem 6%;
+      max-width: 900px;
+      margin: 0 auto 4rem;
     }
     .email {
       color: var(--gold);
-      font-size: clamp(1.6rem, 5vw, 2.2rem);
-      font-weight: 700;
+      font-size: clamp(1.5rem, 4.5vw, 2rem);
       text-decoration: none;
     }
     .email:hover { color: var(--accent); text-decoration: underline; }
 
     @media (max-width: 480px) {
       header { min-height: 70vh; padding: 1.5rem 4%; }
-      .gallery img { height: 300px; }
-      section { padding: 4rem 5% 6rem; }
+      .gallery img { height: 260px; }
+      section { padding: 4rem 4% 6rem; }
     }
   </style>
 </head>
@@ -165,94 +154,74 @@
 
   <header>
     <h1>TravelAir.ai</h1>
-    <div class="tagline">The Next Evolution: AI That Anticipates, Books & Perfects Ultra-Luxury Travel</div>
-    <a href="mailto:travelair.ai@outlook.com?subject=Domain%20Acquisition%20%26%20Equity%20Discussion" class="btn">Inquire About Acquisition + Equity</a>
+    <div class="tagline">AI That Anticipates · Books · Perfects Ultra-Luxury Journeys</div>
+    <a href="mailto:travelair.ai@outlook.com?subject=Inquiry%20-%20TravelAir.ai" class="btn">Get in Touch</a>
   </header>
 
   <section>
-    <h2>Redefining Luxury Travel Intelligence</h2>
+    <h2>Where Luxury Meets Intelligence</h2>
     <p class="intro">
-      TravelAir.ai is the ultimate AI platform for the elite — surpassing Hopper's price prediction, Expedia's Smart Trip AI, and Flyr's optimization with agentic booking, real-time weather-aware planning, private jet/yacht orchestration, and hyper-personalized global experiences. From Fort Lauderdale to the world: predictive, autonomous, uncompromising.
+      Predictive pricing for jets & villas • Autonomous concierge • Weather-aware routing • Exclusive experiences — the future of elite travel starts here.
     </p>
 
     <div class="gallery">
-      <img src="https://thumbs.dreamstime.com/b/luxurious-private-jet-interior-design-image-showcases-opulent-featuring-seating-stylish-table-elegant-gold-368499621.jpg" alt="Opulent Private Jet Interior with Gold Accents">
-      <img src="https://thumbs.dreamstime.com/b/interior-luxury-private-jet-cabin-sunset-flight-clouds-375079185.jpg" alt="Luxury Jet Cabin at Sunset Flight">
-      <img src="https://thumbs.dreamstime.com/b/interior-private-luxury-jet-cabin-captured-flying-sunset-clouds-375082536.jpg" alt="Elegant Private Jet Cabin Sunset">
-      <img src="https://thumbs.dreamstime.com/b/luxury-private-jet-interior-features-plush-black-leather-seating-gold-accents-cabin-offers-opulent-travel-experience-elegant-416780543.jpg" alt="Black & Gold Luxury Jet Interior">
+      <!-- Private Jet Interiors -->
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/041/053/820/small/ai-generated-interior-of-a-luxury-business-jet-airplane-luxury-travel-ai-generative-photo.jpeg" alt="Luxury private jet interior">
+      <img src="https://images.hitpaw.com/topics/photo-enhancer-tips/ai-private-jet-interior.jpg" alt="Elegant jet cabin with leather seats">
+      <img src="https://thumbs.dreamstime.com/b/private-jet-interior-leather-seats-fine-dining-glass-wine-private-jet-interior-leather-seats-fine-dining-354950258.jpg" alt="Jet interior fine dining setup">
+      <img src="https://i.ytimg.com/vi/g_TztsBH9uc/maxresdefault.jpg" alt="Modern private jet cabin sunset view">
     </div>
   </section>
 
   <section>
-    <h2>Our Revolutionary AI Features</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>Predictive Price Intelligence</h3>
-        <p>AI forecasts flight, hotel, jet & yacht prices weeks ahead — alerts you to buy, freeze, or wait (Hopper-level accuracy + luxury scale).</p>
-      </div>
-      <div class="feature">
-        <h3>Agentic Concierge AI</h3>
-        <p>Autonomous booking, cancellations, rebookings, refunds — your digital luxury travel manager handles everything voice/chat.</p>
-      </div>
-      <div class="feature">
-        <h3>Hyper-Personalized Itineraries</h3>
-        <p>Mood-based, weather-integrated plans: private jets + overwater villas + Michelin dining — seamless like Expedia Smart Trip AI but ultra-exclusive.</p>
-      </div>
-      <div class="feature">
-        <h3>Private Aviation & Yacht Mastery</h3>
-        <p>Empty-leg predictions, superyacht positioning, fleet optimization — global access with zero compromise.</p>
-      </div>
+    <h2>Exclusive Destinations</h2>
+    <div class="gallery">
+      <!-- Overwater Villas & Luxury Stays -->
+      <img src="https://prod.centarahotelsresorts.com/centaragrand/sites/centara-centaragrand/files/styles/850x472/public/2020-10/07-cirm-sunset-ocean-pool-villa-03.jpg.JPG?itok=SA4j7PkR" alt="Sunset overwater pool villa">
+      <img src="https://furaveri.com/wp-content/uploads/2022/04/OceanPoolVilla_Sunset_Deck_2.jpg" alt="Ocean pool villa golden hour">
+      <img src="https://assets.vogue.com/photos/676990a56e8ca921b7594d33/master/w_1600%2Cc_limit/Screenshot%25202024-12-23%2520at%252011.32.11%2520AM.png" alt="Maldives overwater villa sunset">
+      <img src="https://sharetribe.imgix.net/6623df02-4af4-48a8-a977-c25cf75728b7/666dc0bc-da0a-40c3-a320-bb41cd93fdec?auto=format&fit=clip&h=2400&w=2400&s=494e14e60ab2fad40108afb57adf1062" alt="Luxury hotel suite ocean view">
     </div>
   </section>
 
   <section>
-    <h2>Real-Time Weather Intelligence</h2>
-    <p class="intro" style="margin-bottom:2rem;">
-      Never get caught in the storm — our AI integrates live weather to adjust itineraries proactively (reschedule yacht days, reroute jets).
+    <h2>Superyacht Lifestyle</h2>
+    <div class="gallery">
+      <img src="https://i2-prod.mirror.co.uk/article35643595.ece/ALTERNATES/s1200f/0_S5_B.jpg" alt="Superyacht at sea golden hour">
+      <img src="https://images.prestigeonline.com/wp-content/uploads/sites/5/2024/02/20160156/hero_ak_royalty_00000661_vb2330038_2500x1650-copy-1600x900.jpeg" alt="Luxury superyacht exterior">
+    </div>
+  </section>
+
+  <section>
+    <h2>Real-Time Fort Lauderdale Weather</h2>
+    <p class="intro" style="margin-bottom:1.5rem;">
+      Smart itineraries adapt instantly — sun, rain or wind.
     </p>
-
     <div class="widget-container">
-      <h3>Current Weather in Fort Lauderdale</h3>
-      <!-- Free Responsive Weather Widget from WeatherWidget.io - Customize location below -->
-      <a href="https://weatherwidget.io/" id="ww_5f8e3d4b2c1a9" target="_blank" style="display:none;">Weather Widget</a>
-      <script async src="https://app3.weatherwidget.org/js/?id=ww_5f8e3d4b2c1a9"></script>
-      <div id="ww_5f8e3d4b2c1a9" v='1.3' loc='id' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"fahrenheit","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'></div>
-    </div>
-  </section>
-
-  <section class="ai-vision">
-    <h2>The Vision: Your Luxury World, AI-Orchestrated</h2>
-    <p style="font-size: clamp(1.3rem, 4vw, 2rem); max-width: 1000px; margin: 0 auto 4rem; font-weight:300; opacity:0.93;">
-      Maps integration for seamless routing, hotel/villa discovery, private experiences — all powered by the most advanced AI in travel. This is the domain that becomes the next Hopper/Expedia killer.
-    </p>
-
-    <div class="gallery">
-      <img src="https://elements-resized.envatousercontent.com/elements-cover-images/e16706af-e08c-45c5-b493-9be8a45a4bbf?w=433&cf_fit=scale-down&q=85&format=auto&s=c341646ad63c250ebfb55e4da9f556a22486c1c76ac36aeb38b591e64f940f0a" alt="Futuristic AI Travel Dashboard">
-      <img src="https://elements-resized.envatousercontent.com/elements-cover-images/3a749fc7-78d5-4b47-80e2-d2e3b926a4ad?w=433&cf_fit=scale-down&q=85&format=auto&s=a764fdac5697d62445f990007b722a59cc3b729deab0f138045e022b9ce2a0a5" alt="Modern Luxury Booking Interface">
-      <img src="https://cdn.dribbble.com/userupload/45195966/file/2d69ff06439e39e809aa3450692117b3.jpeg?resize=752x&vertical=center" alt="AI Flight & Travel App UI">
+      <h3>Current Weather – Fort Lauderdale</h3>
+      <a id="ww_d41d8cd98f" href="https://weatherwidget.io/" target="_blank" style="display:none;">Weather</a>
+      <script async src="https://app3.weatherwidget.org/js/?id=ww_d41d8cd98f"></script>
+      <div id="ww_d41d8cd98f" v='1.3' loc='id' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one","sl_sot":"fahrenheit","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'></div>
     </div>
   </section>
 
   <section>
-    <h2>Exclusive Luxury Destinations</h2>
+    <h2>AI Booking Vision</h2>
     <div class="gallery">
-      <img src="https://maldives.intercontinental.com/wp-content/uploads/sites/20/2023/10/Sunset-Overwater-Pool-Villa-Outdoor-Pool-Deck-1.jpg" alt="Sunset Overwater Pool Villa Maldives">
-      <img src="https://furaveri.com/wp-content/uploads/2022/04/OceanPoolVilla_Sunset_Deck_2.jpg" alt="Luxury Ocean Pool Villa Sunset">
-      <img src="https://www.joali.com/media/sghfirsk/joali_sunsetluxuryvilla_17_2000.jpg?format=webp&v=1698418377" alt="JOALI Maldives Sunset Water Villa">
+      <!-- Futuristic AI Interfaces -->
+      <img src="https://elements-resized.envatousercontent.com/elements-cover-images/e16706af-e08c-45c5-b493-9be8a45a4bbf?w=433&cf_fit=scale-down&q=85&format=auto&s=c341646ad63c250ebfb55e4da9f556a22486c1c76ac36aeb38b591e64f940f0a" alt="Modern AI travel dashboard">
+      <img src="https://elements-resized.envatousercontent.com/elements-cover-images/3a749fc7-78d5-4b47-80e2-d2e3b926a4ad?w=433&cf_fit=scale-down&q=85&format=auto&s=a764fdac5697d62445f990007b722a59cc3b729deab0f138045e022b9ce2a0a5" alt="Luxury booking interface dark mode">
     </div>
   </section>
 
   <footer>
     <div class="contact-box">
-      <h2 style="color:var(--gold); font-size: clamp(2.5rem, 7vw, 4.5rem); margin-bottom:2rem;">Acquire the Future</h2>
-      <p style="font-size: clamp(1.1rem, 3.5vw, 1.5rem); max-width:800px; margin:0 auto 3rem; opacity:0.93;">
-        Domain for sale: TravelAir.ai — premium, memorable, high-value in the exploding AI-travel space. Seeking strategic buyer with equity stake opportunity.
-      </p>
+      <h2 style="color:var(--gold);">Ready for the Future?</h2>
+      <p class="intro" style="margin-bottom:2rem;">Partnerships • Acquisition • Early Access</p>
       <a href="mailto:travelair.ai@outlook.com" class="email">travelair.ai@outlook.com</a>
     </div>
-
-    <p style="font-size: clamp(1rem, 3vw, 1.3rem); opacity:0.8;">
-      © 2026 TravelAir.ai — Pioneering the Next Billion-Dollar AI Travel Revolution from Fort Lauderdale
+    <p style="opacity:0.7; font-size: clamp(0.95rem, 3vw, 1.1rem);">
+      © 2026 TravelAir.ai — Fort Lauderdale, Florida
     </p>
   </footer>
 
