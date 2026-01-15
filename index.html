@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TravelAir.ai — Exclusive AI-Powered Ultra-Luxury Travel</title>
-  <meta name="description" content="Predictive intelligence, autonomous concierge, bespoke private aviation and residences — reserved for the world's most discerning travelers."/>
+  <title>TravelAir.ai — The Future of Intelligent Luxury Travel</title>
+  <meta name="description" content="AI-powered bookings, predictive flights, weather-smart itineraries, exclusive resorts & private aviation — seamless luxury for the modern traveler."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #000000;
-      --text: #fdfdfd;
-      --gold: #d4b978;
-      --accent: #e8d5a3;
-      --overlay: rgba(0,0,0,0.82);
+      --text: #ffffff;
+      --gold: #e5c07a;
+      --accent: #f0d4a8;
+      --overlay: rgba(0,0,0,0.65);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
@@ -26,11 +26,12 @@
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
       font-weight: 900;
+      color: var(--gold);
     }
     header {
-      min-height: 80vh;
+      min-height: 85vh;
       background: linear-gradient(var(--overlay), var(--overlay)),
-                  url('https://artesanocraftsmen.com/wp-content/uploads/2024/10/DALL%C2%B7E-2024-10-08-13.52.45-A-luxurious-private-jet-office-with-leather-panel-chairs-and-a-modern-design-as-well-as-a-tasteful-centerpiece-leather-panel-on-the-wall.-The-office--1024x585.webp') center/cover no-repeat;
+                  url('https://thumbs.dreamstime.com/b/beautiful-sunset-over-ocean-large-swimming-pool-house-background-372400358.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -39,104 +40,102 @@
       padding: 2rem 5%;
     }
     header h1 {
-      font-size: clamp(3.2rem, 9vw, 6.5rem);
+      font-size: clamp(3.5rem, 10vw, 7rem);
       letter-spacing: clamp(3px, 1.2vw, 10px);
-      color: var(--gold);
       margin-bottom: 1rem;
     }
     header .tagline {
-      font-size: clamp(1.3rem, 4.5vw, 2.4rem);
+      font-size: clamp(1.4rem, 5vw, 2.5rem);
       font-weight: 300;
       max-width: 90%;
-      margin-bottom: 2.5rem;
-      opacity: 0.96;
+      margin-bottom: 3rem;
+      opacity: 0.95;
     }
     .btn {
       background: transparent;
       border: 2px solid var(--gold);
       color: var(--gold);
-      padding: clamp(0.9rem, 3vw, 1.3rem) clamp(2rem, 5vw, 3.5rem);
-      border-radius: 50px;
-      font-size: clamp(1rem, 3.5vw, 1.3rem);
+      padding: clamp(1rem, 3.5vw, 1.4rem) clamp(2.5rem, 6vw, 4rem);
+      border-radius: 60px;
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
       font-weight: 600;
       text-decoration: none;
-      transition: all 0.4s;
+      transition: all 0.4s ease;
     }
     .btn:hover {
       background: var(--gold);
       color: #000;
-      transform: translateY(-4px);
+      transform: translateY(-5px);
     }
     section {
-      padding: clamp(5rem, 10vw, 10rem) 5% clamp(3rem, 8vw, 8rem);
-      max-width: 1600px;
+      padding: clamp(6rem, 12vw, 12rem) 6%;
+      max-width: 1700px;
       margin: 0 auto;
     }
     h2 {
-      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-size: clamp(3rem, 8vw, 5.5rem);
       text-align: center;
-      color: var(--gold);
-      margin-bottom: 3.5rem;
+      margin-bottom: 4rem;
     }
     .intro {
-      font-size: clamp(1.1rem, 3.2vw, 1.5rem);
-      max-width: 1000px;
+      font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+      max-width: 1100px;
       margin: 0 auto 4rem;
       text-align: center;
       font-weight: 300;
-      opacity: 0.93;
+      opacity: 0.92;
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.8rem;
-      margin: 3rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
     }
     .gallery img {
       width: 100%;
-      height: clamp(280px, 50vw, 420px);
+      height: clamp(300px, 55vw, 480px);
       object-fit: cover;
-      border-radius: 16px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.7);
-      transition: transform 0.5s;
+      border-radius: 18px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+      transition: transform 0.6s ease;
     }
     .gallery img:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
     .widget-container {
-      background: rgba(212,185,120,0.07);
-      border: 1px solid rgba(212,185,120,0.22);
-      border-radius: 16px;
-      padding: 2rem;
-      margin: 3rem auto;
-      max-width: 700px;
+      background: rgba(229,192,122,0.08);
+      border: 1px solid rgba(229,192,122,0.25);
+      border-radius: 18px;
+      padding: 2.5rem;
+      margin: 4rem auto;
+      max-width: 800px;
       text-align: center;
     }
     footer {
       background: #000;
-      padding: 7rem 5% 4rem;
+      padding: 8rem 6% 5rem;
       text-align: center;
-      border-top: 1px solid rgba(212,185,120,0.18);
+      border-top: 1px solid rgba(229,192,122,0.2);
     }
     .contact-box {
-      background: rgba(212,185,120,0.07);
-      border: 1px solid rgba(212,185,120,0.22);
-      border-radius: 20px;
-      padding: 4rem 6%;
-      max-width: 900px;
-      margin: 0 auto 4rem;
+      background: rgba(229,192,122,0.07);
+      border: 1px solid rgba(229,192,122,0.22);
+      border-radius: 22px;
+      padding: 5rem 7%;
+      max-width: 1000px;
+      margin: 0 auto 5rem;
     }
     .email {
       color: var(--gold);
-      font-size: clamp(1.5rem, 4.5vw, 2rem);
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
       text-decoration: none;
     }
     .email:hover { color: var(--accent); text-decoration: underline; }
 
     @media (max-width: 480px) {
-      header { min-height: 70vh; padding: 1.5rem 4%; }
-      .gallery img { height: 260px; }
-      section { padding: 4rem 4% 6rem; }
+      header { min-height: 70vh; padding: 1.8rem 4%; }
+      .gallery img { height: 280px; }
+      section { padding: 5rem 5% 7rem; }
     }
   </style>
 </head>
@@ -144,59 +143,50 @@
 
   <header>
     <h1>TravelAir.ai</h1>
-    <div class="tagline">Discreet Intelligence for Extraordinary Journeys</div>
-    <a href="mailto:travelair.ai@outlook.com?subject=Private%20Inquiry" class="btn">Private Inquiry</a>
+    <div class="tagline">Intelligent Luxury Travel • Flights • Resorts • Weather-Smart Journeys</div>
+    <a href="mailto:travelair.ai@outlook.com?subject=Inquiry" class="btn">Discover More</a>
   </header>
 
   <section>
-    <h2>Private Aviation Excellence</h2>
-    <p class="intro">Bespoke jets, predictive availability, seamless global access.</p>
+    <h2>Tropical Paradise Awaits</h2>
+    <p class="intro">Crystal-clear waters, pristine beaches, endless horizons — the world's most breathtaking destinations.</p>
     <div class="gallery">
-      <img src="https://artesanocraftsmen.com/wp-content/uploads/2024/10/DALL%C2%B7E-2024-10-08-13.52.45-A-luxurious-private-jet-office-with-leather-panel-chairs-and-a-modern-design-as-well-as-a-tasteful-centerpiece-leather-panel-on-the-wall.-The-office--1024x585.webp" alt="Opulent private jet office interior">
-      <img src="https://thumbs.dreamstime.com/b/luxury-private-jet-interior-leather-seats-elegant-modern-interior-private-jet-comfortable-leather-seating-324165926.jpg" alt="Elegant leather seating cabin">
-      <img src="https://thumbs.dreamstime.com/b/luxury-private-jet-interior-featuring-modern-design-spacious-cabin-elegant-leather-seating-bright-windows-showcases-422450569.jpg" alt="Spacious modern jet cabin">
-      <img src="https://static.wixstatic.com/media/e43449_f9dec6e77ae2407fa54a8eb1ee47ef7e~mv2.webp/v1/fill/w_1000,h_666,al_c,q_85,usm_0.66_1.00_0.01/e43449_f9dec6e77ae2407fa54a8eb1ee47ef7e~mv2.webp" alt="Luxurious private jet interior view">
+      <img src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-ocean-large-swimming-pool-house-background-372400358.jpg" alt="Sunset over ocean pool villa">
+      <img src="https://thumbs.dreamstime.com/b/beautiful-sunset-over-ocean-pool-villa-background-water-calm-sky-filled-warm-colors-372399864.jpg" alt="Vibrant sunset ocean bungalow">
+      <img src="https://thumbs.dreamstime.com/b/idyllic-tropical-beach-sunset-hanging-chair-scene-featuring-beautifully-decorated-wicker-pristine-white-sand-palm-409221504.jpg" alt="Tropical beach sunset with palm">
+      <img src="https://thumbs.dreamstime.com/b/serene-overwater-bungalow-sits-stilts-above-crystal-clear-turquoise-waters-connected-419215075.jpg" alt="Serene overwater bungalow turquoise">
+      <img src="https://www.shutterstock.com/image-photo/aerial-view-idyllic-tropical-beach-600nw-2569043369.jpg" alt="Aerial tropical beach paradise">
+      <img src="https://www.shutterstock.com/image-photo/breathtaking-aerial-view-tropical-coastline-260nw-2685583929.jpg" alt="Aerial view crystal clear ocean">
     </div>
   </section>
 
   <section>
-    <h2>Private Jet Exteriors</h2>
-    <p class="intro">Sleek arrivals and departures in golden light.</p>
+    <h2>Exclusive Beach Resorts</h2>
+    <p class="intro">Oceanfront luxury, infinity pools, private sanctuaries — pure indulgence by the sea.</p>
     <div class="gallery">
-      <img src="https://robbreport.com/wp-content/uploads/2023/07/MV_July_17_Lead_Sized.jpg?w=681&h=383&crop=1" alt="Fast private jet on runway">
-      <img src="https://thumbs.dreamstime.com/b/airplane-showing-luxury-private-jet-sports-car-airport-tarmac-sunset-high-resolution-image-suitable-commercial-use-425107986.jpg" alt="Private jet at sunset tarmac">
-      <img src="https://png.pngtree.com/thumb_back/fh260/background/20250723/pngtree-sunset-view-of-sleek-black-private-jet-parked-on-tarmac-with-image_17644634.webp" alt="Sleek black private jet sunset">
-      <img src="https://t4.ftcdn.net/jpg/06/36/02/63/360_F_636026393_uyIkUtsY4Vh6PCEQbRv5HTpIc8MQSeBH.jpg" alt="Private jet exterior golden hour">
+      <img src="https://media.vrbo.com/lodging/24000000/23270000/23267600/23267508/4c911944.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Luxury beach estate pool view">
+      <img src="https://media.vrbo.com/lodging/118000000/118000000/117994500/117994401/f3ce4182.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Designer pool beachfront villa">
+      <img src="https://belleescapes.com.au/wp-content/uploads/2025/10/Trinity-Beach-Palace-2.webp" alt="Elegant beachfront palace resort">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-s/31/dc/d1/2f/the-cove-pool.jpg" alt="Stunning cove infinity pool beach">
     </div>
   </section>
 
   <section>
-    <h2>Exclusive Residences</h2>
-    <p class="intro">Overwater sanctuaries and private estates.</p>
+    <h2>Private Aviation Elegance</h2>
+    <p class="intro">Sleek jets, luxurious cabins, seamless skies — travel redefined.</p>
     <div class="gallery">
-      <img src="https://i0.wp.com/theluxurytravelexpert.com/wp-content/uploads/2017/04/oneonly-reethi-rah1.jpg?ssl=1" alt="Luxury overwater villa Maldives">
-      <img src="https://www.experienceparkhyattmaldives.com/wp-content/uploads/2024/11/Overwater-Sunset-Pool-Villa_4-scaled.jpg" alt="Sunset overwater pool villa">
-      <img src="https://travelsort.com/wp-content/uploads/2017/11/travelsort-2883.jpeg" alt="Elegant overwater residence sunset">
-      <img src="https://adoremaldives.com/img/http/aHR0cHM6Ly9hZG9yZW1hbGRpdmVzLmNvbS9zdG9yYWdlL3Jvb21zL3RoZS1zdC1yZWdpcy9vdmVyd2F0ZXItdmlsbGEtd2l0aC1wb29sL092ZXJ3YXRlci1WaWxsYS13aXRoLVBvb2wtVGVycmFjZS1TdC4tUmVnaXMtVm9tbXVsaS5qcGc=?w=400&h=300&fit=crop-50-63-1&dpr=1&fm=webp&q=60&s=712d02c5f6dca87e9ddc72edc6df2f1f" alt="Overwater villa with private pool">
+      <img src="https://thumbs.dreamstime.com/b/luxurious-plane-interior-comfortable-white-leather-seats-passengers-cabin-wooden-tables-ready-flight-modern-private-414572536.jpg" alt="Bright luxurious private jet interior">
+      <img src="https://www.shutterstock.com/image-photo/private-jet-ready-boarding-against-260nw-2640302855.jpg" alt="Private jet on tarmac golden light">
+      <img src="https://thumbs.dreamstime.com/b/airplane-preparing-takeoff-sunset-positioned-runway-ready-as-sun-sets-background-lights-illuminated-426950526.jpg" alt="Jet takeoff at vibrant sunset">
+      <img src="https://thumbs.dreamstime.com/b/private-jet-airplane-landing-runway-vibrant-golden-sunset-country-light-illuminating-landscape-419880883.jpg" alt="Private jet landing golden hour">
     </div>
   </section>
 
   <section>
-    <h2>Superyacht Experience</h2>
-    <p class="intro">Seamless ocean voyages in absolute privacy.</p>
-    <div class="gallery">
-      <img src="https://nau-yachts.b-cdn.net/upload/iblock/f11/rnaaeo89x27n7la82dhc1m7g5isikb5z.jpg" alt="Elegant superyacht exterior">
-      <img src="https://pelorus-statamic.s3.eu-west-2.amazonaws.com/images/eternity.jpg" alt="Luxury yacht at sea">
-      <img src="https://www.bluecollection.villas/wp-content/uploads/2019/01/Blue_Yachting_Mykonos_Greece_Luxury_Yachts_MY_SERENITY-3.jpg" alt="Superyacht deck view">
-      <img src="https://thumbs.dreamstime.com/z/luxurious-yacht-cruising-calm-ocean-waters-sunset-sleek-white-navigates-smooth-waves-gliding-under-vibrant-sky-402506205.jpg" alt="Sleek yacht sunset cruise">
-    </div>
-  </section>
-
-  <section>
-    <h2>Real-Time Weather Intelligence</h2>
-    <p class="intro">Proactive adjustments for flawless itineraries.</p>
+    <h2>Weather-Smart Journeys</h2>
+    <p class="intro">Real-time intelligence to keep every moment perfect.</p>
     <div class="widget-container">
-      <h3>Global Weather Overview</h3>
+      <h3>Live Global Weather</h3>
       <a id="ww_d41d8cd98f" href="https://weatherwidget.io/" target="_blank" style="display:none;">Weather</a>
       <script async src="https://app3.weatherwidget.org/js/?id=ww_d41d8cd98f"></script>
       <div id="ww_d41d8cd98f" v='1.3' loc='id' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one","sl_sot":"fahrenheit","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'></div>
@@ -205,12 +195,12 @@
 
   <footer>
     <div class="contact-box">
-      <h2 style="color:var(--gold);">Discreet Inquiries Welcome</h2>
-      <p class="intro" style="margin-bottom:2rem;">Strategic partnerships · Priority access · Acquisition discussions</p>
+      <h2 style="color:var(--gold);">The Future of Travel Starts Here</h2>
+      <p class="intro" style="margin-bottom:2.5rem;">Bookings • Flights • Resorts • Weather Intelligence • Exclusive Experiences</p>
       <a href="mailto:travelair.ai@outlook.com" class="email">travelair.ai@outlook.com</a>
     </div>
-    <p style="opacity:0.7; font-size: clamp(0.95rem, 3vw, 1.1rem);">
-      © 2026 TravelAir.ai
+    <p style="opacity:0.75; font-size: clamp(1rem, 3vw, 1.2rem);">
+      © 2026 TravelAir.ai — Elevating Every Journey
     </p>
   </footer>
 
