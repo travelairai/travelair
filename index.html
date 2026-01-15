@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <title>TravelAir.ai — Premium Domain Vision</title>
   <meta name="description" content="The premium domain positioned to become the leading AI-powered platform for luxury travel, private aviation, exclusive experiences, and intelligent global journeys."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,66 +13,111 @@
       --gold: #e5c07a;
       --overlay: rgba(0, 0, 0, 0.52);
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       color: #ffffff;
       background: #000;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
     main {
-      height: 100vh;
-      min-height: 800px;
+      min-height: 100vh;
       background: linear-gradient(var(--overlay), var(--overlay)),
-                  url('https://thumbs.dreamstime.com/b/luxurious-modern-villa-infinity-pool-overlooking-vibrant-ocean-sunset-featuring-glass-walls-sleek-architecture-356388256.jpg') center/cover no-repeat fixed;
+                  url('https://thumbs.dreamstime.com/b/luxurious-modern-villa-infinity-pool-overlooking-vibrant-ocean-sunset-featuring-glass-walls-sleek-architecture-356388256.jpg') 
+                  center/cover no-repeat fixed;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 6%;
+      padding: clamp(2rem, 6vw, 8rem) clamp(4%, 6vw, 10%);
       position: relative;
     }
+
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(4.5rem, 10vw, 9rem);
-      letter-spacing: 8px;
+      font-size: clamp(3.4rem, 11vw, 8.5rem);
+      letter-spacing: clamp(4px, 1.2vw, 10px);
       color: var(--gold);
-      margin-bottom: 1.5rem;
-      text-shadow: 0 6px 30px rgba(0,0,0,0.9);
+      margin-bottom: clamp(1rem, 4vw, 2rem);
+      text-shadow: 0 4px 25px rgba(0,0,0,0.85);
+      line-height: 0.95;
     }
+
     .vision {
-      max-width: 900px;
-      font-size: clamp(1.3rem, 4vw, 1.9rem);
+      max-width: 920px;
+      font-size: clamp(1.1rem, 3.8vw, 1.75rem);
       font-weight: 300;
-      line-height: 1.7;
-      margin: 0 auto 3rem;
+      line-height: 1.65;
+      margin: 0 auto clamp(1.5rem, 5vw, 3rem);
       opacity: 0.94;
     }
+
     .highlight {
       color: var(--gold);
       font-weight: 500;
     }
+
     .cta {
-      font-size: clamp(1.4rem, 4.5vw, 2rem);
-      margin-top: 2rem;
-      opacity: 0.9;
+      font-size: clamp(1.2rem, 4.2vw, 1.9rem);
+      margin-top: clamp(1.5rem, 5vw, 3rem);
+      opacity: 0.92;
     }
+
     .email {
       color: var(--gold);
       text-decoration: none;
       font-weight: 500;
       border-bottom: 2px solid var(--gold);
-      transition: all 0.3s;
+      transition: all 0.3s ease;
     }
-    .email:hover {
-      color: #fff;
-      border-bottom-color: #fff;
+
+    .email:hover,
+    .email:focus {
+      color: white;
+      border-bottom-color: white;
     }
-    @media (max-width: 768px) {
-      main { padding: 0 5%; }
-      h1 { font-size: clamp(3.5rem, 12vw, 6rem); }
-      .vision { font-size: clamp(1.1rem, 5vw, 1.6rem); }
+
+    footer {
+      position: absolute;
+      bottom: clamp(1rem, 3vw, 1.8rem);
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+      opacity: 0.65;
+      letter-spacing: 0.4px;
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+      
+      h1 {
+        line-height: 0.92;
+      }
+      
+      .vision {
+        line-height: 1.55;
+      }
+    }
+
+    @media (orientation: landscape) and (max-height: 500px) {
+      main {
+        padding-top: 8vh;
+        padding-bottom: 8vh;
+      }
     }
   </style>
 </head>
@@ -90,7 +135,7 @@
     </p>
 
     <p class="vision">
-      This is not incremental innovation. This is the domain that becomes the <span class="highlight">definitive name</span> in intelligent luxury travel — the bridge between cutting-edge AI and the world's most extraordinary experiences.
+      This is the domain that becomes the <span class="highlight">definitive name</span> in intelligent luxury travel — the bridge between cutting-edge AI and the world's most extraordinary experiences.
     </p>
 
     <p class="vision">
@@ -102,6 +147,10 @@
       Direct inquiries: <a href="mailto:travelair.ai@outlook.com" class="email">travelair.ai@outlook.com</a>
     </p>
   </main>
+
+  <footer>
+    © 2026 TravelAir.ai — All Rights Reserved
+  </footer>
 
 </body>
 </html>
