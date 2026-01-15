@@ -3,33 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TravelAir.ai - Book Flights, Hotels & More</title>
-  <meta name="description" content="Search and book cheap flights, hotels, vacation packages and more with TravelAir.ai - your smart travel companion."/>
+  <title>TravelAir.ai — The Future of Intelligent Luxury Travel</title>
+  <meta name="description" content="The premium domain for the next generation AI-powered travel platform. Predictive flights, exclusive resorts, seamless luxury experiences."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #006ce4;     /* Expedia-like blue */
-      --dark: #001f3f;
-      --light: #ffffff;
-      --accent: #ff6b00;
-      --gray: #f5f7fa;
+      --bg: #000000;
+      --text: #ffffff;
+      --gold: #e5c07a;
+      --overlay: rgba(0,0,0,0.55);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      color: var(--dark);
-      background: var(--light);
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
     }
     header {
-      position: relative;
-      height: 85vh;
-      min-height: 600px;
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
-                  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80') center/cover no-repeat;
-      color: white;
+      height: 100vh;
+      background: linear-gradient(var(--overlay), var(--overlay)),
+                  url('https://www.asiaodysseytravel.com/images/maldives/varu-by-atmosphere-5-star/water-suite-700-1.jpg') center/cover no-repeat fixed;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -39,122 +35,61 @@
     }
     header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 8vw, 5rem);
+      font-size: clamp(4rem, 10vw, 8rem);
+      letter-spacing: 6px;
+      color: var(--gold);
       margin-bottom: 1rem;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.7);
     }
-    header p {
-      font-size: clamp(1.1rem, 4vw, 1.6rem);
-      max-width: 800px;
-      margin-bottom: 2.5rem;
+    header .tagline {
+      font-size: clamp(1.5rem, 5vw, 2.8rem);
+      font-weight: 300;
+      max-width: 90%;
       opacity: 0.95;
     }
-    .search-tabs {
-      display: flex;
-      background: rgba(255,255,255,0.95);
-      border-radius: 12px 12px 0 0;
-      overflow: hidden;
-      max-width: 900px;
-      width: 100%;
-    }
-    .tab {
-      flex: 1;
-      padding: 1.2rem;
-      text-align: center;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-      color: var(--dark);
-      background: var(--gray);
-    }
-    .tab.active {
-      background: white;
-      color: var(--primary);
-    }
-    .search-form {
-      background: white;
-      padding: 2rem;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      max-width: 900px;
-      width: 100%;
-    }
-    .form-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    input, select {
-      flex: 1;
-      padding: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 1rem;
-      min-width: 200px;
-    }
-    .btn-search {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
-      width: 100%;
-    }
-    .btn-search:hover {
-      background: #0055b3;
-    }
     section {
-      padding: 5rem 5%;
-      max-width: 1400px;
+      padding: 8rem 5%;
+      max-width: 1800px;
       margin: 0 auto;
     }
     h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-size: clamp(3rem, 7vw, 5.5rem);
       text-align: center;
-      margin-bottom: 3rem;
-      color: var(--dark);
+      color: var(--gold);
+      margin-bottom: 4rem;
     }
-    .inspiration-gallery {
+    .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2.5rem;
     }
-    .card {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-    }
-    .card img {
+    .gallery img {
       width: 100%;
-      height: 240px;
+      height: 520px;
       object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      transition: transform 0.7s ease;
     }
-    .card-content {
-      padding: 1.5rem;
-      background: white;
-    }
-    .card h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
+    .gallery img:hover {
+      transform: scale(1.04);
     }
     footer {
-      background: var(--dark);
-      color: white;
+      background: var(--bg);
+      padding: 6rem 5% 4rem;
       text-align: center;
-      padding: 4rem 5% 2rem;
+      border-top: 1px solid rgba(229,192,122,0.15);
+    }
+    .contact {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      color: var(--gold);
+      margin-bottom: 2rem;
     }
     @media (max-width: 768px) {
-      header { min-height: 70vh; }
-      .form-row { flex-direction: column; }
+      header { height: 80vh; }
+      .gallery img { height: 380px; }
+      section { padding: 6rem 4%; }
     }
   </style>
 </head>
@@ -162,70 +97,63 @@
 
   <header>
     <h1>TravelAir.ai</h1>
-    <p>Search hundreds of airlines, hotels & destinations — book smarter, travel better.</p>
-
-    <div class="search-tabs">
-      <div class="tab active">Flights</div>
-      <div class="tab">Hotels</div>
-      <div class="tab">Packages</div>
-      <div class="tab">Cars</div>
-    </div>
-
-    <div class="search-form">
-      <div class="form-row">
-        <input type="text" placeholder="From (city or airport)">
-        <input type="text" placeholder="To (city or airport)">
-      </div>
-      <div class="form-row">
-        <input type="date" placeholder="Depart">
-        <input type="date" placeholder="Return">
-        <select>
-          <option>1 adult, 0 children</option>
-          <option>2 adults</option>
-          <option>1 adult, 1 child</option>
-        </select>
-      </div>
-      <button class="btn-search">Search</button>
-    </div>
+    <div class="tagline">The Premium Domain for the Next Era of Intelligent Luxury Travel</div>
   </header>
 
   <section>
-    <h2>Explore Dream Destinations</h2>
-    <div class="inspiration-gallery">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef7e?auto=format&fit=crop&q=80" alt="Tropical beach paradise">
-        <div class="card-content">
-          <h3>Maldives Overwater Bliss</h3>
-          <p>Crystal waters & luxury villas</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80" alt="Sunny beach resort">
-        <div class="card-content">
-          <h3>Bali Beach Escape</h3>
-          <p>From $299/night</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80" alt="Private jet over ocean">
-        <div class="card-content">
-          <h3>Private Jet to Santorini</h3>
-          <p>Exclusive & seamless</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80" alt="Luxury resort infinity pool">
-        <div class="card-content">
-          <h3>Hawaii Resort Retreat</h3>
-          <p>Infinity views & relaxation</p>
-        </div>
-      </div>
+    <h2>Overwater Sanctuaries</h2>
+    <div class="gallery">
+      <img src="https://www.asiaodysseytravel.com/images/maldives/varu-by-atmosphere-5-star/water-suite-700-1.jpg" alt="Luxury overwater villa Maldives">
+      <img src="https://cache.marriott.com/is/image/marriotts7prod/wi-mlewi-overwater-villa-with-pool-12960:Classic-Hor?wid=1300&fit=constrain" alt="Sunset overwater pool villa">
+      <img src="https://islandii.com/wp-content/uploads/2023/09/JW-MARRIOTT-opvsr-1.jpg" alt="Elegant Maldives overwater residence">
+      <img src="https://cache.marriott.com/content/dam/marriott-renditions/MLEWI/mlewi-suitepool-exteriortwilight-4111-hor-clsc.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1300px:*" alt="Twilight overwater suite">
+    </div>
+  </section>
+
+  <section>
+    <h2>Private Jet Interiors</h2>
+    <div class="gallery">
+      <img src="https://miro.medium.com/0*objOHAtb5irpISFH.png" alt="Opulent private jet cabin">
+      <img src="https://robbreport.com/wp-content/uploads/2025/08/NRodriguez_Solrise.jpg?w=1024" alt="Modern luxury jet seating">
+      <img src="https://png.pngtree.com/background/20250428/original/pngtree-luxurious-private-jet-cabin-with-premium-seating-picture-image_16450755.jpg" alt="Premium private jet interior">
+      <img src="https://thumbs.dreamstime.com/b/futuristic-private-jet-interior-design-modern-luxurious-cabin-features-sleek-white-rose-gold-accents-integrated-377452582.jpg" alt="Sleek rose-gold jet cabin">
+    </div>
+  </section>
+
+  <section>
+    <h2>Tropical Beach Paradise</h2>
+    <div class="gallery">
+      <img src="https://www.shutterstock.com/image-photo/tropical-beach-turquoise-sea-golden-260nw-2678449209.jpg" alt="Turquoise tropical beach sunset">
+      <img src="https://png.pngtree.com/background/20250118/original/pngtree-tropical-beach-paradise-white-sand-turquoise-water-and-swaying-palm-trees-picture-image_16079885.jpg" alt="Pristine white sand beach">
+      <img src="https://thumbs.dreamstime.com/b/idyllic-tropical-beach-sunset-hanging-chair-scene-featuring-beautifully-decorated-wicker-pristine-white-sand-palm-409221504.jpg" alt="Idyllic tropical sunset beach">
+      <img src="https://thumbs.dreamstime.com/b/tropical-beach-palm-trees-crystal-clear-water-sailboat-tropical-beach-palm-trees-crystal-clear-water-sailboat-405167380.jpg" alt="Palm-fringed crystal water">
+    </div>
+  </section>
+
+  <section>
+    <h2>Luxury Infinity Pools & Resorts</h2>
+    <div class="gallery">
+      <img src="https://media.vrbo.com/lodging/80000000/79050000/79045100/79045055/2d1314e5.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Heated infinity pool ocean view">
+      <img src="https://assets.cntraveller.in/photos/665c579cdca7541ad05c2098/master/w_1024%2Cc_limit/4snapshot.jpg" alt="Stunning resort infinity pool">
+      <img src="https://media.istockphoto.com/id/2110310187/photo/luxury-tropical-pool-villa-at-dusk.jpg?s=612x612&w=0&k=20&c=r8UTpMnbLWD_DOKHAcu6dw-MJEcGg0CTqt0ICa84D84=" alt="Tropical pool villa dusk">
+      <img src="https://media.vrbo.com/lodging/80000000/79050000/79045100/79045055/d131c40c.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="360° luxury pool estate">
+    </div>
+  </section>
+
+  <section>
+    <h2>Superyacht Horizons</h2>
+    <div class="gallery">
+      <img src="https://www.shutterstock.com/image-photo/outdoor-photo-elegantly-dressed-middle-260nw-2678275361.jpg" alt="Elegant yacht sunset scene">
+      <img src="https://thumbs.dreamstime.com/b/luxury-yacht-balcony-overlooking-ocean-sunset-modern-furniture-scenic-views-generative-ai-beautifully-designed-348336223.jpg" alt="Luxury yacht balcony ocean view">
+      <img src="https://www.shutterstock.com/image-photo/sailboat-calm-red-sea-during-260nw-2619169641.jpg" alt="Sleek yacht golden hour">
     </div>
   </section>
 
   <footer>
-    <p>© 2026 TravelAir.ai — Book smarter, travel farther.</p>
-    <p>Find deals on flights, hotels, cars, packages and more.</p>
+    <div class="contact">
+      TravelAir.ai — Premium Domain Available<br>
+      Serious Inquiries: travelair.ai@outlook.com
+    </div>
   </footer>
 
 </body>
