@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TravelAir.ai — The Intelligence Layer for Travel</title>
-
 <meta name="description" content="TravelAir.ai helps people decide how to travel, not just search. AI-powered itineraries, smarter routing, and confident travel decisions.">
-
 <style>
 :root{
   --bg:#050b14;
@@ -19,7 +17,6 @@
   --radius:18px;
   --max:1200px;
 }
-
 *{box-sizing:border-box}
 body{
   margin:0;
@@ -27,14 +24,12 @@ body{
   background:var(--bg);
   color:var(--text);
 }
-
 a{text-decoration:none;color:inherit}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 section{padding:90px 0}
 h1,h2,h3{margin:0}
 p{line-height:1.6;color:var(--muted)}
 ul{padding-left:18px;color:var(--muted)}
-
 .btn{
   padding:14px 22px;
   border-radius:14px;
@@ -47,31 +42,51 @@ ul{padding-left:18px;color:var(--muted)}
 .btn.ghost{
   border:1px solid rgba(255,255,255,.2);
 }
-
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:44px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-
 .card{
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.1);
   border-radius:var(--radius);
   padding:30px;
 }
-
+.logo-container {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.2s ease;
+}
+.logo-container:hover {
+  transform: scale(1.1);
+}
 @media(max-width:900px){
   .grid2,.grid3{grid-template-columns:1fr}
   h1{font-size:40px !important}
 }
 </style>
 </head>
-
 <body>
-
 <!-- HEADER -->
 <header style="position:sticky;top:0;z-index:99;background:rgba(5,11,20,.95);border-bottom:1px solid rgba(255,255,255,.08)">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0">
     <div style="display:flex;align-items:center;gap:14px">
-      <img src="assets/travelair-logo.png" style="width:44px;height:44px">
+      <!-- Embedded SVG Logo (no external file needed) -->
+      <div class="logo-container">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ff8a00;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#2b74ff;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <!-- Stylized globe/flight path circle -->
+          <circle cx="24" cy="24" r="18" stroke="url(#grad)" stroke-width="3" fill="none" opacity="0.7"/>
+          <!-- Airplane icon -->
+          <path d="M12 24 L20 18 L36 24 L20 30 Z" fill="url(#grad)" stroke="#ffffff" stroke-width="1.5"/>
+          <!-- Flight trail lines -->
+          <path d="M8 24 Q 24 12, 40 24" stroke="url(#grad)" stroke-width="2" fill="none" opacity="0.6"/>
+          <path d="M8 24 Q 24 36, 40 24" stroke="url(#grad)" stroke-width="2" fill="none" opacity="0.4"/>
+        </svg>
+      </div>
       <div>
         <strong style="font-size:18px">TravelAir.ai</strong>
         <div style="font-size:12px;color:var(--muted)">The Intelligence Layer for Travel</div>
@@ -86,6 +101,7 @@ ul{padding-left:18px;color:var(--muted)}
   </div>
 </header>
 
+<!-- The rest of your sections remain exactly the same -->
 <!-- HERO -->
 <section style="position:relative;padding:140px 0;background:
 linear-gradient(90deg, rgba(5,11,20,.96), rgba(5,11,20,.65)),
@@ -95,13 +111,11 @@ url('assets/travelair-hero.jpg') center/cover">
       Expedia helps you search.<br>
       <span style="color:var(--orange)">TravelAir.ai helps you decide.</span>
     </h1>
-
     <p style="max-width:760px;font-size:18px;margin:28px 0">
       TravelAir.ai turns intent into intelligent travel decisions.
       One prompt becomes a complete, optimized itinerary — built for speed,
       clarity, and confidence.
     </p>
-
     <div style="display:flex;gap:16px;flex-wrap:wrap">
       <a href="#contact" class="btn primary">Request early access</a>
       <a href="#platform" class="btn ghost">Explore the platform</a>
@@ -117,7 +131,6 @@ url('assets/travelair-hero.jpg') center/cover">
       Legacy travel platforms were built around inventory and filters.
       TravelAir.ai is built around intelligence and outcomes.
     </p>
-
     <div class="grid3">
       <div class="card">
         <h3>AI Trip Intelligence</h3>
@@ -126,7 +139,6 @@ url('assets/travelair-hero.jpg') center/cover">
           city flow, and daily structure — optimized in seconds.
         </p>
       </div>
-
       <div class="card">
         <h3>Decision-Ready Results</h3>
         <p>
@@ -134,7 +146,6 @@ url('assets/travelair-hero.jpg') center/cover">
           preferences, constraints, timing, and experience.
         </p>
       </div>
-
       <div class="card">
         <h3>Premium Experience</h3>
         <p>
@@ -154,7 +165,6 @@ url('assets/travelair-hero.jpg') center/cover">
       TravelAir.ai understands how people actually plan travel —
       goals, constraints, timing, and experience.
     </p>
-
     <div class="grid3">
       <div class="card">
         <strong>Input</strong>
@@ -162,7 +172,6 @@ url('assets/travelair-hero.jpg') center/cover">
           “7 days in Italy, relaxed pace, flying from Miami, food & culture focused.”
         </p>
       </div>
-
       <div class="card">
         <strong>AI Intelligence</strong>
         <p>
@@ -170,7 +179,6 @@ url('assets/travelair-hero.jpg') center/cover">
           transit fatigue, and traveler intent.
         </p>
       </div>
-
       <div class="card">
         <strong>Output</strong>
         <p>
@@ -186,12 +194,10 @@ url('assets/travelair-hero.jpg') center/cover">
 <section>
   <div class="wrap">
     <h2 style="font-size:44px">Example: AI-generated itinerary</h2>
-
     <div class="card" style="max-width:900px">
       <p><strong>Trip:</strong> Paris → Florence → Rome</p>
       <p><strong>Duration:</strong> 7 days</p>
       <p><strong>Style:</strong> Cultural, relaxed pace</p>
-
       <ul>
         <li>Optimized arrival & departure windows</li>
         <li>Lodging suggestions by location efficiency</li>
@@ -216,7 +222,6 @@ url('assets/travelair-hero.jpg') center/cover">
         endless comparisons with intelligent tradeoffs.
       </p>
     </div>
-
     <div class="card">
       <strong>TravelAir.ai vs legacy platforms</strong>
       <ul>
@@ -233,7 +238,6 @@ url('assets/travelair-hero.jpg') center/cover">
 <section>
   <div class="wrap">
     <h2 style="font-size:44px">Built to scale globally</h2>
-
     <div class="grid3">
       <div class="card">
         <h3>Consumer Travel</h3>
@@ -241,14 +245,12 @@ url('assets/travelair-hero.jpg') center/cover">
           Smarter planning for leisure, family, and multi-city travel.
         </p>
       </div>
-
       <div class="card">
         <h3>Business & Teams</h3>
         <p>
           Cost-aware, policy-friendly itineraries for founders and teams.
         </p>
       </div>
-
       <div class="card">
         <h3>Platform & Partners</h3>
         <p>
@@ -263,18 +265,15 @@ url('assets/travelair-hero.jpg') center/cover">
 <section id="roadmap" style="background:rgba(255,255,255,.03)">
   <div class="wrap">
     <h2 style="font-size:44px">Roadmap</h2>
-
     <div class="grid3">
       <div class="card">
         <strong>Phase 1 — Intelligence</strong>
         <p>AI itinerary generation and routing optimization.</p>
       </div>
-
       <div class="card">
         <strong>Phase 2 — Optimization</strong>
         <p>Real-time signals, smarter tradeoffs, dynamic awareness.</p>
       </div>
-
       <div class="card">
         <strong>Phase 3 — Platform</strong>
         <p>Global travel intelligence powering consumers and partners.</p>
@@ -293,7 +292,6 @@ url('assets/travelair-hero.jpg') center/cover">
         Join early and help shape the future of intelligent travel.
       </p>
     </div>
-
     <form class="card" action="https://formspree.io/f/xnjjngql" method="POST">
       <input name="name" placeholder="Your name" required style="width:100%;padding:14px;border-radius:12px;margin-bottom:12px">
       <input name="email" type="email" placeholder="Email address" required style="width:100%;padding:14px;border-radius:12px;margin-bottom:12px">
@@ -307,6 +305,5 @@ url('assets/travelair-hero.jpg') center/cover">
 <footer style="padding:48px 0;text-align:center;color:var(--muted)">
   © <script>document.write(new Date().getFullYear())</script> TravelAir.ai — All rights reserved
 </footer>
-
 </body>
 </html>
