@@ -305,9 +305,17 @@ url('assets/travelair-hero.jpg') center/cover">
 <footer style="padding:48px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)">
   <div class="wrap">
     <p style="font-size:13px">
-   © 2026 BoardAi.ai. All rights reserved.
-BoardAi.ai is a privately owned brand and intellectual property.
-Select strategic partnerships or acquisition discussions may be considered. 
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <p>© <span id="year"></span> BoardAi.ai. All rights reserved.</p>
+    <p><strong>BoardAi.ai</strong> is a privately owned brand and digital asset.</p>
+    <p>Strategic partnerships or acquisition discussions may be considered.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
     </p>
   </div>
 </footer>
