@@ -1,642 +1,559 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b1020" />
-  <title>TravelAir.ai — The AI-Native Travel Brand</title>
-  <meta name="description" content="TravelAir.ai is a premium AI-native travel brand and domain asset. Strategic inquiries only." />
-  <!-- Open Graph -->
-  <meta property="og:title" content="TravelAir.ai — The AI-Native Travel Brand" />
-  <meta property="og:description" content="A premium AI-native travel brand and domain asset. Strategic inquiries only." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.travelair.ai/" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TravelAir.ai — AI-Powered Travel, Reimagined</title>
+  <meta name="description" content="TravelAir.ai helps travelers plan smarter with AI-powered itineraries, price awareness, and seamless trip orchestration." />
+  <meta name="theme-color" content="#07152b" />
+
   <style>
-    :root {
-      --bg0: #070914;
-      --bg1: #0b1020;
-      --card: #0e1630cc;
-      --stroke: rgba(255,255,255,.10);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.68);
-      --soft: rgba(255,255,255,.10);
-      --gold: #c8a96a; /* warm gold for travel luxury */
-      --gold-dark: #b7975c;
-      --shadow: 0 18px 55px rgba(0,0,0,.55);
-      --radius: 18px;
-      --radius2: 28px;
-      --max: 1140px;
-      --blur: 18px;
+    :root{
+      --bg:#050b14;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.10);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.70);
+      --line:rgba(255,255,255,.14);
+      --blue:#1f6feb;
+      --cyan:#45d6ff;
+      --orange:#ff8a00;
+      --gold:#ffcf6a;
+
+      --radius:18px;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --max: 1180px;
+      --ease: cubic-bezier(.2,.8,.2,1);
     }
-    * { box-sizing:border-box; }
-    html, body { height:100%; margin:0; padding:0; }
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(1200px 650px at 20% 10%, rgba(200,169,106,.15), transparent 55%),
-        radial-gradient(1100px 650px at 80% 30%, rgba(200,169,106,.12), transparent 55%),
-        radial-gradient(900px 550px at 40% 85%, rgba(200,169,106,.08), transparent 55%),
-        linear-gradient(180deg, var(--bg0), var(--bg1) 55%, #060816);
-      overflow-x: hidden;
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(31,111,235,.35), transparent 60%),
+                  radial-gradient(900px 500px at 85% 10%, rgba(255,138,0,.20), transparent 55%),
+                  radial-gradient(900px 600px at 50% 120%, rgba(69,214,255,.16), transparent 60%),
+                  var(--bg);
+      overflow-x:hidden;
     }
-    a { color:inherit; text-decoration:none; }
-    .wrap { max-width:var(--max); margin:0 auto; padding:0 20px; }
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(var(--blur));
-      background: linear-gradient(to bottom, rgba(7,9,20,.72), rgba(7,9,20,.35));
-      border-bottom: 1px solid rgba(255,255,255,.06);
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px;}
+
+    /* Top bar */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(5,11,20,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 74px;
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
     }
-    .brand {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      letter-spacing: .2px;
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 210px;
     }
-    .logo {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      box-shadow: 0 12px 35px rgba(200,169,106,.20);
-      position: relative;
-      overflow: hidden;
+    .brand img{
+      width:42px; height:42px; object-fit:contain;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
     }
-    .logo:after {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: conic-gradient(from 180deg, rgba(255,255,255,.25), transparent 55%, rgba(255,255,255,.18));
-      animation: spin 8s linear infinite;
-      opacity: .65;
+    .brand .name{
+      display:flex; flex-direction:column; line-height:1.05;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .brand b { font-weight: 800; }
-    .brand small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
-    .navlinks { display: flex; gap: 18px; align-items: center; }
-    .navlinks a {
-      color: var(--muted);
-      font-size: 14px;
-      padding: 10px 10px;
-      border-radius: 12px;
-      transition: .18s ease;
+    .brand .name strong{font-size:16px; letter-spacing:.2px}
+    .brand .name span{font-size:12px; color:var(--muted)}
+    .links{
+      display:flex; gap:18px; align-items:center;
+      color:rgba(255,255,255,.78);
+      font-size:14px;
     }
-    .navlinks a:hover { color: var(--text); background: rgba(255,255,255,.06); }
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(200,169,106,.20);
-      background: linear-gradient(135deg, rgba(200,169,106,.22), rgba(200,169,106,.14));
-      box-shadow: 0 12px 35px rgba(0,0,0,.35);
-      transition: .18s ease;
-      font-size: 14px;
-      color: var(--text);
+    .links a{padding:8px 10px; border-radius:12px}
+    .links a:hover{background:rgba(255,255,255,.06); color:rgba(255,255,255,.92)}
+    .cta{
+      display:flex; gap:10px; align-items:center;
     }
-    .cta:hover { transform: translateY(-1px); border-color: rgba(200,169,106,.35); }
-    .cta .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #ffffff, var(--gold));
-      box-shadow: 0 0 0 5px rgba(200,169,106,.10);
+    .btn{
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:14px;
+      font-weight:650;
+      font-size:14px;
+      display:inline-flex; align-items:center; gap:10px;
+      cursor:pointer;
+      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
     }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.24)}
+    .btn.primary{
+      border-color: rgba(255,138,0,.35);
+      background: linear-gradient(135deg, rgba(255,138,0,.95), rgba(31,111,235,.90));
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+    .btn.primary:hover{transform: translateY(-1px) scale(1.01)}
+    .pill{
+      font-size:12px; color:rgba(255,255,255,.86);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding:6px 10px;
+      border-radius:999px;
+      display:inline-flex; gap:8px; align-items:center;
+    }
+    .dot{width:8px;height:8px;border-radius:999px;background:var(--orange); box-shadow: 0 0 20px rgba(255,138,0,.65)}
+
     /* Hero */
-    .hero { padding: 64px 0 26px; position: relative; }
-    .gridfx {
-      position: absolute;
-      inset: -40px -40px auto -40px;
-      height: 520px;
-      background:
-        linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: radial-gradient(circle at 35% 25%, black 0%, transparent 65%);
-      opacity: .35;
-      pointer-events: none;
+    .hero{
+      position:relative;
+      padding:34px 0 34px;
     }
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1.25fr .9fr;
-      gap: 34px;
-      align-items: start;
-    }
-    .kicker {
-      display: inline-flex;
-      gap: 10px;
-      align-items: center;
-      padding: 9px 12px;
-      border: 1px solid rgba(200,169,106,.20);
-      background: rgba(200,169,106,.04);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .pill {
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, rgba(200,169,106,.26), rgba(200,169,106,.12));
-      border: 1px solid rgba(200,169,106,.20);
-      color: rgba(255,255,255,.80);
-    }
-    h1 {
-      margin: 18px 0 12px;
-      font-size: clamp(34px, 4.2vw, 56px);
-      line-height: 1.02;
-      letter-spacing: -0.8px;
-    }
-    .grad {
-      background: linear-gradient(90deg, #ffffff, var(--gold), #ffffff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .sub {
-      margin: 0 0 22px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.55;
-      max-width: 54ch;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      margin-top: 16px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(200,169,106,.20);
-      background: rgba(200,169,106,.06);
-      color: var(--text);
-      transition: .18s ease;
-      font-weight: 650;
-      font-size: 14px;
-    }
-    .btn:hover { transform: translateY(-1px); border-color: rgba(200,169,106,.35); }
-    .btn.primary {
-      background: linear-gradient(135deg, rgba(200,169,106,.40), rgba(200,169,106,.22));
-      box-shadow: 0 18px 45px rgba(0,0,0,.40);
-    }
-    .btn .arrow { opacity: .8; }
-    .fineprint {
-      margin-top: 14px;
-      color: rgba(255,255,255,.55);
-      font-size: 12.5px;
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .fineprint span {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 10px;
-      border: 1px solid rgba(200,169,106,.20);
-      border-radius: 999px;
-      background: rgba(200,169,106,.03);
-    }
-    /* Glass cards */
-    .glass {
-      border: 1px solid rgba(200,169,106,.20);
-      background: linear-gradient(180deg, rgba(200,169,106,.10), rgba(200,169,106,.05));
-      backdrop-filter: blur(var(--blur));
-      border-radius: var(--radius2);
+    .heroCard{
+      position:relative;
+      border-radius: 26px;
+      overflow:hidden;
       box-shadow: var(--shadow);
-      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
     }
-    .panel { padding: 18px; }
-    .panel h3 { margin: 0 0 6px; font-size: 14px; letter-spacing: .2px; }
-    .panel p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
-    /* Form */
-    .formwrap { padding: 18px; }
-    form { display: grid; gap: 12px; }
-    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    label { display: block; font-size: 12px; color: rgba(255,255,255,.68); margin-bottom: 6px; }
-    input, select, textarea {
-      width: 100%;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(200,169,106,.20);
-      background: rgba(0,0,0,.20);
-      color: var(--text);
-      outline: none;
-      transition: .18s ease;
-      font-size: 14px;
+    .heroBg{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(5,11,20,.92) 0%, rgba(5,11,20,.72) 45%, rgba(5,11,20,.30) 100%),
+        url("assets/travelair-banner.png");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.08) contrast(1.03);
+      transform: scale(1.02);
     }
-    textarea { min-height: 120px; resize: vertical; }
-    input:focus, select:focus, textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 5px rgba(200,169,106,.10); }
-    .submit {
-      border: none;
-      cursor: pointer;
-      padding: 13px 14px;
-      border-radius: 16px;
-      font-weight: 750;
-      background: linear-gradient(135deg, rgba(200,169,106,.30), rgba(200,169,106,.36));
-      color: rgba(255,255,255,.92);
-      transition: .18s ease;
+    .heroGlow{
+      position:absolute; inset:-2px;
+      pointer-events:none;
+      background:
+        radial-gradient(800px 320px at 15% 20%, rgba(255,138,0,.20), transparent 60%),
+        radial-gradient(700px 320px at 40% 70%, rgba(31,111,235,.20), transparent 65%),
+        radial-gradient(700px 420px at 95% 10%, rgba(69,214,255,.15), transparent 60%);
+      mix-blend-mode: screen;
     }
-    .submit:hover { transform: translateY(-1px); }
-    .note { font-size: 12px; color: rgba(255,255,255,.55); line-height: 1.45; }
-    /* Sections */
-    section { padding: 44px 0; }
-    .section-title {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 16px;
+    .heroInner{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
+      padding: 34px;
+      min-height: 420px;
     }
-    .section-title h2 { margin: 0; font-size: 22px; letter-spacing: -0.2px; }
-    .section-title p { margin: 0; color: var(--muted); font-size: 14px; max-width: 58ch; }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+    h1{
+      margin:14px 0 12px;
+      font-size:44px;
+      line-height:1.05;
+      letter-spacing:-.8px;
     }
-    .card {
-      padding: 16px 16px 14px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(200,169,106,.20);
-      background: rgba(200,169,106,.04);
-      transition: .18s ease;
-      position: relative;
-      overflow: hidden;
-      min-height: 140px;
+    .sub{
+      font-size:16px;
+      line-height:1.55;
+      color:rgba(255,255,255,.80);
+      max-width: 560px;
     }
-    .card:hover { transform: translateY(-2px); border-color: rgba(200,169,106,.35); }
-    .card b { display: block; margin-bottom: 6px; }
-    .card p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.55; }
-    .spark {
-      position: absolute;
-      inset: auto -40px -40px auto;
-      width: 160px;
-      height: 160px;
+    .highlights{
+      margin-top:18px;
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .tag{
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      padding:9px 12px;
       border-radius: 999px;
-      filter: blur(18px);
-      opacity: .10;
-      animation: drift 10s ease-in-out infinite;
+      font-size:13px;
+      color:rgba(255,255,255,.86);
     }
-    .o1 { left: -120px; top: 120px; background: var(--gold); }
-    .o2 { right: -140px; top: 220px; background: var(--gold-dark); animation-duration: 12s; }
-    .o3 { left: 18%; bottom: -160px; background: var(--gold); animation-duration: 14s; }
-    @keyframes drift {
-      0%,100% { transform: translate3d(0,0,0); }
-      50% { transform: translate3d(22px,-18px,0); }
+    .heroActions{
+      margin-top:18px;
+      display:flex; flex-wrap:wrap; gap:12px;
+      align-items:center;
     }
+    .card{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.28);
+    }
+    .miniTitle{
+      display:flex; justify-content:space-between; gap:10px; align-items:center;
+      margin-bottom:10px;
+    }
+    .miniTitle strong{font-size:14px}
+    .miniTitle span{font-size:12px;color:rgba(255,255,255,.65)}
+    .list{
+      display:grid; gap:10px;
+      margin:0; padding:0; list-style:none;
+    }
+    .list li{
+      display:flex; gap:10px; align-items:flex-start;
+      font-size:13px; color:rgba(255,255,255,.78);
+    }
+    .check{
+      width:18px;height:18px;border-radius:6px;
+      background: linear-gradient(135deg, rgba(255,138,0,.95), rgba(31,111,235,.90));
+      display:inline-flex; align-items:center; justify-content:center;
+      flex:0 0 auto;
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+      margin-top:1px;
+    }
+    .check svg{width:12px;height:12px}
+
+    /* Sections */
+    section{padding: 22px 0}
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .feature h3{margin:8px 0 6px; font-size:16px}
+    .feature p{margin:0; color:rgba(255,255,255,.72); font-size:13px; line-height:1.5}
+    .icon{
+      width:44px;height:44px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .icon svg{width:22px;height:22px; opacity:.95}
+
+    /* Contact */
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:start;
+    }
+    form{display:grid; gap:10px}
+    label{font-size:12px; color:rgba(255,255,255,.78)}
+    input, textarea{
+      width:100%;
+      border-radius:14px;
+      padding:12px 12px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus{border-color: rgba(69,214,255,.55)}
+    .fine{
+      color:rgba(255,255,255,.62);
+      font-size:12px; line-height:1.5;
+    }
+
+    footer{
+      padding:24px 0 44px;
+      color:rgba(255,255,255,.60);
+      font-size:12px;
+    }
+
     /* Responsive */
-    @media (max-width: 980px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 14px; }
-      .cards { grid-template-columns: 1fr; }
+    @media (max-width: 960px){
+      .heroInner{grid-template-columns: 1fr; min-height:auto}
+      h1{font-size:38px}
+      .grid3{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .links{display:none}
+    }
+
+    /* Subtle animated spark */
+    .spark{
+      position:absolute;
+      width:220px; height:220px;
+      border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,138,0,.40), transparent 60%),
+                  radial-gradient(circle at 70% 60%, rgba(31,111,235,.35), transparent 65%),
+                  radial-gradient(circle at 50% 80%, rgba(69,214,255,.25), transparent 65%);
+      filter: blur(20px);
+      opacity:.55;
+      animation: floaty 8s var(--ease) infinite;
+      pointer-events:none;
+      top:-60px; left:-60px;
+    }
+    @keyframes floaty{
+      0%{transform: translate3d(0,0,0) scale(1)}
+      50%{transform: translate3d(26px,18px,0) scale(1.05)}
+      100%{transform: translate3d(0,0,0) scale(1)}
     }
   </style>
 </head>
+
 <body>
-  <div class="orbs" aria-hidden="true">
-    <div class="orb o1"></div>
-    <div class="orb o2"></div>
-    <div class="orb o3"></div>
-  </div>
-  <div class="topbar">
-    <div class="wrap">
-      <div class="nav">
-        <a class="brand" href="#top">
-          <span class="logo" aria-hidden="true"></span>
-          <span>
-            <b>TravelAir.ai</b>
-            <small>AI-native travel brand asset</small>
-          </span>
-        </a>
-        <div class="navlinks">
-          <a href="#positioning">Positioning</a>
-          <a href="#usecases">Use cases</a>
-          <a href="#faq">FAQ</a>
-          <a href="#inquire">Inquire</a>
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="#top">
+        <!-- PRIMARY LOGO (replace file in assets/) -->
+        <img src="assets/travelair-logo.png" alt="TravelAir.ai Logo" />
+        <div class="name">
+          <strong>TravelAir.ai</strong>
+          <span>AI-Powered Travel Platform</span>
         </div>
-        <a class="cta" href="#inquire">
-          <span class="dot"></span>
-          Strategic Inquiry
-        </a>
+      </a>
+
+      <nav class="links">
+        <a href="#features">Features</a>
+        <a href="#how">How it Works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="cta">
+        <span class="pill"><span class="dot"></span> Launching soon</span>
+        <a class="btn primary" href="#contact">Request early access</a>
       </div>
     </div>
   </div>
-  <main id="top">
-    <header class="hero">
-      <div class="gridfx" aria-hidden="true"></div>
-      <div class="wrap">
-        <div class="hero-inner">
-          <div>
-            <div class="kicker">
-              <span class="pill">Premium Domain</span>
-              <span>Acquisition-ready branding for AI travel</span>
-            </div>
-            <h1>
-              Own a name that feels <span class="grad">inevitable</span> in AI travel.
-            </h1>
-            <p class="sub">
-              <b>TravelAir.ai</b> is a premium, category-aligned brand asset built for the next generation of travel technology —
-              from AI trip planning and booking to airline experience, operations, and personalization.
-              <br><br>
-              This is not a hobby listing. It’s positioned for teams who move fast and care about brand authority.
-            </p>
-            <div class="hero-actions">
-              <a class="btn primary" href="#inquire">
-                Request acquisition details <span class="arrow">→</span>
-              </a>
-              <a class="btn" href="#positioning">
-                See positioning <span class="arrow">↘</span>
-              </a>
-            </div>
-            <div class="fineprint">
-              <span>• Strategic discussions only</span>
-              <span>• Fast transfer via escrow</span>
-              <span>• Clean, brand-safe asset</span>
-            </div>
+</header>
+
+<main id="top" class="wrap">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="heroCard">
+      <div class="heroBg"></div>
+      <div class="heroGlow"></div>
+      <div class="spark"></div>
+
+      <div class="heroInner">
+        <div>
+          <span class="pill"><span class="dot"></span> AI travel planning, reimagined</span>
+          <h1>Plan faster. Fly smarter.<br/>Travel better.</h1>
+          <p class="sub">
+            TravelAir.ai turns intent into itineraries — instantly. Discover optimized routes, smart options, and a seamless
+            trip flow designed for modern travelers and high-performance teams.
+          </p>
+
+          <div class="highlights">
+            <span class="tag">Smart Itineraries</span>
+            <span class="tag">Route Optimization</span>
+            <span class="tag">Instant Recommendations</span>
+            <span class="tag">Premium Experience</span>
           </div>
-          <aside class="glass">
-            <div class="panel">
-              <h3>Inbound, qualified, simple.</h3>
-              <p>Submit a strategic inquiry. You’ll receive next-step details via the contact information provided.</p>
-            </div>
-            <div class="formwrap" id="inquire">
-              <form action="https://formspree.io/f/xnjjngql" method="POST">
-                <div class="row">
-                  <div>
-                    <label for="name">Name</label>
-                    <input id="name" name="name" type="text" placeholder="Your name" required />
-                  </div>
-                  <div>
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" placeholder="name@company.com" required />
-                  </div>
-                </div>
-                <div class="row">
-                  <div>
-                    <label for="company">Company (optional)</label>
-                    <input id="company" name="company" type="text" placeholder="Company / fund / project" />
-                  </div>
-                  <div>
-                    <label for="intent">Inquiry type</label>
-                    <select id="intent" name="inquiry_type" required>
-                      <option value="" disabled selected>Select one…</option>
-                      <option>Domain acquisition</option>
-                      <option>Partnership / JV</option>
-                      <option>Brand / product build</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                </div>
-                <div>
-                  <label for="message">Message</label>
-                  <textarea id="message" name="message" placeholder="Share what you're building and your timeline. If acquisition-focused, include preferred structure (outright / terms) and decision window." required></textarea>
-                </div>
-                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-                <button class="submit" type="submit">Submit strategic inquiry</button>
-                <div class="note">
-                  By submitting, you confirm you’re reaching out for a legitimate business purpose.
-                  You’ll receive follow-up to the email provided. (No public pricing on-page.)
-                </div>
-              </form>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </header>
-    <section id="positioning">
-      <div class="wrap">
-        <div class="section-title">
-          <h2>Positioned for premium buyers</h2>
-          <p>
-            The value here is brand authority: short, memorable, industry-aligned, and built for AI-native travel experiences.
+
+          <div class="heroActions">
+            <a class="btn primary" href="#contact">
+              Request early access
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 18l6-6-6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a class="btn" href="#features">See how it works</a>
+          </div>
+
+          <p class="fine" style="margin-top:12px;">
+            Built for travelers, founders, and teams who value speed, clarity, and confidence.
           </p>
         </div>
-        <div class="cards">
-          <div class="card">
-            <div class="spark" aria-hidden="true"></div>
-            <b>Category-aligned</b>
-            <p>“Travel” + “Air” is instantly understood globally, and naturally maps to flights, mobility, and modern travel platforms.</p>
+
+        <aside class="card">
+          <div class="miniTitle">
+            <strong>What TravelAir.ai does</strong>
+            <span>in one place</span>
           </div>
-          <div class="card">
-            <div class="spark" aria-hidden="true"></div>
-            <b>AI-native extension</b>
-            <p>.ai signals innovation and positions the brand as an AI-first product, not a legacy travel directory.</p>
+          <ul class="list">
+            <li>
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Build complete trips from a single prompt — flights, stays, and daily plans.
+            </li>
+            <li>
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Suggest smarter routes and options with clean, decision-ready recommendations.
+            </li>
+            <li>
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Keep the experience premium: fewer clicks, less noise, more confidence.
+            </li>
+          </ul>
+
+          <div style="margin-top:14px; border-top:1px solid rgba(255,255,255,.12); padding-top:12px;">
+            <div class="miniTitle" style="margin:0 0 8px;">
+              <strong>Use cases</strong>
+              <span>real-world</span>
+            </div>
+            <ul class="list" style="gap:8px;">
+              <li>• Weekend escapes</li>
+              <li>• Business travel planning</li>
+              <li>• Group trips & multi-city itineraries</li>
+              <li>• Premium travel discovery</li>
+            </ul>
           </div>
-          <div class="card">
-            <div class="spark" aria-hidden="true"></div>
-            <b>Strategic brand moat</b>
-            <p>Names like this are difficult to replace once your product is live. Brand clarity becomes a growth advantage.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="usecases">
-      <div class="wrap">
-        <div class="section-title">
-          <h2>Built for real use cases</h2>
-          <p>TravelAir.ai can sit at the center of a platform, product line, or innovation unit — without sounding narrow or trendy.</p>
-        </div>
-        <div class="two">
-          <div class="glass">
-            <div class="panel">
-              <h3>High-fit applications</h3>
-              <p>Use the brand as a flagship product or a premium sub-brand inside an existing travel organization.</p>
-            </div>
-            <div class="panel" style="padding-top:0">
-              <ul class="list">
-                <li class="li">
-                  <span class="badge" aria-hidden="true"></span>
-                  <div>
-                    <b>AI trip planning + itinerary intelligence</b>
-                    <span>Context-aware travel planning that adapts in real time: preferences, budget, disruptions, and intent.</span>
-                  </div>
-                </li>
-                <li class="li">
-                  <span class="badge" aria-hidden="true"></span>
-                  <div>
-                    <b>Flight search + personalization layer</b>
-                    <span>An AI-native interface on top of flight data—better discovery, higher conversion, lower friction.</span>
-                  </div>
-                </li>
-                <li class="li">
-                  <span class="badge" aria-hidden="true"></span>
-                  <div>
-                    <b>Airline & airport experience automation</b>
-                    <span>Customer service, disruption handling, rebooking, concierge workflows, and operational assistants.</span>
-                  </div>
-                </li>
-                <li class="li">
-                  <span class="badge" aria-hidden="true"></span>
-                  <div>
-                    <b>Corporate travel intelligence</b>
-                    <span>Policy-aware, cost-optimized travel with AI support for approvals, changes, and reporting.</span>
-                  </div>
-                </li>
-                <li class="li">
-                  <span class="badge" aria-hidden="true"></span>
-                  <div>
-                    <b>Concierge & luxury experience orchestration</b>
-                    <span>Hyper-personalized recommendations, bookings, and experiences for high-net-worth travelers.</span>
-                  </div>
-                </li>
-                <li class="li">
-                  <span class="badge" aria-hidden="true"></span>
-                  <div>
-                    <b>Weather-aware routing & disruption management</b>
-                    <span>Real-time routing optimization, delay prediction, and seamless rebooking.</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="glass">
-            <div class="panel">
-              <h3>What you’re really buying</h3>
-              <p>Brand + positioning that reduces future friction: marketing, memorability, trust, and category clarity.</p>
-            </div>
-            <div class="panel" style="padding-top:0; padding-bottom:18px;">
-              <div class="card" style="min-height:auto; background: rgba(200,169,106,.035); border-radius: 18px;">
-                <b>Signals authority on day one</b>
-                <p>When you’re building in a crowded space, the name becomes a shortcut to credibility.</p>
-              </div>
-              <div style="height:10px"></div>
-              <div class="card" style="min-height:auto; background: rgba(200,169,106,.035); border-radius: 18px;">
-                <b>Protects competitive positioning</b>
-                <p>Owning a premium category brand is defense and offense—especially as AI travel products converge.</p>
-              </div>
-              <div style="height:10px"></div>
-              <div class="card" style="min-height:auto; background: rgba(200,169,106,.035); border-radius: 18px;">
-                <b>Flexible brand architecture</b>
-                <p>Works for consumer apps, enterprise tools, or platform plays without boxing you into one feature set.</p>
-              </div>
-              <div style="height:14px"></div>
-              <a class="btn primary" href="#inquire" style="width:100%; text-align:center; justify-content:center;">
-                Start a strategic conversation →
-              </a>
-              <div style="height:12px"></div>
-              <div class="note">
-                If you’re evaluating multiple naming options: the right question is not “can we build without it?” —
-                it’s “what does it cost later if we don’t own it now?”
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="faq">
-      <div class="wrap">
-        <div class="section-title">
-          <h2>FAQ</h2>
-          <p>Clear answers for teams and investors evaluating acquisition and transfer.</p>
-        </div>
-        <div class="faq">
-          <details>
-            <summary>
-              Is TravelAir.ai for sale?
-              <span class="chev">▾</span>
-            </summary>
-            <div class="ans">
-              Yes—this is a strategic asset. Serious, qualified inquiries can request acquisition structure and next steps through the form.
-            </div>
-          </details>
-          <details>
-            <summary>
-              Do you show the price publicly?
-              <span class="chev">▾</span>
-            </summary>
-            <div class="ans">
-              No. Pricing and structure are shared privately to qualified parties. This protects the process and keeps discussions serious.
-            </div>
-          </details>
-          <details>
-            <summary>
-              What transfer method do you use?
-              <span class="chev">▾</span>
-            </summary>
-            <div class="ans">
-              Standard escrow and registrar transfer for buyer protection and clean delivery. Details are provided after initial inquiry.
-            </div>
-          </details>
-          <details>
-            <summary>
-              Is this brand suitable for enterprise use?
-              <span class="chev">▾</span>
-            </summary>
-            <div class="ans">
-              Yes. The name is globally intuitive, category-aligned, and positioned as an AI-native brand—appropriate for consumer or enterprise products.
-            </div>
-          </details>
-          <details>
-            <summary>
-              Can you include brand assets (logo / guidelines)?
-              <span class="chev">▾</span>
-            </summary>
-            <div class="ans">
-              If requested, brand asset discussions can be included as part of a structured acquisition conversation.
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="wrap">
-        <div class="glass">
-          <div class="panel" style="padding:18px 18px 8px;">
-            <h3>Last word</h3>
-            <p>
-              TravelAir.ai is designed to be the brand people remember—and the asset competitors wish they secured earlier.
-              If you’re building in AI travel, this name is a strategic advantage.
-            </p>
-          </div>
-          <div class="panel" style="padding-top:0; padding-bottom:18px;">
-            <a class="btn primary" href="#inquire" style="width:100%; text-align:center; justify-content:center;">
-              Submit strategic inquiry →
-            </a>
-            <div style="height:10px"></div>
-            <div class="note">No public email. No tire-kickers. Just real discussions.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="wrap">
-      <div class="foot">
-        <div>© <span id="year"></span> TravelAir.ai — All rights reserved.</div>
-        <div>Strategic inquiries only • Brand-safe asset • Escrow-friendly</div>
+        </aside>
       </div>
     </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="grid3">
+      <div class="card feature">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Instant Trip Builder</h3>
+        <p>From one input to a complete itinerary — structured, clean, and ready to book.</p>
+      </div>
+
+      <div class="card feature">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0Z" stroke="white" stroke-width="2"/><path d="M12 12a2.5 2.5 0 1 0 0.01 0Z" stroke="white" stroke-width="2"/></svg>
+        </div>
+        <h3>Signal, Not Noise</h3>
+        <p>TravelAir.ai focuses on the best options — not endless scrolling and tabs.</p>
+      </div>
+
+      <div class="card feature">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4Z" stroke="white" stroke-width="2"/></svg>
+        </div>
+        <h3>Premium Experience</h3>
+        <p>Clean UI and confident recommendations — built to feel modern and high-end.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="card">
+      <div class="miniTitle">
+        <strong>How it works</strong>
+        <span>simple flow</span>
+      </div>
+      <div class="grid3" style="margin-top:10px;">
+        <div class="feature">
+          <h3>1) Tell us your trip</h3>
+          <p>Dates, vibe, budget range, city count, interests — or just describe what you want.</p>
+        </div>
+        <div class="feature">
+          <h3>2) Get an itinerary</h3>
+          <p>We return a structured plan with the smartest options and a clean schedule.</p>
+        </div>
+        <div class="feature">
+          <h3>3) Book with confidence</h3>
+          <p>Move from planning to booking without chaos — faster decisions, better trips.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="card">
+      <div class="miniTitle">
+        <strong>FAQ</strong>
+        <span>quick answers</span>
+      </div>
+
+      <div style="display:grid; gap:10px; margin-top:10px;">
+        <div class="card" style="background:rgba(255,255,255,.04)">
+          <strong style="font-size:14px;">Is TravelAir.ai live?</strong>
+          <p style="margin:6px 0 0; color:rgba(255,255,255,.72); font-size:13px; line-height:1.5;">
+            We’re preparing for release. Request early access and you’ll be first in line for updates and the private launch.
+          </p>
+        </div>
+
+        <div class="card" style="background:rgba(255,255,255,.04)">
+          <strong style="font-size:14px;">What makes it different?</strong>
+          <p style="margin:6px 0 0; color:rgba(255,255,255,.72); font-size:13px; line-height:1.5;">
+            TravelAir.ai is built around speed and clarity: smarter routing, decision-ready options, and a premium planning flow.
+          </p>
+        </div>
+
+        <div class="card" style="background:rgba(255,255,255,.04)">
+          <strong style="font-size:14px;">Who is it for?</strong>
+          <p style="margin:6px 0 0; color:rgba(255,255,255,.72); font’t-size:13px; line-height:1.5;">
+            Frequent travelers, families, founders, and teams that want a smarter way to plan and move.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact">
+      <div class="card">
+        <div class="miniTitle">
+          <strong>Request early access</strong>
+          <span>get notified</span>
+        </div>
+        <p class="fine" style="margin:0 0 10px;">
+          Drop your info and what you want TravelAir.ai to do for you. We’ll reach out with next steps.
+        </p>
+
+        <!-- FORM: Replace the action URL with YOUR Formspree endpoint -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@email.com" required />
+          </div>
+
+          <div>
+            <label for="message">What do you want TravelAir.ai to help with?</label>
+            <textarea id="message" name="message" placeholder="Example: multi-city trip planning, best route, premium itinerary..." required></textarea>
+          </div>
+
+          <button class="btn primary" type="submit">Send request</button>
+          <p class="fine">By submitting, you agree to be contacted about TravelAir.ai updates. No spam.</p>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="miniTitle">
+          <strong>Brand positioning</strong>
+          <span>for buyers & partners</span>
+        </div>
+        <p class="fine" style="margin-top:0;">
+          TravelAir.ai is positioned as a travel-tech platform that blends premium experience with AI-driven planning.
+          If you’re a partner, acquirer, or investor, use the message box and include “Partnership” in your note.
+        </p>
+
+        <div style="margin-top:12px; border-top:1px solid rgba(255,255,255,.12); padding-top:12px;">
+          <div class="miniTitle" style="margin:0 0 8px;">
+            <strong>What’s next</strong>
+            <span>brand assets</span>
+          </div>
+          <ul class="list" style="gap:8px;">
+            <li>• App icon + favicon set</li>
+            <li>• LinkedIn banner crops (safe zones)</li>
+            <li>• Clean homepage hero (lighter variant)</li>
+            <li>• 1-page investor/partner PDF</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap" style="padding:0">
+      © <span id="year"></span> TravelAir.ai — All rights reserved.
+    </div>
   </footer>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener("click", e => {
-        const id = a.getAttribute("href");
-        if (!id || id === "#") return;
-        const el = document.querySelector(id);
-        if (!el) return;
-        e.preventDefault();
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    });
-  </script>
+</main>
+
+<script>
+  // Small details that make it feel legit
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
