@@ -55,35 +55,35 @@ ul {padding-left:18px;color:var(--muted)}
   padding:30px;
 }
 .logo-img {
-  width: 100px;                /* BIGGER LOGO - stands out more */
+  width: 120px;                /* Much bigger logo to stand out */
   height: auto;
-  transition: transform 0.25s ease;
+  transition: transform 0.3s ease;
 }
 .logo-img:hover {
   transform: scale(1.12);
 }
 .brand-text strong {
-  font-size: 22px;             /* Slightly larger text to balance bigger logo */
+  font-size: 24px;             /* Larger text to match bigger logo */
 }
 .brand-text div {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
 }
 @media(max-width:900px){
   .grid2,.grid3 {grid-template-columns:1fr}
   h1 {font-size:40px !important}
   section {padding:70px 0}
-  .logo-img {width: 80px;}     /* Slightly smaller on mobile for balance */
-  .brand-text strong {font-size: 20px;}
+  .logo-img {width: 90px;}     /* Scaled down on mobile so it doesn't overwhelm */
+  .brand-text strong {font-size: 22px;}
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER with bigger logo -->
+<!-- HEADER with bigger standout logo -->
 <header style="position:sticky;top:0;z-index:99;background:rgba(5,11,20,.95);border-bottom:1px solid rgba(255,255,255,.08)">
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding:20px 0">
-    <div style="display:flex;align-items:center;gap:16px">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding:24px 0">
+    <div style="display:flex;align-items:center;gap:18px">
       <img src="https://i.imgur.com/ccN73dx.png" alt="TravelAir.ai logo" class="logo-img">
       <div class="brand-text">
         <strong>TravelAir.ai</strong>
@@ -167,19 +167,8 @@ url('assets/travelair-hero.jpg') center/cover">
   </div>
 </section>
 
-<!-- SEE IT IN ACTION -->
-<section>
-  <div class="wrap" style="text-align:center">
-    <h2 style="font-size:44px">See it in action</h2>
-    <p style="max-width:880px;margin:20px auto 40px">
-      Enter your trip idea and watch TravelAir.ai build your perfect plan in seconds.
-    </p>
-    <img src="assets/ai-interface-mockup.png" alt="TravelAir.ai AI interface demo" style="width:100%;max-width:900px;border-radius:22px;border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 60px rgba(0,0,0,.5);">
-  </div>
-</section>
-
 <!-- SAMPLE RESULT -->
-<section style="background:rgba(255,255,255,.02)">
+<section>
   <div class="wrap">
     <h2 style="font-size:44px">Example: AI-generated itinerary</h2>
     <div class="card" style="max-width:900px;margin:0 auto">
