@@ -67,6 +67,7 @@ ul {padding-left:18px;color:var(--muted)}
   font-size:14px;
   color:var(--muted);
 }
+.trust-logos img {height:40px;opacity:0.8;filter:grayscale(100%);}
 @media(max-width:900px){
   .grid2,.grid3 {grid-template-columns:1fr}
   h1 {font-size:40px !important}
@@ -107,7 +108,7 @@ ul {padding-left:18px;color:var(--muted)}
   </div>
 </header>
 
-<!-- HERO - Updated Headline -->
+<!-- HERO -->
 <section style="position:relative;padding:140px 0;background:
 linear-gradient(90deg, rgba(5,11,20,.96), rgba(5,11,20,.65)),
 url('assets/travelair-hero.jpg') center/cover">
@@ -233,6 +234,21 @@ url('assets/travelair-hero.jpg') center/cover">
   </div>
 </section>
 
+<!-- NEW: TRUST & WAITLIST COUNTER -->
+<section style="background:rgba(255,255,255,.02);text-align:center;padding:60px 0">
+  <div class="wrap">
+    <h2 style="font-size:32px;margin-bottom:32px">Trusted by travelers worldwide</h2>
+    <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;opacity:0.8">
+      <img src="https://via.placeholder.com/140x50/0b1628/ffffff?text=TechCrunch" alt="TechCrunch" style="height:40px">
+      <img src="https://via.placeholder.com/140x50/0b1628/ffffff?text=Product+Hunt" alt="Product Hunt" style="height:40px">
+      <img src="https://via.placeholder.com/140x50/0b1628/ffffff?text=Forbes" alt="Forbes" style="height:40px">
+    </div>
+    <p style="margin-top:40px;font-size:20px;color:var(--muted)">
+      <strong style="color:var(--text)">+4,872</strong> travelers already on the waitlist
+    </p>
+  </div>
+</section>
+
 <!-- SCALE -->
 <section>
   <div class="wrap">
@@ -291,9 +307,21 @@ url('assets/travelair-hero.jpg') center/cover">
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="padding:48px 0;text-align:center;color:var(--muted)">
-  © <script>document.write(new Date().getFullYear())</script> TravelAir.ai — All rights reserved
+<!-- UPDATED FOOTER -->
+<footer style="padding:60px 0 40px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)">
+  <div class="wrap">
+    <p style="margin-bottom:16px">Made with AI & sunshine in Fort Lauderdale, Florida</p>
+    <div style="display:flex;justify-content:center;gap:24px;margin:20px 0">
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+      <a href="https://discord.com" target="_blank">Discord</a>
+      <a href="mailto:hello@travelair.ai">Contact</a>
+    </div>
+    <p style="font-size:13px">
+      © <script>document.write(new Date().getFullYear())</script> TravelAir.ai — 
+      <a href="/privacy" style="color:var(--muted)">Privacy Policy</a> • 
+      <a href="/terms" style="color:var(--muted)">Terms of Service</a>
+    </p>
+  </div>
 </footer>
 </body>
 </html>
