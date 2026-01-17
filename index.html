@@ -73,9 +73,12 @@ ul{padding-left:18px;color:var(--muted)}
 }
 .mockup-img {
   width:100%;
+  max-width:900px;
   border-radius:22px;
   border:1px solid rgba(255,255,255,.12);
   box-shadow:0 20px 60px rgba(0,0,0,.5);
+  display:block;
+  margin:0 auto;
 }
 @media(max-width:900px){
   .grid2,.grid3{grid-template-columns:1fr}
@@ -89,6 +92,7 @@ ul{padding-left:18px;color:var(--muted)}
 <header style="position:sticky;top:0;z-index:99;background:rgba(5,11,20,.95);border-bottom:1px solid rgba(255,255,255,.08)">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0">
     <div style="display:flex;align-items:center;gap:14px">
+      <!-- Your new logo - upload to assets/ or replace src with external URL -->
       <img src="assets/travelair-logo.png" alt="TravelAir.ai logo" class="logo-img">
       <div>
         <strong style="font-size:18px">TravelAir.ai</strong>
@@ -104,10 +108,10 @@ ul{padding-left:18px;color:var(--muted)}
   </div>
 </header>
 
-<!-- HERO - Upgraded futuristic background -->
+<!-- HERO - Futuristic high-tech background -->
 <section style="position:relative;padding:160px 0 120px;background:
 linear-gradient(90deg, rgba(5,11,20,.96), rgba(5,11,20,.65)),
-url('assets/travelair-hero-new.jpg') center/cover no-repeat">
+url('assets/travelair-hero-new.jpg') center/cover no-repeat fixed">
   <div class="wrap">
     <h1 style="font-size:56px;max-width:880px">
       Travel smarter.<br>
@@ -172,14 +176,14 @@ url('assets/travelair-hero-new.jpg') center/cover no-repeat">
   </div>
 </section>
 
-<!-- NEW: SEE IT IN ACTION (Demo Mockup) -->
+<!-- SEE IT IN ACTION - Demo Mockup -->
 <section>
-  <div class="wrap">
+  <div class="wrap" style="text-align:center">
     <h2 style="font-size:44px">See it in action</h2>
-    <p style="max-width:880px;margin:20px 0">
+    <p style="max-width:880px;margin:20px auto">
       Enter your trip idea and watch TravelAir.ai build your perfect plan in seconds.
     </p>
-    <img src="assets/ai-interface-mockup.png" alt="TravelAir.ai AI interface demo showing prompt to itinerary" class="mockup-img">
+    <img src="assets/ai-interface-mockup.png" alt="TravelAir.ai AI interface demo: prompt to optimized itinerary" class="mockup-img">
   </div>
 </section>
 
@@ -187,7 +191,7 @@ url('assets/travelair-hero-new.jpg') center/cover no-repeat">
 <section style="background:rgba(255,255,255,.02)">
   <div class="wrap">
     <h2 style="font-size:44px">Example: AI-generated itinerary</h2>
-    <div class="card" style="max-width:900px">
+    <div class="card" style="max-width:900px;margin:0 auto">
       <p><strong>Trip:</strong> Paris → Florence → Rome</p>
       <p><strong>Duration:</strong> 7 days</p>
       <p><strong>Style:</strong> Cultural, relaxed pace</p>
@@ -201,8 +205,8 @@ url('assets/travelair-hero-new.jpg') center/cover no-repeat">
   </div>
 </section>
 
-<!-- WHY + NEW Testimonials -->
-<section id="why">
+<!-- WHY + Testimonials -->
+<section id="why" style="background:rgba(255,255,255,.02)">
   <div class="wrap">
     <h2 style="font-size:44px">Why travelers choose TravelAir.ai</h2>
     <p style="max-width:880px;margin:20px 0">
@@ -223,7 +227,7 @@ url('assets/travelair-hero-new.jpg') center/cover no-repeat">
       </div>
     </div>
 
-    <!-- New Testimonials -->
+    <!-- Testimonials -->
     <h3 style="font-size:32px;margin:60px 0 30px;text-align:center">What early users are saying</h3>
     <div class="grid3">
       <div class="testimonial-card">
@@ -242,7 +246,7 @@ url('assets/travelair-hero-new.jpg') center/cover no-repeat">
   </div>
 </section>
 
-<!-- SCALE, ROADMAP, CONTACT, FOOTER -->
+<!-- SCALE -->
 <section>
   <div class="wrap">
     <h2 style="font-size:44px">Built to scale globally</h2>
@@ -263,6 +267,7 @@ url('assets/travelair-hero-new.jpg') center/cover no-repeat">
   </div>
 </section>
 
+<!-- ROADMAP -->
 <section id="roadmap" style="background:rgba(255,255,255,.03)">
   <div class="wrap">
     <h2 style="font-size:44px">Roadmap</h2>
@@ -283,6 +288,7 @@ url('assets/travelair-hero-new.jpg') center/cover no-repeat">
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="wrap grid2">
     <div>
@@ -301,6 +307,7 @@ url('assets/travelair-hero-new.jpg') center/cover no-repeat">
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer style="padding:48px 0;text-align:center;color:var(--muted)">
   © <script>document.write(new Date().getFullYear())</script> TravelAir.ai — All rights reserved
 </footer>
