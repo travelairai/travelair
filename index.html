@@ -55,34 +55,31 @@ ul { padding-left: 18px; color: var(--muted); }
   padding: 30px;
 }
 .logo-img {
-  width: 180px;                /* Big on desktop */
+  width: 180px;                /* BIG on desktop */
   height: auto;
   transition: transform 0.3s ease;
 }
 .logo-img:hover { transform: scale(1.12); }
 .brand-text strong {
   font-size: 26px;
-  background: linear-gradient(135deg, var(--orange), var(--blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 .brand-text div { font-size: 14px; color: var(--muted); }
 @media (max-width: 900px) {
   .grid2, .grid3 { grid-template-columns: 1fr; }
   h1 { font-size: 40px !important; }
   section { padding: 70px 0; }
-  .logo-img { width: 140px; }   /* Still big & prominent on phone */
-  .brand-text strong { font-size: 24px; }
-  header .wrap { padding: 28px 0; }
+  .logo-img { width: 180px; }   /* HUGE on phone – stands out massively */
+  .brand-text strong { font-size: 26px; }
+  header .wrap { padding: 32px 0; flex-direction: column; text-align: center; gap: 16px; }
+  header .wrap > div:last-child { margin-top: 12px; justify-content: center; }
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER with big logo + gradient text -->
+<!-- HEADER with very big logo -->
 <header style="position:sticky; top:0; z-index:99; background:rgba(5,11,20,.95); border-bottom:1px solid rgba(255,255,255,.08)">
-  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; padding:28px 0">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; padding:32px 0">
     <div style="display:flex; align-items:center; gap:20px">
       <img src="https://i.imgur.com/ccN73dx.png" alt="TravelAir.ai logo" class="logo-img">
       <div class="brand-text">
@@ -189,15 +186,15 @@ url('assets/travelair-hero.jpg') center/cover">
 
     <h3 style="font-size:32px; margin:60px 0 30px; text-align:center">What early users are saying</h3>
     <div class="grid3">
-      <div class="testimonial-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(43,116,255,0.2);border-radius:var(--radius);padding:24px;font-style:italic">
+      <div class="testimonial-card">
         <p>"Finally, travel planning that feels effortless and actually smart — no more tab chaos!"</p>
         <p style="text-align:right;margin-top:12px;color:var(--muted)">— Sarah K., Frequent Traveler</p>
       </div>
-      <div class="testimonial-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(43,116,255,0.2);border-radius:var(--radius);padding:24px;font-style:italic">
+      <div class="testimonial-card">
         <p>"The optimized routes and confidence scores saved me hours and stress on my last trip."</p>
         <p style="text-align:right;margin-top:12px;color:var(--muted)">— Mike T., Business Traveler</p>
       </div>
-      <div class="testimonial-card" style="background:rgba(255,255,255,.06);border:1px solid rgba(43,116,255,0.2);border-radius:var(--radius);padding:24px;font-style:italic">
+      <div class="testimonial-card">
         <p>"This is the future of travel — one prompt and it's done perfectly."</p>
         <p style="text-align:right;margin-top:12px;color:var(--muted)">— Elena R., Adventure Seeker</p>
       </div>
