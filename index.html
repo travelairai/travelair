@@ -67,6 +67,7 @@ ul {padding-left:18px;color:var(--muted)}
   font-size:14px;
   color:var(--muted);
 }
+.trust-logos img {height:40px;opacity:0.6;filter:grayscale(80%);}
 @media(max-width:900px){
   .grid2,.grid3 {grid-template-columns:1fr}
   h1 {font-size:40px !important}
@@ -233,6 +234,16 @@ url('assets/travelair-hero.jpg') center/cover">
   </div>
 </section>
 
+<!-- NEW: INTEREST & WAITLIST (softened, no trust claims) -->
+<section style="background:rgba(255,255,255,.02);text-align:center;padding:60px 0">
+  <div class="wrap">
+    <h2 style="font-size:32px;margin-bottom:32px">Interest is growing</h2>
+    <p style="font-size:20px;color:var(--muted);margin-bottom:40px">
+      Travelers are excited about the idea of AI choosing the best trips.
+    </p>
+  </div>
+</section>
+
 <!-- SCALE -->
 <section>
   <div class="wrap">
@@ -279,8 +290,8 @@ url('assets/travelair-hero.jpg') center/cover">
 <section id="contact">
   <div class="wrap grid2">
     <div>
-      <h2 style="font-size:44px">Request early access</h2>
-      <p>TravelAir.ai is in early development. Join the waitlist to be notified when we launch and get first access.</p>
+      <h2 style="font-size:44px">Join the early access waitlist</h2>
+      <p>TravelAir.ai is in early development. Sign up to be notified when we launch and get first access.</p>
     </div>
     <form class="card" action="https://formspree.io/f/xnjjngql" method="POST">
       <input name="name" placeholder="Your name" required style="width:100%;padding:14px;border-radius:12px;margin-bottom:12px">
@@ -291,9 +302,21 @@ url('assets/travelair-hero.jpg') center/cover">
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="padding:48px 0;text-align:center;color:var(--muted)">
-  © <script>document.write(new Date().getFullYear())</script> TravelAir.ai — A project in development
+<!-- UPDATED FOOTER -->
+<footer style="padding:60px 0 40px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)">
+  <div class="wrap">
+    <p style="margin-bottom:16px">Made with AI & sunshine in Fort Lauderdale, Florida</p>
+    <div style="display:flex;justify-content:center;gap:24px;margin:20px 0">
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+      <a href="https://discord.com" target="_blank">Discord</a>
+      <a href="mailto:hello@travelair.ai">Contact</a>
+    </div>
+    <p style="font-size:13px">
+      © <script>document.write(new Date().getFullYear())</script> TravelAir.ai — 
+      <a href="/privacy" style="color:var(--muted)">Privacy Policy</a> • 
+      <a href="/terms" style="color:var(--muted)">Terms of Service</a>
+    </p>
+  </div>
 </footer>
 </body>
 </html>
