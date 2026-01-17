@@ -50,13 +50,13 @@ ul{padding-left:18px;color:var(--muted)}
   border-radius:var(--radius);
   padding:30px;
 }
-.logo-container {
-  width: 48px;
-  height: 48px;
+.logo-img {
+  width: 52px;
+  height: auto;
   transition: transform 0.2s ease;
 }
-.logo-container:hover {
-  transform: scale(1.1);
+.logo-img:hover {
+  transform: scale(1.08);
 }
 @media(max-width:900px){
   .grid2,.grid3{grid-template-columns:1fr}
@@ -69,21 +69,8 @@ ul{padding-left:18px;color:var(--muted)}
 <header style="position:sticky;top:0;z-index:99;background:rgba(5,11,20,.95);border-bottom:1px solid rgba(255,255,255,.08)">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0">
     <div style="display:flex;align-items:center;gap:14px">
-      <!-- Embedded SVG Logo -->
-      <div class="logo-container">
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#ff8a00;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#2b74ff;stop-opacity:1" />
-            </linearGradient>
-          </defs>
-          <circle cx="24" cy="24" r="18" stroke="url(#grad)" stroke-width="3" fill="none" opacity="0.7"/>
-          <path d="M12 24 L20 18 L36 24 L20 30 Z" fill="url(#grad)" stroke="#ffffff" stroke-width="1.5"/>
-          <path d="M8 24 Q 24 12, 40 24" stroke="url(#grad)" stroke-width="2" fill="none" opacity="0.6"/>
-          <path d="M8 24 Q 24 36, 40 24" stroke="url(#grad)" stroke-width="2" fill="none" opacity="0.4"/>
-        </svg>
-      </div>
+      <!-- New Logo Image -->
+      <img src="assets/travelair-logo-new.png" alt="TravelAir.ai logo" class="logo-img">
       <div>
         <strong style="font-size:18px">TravelAir.ai</strong>
         <div style="font-size:12px;color:var(--muted)">The Intelligence Layer for Travel</div>
@@ -98,7 +85,7 @@ ul{padding-left:18px;color:var(--muted)}
   </div>
 </header>
 
-<!-- HERO - Updated for professionalism -->
+<!-- HERO -->
 <section style="position:relative;padding:140px 0;background:
 linear-gradient(90deg, rgba(5,11,20,.96), rgba(5,11,20,.65)),
 url('assets/travelair-hero.jpg') center/cover">
@@ -178,7 +165,7 @@ url('assets/travelair-hero.jpg') center/cover">
   </div>
 </section>
 
-<!-- SAMPLE RESULT (unchanged) -->
+<!-- SAMPLE RESULT -->
 <section>
   <div class="wrap">
     <h2 style="font-size:44px">Example: AI-generated itinerary</h2>
@@ -196,7 +183,7 @@ url('assets/travelair-hero.jpg') center/cover">
   </div>
 </section>
 
-<!-- WHY - Reframed positively -->
+<!-- WHY -->
 <section id="why" style="background:rgba(255,255,255,.02)">
   <div class="wrap grid2">
     <div>
@@ -219,8 +206,6 @@ url('assets/travelair-hero.jpg') center/cover">
     </div>
   </div>
 </section>
-
-<!-- SCALE, ROADMAP, CONTACT, FOOTER unchanged for brevity - copy them from previous version if needed -->
 
 <!-- SCALE -->
 <section>
