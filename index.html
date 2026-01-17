@@ -8,65 +8,91 @@
 <style>
 :root {
   --bg: #050b14;
+  --panel: #0c1628;
   --text: #ffffff;
   --muted: rgba(255,255,255,.72);
+  --line: rgba(255,255,255,.12);
   --blue: #2b74ff;
   --orange: #ff8a00;
   --radius: 18px;
   --max: 1200px;
 }
 *{box-sizing:border-box}
-body {margin:0;font-family:system-ui;background:var(--bg);color:var(--text)}
+body {
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+a {text-decoration:none;color:inherit}
 .wrap {max-width:var(--max);margin:0 auto;padding:0 24px}
 section {padding:90px 0}
 h1,h2,h3 {margin:0}
 p {line-height:1.6;color:var(--muted)}
-.btn {padding:14px 22px;border-radius:14px;font-weight:700;display:inline-block;transition:all .3s}
-.btn.primary {background:linear-gradient(135deg,var(--orange),var(--blue));box-shadow:0 0 20px rgba(43,116,255,.3)}
-.btn.primary:hover {transform:translateY(-3px);box-shadow:0 0 35px rgba(43,116,255,.6)}
+ul {padding-left:18px;color:var(--muted)}
+.btn {
+  padding:14px 22px;
+  border-radius:14px;
+  font-weight:700;
+  display:inline-block;
+  transition: all 0.3s ease;
+}
+.btn.primary {
+  background:linear-gradient(135deg,var(--orange),var(--blue));
+  box-shadow:0 0 20px rgba(43,116,255,0.3);
+}
+.btn.primary:hover {
+  transform:translateY(-2px);
+  box-shadow:0 0 30px rgba(43,116,255,0.5);
+}
+.btn.ghost {border:1px solid rgba(255,255,255,.2)}
 .grid2 {display:grid;grid-template-columns:1fr 1fr;gap:44px}
 .grid3 {display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.card {background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:30px}
-
-/* LOGO - HUGE on both desktop and phone */
+.card {
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius);
+  padding:30px;
+}
 .logo-img {
-  width: 220px;           /* Massive on desktop */
+  width: 200px;                /* SUPER BIG on desktop */
   height: auto;
   transition: transform 0.3s ease;
 }
-.logo-img:hover {transform: scale(1.15);}
-
-/* Even bigger on phones */
-@media (max-width: 768px) {
-  .logo-img {width: 160px !important;}   /* Still HUGE on mobile */
-  .brand-text strong {font-size: 26px !important;}
+.logo-img:hover {
+  transform: scale(1.15);
 }
-@media (max-width: 480px) {
-  .logo-img {width: 150px !important;}   /* Still dominant on small phones */
+.brand-text strong {
+  font-size: 30px;             /* Big text to match huge logo */
 }
-.brand-text strong {font-size: 28px;}
-.brand-text div {font-size: 15px;color:var(--muted);}
-
+.brand-text div {
+  font-size: 16px;
+  color: var(--muted);
+}
 @media(max-width:900px){
   .grid2,.grid3 {grid-template-columns:1fr}
   h1 {font-size:40px !important}
   section {padding:70px 0}
+  .logo-img {width: 160px;}    /* HUGE on phone browser – really stands out */
+  .brand-text strong {font-size: 26px;}
+  header .wrap {padding: 28px 0; justify-content:center; flex-direction:column; text-align:center; gap:12px;}
+  header .wrap > div:last-child {margin-top:12px;}
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER - Logo is now massive on phone too -->
+<!-- HEADER with massive logo – extra big on phones -->
 <header style="position:sticky;top:0;z-index:99;background:rgba(5,11,20,.95);border-bottom:1px solid rgba(255,255,255,.08)">
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding:32px 0">
-    <div style="display:flex;align-items:center;gap:22px">
+    <div style="display:flex;align-items:center;gap:24px">
       <img src="https://i.imgur.com/ccN73dx.png" alt="TravelAir.ai logo" class="logo-img">
       <div class="brand-text">
         <strong>TravelAir.ai</strong>
         <div>The Intelligence Layer for Travel</div>
       </div>
     </div>
-    <div style="display:flex;gap:20px;align-items:center;font-size:15px">
+    <div style="display:flex;gap:24px;align-items:center">
       <a href="#platform">Platform</a>
       <a href="#why">Why</a>
       <a href="#roadmap">Roadmap</a>
@@ -76,13 +102,17 @@ p {line-height:1.6;color:var(--muted)}
 </header>
 
 <!-- HERO -->
-<section style="position:relative;padding:140px 0;background:linear-gradient(90deg,rgba(5,11,20,.96),rgba(5,11,20,.65)),url('assets/travelair-hero.jpg') center/cover">
+<section style="position:relative;padding:140px 0;background:
+linear-gradient(90deg, rgba(5,11,20,.96), rgba(5,11,20,.65)),
+url('assets/travelair-hero.jpg') center/cover">
   <div class="wrap">
     <h1 style="font-size:56px;max-width:880px">
-      Travel smarter.<br><span style="color:var(--orange)">Let AI decide for you.</span>
+      Travel smarter.<br>
+      <span style="color:var(--orange)">Let AI decide for you.</span>
     </h1>
     <p style="max-width:760px;font-size:18px;margin:28px 0">
-      TravelAir.ai transforms your travel intent into confident, optimized decisions. One prompt delivers a complete itinerary — personalized, efficient, and ready to experience.
+      TravelAir.ai transforms your travel intent into confident, optimized decisions.
+      One prompt delivers a complete itinerary — personalized, efficient, and ready to experience.
     </p>
     <div style="display:flex;gap:16px;flex-wrap:wrap">
       <a href="#contact" class="btn primary">Request early access</a>
@@ -91,31 +121,55 @@ p {line-height:1.6;color:var(--muted)}
   </div>
 </section>
 
-<!-- Rest of your sections (unchanged) -->
+<!-- PLATFORM -->
 <section id="platform">
   <div class="wrap">
     <h2 style="font-size:44px">Intelligence-first travel planning</h2>
-    <p style="max-width:880px;margin:20px 0">Forget filters and endless tabs. TravelAir.ai is built around deep AI understanding and real outcomes.</p>
+    <p style="max-width:880px;margin:20px 0">
+      Forget filters and endless tabs. TravelAir.ai is built around deep AI understanding and real outcomes.
+    </p>
     <div class="grid3">
-      <div class="card"><h3>AI Trip Intelligence</h3><p>Generate full itineraries from your vision — flights, stays, daily flow, and smart routing — in seconds.</p></div>
-      <div class="card"><h3>Decision-Ready Results</h3><p>Surface the best options tailored to your preferences, constraints, timing, and desired experience.</p></div>
-      <div class="card"><h3>Premium Experience</h3><p>Designed for travelers who prioritize clarity, confidence, and quality over overwhelming choices.</p></div>
+      <div class="card">
+        <h3>AI Trip Intelligence</h3>
+        <p>Generate full itineraries from your vision — flights, stays, daily flow, and smart routing — in seconds.</p>
+      </div>
+      <div class="card">
+        <h3>Decision-Ready Results</h3>
+        <p>Surface the best options tailored to your preferences, constraints, timing, and desired experience.</p>
+      </div>
+      <div class="card">
+        <h3>Premium Experience</h3>
+        <p>Designed for travelers who prioritize clarity, confidence, and quality over overwhelming choices.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- HOW AI WORKS -->
 <section style="background:rgba(255,255,255,.02)">
   <div class="wrap">
     <h2 style="font-size:44px">How TravelAir.ai works</h2>
-    <p style="max-width:880px;margin:20px 0">We understand real travel planning — your goals, limits, timing, and desired vibe.</p>
+    <p style="max-width:880px;margin:20px 0">
+      We understand real travel planning — your goals, limits, timing, and desired vibe.
+    </p>
     <div class="grid3">
-      <div class="card"><strong>Input</strong><p>“7 days in Italy, relaxed pace, flying from Miami, food & culture focused.”</p></div>
-      <div class="card"><strong>AI Intelligence</strong><p>Optimize routes by geography, flow, transit ease, and your unique intent.</p></div>
-      <div class="card"><strong>Output</strong><p>A clean, structured plan — flights, cities, lodging, pacing — ready for your adventure.</p></div>
+      <div class="card">
+        <strong>Input</strong>
+        <p>“7 days in Italy, relaxed pace, flying from Miami, food & culture focused.”</p>
+      </div>
+      <div class="card">
+        <strong>AI Intelligence</strong>
+        <p>Optimize routes by geography, flow, transit ease, and your unique intent.</p>
+      </div>
+      <div class="card">
+        <strong>Output</strong>
+        <p>A clean, structured plan — flights, cities, lodging, pacing — ready for your adventure.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- SAMPLE RESULT -->
 <section>
   <div class="wrap">
     <h2 style="font-size:44px">Example: AI-generated itinerary</h2>
@@ -133,45 +187,89 @@ p {line-height:1.6;color:var(--muted)}
   </div>
 </section>
 
+<!-- WHY + TESTIMONIALS -->
 <section id="why" style="background:rgba(255,255,255,.02)">
   <div class="wrap">
     <h2 style="font-size:44px">Why travelers choose TravelAir.ai</h2>
-    <p style="max-width:880px;margin:20px 0">We empower effortless, intelligent decisions that make every trip better.</p>
+    <p style="max-width:880px;margin:20px 0">
+      We empower effortless, intelligent decisions that make every trip better.
+    </p>
     <div class="grid2" style="margin-top:40px">
-      <div><p>Built AI-first from the ground up, TravelAir.ai delivers clarity and confidence where others create complexity.</p></div>
-      <div class="card"><strong>Key advantages</strong><ul><li>✔ One prompt for complete plans</li><li>✔ Intelligent, fatigue-minimizing routing</li><li>✔ Curated recommendations, no overload</li><li>✔ Premium, decision-focused design</li></ul></div>
+      <div>
+        <p>Built AI-first from the ground up, TravelAir.ai delivers clarity and confidence where others create complexity.</p>
+      </div>
+      <div class="card">
+        <strong>Key advantages</strong>
+        <ul>
+          <li>✔ One prompt for complete plans</li>
+          <li>✔ Intelligent, fatigue-minimizing routing</li>
+          <li>✔ Curated recommendations, no overload</li>
+          <li>✔ Premium, decision-focused design</li>
+        </ul>
+      </div>
     </div>
+
     <h3 style="font-size:32px;margin:60px 0 30px;text-align:center">What early users are saying</h3>
     <div class="grid3">
-      <div class="card" style="font-style:italic"><p>"Finally, travel planning that feels effortless and actually smart — no more tab chaos!"</p><p style="text-align:right;color:var(--muted)">— Sarah K.</p></div>
-      <div class="card" style="font-style:italic"><p>"The optimized routes and confidence scores saved me hours and stress on my last trip."</p><p style="text-align:right;color:var(--muted)">— Mike T.</p></div>
-      <div class="card" style="font-style:italic"><p>"This is the future of travel — one prompt and it's done perfectly."</p><p style="text-align:right;color:var(--muted)">— Elena R.</p></div>
+      <div class="testimonial-card">
+        <p>"Finally, travel planning that feels effortless and actually smart — no more tab chaos!"</p>
+        <p style="text-align:right;margin-top:12px;color:var(--muted)">— Sarah K., Frequent Traveler</p>
+      </div>
+      <div class="testimonial-card">
+        <p>"The optimized routes and confidence scores saved me hours and stress on my last trip."</p>
+        <p style="text-align:right;margin-top:12px;color:var(--muted)">— Mike T., Business Traveler</p>
+      </div>
+      <div class="testimonial-card">
+        <p>"This is the future of travel — one prompt and it's done perfectly."</p>
+        <p style="text-align:right;margin-top:12px;color:var(--muted)">— Elena R., Adventure Seeker</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- SCALE -->
 <section>
   <div class="wrap">
     <h2 style="font-size:44px">Built to scale globally</h2>
     <div class="grid3">
-      <div class="card"><h3>Consumer Travel</h3><p>Smarter planning for leisure, family, and multi-city adventures.</p></div>
-      <div class="card"><h3>Business & Teams</h3><p>Cost-aware, policy-friendly itineraries for founders and teams.</p></div>
-      <div class="card"><h3>Platform & Partners</h3><p>An intelligence layer for airlines, hotels, and travel APIs.</p></div>
+      <div class="card">
+        <h3>Consumer Travel</h3>
+        <p>Smarter planning for leisure, family, and multi-city adventures.</p>
+      </div>
+      <div class="card">
+        <h3>Business & Teams</h3>
+        <p>Cost-aware, policy-friendly itineraries for founders and teams.</p>
+      </div>
+      <div class="card">
+        <h3>Platform & Partners</h3>
+        <p>An intelligence layer for airlines, hotels, and travel APIs.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ROADMAP -->
 <section id="roadmap" style="background:rgba(255,255,255,.03)">
   <div class="wrap">
     <h2 style="font-size:44px">Roadmap</h2>
     <div class="grid3">
-      <div class="card"><strong>Phase 1 — Intelligence</strong><p>AI itinerary generation and routing optimization.</p></div>
-      <div class="card"><strong>Phase 2 — Optimization</strong><p>Real-time signals, smarter tradeoffs, dynamic awareness.</p></div>
-      <div class="card"><strong>Phase 3 — Platform</strong><p>Global travel intelligence powering consumers and partners.</p></div>
+      <div class="card">
+        <strong>Phase 1 — Intelligence</strong>
+        <p>AI itinerary generation and routing optimization.</p>
+      </div>
+      <div class="card">
+        <strong>Phase 2 — Optimization</strong>
+        <p>Real-time signals, smarter tradeoffs, dynamic awareness.</p>
+      </div>
+      <div class="card">
+        <strong>Phase 3 — Platform</strong>
+        <p>Global travel intelligence powering consumers and partners.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="wrap grid2">
     <div>
@@ -187,6 +285,7 @@ p {line-height:1.6;color:var(--muted)}
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer style="padding:48px 0;text-align:center;color:var(--muted)">
   © <script>document.write(new Date().getFullYear())</script> TravelAir.ai — All rights reserved
 </footer>
