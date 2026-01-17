@@ -55,7 +55,7 @@ ul {padding-left:18px;color:var(--muted)}
   padding:30px;
 }
 .logo-img {
-  width: 140px;                /* MUCH BIGGER LOGO - really stands out now */
+  width: 180px;                /* Extremely big on desktop - really stands out */
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -63,26 +63,27 @@ ul {padding-left:18px;color:var(--muted)}
   transform: scale(1.15);
 }
 .brand-text strong {
-  font-size: 26px;             /* Larger text to balance the big logo */
+  font-size: 28px;             /* Larger text to complement the huge logo */
 }
 .brand-text div {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--muted);
 }
 @media(max-width:900px){
   .grid2,.grid3 {grid-template-columns:1fr}
   h1 {font-size:40px !important}
   section {padding:70px 0}
-  .logo-img {width: 100px;}    /* Still prominent but balanced on mobile */
+  .logo-img {width: 120px;}    /* Still very big & prominent on phones */
   .brand-text strong {font-size: 24px;}
+  header .wrap {padding: 24px 0;} /* Extra space on mobile */
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER with very prominent big logo -->
+<!-- HEADER with very large standout logo -->
 <header style="position:sticky;top:0;z-index:99;background:rgba(5,11,20,.95);border-bottom:1px solid rgba(255,255,255,.08)">
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding:30px 0">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding:32px 0">
     <div style="display:flex;align-items:center;gap:20px">
       <img src="https://i.imgur.com/ccN73dx.png" alt="TravelAir.ai logo" class="logo-img">
       <div class="brand-text">
