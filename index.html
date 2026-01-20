@@ -1,316 +1,494 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TravelAir.ai — The Intelligence Layer for Travel</title>
-<meta name="description" content="TravelAir.ai is an upcoming AI-powered travel intelligence tool. Join the early access waitlist to be among the first to try it.">
-<style>
-:root {
-  --bg: #050b14;
-  --panel: #0c1628;
-  --text: #ffffff;
-  --muted: rgba(255,255,255,.72);
-  --line: rgba(255,255,255,.12);
-  --blue: #2b74ff;
-  --orange: #ff8a00;
-  --radius: 18px;
-  --max: 1200px;
-}
-*{box-sizing:border-box}
-body {
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
-a {text-decoration:none;color:inherit}
-.wrap {max-width:var(--max);margin:0 auto;padding:0 24px}
-section {padding:90px 0}
-h1,h2,h3 {margin:0}
-p {line-height:1.6;color:var(--muted)}
-ul {padding-left:18px;color:var(--muted)}
-.btn {
-  padding:14px 22px;
-  border-radius:14px;
-  font-weight:700;
-  display:inline-block;
-  transition:all 0.3s ease;
-}
-.btn.primary {
-  background:linear-gradient(135deg,var(--orange),var(--blue));
-  box-shadow:0 0 20px rgba(43,116,255,0.3);
-}
-.btn.primary:hover {
-  transform:translateY(-2px);
-  box-shadow:0 0 30px rgba(43,116,255,0.5);
-}
-.btn.ghost {border:1px solid rgba(255,255,255,.2)}
-.grid2 {display:grid;grid-template-columns:1fr 1fr;gap:44px}
-.grid3 {display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.card {
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:var(--radius);
-  padding:30px;
-}
-.logo-img {
-  width:180px;
-  height:auto;
-  transition:transform 0.3s ease;
-}
-.logo-img:hover {transform:scale(1.12);}
-.brand-text strong {
-  font-size:26px;
-}
-.brand-text div {
-  font-size:14px;
-  color:var(--muted);
-}
-@media(max-width:900px){
-  .grid2,.grid3 {grid-template-columns:1fr}
-  h1 {font-size:40px !important}
-  section {padding:70px 0}
-  .logo-img {width:180px;}
-  .brand-text strong {font-size:26px;}
-  header .wrap {
-    padding:32px 0;
-    flex-direction:column;
-    text-align:center;
-    gap:16px;
-  }
-  header .wrap > div:last-child {
-    margin-top:12px;
-    justify-content:center;
-  }
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TravelAir.ai — The Intelligence Layer for Global Travel Systems</title>
+  <meta name="description" content="TravelAir.ai is a privately held AI platform designed to function as the intelligence layer beneath modern travel ecosystems." />
+  <meta name="theme-color" content="#0b0f1a" />
+
+  <style>
+    :root{
+      --bg:#070A12;
+      --panel:#0B1020;
+      --panel2:#0C1326;
+      --text:#EAF0FF;
+      --muted:#A9B4D0;
+      --line:rgba(255,255,255,.10);
+      --accent:#F6A63A;
+      --accent2:#3B82F6;
+      --good:#22C55E;
+      --bad:#EF4444;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius:16px;
+      --max:1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:
+        radial-gradient(1000px 600px at 15% 10%, rgba(59,130,246,.18), transparent 55%),
+        radial-gradient(900px 550px at 85% 20%, rgba(246,166,58,.14), transparent 55%),
+        radial-gradient(800px 500px at 50% 95%, rgba(59,130,246,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,10,18,.65);
+      border-bottom:1px solid var(--line);
+    }
+    .navin{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px; padding:14px 0}
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(246,166,58,.95), rgba(59,130,246,.95));
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      display:grid; place-items:center; font-weight:900; letter-spacing:.5px;
+    }
+    .brand b{font-size:16px; letter-spacing:.2px}
+    .brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+    .links{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .links a{font-size:13px; color:var(--muted)}
+    .links a:hover{color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:600;
+      gap:10px;
+    }
+    .btn:hover{border-color:rgba(255,255,255,.22)}
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--accent), #ffcc6b);
+      color:#111827;
+      box-shadow: 0 12px 40px rgba(246,166,58,.18);
+    }
+    .btn.secondary{
+      border:none;
+      background: linear-gradient(135deg, rgba(59,130,246,.95), rgba(59,130,246,.70));
+      box-shadow: 0 12px 40px rgba(59,130,246,.16);
+    }
+    .hero{padding:54px 0 28px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:24px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .links{display:none}
+    }
+    h1{
+      margin:0;
+      font-size:44px;
+      line-height:1.08;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      margin:14px 0 0;
+      color:var(--muted);
+      font-size:16px;
+      max-width:60ch;
+    }
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+    .pill{
+      font-size:12px; color:rgba(234,240,255,.92);
+      border:1px solid var(--line);
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+    }
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px}
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .panel h3{margin:0 0 8px; font-size:16px}
+    .panel p{margin:0; color:var(--muted); font-size:13px}
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    @media (max-width: 900px){
+      .cards{grid-template-columns:1fr}
+    }
+    .card{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(11,16,32,.55);
+    }
+    .card b{display:block; margin-bottom:6px}
+    .card span{color:var(--muted); font-size:13px}
+    section{padding:26px 0}
+    .h2{
+      font-size:22px; margin:0 0 8px;
+      letter-spacing:-.2px;
+    }
+    .p{margin:0; color:var(--muted); max-width:78ch}
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    @media (max-width: 900px){
+      .two{grid-template-columns:1fr}
+    }
+    .list{margin:12px 0 0; padding:0; list-style:none}
+    .list li{
+      margin:10px 0; padding-left:18px; position:relative; color:var(--muted)
+    }
+    .list li:before{
+      content:"";
+      width:8px; height:8px; border-radius:99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      position:absolute; left:0; top:.55em;
+    }
+    .formgrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (max-width: 900px){
+      .formgrid{grid-template-columns:1fr}
+    }
+    label{display:block; font-size:12px; color:var(--muted); margin-bottom:6px}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.28);
+      color:var(--text);
+      outline:none;
+    }
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(246,166,58,.55);
+      box-shadow: 0 0 0 4px rgba(246,166,58,.12);
+    }
+    textarea{min-height:120px; resize:vertical}
+    .small{font-size:12px; color:var(--muted); margin-top:10px}
+    .status{
+      margin-top:12px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    footer{
+      padding:26px 0 40px;
+      border-top:1px solid var(--line);
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .rightbox{
+      display:flex; flex-direction:column; gap:14px;
+      height:100%;
+    }
+    .kpi{
+      display:grid; grid-template-columns:1fr 1fr; gap:12px;
+    }
+    .kpi .card{background: rgba(12,19,38,.55)}
+    .kpi b{font-size:18px}
+    .muter{color:var(--muted)}
+  </style>
 </head>
+
 <body>
-
-<!-- HEADER -->
-<header style="position:sticky;top:0;z-index:99;background:rgba(5,11,20,.95);border-bottom:1px solid rgba(255,255,255,.08)">
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding:32px 0">
-    <div style="display:flex;align-items:center;gap:20px">
-      <img src="https://i.imgur.com/ccN73dx.png" alt="TravelAir.ai logo" class="logo-img">
-      <div class="brand-text">
-        <strong>TravelAir.ai</strong>
-        <div>The Intelligence Layer for Travel</div>
+  <div class="nav">
+    <div class="wrap navin">
+      <div class="brand">
+        <div class="logo">TA</div>
+        <div>
+          <b>TravelAir.ai</b>
+          <span>The Intelligence Layer for Travel Systems</span>
+        </div>
       </div>
-    </div>
-    <div style="display:flex;gap:20px;align-items:center">
-      <a href="#platform">Platform</a>
-      <a href="#why">Why</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#contact" class="btn primary">Request early access</a>
-    </div>
-  </div>
-</header>
 
-<!-- HERO -->
-<section style="position:relative;padding:140px 0;background:
-linear-gradient(90deg, rgba(5,11,20,.96), rgba(5,11,20,.65)),
-url('assets/travelair-hero.jpg') center/cover">
-  <div class="wrap">
-    <h1 style="font-size:56px;max-width:880px">
-      Travel better.<br>
-      <span style="color:var(--orange)">Let AI choose.</span>
-    </h1>
-    <p style="max-width:760px;font-size:18px;margin:28px 0">
-      TravelAir.ai is an upcoming AI-powered travel intelligence tool in development.  
-      One prompt delivers a complete itinerary — personalized, efficient, and ready to experience.
-    </p>
-    <div style="display:flex;gap:16px;flex-wrap:wrap">
-      <a href="#contact" class="btn primary">Join the early access waitlist</a>
-      <a href="#platform" class="btn ghost">Learn more</a>
-    </div>
-  </div>
-</section>
+      <div class="links">
+        <a href="#platform">Platform</a>
+        <a href="#why">Why</a>
+        <a href="#inquiries">Inquiries</a>
+      </div>
 
-<!-- PLATFORM -->
-<section id="platform">
-  <div class="wrap">
-    <h2 style="font-size:44px">Intelligence-first travel planning</h2>
-    <p style="max-width:880px;margin:20px 0">
-      The vision: forget filters and endless tabs. TravelAir.ai will be built around deep AI understanding and real outcomes.
-    </p>
-    <div class="grid3">
-      <div class="card">
-        <h3>AI Trip Intelligence</h3>
-        <p>Generate full itineraries from your vision — flights, stays, daily flow, and smart routing — in seconds.</p>
-      </div>
-      <div class="card">
-        <h3>Decision-Ready Results</h3>
-        <p>Surface the best options tailored to your preferences, constraints, timing, and desired experience.</p>
-      </div>
-      <div class="card">
-        <h3>Premium Experience</h3>
-        <p>Designed for travelers who prioritize clarity, confidence, and quality over overwhelming choices.</p>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a class="btn" href="#inquiries">Strategic Inquiries</a>
+        <a class="btn primary" href="#inquiries">Limited Access</a>
       </div>
     </div>
   </div>
-</section>
 
-<!-- HOW AI WORKS -->
-<section style="background:rgba(255,255,255,.02)">
-  <div class="wrap">
-    <h2 style="font-size:44px">How TravelAir.ai will work</h2>
-    <p style="max-width:880px;margin:20px 0">
-      The planned experience: we understand real travel planning — your goals, limits, timing, and desired vibe.
-    </p>
-    <div class="grid3">
-      <div class="card">
-        <strong>Input</strong>
-        <p>“7 days in Italy, relaxed pace, flying from Miami, food & culture focused.”</p>
-      </div>
-      <div class="card">
-        <strong>AI Intelligence</strong>
-        <p>Optimize routes by geography, flow, transit ease, and your unique intent.</p>
-      </div>
-      <div class="card">
-        <strong>Output</strong>
-        <p>A clean, structured plan — flights, cities, lodging, pacing — ready for your adventure.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <main class="wrap">
+    <header class="hero">
+      <div class="grid">
+        <div>
+          <h1>The Intelligence Layer for Global Travel Systems</h1>
+          <p class="sub">
+            TravelAir.ai is a privately held AI platform designed to function as the decision layer beneath modern travel ecosystems —
+            unifying intent, constraints, and outcomes into structured intelligence other systems can act on.
+          </p>
 
-<!-- SAMPLE RESULT -->
-<section>
-  <div class="wrap">
-    <h2 style="font-size:44px">Example: AI-generated itinerary</h2>
-    <div class="card" style="max-width:900px;margin:0 auto">
-      <p><strong>Trip:</strong> Paris → Florence → Rome</p>
-      <p><strong>Duration:</strong> 7 days</p>
-      <p><strong>Style:</strong> Cultural, relaxed pace</p>
-      <ul>
-        <li>Optimized arrival & departure windows</li>
-        <li>Lodging suggestions by location efficiency</li>
-        <li>Daily flow designed to minimize transit fatigue</li>
-        <li>Confidence score on itinerary quality</li>
-      </ul>
-    </div>
-  </div>
-</section>
+          <div class="pillrow">
+            <div class="pill">Infrastructure-first</div>
+            <div class="pill">AI-native</div>
+            <div class="pill">Integration-oriented</div>
+            <div class="pill">Strategic positioning</div>
+          </div>
 
-<!-- WHY + SUPPORT QUOTES -->
-<section id="why" style="background:rgba(255,255,255,.02)">
-  <div class="wrap">
-    <h2 style="font-size:44px">Why we're building TravelAir.ai</h2>
-    <p style="max-width:880px;margin:20px 0">
-      We want to empower effortless, intelligent decisions that make every trip better.
-    </p>
-    <div class="grid2" style="margin-top:40px">
-      <div>
-        <p>Built AI-first from the ground up, the vision is to deliver clarity and confidence where others create complexity.</p>
-      </div>
-      <div class="card">
-        <strong>Key planned advantages</strong>
-        <ul>
-          <li>✔ One prompt for complete plans</li>
-          <li>✔ Intelligent, fatigue-minimizing routing</li>
-          <li>✔ Curated recommendations, no overload</li>
-          <li>✔ Premium, decision-focused design</li>
-        </ul>
-      </div>
-    </div>
+          <div class="cta">
+            <a class="btn secondary" href="#inquiries">Strategic Inquiries</a>
+            <a class="btn primary" href="#inquiries">Request Limited Access</a>
+            <a class="btn" href="#platform">View Platform</a>
+          </div>
 
-    <h3 style="font-size:32px;margin:60px 0 30px;text-align:center">What early supporters are saying</h3>
-    <div class="grid3">
-      <div class="testimonial-card">
-        <p>"This is exactly what travel planning needs — something that just gets it right the first time."</p>
-        <p style="text-align:right;margin-top:12px;color:var(--muted)">— Early interest from a traveler</p>
-      </div>
-      <div class="testimonial-card">
-        <p>"Excited to see AI finally handle the hard parts so I can focus on enjoying the trip."</p>
-        <p style="text-align:right;margin-top:12px;color:var(--muted)">— Potential early user</p>
-      </div>
-      <div class="testimonial-card">
-        <p>"Can't wait to try this — the idea of AI choosing the best path sounds perfect."</p>
-        <p style="text-align:right;margin-top:12px;color:var(--muted)">— Someone on the waitlist</p>
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="cards">
+            <div class="card">
+              <b>Not a booking site</b>
+              <span>Designed to sit beneath travel products as an intelligence layer.</span>
+            </div>
+            <div class="card">
+              <b>Not an itinerary toy</b>
+              <span>Built around decisions, tradeoffs, and outcomes — at scale.</span>
+            </div>
+            <div class="card">
+              <b>Built for ownership</b>
+              <span>Durable brand, expandable scope, integration-first architecture.</span>
+            </div>
+          </div>
+        </div>
 
-<!-- INTEREST & WAITLIST (softened) -->
-<section style="background:rgba(255,255,255,.02);text-align:center;padding:60px 0">
-  <div class="wrap">
-    <h2 style="font-size:32px;margin-bottom:32px">Interest is growing</h2>
-    <p style="font-size:20px;color:var(--muted);margin-bottom:40px">
-      Travelers are excited about the idea of AI choosing the best trips.
-    </p>
-  </div>
-</section>
+        <aside class="rightbox">
+          <div class="panel">
+            <h3>Mandate</h3>
+            <p>
+              Travel systems optimize inventory, pricing, and logistics independently — but lack holistic understanding of intent and outcomes.
+              TravelAir.ai is designed to unify these signals into a single decision layer.
+            </p>
+          </div>
 
-<!-- SCALE -->
-<section>
-  <div class="wrap">
-    <h2 style="font-size:44px">Built to scale globally (the vision)</h2>
-    <div class="grid3">
-      <div class="card">
-        <h3>Consumer Travel</h3>
-        <p>Smarter planning for leisure, family, and multi-city adventures.</p>
-      </div>
-      <div class="card">
-        <h3>Business & Teams</h3>
-        <p>Cost-aware, policy-friendly itineraries for founders and teams.</p>
-      </div>
-      <div class="card">
-        <h3>Platform & Partners</h3>
-        <p>An intelligence layer for airlines, hotels, and travel APIs.</p>
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="kpi">
+            <div class="card">
+              <b>Platform</b>
+              <span class="muter">Decision intelligence</span>
+            </div>
+            <div class="card">
+              <b>Scope</b>
+              <span class="muter">Travel ecosystems</span>
+            </div>
+            <div class="card">
+              <b>Fit</b>
+              <span class="muter">Enterprise + platforms</span>
+            </div>
+            <div class="card">
+              <b>Access</b>
+              <span class="muter">Selective</span>
+            </div>
+          </div>
 
-<!-- ROADMAP -->
-<section id="roadmap" style="background:rgba(255,255,255,.03)">
-  <div class="wrap">
-    <h2 style="font-size:44px">Roadmap (what's planned)</h2>
-    <div class="grid3">
-      <div class="card">
-        <strong>Phase 1 — Intelligence</strong>
-        <p>AI itinerary generation and routing optimization.</p>
+          <div class="panel">
+            <h3>Availability</h3>
+            <p>
+              TravelAir.ai is privately held and developed deliberately. Engagement is limited to strategic inquiries,
+              platform alignment discussions, and acquisition-oriented conversations.
+            </p>
+          </div>
+        </aside>
       </div>
-      <div class="card">
-        <strong>Phase 2 — Optimization</strong>
-        <p>Real-time signals, smarter tradeoffs, dynamic awareness.</p>
-      </div>
-      <div class="card">
-        <strong>Phase 3 — Platform</strong>
-        <p>Global travel intelligence powering consumers and partners.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </header>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="wrap grid2">
-    <div>
-      <h2 style="font-size:44px">Join the early access waitlist</h2>
-      <p>TravelAir.ai is in early development. Sign up to be notified when we launch and get first access.</p>
-    </div>
-    <form class="card" action="https://formspree.io/f/xnjjngql" method="POST">
-      <input name="name" placeholder="Your name" required style="width:100%;padding:14px;border-radius:12px;margin-bottom:12px">
-      <input name="email" type="email" placeholder="Email address" required style="width:100%;padding:14px;border-radius:12px;margin-bottom:12px">
-      <textarea name="message" placeholder="What kind of trips do you want TravelAir.ai to help with?" required style="width:100%;padding:14px;border-radius:12px;height:120px"></textarea>
-      <button class="btn primary" type="submit" style="margin-top:14px;width:100%">Join the waitlist</button>
-    </form>
-  </div>
-</section>
+    <section id="platform">
+      <h2 class="h2">Platform</h2>
+      <p class="p">
+        TravelAir.ai is architected as an underlying intelligence asset — focused on interpreting intent, modeling tradeoffs,
+        and producing structured outputs that downstream systems can use.
+      </p>
 
-<!-- CLEAN FOOTER (no socials, no location) -->
-© 2026 TravelAir.ai — All rights reserved.<br>
-      This domain and associated intellectual property are privately owned.<br>
-      Strategic partnerships or acquisition discussions may be considered.<br>
-      For informational purposes only. Not an offer to sell.
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-    </p>
-  </div>
-</footer>
+      <div class="two">
+        <div class="panel">
+          <h3>What it does</h3>
+          <ul class="list">
+            <li>Interprets travel intent and constraints (time, budget, preferences, risk tolerance).</li>
+            <li>Models decision tradeoffs across routes, schedules, inventory, and policies.</li>
+            <li>Produces structured intelligence to inform planning, personalization, and optimization.</li>
+            <li>Supports orchestration across fragmented travel workflows and data silos.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>What it is not</h3>
+          <ul class="list">
+            <li>Not positioned as a consumer-facing booking experience.</li>
+            <li>Not a chatbot wrapper or prompt-only itinerary generator.</li>
+            <li>Not a short-term feature race or marketing funnel.</li>
+            <li>Not dependent on a single interface for value creation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <h2 class="h2">Why this layer matters</h2>
+      <p class="p">
+        Travel is fragmented across booking engines, distribution, pricing and revenue systems, loyalty stacks,
+        and operational software. Each operates locally. TravelAir.ai is designed to sit above these silos —
+        translating fragmented signals into coherent decision intelligence.
+      </p>
+
+      <div class="two">
+        <div class="panel">
+          <h3>Design principle</h3>
+          <p>
+            Interfaces evolve. Intelligence compounds. TravelAir.ai is built to be integrated quietly into existing systems,
+            strengthening the ecosystem rather than competing with it.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Strategic fit</h3>
+          <p>
+            Intended to align with global travel platforms, enterprise travel systems, airline and hospitality stacks,
+            and AI-native infrastructure environments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="inquiries">
+      <h2 class="h2">Strategic inquiries</h2>
+      <p class="p">
+        Use the form below for partnership, platform alignment, or acquisition-oriented conversations.
+        Messages are routed privately via Formspree.
+      </p>
+
+      <div class="panel" style="margin-top:14px;">
+        <form id="contactForm" action="https://formspree.io/f/xnjjngql" method="POST">
+          <!-- Optional: set the email subject in Formspree -->
+          <input type="hidden" name="_subject" value="TravelAir.ai — New Inquiry" />
+          <!-- Optional: redirect after submit (uncomment and set your URL) -->
+          <!-- <input type="hidden" name="_redirect" value="https://www.travelair.ai/thank-you.html" /> -->
+
+          <div class="formgrid">
+            <div>
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@company.com" required />
+            </div>
+
+            <div>
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" placeholder="Company / organization" />
+            </div>
+
+            <div>
+              <label for="role">Role</label>
+              <input id="role" name="role" type="text" placeholder="Title / role" />
+            </div>
+
+            <div>
+              <label for="interest">Inquiry type</label>
+              <select id="interest" name="interest" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Strategic partnership</option>
+                <option>Platform alignment</option>
+                <option>Acquisition inquiry</option>
+                <option>Press / media</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="budget">Budget range (optional)</label>
+              <select id="budget" name="budget">
+                <option value="" selected>Prefer not to say</option>
+                <option>$10k–$50k</option>
+                <option>$50k–$150k</option>
+                <option>$150k–$500k</option>
+                <option>$500k+</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Briefly describe what you're looking to accomplish." required></textarea>
+          </div>
+
+          <!-- Basic anti-spam honeypot (Formspree ignores if empty) -->
+          <div style="display:none;">
+            <label>Leave this empty</label>
+            <input name="_gotcha" />
+          </div>
+
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:14px;">
+            <button class="btn primary" type="submit">Send inquiry</button>
+            <span class="small">By submitting, you agree to be contacted regarding your inquiry.</span>
+          </div>
+
+          <div id="formStatus" class="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div><b>© TravelAir.ai</b> — All rights reserved.</div>
+      <div>TravelAir.ai is a privately owned digital asset. Strategic inquiries only.</div>
+    </footer>
+  </main>
+
+  <script>
+    // Optional: show a friendly success message without leaving the page.
+    // Formspree supports AJAX posts if you send Accept: application/json.
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.textContent = "Sending…";
+
+      const data = new FormData(form);
+
+      try {
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.reset();
+          statusEl.textContent = "Thanks — your inquiry was sent.";
+          statusEl.style.color = "rgba(34,197,94,.95)";
+        } else {
+          const out = await res.json().catch(() => ({}));
+          statusEl.textContent = out?.errors?.[0]?.message || "Something went wrong. Please try again.";
+          statusEl.style.color = "rgba(239,68,68,.95)";
+        }
+      } catch (err) {
+        statusEl.textContent = "Network error. Please try again.";
+        statusEl.style.color = "rgba(239,68,68,.95)";
+      }
+    });
+  </script>
 </body>
 </html>
