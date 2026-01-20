@@ -161,53 +161,77 @@
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       position:absolute; left:0; top:.55em;
     }
+    /* Updated nicer form styling */
     .form-section {
-      max-width: 600px;
+      max-width: 680px;
       margin: 4rem auto 0;
-      padding: 2rem;
-      background: rgba(17,24,39,0.75);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(96,165,250,0.25);
-      border-radius: var(--radius);
+      padding: 2.5rem;
+      background: rgba(17,24,39,0.82);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(96,165,250,0.32);
+      border-radius: 20px;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.55);
     }
     .form-section h2 {
       text-align: center;
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      color: #e0f2fe;
     }
     .form-section form label {
       display: block;
-      margin: 1rem 0 0.4rem;
-      font-size: 0.95rem;
+      margin: 1.2rem 0 0.5rem;
+      font-size: 0.98rem;
       color: #cbd5e1;
     }
     .form-section input,
-    .form-section textarea {
+    .form-section textarea,
+    .form-section select {
       width: 100%;
-      padding: 0.9rem;
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.18);
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
       color: white;
-      border-radius: 8px;
       font-size: 1rem;
+      transition: all 0.2s ease;
     }
-    .form-section textarea { min-height: 140px; resize: vertical; }
+    .form-section input:focus,
+    .form-section textarea:focus,
+    .form-section select:focus {
+      border-color: rgba(246,166,58,0.6);
+      box-shadow: 0 0 0 4px rgba(246,166,58,0.15);
+      outline: none;
+    }
+    .form-section textarea { min-height: 160px; resize: vertical; }
     .form-section button {
       width: 100%;
-      margin-top: 1.5rem;
-      padding: 1.1rem;
+      margin-top: 2rem;
+      padding: 1.2rem;
       background: linear-gradient(135deg, #2563eb, var(--accent));
       color: white;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       border: none;
       border-radius: 999px;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(37,99,235,0.35);
     }
     .form-section button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(96,165,250,0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 64px rgba(96,165,250,0.5);
+    }
+    .small {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .status {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      text-align: center;
     }
     footer{
       padding:26px 0 40px;
@@ -380,7 +404,7 @@
       </p>
       <div class="panel" style="margin-top:14px;">
         <form id="contactForm" action="https://formspree.io/f/xnjjngql" method="POST">
-          <input type="hidden" name="_subject" value="TravelAir.ai — New Inquiry" />
+          <input type="hidden" name="_subject" value="TravelAir.ai — Strategic Inquiry" />
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="formgrid">
             <div>
