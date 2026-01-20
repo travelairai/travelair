@@ -161,54 +161,6 @@
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       position:absolute; left:0; top:.55em;
     }
-    .formgrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-      margin-top:12px;
-    }
-    @media (max-width: 900px){
-      .formgrid{grid-template-columns:1fr}
-    }
-    label{display:block; font-size:12px; color:var(--muted); margin-bottom:6px}
-    input, textarea, select{
-      width:100%;
-      padding:12px 12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.28);
-      color:var(--text);
-      outline:none;
-    }
-    input:focus, textarea:focus, select:focus{
-      border-color: rgba(246,166,58,.55);
-      box-shadow: 0 0 0 4px rgba(246,166,58,.12);
-    }
-    textarea{min-height:120px; resize:vertical}
-    .small{font-size:12px; color:var(--muted); margin-top:10px}
-    .status{
-      margin-top:12px;
-      font-size:13px;
-      color:var(--muted);
-    }
-    footer{
-      padding:26px 0 40px;
-      border-top:1px solid var(--line);
-      margin-top:10px;
-      color:var(--muted);
-      font-size:12px;
-    }
-    .rightbox{
-      display:flex; flex-direction:column; gap:14px;
-      height:100%;
-    }
-    .kpi{
-      display:grid; grid-template-columns:1fr 1fr; gap:12px;
-    }
-    .kpi .card{background: rgba(12,19,38,.55)}
-    .kpi b{font-size:18px}
-    .muter{color:var(--muted)}
-    /* Form section style to match the others */
     .form-section {
       max-width: 600px;
       margin: 4rem auto 0;
@@ -256,6 +208,14 @@
     .form-section button:hover {
       transform: translateY(-2px);
       box-shadow: 0 12px 40px rgba(96,165,250,0.4);
+    }
+    footer{
+      padding:26px 0 40px;
+      border-top:1px solid var(--line);
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
     }
   </style>
 </head>
@@ -438,16 +398,6 @@
                 <option>Acquisition inquiry</option>
                 <option>Press / media</option>
                 <option>Other</option>
-              </select>
-            </div>
-            <div>
-              <label for="budget">Budget range (optional)</label>
-              <select id="budget" name="budget">
-                <option value="" selected>Prefer not to say</option>
-                <option>$10k–$50k</option>
-                <option>$50k–$150k</option>
-                <option>$150k–$500k</option>
-                <option>$500k+</option>
               </select>
             </div>
           </div>
