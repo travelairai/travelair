@@ -1,111 +1,236 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"/>
-  <meta name="format-detection" content="telephone=no"/>
-  <title>TravelAir</title>
-  <meta name="description" content="Ultra-premium AI intelligence layer for global travel systems and ecosystems."/>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TravelAir.ai — The Intelligence Layer for Global Travel Systems</title>
+  <meta name="description" content="TravelAir.ai is a privately held AI platform designed to function as the intelligence layer beneath modern travel ecosystems." />
+  <meta name="theme-color" content="#0b0f1a" />
   <style>
-    :root {
-      --bg: #080c17;
-      --card: rgba(17,24,39,0.75);
-      --border: rgba(96,165,250,0.25);
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --accent: #60a5fa;
-      --glow: rgba(96,165,250,0.45);
-      --radius: 24px;
+    :root{
+      --bg:#070A12;
+      --panel:#0B1020;
+      --panel2:#0C1326;
+      --text:#EAF0FF;
+      --muted:#A9B4D0;
+      --line:rgba(255,255,255,.10);
+      --accent:#F6A63A;
+      --accent2:#3B82F6;
+      --good:#22C55E;
+      --bad:#EF4444;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius:16px;
+      --max:1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: 
-        linear-gradient(rgba(8,12,23,0.65), rgba(0,0,0,0.80)),
-        url('https://images.unsplash.com/photo-1639325676295-1e0e3a3b3b3b?w=2070&auto=format&fit=crop&q=80') center/cover no-repeat fixed;
-      background-blend-mode: multiply;
-      color: var(--text);
-      line-height: 1.65;
-      min-height: 100dvh;
-      -webkit-font-smoothing: antialiased;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:
+        radial-gradient(1000px 600px at 15% 10%, rgba(59,130,246,.18), transparent 55%),
+        radial-gradient(900px 550px at 85% 20%, rgba(246,166,58,.14), transparent 55%),
+        radial-gradient(800px 500px at 50% 95%, rgba(59,130,246,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
     }
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: clamp(60px, 10vw, 120px) 24px;
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,10,18,.65);
+      border-bottom:1px solid var(--line);
     }
-    header {
-      text-align: center;
-      padding-bottom: 6rem;
+    .navin{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px; padding:14px 0}
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(246,166,58,.95), rgba(59,130,246,.95));
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      display:grid; place-items:center; font-weight:900; letter-spacing:.5px;
     }
-    h1 {
-      font-size: clamp(4.5rem, 11vw, 8rem);
-      font-weight: 900;
-      background: linear-gradient(90deg, #60a5fa, #a5b4fc, #c084fc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -0.04em;
-      margin-bottom: 1.2rem;
+    .brand b{font-size:16px; letter-spacing:.2px}
+    .brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+    .links{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .links a{font-size:13px; color:var(--muted)}
+    .links a:hover{color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:600;
+      gap:10px;
     }
-    .tagline {
-      font-size: clamp(1.4rem, 5vw, 1.8rem);
-      color: #d1d5db;
-      max-width: 960px;
-      margin: 0 auto 3rem;
-      font-weight: 300;
-      opacity: 0.92;
+    .btn:hover{border-color:rgba(255,255,255,.22)}
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--accent), #ffcc6b);
+      color:#111827;
+      box-shadow: 0 12px 40px rgba(246,166,58,.18);
     }
-    .vision-section {
-      max-width: 900px;
-      margin: 0 auto 4rem;
-      text-align: center;
+    .btn.secondary{
+      border:none;
+      background: linear-gradient(135deg, rgba(59,130,246,.95), rgba(59,130,246,.70));
+      box-shadow: 0 12px 40px rgba(59,130,246,.16);
     }
-    .vision {
-      font-size: clamp(1.15rem, 4vw, 1.35rem);
-      color: #cbd5e1;
-      line-height: 1.7;
-      margin-bottom: 2rem;
+    .hero{padding:54px 0 28px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:24px;
+      align-items:stretch;
     }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 32px;
-      margin-bottom: 5rem;
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .links{display:none}
     }
-    .card {
-      background: var(--card);
-      backdrop-filter: blur(18px);
-      border: 1px solid var(--border);
+    h1{
+      margin:0;
+      font-size:44px;
+      line-height:1.08;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      margin:14px 0 0;
+      color:var(--muted);
+      font-size:16px;
+      max-width:60ch;
+    }
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+    .pill{
+      font-size:12px; color:rgba(234,240,255,.92);
+      border:1px solid var(--line);
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+    }
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px}
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
       border-radius: var(--radius);
-      padding: 2.4rem;
-      transition: all 0.4s ease;
-      box-shadow: 0 10px 48px rgba(0,0,0,0.5);
+      box-shadow: var(--shadow);
+      padding:18px;
     }
-    .card:hover {
-      transform: translateY(-12px);
-      border-color: rgba(96,165,250,0.55);
-      box-shadow: 0 24px 80px var(--glow);
+    .panel h3{margin:0 0 8px; font-size:16px}
+    .panel p{margin:0; color:var(--muted); font-size:13px}
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:18px;
     }
-    .card h3 {
-      font-size: clamp(1.5rem, 4vw, 1.9rem);
-      font-weight: 700;
-      color: #e0f2fe;
-      margin-bottom: 0.8rem;
+    @media (max-width: 900px){
+      .cards{grid-template-columns:1fr}
     }
+    .card{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(11,16,32,.55);
+    }
+    .card b{display:block; margin-bottom:6px}
+    .card span{color:var(--muted); font-size:13px}
+    section{padding:26px 0}
+    .h2{
+      font-size:22px; margin:0 0 8px;
+      letter-spacing:-.2px;
+    }
+    .p{margin:0; color:var(--muted); max-width:78ch}
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    @media (max-width: 900px){
+      .two{grid-template-columns:1fr}
+    }
+    .list{margin:12px 0 0; padding:0; list-style:none}
+    .list li{
+      margin:10px 0; padding-left:18px; position:relative; color:var(--muted)
+    }
+    .list li:before{
+      content:"";
+      width:8px; height:8px; border-radius:99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      position:absolute; left:0; top:.55em;
+    }
+    .formgrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (max-width: 900px){
+      .formgrid{grid-template-columns:1fr}
+    }
+    label{display:block; font-size:12px; color:var(--muted); margin-bottom:6px}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.28);
+      color:var(--text);
+      outline:none;
+    }
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(246,166,58,.55);
+      box-shadow: 0 0 0 4px rgba(246,166,58,.12);
+    }
+    textarea{min-height:120px; resize:vertical}
+    .small{font-size:12px; color:var(--muted); margin-top:10px}
+    .status{
+      margin-top:12px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    footer{
+      padding:26px 0 40px;
+      border-top:1px solid var(--line);
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .rightbox{
+      display:flex; flex-direction:column; gap:14px;
+      height:100%;
+    }
+    .kpi{
+      display:grid; grid-template-columns:1fr 1fr; gap:12px;
+    }
+    .kpi .card{background: rgba(12,19,38,.55)}
+    .kpi b{font-size:18px}
+    .muter{color:var(--muted)}
+    /* Form section style to match the others */
     .form-section {
       max-width: 600px;
       margin: 4rem auto 0;
+      padding: 2rem;
+      background: rgba(17,24,39,0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(96,165,250,0.25);
+      border-radius: var(--radius);
     }
-    .form-section label {
+    .form-section h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+    .form-section form label {
       display: block;
       margin: 1rem 0 0.4rem;
       font-size: 0.95rem;
       color: #cbd5e1;
     }
-    input, textarea {
+    .form-section input,
+    .form-section textarea {
       width: 100%;
       padding: 0.9rem;
       background: rgba(255,255,255,0.05);
@@ -114,9 +239,8 @@
       border-radius: 8px;
       font-size: 1rem;
     }
-    textarea { min-height: 140px; resize: vertical; }
-    button {
-      display: block;
+    .form-section textarea { min-height: 140px; resize: vertical; }
+    .form-section button {
       width: 100%;
       margin-top: 1.5rem;
       padding: 1.1rem;
@@ -129,82 +253,254 @@
       cursor: pointer;
       transition: all 0.3s;
     }
-    button:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(96,165,250,0.4); }
-    footer {
-      margin-top: 8rem;
-      padding: 4rem 1rem;
-      text-align: center;
-      font-size: 0.95rem;
-      color: #64748b;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-    @media (max-width: 768px) {
-      .container { padding: 60px 20px; }
-      h1 { font-size: clamp(3.8rem, 14vw, 5.8rem); }
-      .cta { padding: 3.5rem 2rem; margin-top: 6rem; }
-      button { padding: 1.4rem 1.5rem; font-size: 1.2rem; }
-    }
-    @media (max-width: 480px) {
-      button { padding: 1.5rem 1rem; font-size: 1.15rem; }
+    .form-section button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(96,165,250,0.4);
     }
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <header>
-      <h1>TravelAir</h1>
-      <p class="tagline">
-        The intelligence layer for global travel systems and ecosystems.
-      </p>
+  <div class="nav">
+    <div class="wrap navin">
+      <div class="brand">
+        <div class="logo">TA</div>
+        <div>
+          <b>TravelAir.ai</b>
+          <span>The Intelligence Layer for Travel Systems</span>
+        </div>
+      </div>
+      <div class="links">
+        <a href="#platform">Platform</a>
+        <a href="#why">Why</a>
+        <a href="#inquiries">Inquiries</a>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a class="btn" href="#inquiries">Strategic Inquiries</a>
+        <a class="btn primary" href="#inquiries">Limited Access</a>
+      </div>
+    </div>
+  </div>
+  <main class="wrap">
+    <header class="hero">
+      <div class="grid">
+        <div>
+          <h1>The Intelligence Layer for Global Travel Systems</h1>
+          <p class="sub">
+            TravelAir.ai is a privately held AI platform designed to function as the decision layer beneath modern travel ecosystems —
+            unifying intent, constraints, and outcomes into structured intelligence other systems can act on.
+          </p>
+          <div class="pillrow">
+            <div class="pill">Infrastructure-first</div>
+            <div class="pill">AI-native</div>
+            <div class="pill">Integration-oriented</div>
+            <div class="pill">Strategic positioning</div>
+          </div>
+          <div class="cta">
+            <a class="btn secondary" href="#inquiries">Strategic Inquiries</a>
+            <a class="btn primary" href="#inquiries">Request Limited Access</a>
+            <a class="btn" href="#platform">View Platform</a>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <b>Not a booking site</b>
+              <span>Designed to sit beneath travel products as an intelligence layer.</span>
+            </div>
+            <div class="card">
+              <b>Not an itinerary toy</b>
+              <span>Built around decisions, tradeoffs, and outcomes — at scale.</span>
+            </div>
+            <div class="card">
+              <b>Built for ownership</b>
+              <span>Durable brand, expandable scope, integration-first architecture.</span>
+            </div>
+          </div>
+        </div>
+        <aside class="rightbox">
+          <div class="panel">
+            <h3>Mandate</h3>
+            <p>
+              Travel systems optimize inventory, pricing, and logistics independently — but lack holistic understanding of intent and outcomes.
+              TravelAir.ai is designed to unify these signals into a single decision layer.
+            </p>
+          </div>
+          <div class="kpi">
+            <div class="card">
+              <b>Platform</b>
+              <span class="muter">Decision intelligence</span>
+            </div>
+            <div class="card">
+              <b>Scope</b>
+              <span class="muter">Travel ecosystems</span>
+            </div>
+            <div class="card">
+              <b>Fit</b>
+              <span class="muter">Enterprise + platforms</span>
+            </div>
+            <div class="card">
+              <b>Access</b>
+              <span class="muter">Selective</span>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Availability</h3>
+            <p>
+              TravelAir.ai is privately held and developed deliberately. Engagement is limited to strategic inquiries,
+              platform alignment discussions, and acquisition-oriented conversations.
+            </p>
+          </div>
+        </aside>
+      </div>
     </header>
-
-    <div class="vision-section">
-      <p class="vision">
-        TravelAir is the underlying decision intelligence platform that powers modern travel ecosystems. It interprets intent, models trade-offs, and produces structured outputs that downstream systems (booking engines, OTAs, loyalty stacks, operations software) can act on immediately. Built to unify fragmented signals into coherent, actionable intelligence — so travel becomes effortless, intelligent, and outcome-driven.
+    <section id="platform">
+      <h2 class="h2">Platform</h2>
+      <p class="p">
+        TravelAir.ai is architected as an underlying intelligence asset — focused on interpreting intent, modeling tradeoffs,
+        and producing structured outputs that downstream systems can use.
       </p>
-    </div>
-
-    <div class="features">
-      <div class="card">
-        <h3>Intent Interpretation Engine</h3>
-        <p>Deep understanding of traveler goals, constraints, preferences, and risk tolerance — no filters, no endless tabs.</p>
+      <div class="two">
+        <div class="panel">
+          <h3>What it does</h3>
+          <ul class="list">
+            <li>Interprets travel intent and constraints (time, budget, preferences, risk tolerance).</li>
+            <li>Models decision tradeoffs across routes, schedules, inventory, and policies.</li>
+            <li>Produces structured intelligence to inform planning, personalization, and optimization.</li>
+            <li>Supports orchestration across fragmented travel workflows and data silos.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>What it is not</h3>
+          <ul class="list">
+            <li>Not positioned as a consumer-facing booking experience.</li>
+            <li>Not a chatbot wrapper or prompt-only itinerary generator.</li>
+            <li>Not a short-term feature race or marketing funnel.</li>
+            <li>Not dependent on a single interface for value creation.</li>
+          </ul>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>Decision-Ready Intelligence</h3>
-        <p>Structured outputs with confidence scores, trade-off comparisons, and optimized recommendations ready for downstream execution.</p>
+    </section>
+    <section id="why">
+      <h2 class="h2">Why this layer matters</h2>
+      <p class="p">
+        Travel is fragmented across booking engines, distribution, pricing and revenue systems, loyalty stacks,
+        and operational software. Each operates locally. TravelAir.ai is designed to sit above these silos —
+        translating fragmented signals into coherent decision intelligence.
+      </p>
+      <div class="two">
+        <div class="panel">
+          <h3>Design principle</h3>
+          <p>
+            Interfaces evolve. Intelligence compounds. TravelAir.ai is built to be integrated quietly into existing systems,
+            strengthening the ecosystem rather than competing with it.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Strategic fit</h3>
+          <p>
+            Intended to align with global travel platforms, enterprise travel systems, airline and hospitality stacks,
+            and AI-native infrastructure environments.
+          </p>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>Ecosystem Orchestration</h3>
-        <p>Seamless integration with fragmented travel workflows — strengthening existing systems rather than competing with them.</p>
+    </section>
+    <section id="inquiries">
+      <h2 class="h2">Strategic inquiries</h2>
+      <p class="p">
+        Use the form below for partnership, platform alignment, or acquisition-oriented conversations.
+        Messages are routed privately via Formspree.
+      </p>
+      <div class="panel" style="margin-top:14px;">
+        <form id="contactForm" action="https://formspree.io/f/xnjjngql" method="POST">
+          <input type="hidden" name="_subject" value="TravelAir.ai — New Inquiry" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="formgrid">
+            <div>
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@company.com" required />
+            </div>
+            <div>
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" placeholder="Company / organization" />
+            </div>
+            <div>
+              <label for="role">Role</label>
+              <input id="role" name="role" type="text" placeholder="Title / role" />
+            </div>
+            <div>
+              <label for="interest">Inquiry type</label>
+              <select id="interest" name="interest" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Strategic partnership</option>
+                <option>Platform alignment</option>
+                <option>Acquisition inquiry</option>
+                <option>Press / media</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="budget">Budget range (optional)</label>
+              <select id="budget" name="budget">
+                <option value="" selected>Prefer not to say</option>
+                <option>$10k–$50k</option>
+                <option>$50k–$150k</option>
+                <option>$150k–$500k</option>
+                <option>$500k+</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-top:12px;">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Briefly describe what you're looking to accomplish." required></textarea>
+          </div>
+          <div style="display:none;">
+            <label>Leave this empty</label>
+            <input name="_gotcha" />
+          </div>
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:14px;">
+            <button class="btn primary" type="submit">Send inquiry</button>
+            <span class="small">By submitting, you agree to be contacted regarding your inquiry.</span>
+          </div>
+          <div id="formStatus" class="status" aria-live="polite"></div>
+        </form>
       </div>
-    </div>
-
-    <div class="form-section">
-      <h2 style="text-align:center;margin-bottom:1.5rem;">Strategic Inquiries</h2>
-      <form action="https://formspree.io/f/xnjjngql" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required placeholder="Your full name" />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="your@email.com" />
-
-        <label for="message">Message (optional)</label>
-        <textarea id="message" name="message" placeholder="Tell us about your interest, project, or inquiry..."></textarea>
-
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-
+    </section>
     <footer>
-      © 2026 TravelAir — All rights reserved.<br>
+      © 2026 TravelAir.ai — All rights reserved.<br>
       This domain and associated intellectual property are privately owned.<br>
       Strategic partnerships or acquisition discussions may be considered.<br>
       For informational purposes only. Not an offer to sell.
     </footer>
-  </div>
-
+  </main>
+  <script>
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.textContent = "Sending…";
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.reset();
+          statusEl.textContent = "Thanks — your inquiry was sent.";
+          statusEl.style.color = "rgba(34,197,94,.95)";
+        } else {
+          const out = await res.json().catch(() => ({}));
+          statusEl.textContent = out?.errors?.[0]?.message || "Something went wrong. Please try again.";
+          statusEl.style.color = "rgba(239,68,68,.95)";
+        }
+      } catch (err) {
+        statusEl.textContent = "Network error. Please try again.";
+        statusEl.style.color = "rgba(239,68,68,.95)";
+      }
+    });
+  </script>
 </body>
 </html>
