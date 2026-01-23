@@ -4,146 +4,144 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TravelAir.ai — Enterprise Travel Intelligence Infrastructure</title>
-  <meta name="description" content="AI-native travel intelligence infrastructure for enterprise decision-making. Not a booking platform." />
+  <meta name="description" content="TravelAir.ai is an AI-native decision intelligence layer for enterprise travel, positioned above booking systems to coordinate pricing, routing, policy, and operational outcomes."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: linear-gradient(180deg, #0b1f3f, #0e2b5c);
-      color: #ffffff;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(180deg, #071a3a 0%, #0b2f66 100%);
+      color: #e8eef7;
     }
+    a { color: inherit; text-decoration: none; }
 
     header {
-      padding: 28px 40px;
+      padding: 28px 56px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
     header h1 {
       font-size: 18px;
       font-weight: 600;
+      letter-spacing: 0.2px;
     }
-
     nav a {
       margin-left: 28px;
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
       font-size: 14px;
+      opacity: 0.85;
     }
 
-    .hero {
-      padding: 80px 40px 40px;
+    .container {
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
+      padding: 80px 56px 120px;
     }
 
+    .pill-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
     .pill {
-      display: inline-block;
-      padding: 6px 12px;
-      margin-right: 8px;
-      margin-bottom: 14px;
-      font-size: 12px;
+      padding: 8px 14px;
       border-radius: 999px;
+      font-size: 12px;
       background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
-    .hero h2 {
-      font-size: 46px;
-      font-weight: 600;
+    h2 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin: 0 0 28px;
       max-width: 900px;
-      margin: 20px 0;
     }
 
-    .hero p {
+    p.lead {
       font-size: 18px;
-      max-width: 900px;
-      color: rgba(255,255,255,0.85);
       line-height: 1.6;
+      max-width: 900px;
+      opacity: 0.95;
+      margin-bottom: 18px;
     }
 
-    .buttons {
-      margin-top: 28px;
+    .actions {
+      margin-top: 36px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
     }
-
     .btn {
-      display: inline-block;
       padding: 14px 22px;
-      border-radius: 8px;
-      margin-right: 14px;
+      border-radius: 10px;
       font-size: 14px;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.2);
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      cursor: pointer;
     }
-
-    .primary {
-      background: #4da3ff;
-      color: #0b1f3f;
+    .btn.primary {
+      background: linear-gradient(135deg, #2f80ff, #4fa3ff);
       border: none;
+      color: #fff;
     }
 
-    .secondary {
-      color: #ffffff;
+    .grid {
+      margin-top: 90px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
     }
-
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px;
-    }
-
-    .panel {
+    .card {
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px;
-      padding: 24px;
-      margin-bottom: 24px;
+      border-radius: 16px;
+      padding: 28px;
     }
-
-    .panel h3 {
-      font-size: 16px;
-      margin-bottom: 12px;
+    .card h3 {
+      margin-top: 0;
+      font-size: 18px;
+      margin-bottom: 16px;
     }
-
-    .panel p, .panel li {
-      font-size: 14px;
-      color: rgba(255,255,255,0.8);
+    .card p {
+      font-size: 15px;
       line-height: 1.6;
+      opacity: 0.9;
     }
-
-    ul {
+    .card ul {
       padding-left: 18px;
+      margin: 12px 0 0;
+    }
+    .card li {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     footer {
-      text-align: center;
-      padding: 30px;
+      padding: 48px 56px;
+      border-top: 1px solid rgba(255,255,255,0.08);
       font-size: 13px;
-      color: rgba(255,255,255,0.6);
-      border-top: 1px solid rgba(255,255,255,0.12);
+      opacity: 0.7;
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      border-radius: 6px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.08);
-      color: white;
-    }
-
-    button {
-      padding: 14px 22px;
-      border-radius: 8px;
-      border: none;
-      background: #4da3ff;
-      color: #0b1f3f;
-      font-weight: 600;
-      cursor: pointer;
+    @media (max-width: 900px) {
+      header, .container, footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      h2 {
+        font-size: 40px;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -159,90 +157,88 @@
   </nav>
 </header>
 
-<div class="hero">
-  <span class="pill">Enterprise infrastructure</span>
-  <span class="pill">Infrastructure — not a booking platform</span>
-  <span class="pill">AI-native decision layer</span>
-  <span class="pill">Private asset</span>
+<section class="container">
+
+  <div class="pill-row">
+    <div class="pill">Enterprise infrastructure</div>
+    <div class="pill">Infrastructure — not a booking platform</div>
+    <div class="pill">AI-native decision layer</div>
+    <div class="pill">Private asset</div>
+  </div>
 
   <h2>Enterprise Travel Intelligence Infrastructure</h2>
 
-  <p>
-    TravelAir.ai is an AI-native decision intelligence layer designed to sit above enterprise booking systems.
-    It synthesizes pricing, routing, policy, and operational inputs into decision-ready outcomes across
+  <p class="lead">
+    TravelAir.ai is an AI-native intelligence layer designed to sit above enterprise booking systems,
+    synthesizing pricing, routing, policy, and operational inputs into decision-ready outcomes for
     complex travel environments.
   </p>
 
-  <p>
+  <p class="lead">
     As enterprise travel scales in volume and complexity, ownership of the intelligence layer becomes
     the strategic control point — not the booking interface.
   </p>
 
-  <div class="buttons">
+  <div class="actions">
     <a href="#contact" class="btn primary">Strategic inquiries</a>
-    <a href="#solution" class="btn secondary">Enterprise use cases</a>
+    <a href="#solution" class="btn">Enterprise use cases</a>
   </div>
-</div>
 
-<section id="problem">
-  <div class="panel">
-    <h3>The enterprise problem</h3>
-    <p>
-      Enterprise travel decisions are fragmented across booking tools, pricing engines, policies,
-      and human judgment. This fragmentation compounds inefficiency, inconsistency, and cost at scale.
-    </p>
+  <div id="problem" class="grid">
+    <div class="card">
+      <h3>The Enterprise Problem</h3>
+      <p>
+        Enterprise travel decisions are fragmented across booking tools, pricing engines,
+        policy rules, vendor contracts, and human judgment.
+      </p>
+      <ul>
+        <li><strong>Inefficient routing</strong> — Complex itineraries degrade without centralized intelligence.</li>
+        <li><strong>Uncontrolled spend</strong> — Policy and pricing variables are rarely optimized together.</li>
+        <li><strong>Operational drag</strong> — Decisions remain reactive, manual, and disconnected.</li>
+      </ul>
+    </div>
 
-    <ul>
-      <li>Inefficient routing across multi-city and complex itineraries</li>
-      <li>Uncontrolled spend driven by disconnected policy enforcement</li>
-      <li>Operational blind spots between planning and execution</li>
-    </ul>
+    <div id="solution" class="card">
+      <h3>The Solution</h3>
+      <p>
+        TravelAir.ai is being developed as an AI-native travel intelligence layer that governs
+        decisions across enterprise travel infrastructure.
+      </p>
+      <ul>
+        <li>Synthesize pricing, routing, policy, vendor, and preference signals</li>
+        <li>Coordinate outcomes across platforms and stakeholders</li>
+        <li>Optimize decisions at scale without operational overhead</li>
+      </ul>
+    </div>
   </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Where It Sits in the Stack</h3>
+      <p>
+        Above booking tools. Above vendor platforms. Above execution interfaces.
+        TravelAir.ai defines what should happen before transactions occur.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Asset Positioning</h3>
+      <p>
+        TravelAir.ai is a privately owned strategic asset.
+        Not publicly marketed. Strategic discussions by inquiry only.
+      </p>
+    </div>
+  </div>
+
 </section>
 
-<section id="solution">
-  <div class="panel">
-    <h3>The solution</h3>
-    <p>
-      TravelAir.ai is being developed as an AI-native intelligence layer that sits above enterprise
-      travel infrastructure — coordinating decisions across systems rather than replacing them.
-    </p>
-
-    <ul>
-      <li>Synthesize pricing, routing, policy, and preference signals</li>
-      <li>Align planning with real-world operational constraints</li>
-      <li>Create a single decision surface for enterprise travel control</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <div class="panel">
-    <h3>Strategic value</h3>
-    <p>
-      Booking tools compete on features. Intelligence compounds.
-      Ownership of the decision layer determines long-term leverage,
-      margin control, and platform defensibility.
-    </p>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="panel">
-    <h3>Private discussions</h3>
-    <p>TravelAir.ai is privately owned. Strategic discussions by inquiry only.</p>
-
-    <form action="https://formspree.io/f/xnjjngql" method="POST">
-      <input type="text" name="name" placeholder="Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Inquiry" rows="4" required></textarea>
-      <button type="submit">Submit inquiry</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  © TravelAir.ai — Enterprise Travel Intelligence Infrastructure
+<footer id="contact">
+  © TravelAir.ai — Privately owned • Strategic discussions by inquiry only
+  <form action="https://formspree.io/f/xnjjngql" method="POST" style="margin-top:16px;">
+    <input type="email" name="email" placeholder="Email" required
+           style="padding:10px;border-radius:6px;border:none;margin-right:8px;">
+    <button type="submit" class="btn primary">Request discussion</button>
+  </form>
 </footer>
 
 </body>
