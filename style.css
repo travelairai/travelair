@@ -122,3 +122,33 @@ h1 {
 .card p {
   color: #cfd6e6;
 }
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    padding:90px 8%;
+    background:#05070d;
+}
+
+.stat{
+    text-align:center;
+    padding:35px;
+    border-radius:22px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.stat:hover{
+    transform:translateY(-8px);
+}
+
+.stat h2{
+    font-size:40px;
+    margin-bottom:12px;
+    color:#7db7ff;
+}
+
+.stat p{
+    color:#d6d6d6;
+}
