@@ -1790,3 +1790,185 @@ font-size:42px;
 }
 
 }
+/* ============================================================
+   MOBILE RESPONSIVE FIX
+============================================================ */
+
+@media (max-width: 900px){
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .site-header{
+    position:relative;
+    flex-direction:column;
+    gap:18px;
+    padding:22px 6%;
+    text-align:center;
+  }
+
+  .brand{
+    font-size:28px;
+  }
+
+  .tm{
+    font-size:.28em;
+  }
+
+  .desktop-nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+  }
+
+  .desktop-nav a{
+    font-size:13px;
+  }
+
+  .nav-cta{
+    width:100%;
+    text-align:center;
+  }
+
+  .hero-section,
+  .command-page-hero{
+    grid-template-columns:1fr;
+    padding:70px 6%;
+    gap:40px;
+    min-height:auto;
+  }
+
+  .hero-left h1,
+  .command-hero-left h1,
+  h1{
+    font-size:42px;
+    line-height:1.05;
+    letter-spacing:-1px;
+  }
+
+  .hero-copy,
+  .command-hero-copy{
+    font-size:18px;
+  }
+
+  .hero-proof,
+  .command-kpi-grid,
+  .metrics-section,
+  .feature-grid.three,
+  .feature-grid.four,
+  .dashboard-grid,
+  .decision-grid,
+  .industry-grid,
+  .feed-grid,
+  .governance-grid,
+  .industry-strip,
+  .command-layout{
+    grid-template-columns:1fr !important;
+  }
+
+  .command-card,
+  .command-hero-panel,
+  .dashboard-card,
+  .premium-card,
+  .solution-card,
+  .decision-card,
+  .industry-card,
+  .feed-card,
+  .governance-card{
+    padding:26px;
+    border-radius:24px;
+  }
+
+  .section-header h2,
+  .section-heading h2,
+  .command-cta h2,
+  .contact-section h2{
+    font-size:34px;
+    line-height:1.1;
+    letter-spacing:-1px;
+  }
+
+  .platform-section,
+  .solutions-section,
+  .command-section,
+  .live-dashboard-section,
+  .decision-center,
+  .industry-command,
+  .executive-feed,
+  .governance-layer,
+  .intelligence-section,
+  .industries-section,
+  .contact-section,
+  .command-cta{
+    padding:70px 6%;
+  }
+
+  .button{
+    width:100%;
+    text-align:center;
+  }
+
+  .hero-actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+
+  .network-map,
+  .map-visual{
+    height:280px;
+  }
+
+  .metric-big{
+    font-size:42px;
+  }
+
+  .dashboard-card.large,
+  .wide,
+  .large{
+    grid-column:auto !important;
+  }
+
+}
+
+@media (max-width: 480px){
+
+  .brand{
+    font-size:25px;
+  }
+
+  .hero-left h1,
+  .command-hero-left h1,
+  h1{
+    font-size:36px;
+  }
+
+  .section-header h2,
+  .section-heading h2,
+  .command-cta h2,
+  .contact-section h2{
+    font-size:30px;
+  }
+
+  .desktop-nav{
+    gap:10px;
+  }
+
+  .desktop-nav a{
+    font-size:12px;
+  }
+
+  .hero-copy,
+  .command-hero-copy,
+  .contact-section p{
+    font-size:16px;
+  }
+
+  .command-search,
+  .travel-search,
+  .dashboard-grid-large{
+    grid-template-columns:1fr !important;
+  }
+
+}
