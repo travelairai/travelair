@@ -1,3 +1,1 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("TravelAir.ai Loaded");
-});
+console.log("TravelAir.ai loaded");
