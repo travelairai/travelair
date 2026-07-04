@@ -1595,3 +1595,86 @@ padding:14px 0;
 border-bottom:1px solid rgba(255,255,255,.08);
 color:#d4d4d4;
 }
+/* ============================================================
+   DECISION CENTER
+============================================================ */
+
+.decision-center{
+padding:100px 6%;
+background:linear-gradient(180deg,#090909,#050505);
+}
+
+.decision-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:24px;
+}
+
+.decision-card{
+background:#181818;
+border:1px solid rgba(255,201,40,.16);
+border-radius:24px;
+padding:30px;
+transition:.3s;
+}
+
+.decision-card:hover{
+transform:translateY(-8px);
+border-color:#ffc928;
+}
+
+.decision-number{
+color:#ffc928;
+font-size:13px;
+font-weight:900;
+letter-spacing:2px;
+margin-bottom:22px;
+}
+
+.decision-card h3{
+font-size:30px;
+margin-bottom:16px;
+}
+
+.decision-card p{
+color:#bdbdbd;
+line-height:1.8;
+}
+
+
+/* ============================================================
+   ENTERPRISE SOLUTIONS
+============================================================ */
+
+.industry-command{
+padding:100px 6%;
+}
+
+.industry-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.industry-card{
+background:#181818;
+border:1px solid rgba(255,201,40,.16);
+border-radius:24px;
+padding:34px;
+transition:.3s;
+}
+
+.industry-card:hover{
+transform:translateY(-8px);
+border-color:#ffc928;
+}
+
+.industry-card h3{
+font-size:30px;
+margin-bottom:18px;
+}
+
+.industry-card p{
+color:#bdbdbd;
+line-height:1.8;
+}
