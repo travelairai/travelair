@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #05070d;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 8%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.nav a {
+  color: #cfd6e6;
+  text-decoration: none;
+  margin-left: 28px;
+  font-size: 14px;
+}
+
+.hero {
+  min-height: 85vh;
+  padding: 120px 8%;
+  max-width: 1100px;
+}
+
+.eyebrow {
+  color: #7db7ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 1.05;
+  max-width: 900px;
+  margin-bottom: 24px;
+}
+
+.hero-text {
+  color: #cfd6e6;
+  font-size: 20px;
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-right: 12px;
+  font-weight: 600;
+}
+
+.primary {
+  background: #ffffff;
+  color: #05070d;
+}
+
+.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
