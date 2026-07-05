@@ -1,72 +1,49 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 const revealItems = document.querySelectorAll(
-".feature-card, .solution-card, .step-card, .dash-widget, .command-card"
+".feature-card, .solution-card, .step-card, .command-widget, .visual-card, .command-map"
 );
 
 const observer = new IntersectionObserver((entries) => {
-
 entries.forEach((entry) => {
-
 if (entry.isIntersecting) {
-
-entry.target.style.opacity = "1";
-entry.target.style.transform = "translateY(0px)";
+entry.target.classList.add("visible");
 observer.unobserve(entry.target);
-
 }
-
 });
-
 }, {
-
 threshold: 0.15
-
 });
 
 revealItems.forEach((item) => {
-
-item.style.opacity = "0";
-item.style.transform = "translateY(30px)";
-item.style.transition = "all .6s ease";
-
+item.classList.add("reveal");
 observer.observe(item);
-
 });
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
 link.addEventListener("click", function(e) {
-
 e.preventDefault();
 
 const target = document.querySelector(this.getAttribute("href"));
 
-if(target){
-
+if (target) {
 target.scrollIntoView({
-
-behavior:"smooth"
-
+behavior: "smooth",
+block: "start"
 });
-
 }
-
 });
-
 });
 
 const globe = document.querySelector(".globe");
 
-window.addEventListener("mousemove",(e)=>{
+window.addEventListener("mousemove", (e) => {
+if (!globe) return;
 
-if(!globe) return;
+const x = (e.clientX / window.innerWidth - 0.5) * 14;
+const y = (e.clientY / window.innerHeight - 0.5) * 14;
 
-const x=(e.clientX/window.innerWidth-.5)*18;
-const y=(e.clientY/window.innerHeight-.5)*18;
-
-globe.style.transform=translateX(-50%) rotateY(${x}deg) rotateX(${-y}deg);
-
+globe.style.transform = rotateY(${x}deg) rotateX(${-y}deg);
 });
 
 });
