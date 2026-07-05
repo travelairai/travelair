@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 const revealItems = document.querySelectorAll(
-".feature-card, .solution-card, .step-card, .command-widget, .visual-card, .command-map"
+".feature-card, .solution-card, .step-card, .command-widget, .executive-card, .network-card"
 );
 
 const observer = new IntersectionObserver((entries) => {
@@ -35,15 +35,15 @@ block: "start"
 });
 });
 
-const globe = document.querySelector(".globe");
+const orb = document.querySelector(".orb-system");
 
 window.addEventListener("mousemove", (e) => {
-if (!globe) return;
+if (!orb) return;
 
 const x = (e.clientX / window.innerWidth - 0.5) * 14;
 const y = (e.clientY / window.innerHeight - 0.5) * 14;
 
-globe.style.transform = rotateY(${x}deg) rotateX(${-y}deg);
+orb.style.transform = translateX(-50%) rotateY(${x}deg) rotateX(${-y}deg);
 });
 
 });
