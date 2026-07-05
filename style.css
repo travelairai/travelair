@@ -1663,3 +1663,43 @@ scroll-behavior:auto!important;
     grid-template-columns:1fr!important;
   }
 }
+
+/* EMERGENCY FIX: keep logo only in header/footer, not giant in page */
+
+main img.brand-logo{
+  display:none!important;
+}
+
+.site-header .brand-logo{
+  display:block!important;
+  height:44px!important;
+  width:auto!important;
+  max-width:220px!important;
+  object-fit:contain!important;
+}
+
+footer .brand-logo{
+  display:block!important;
+  height:38px!important;
+  width:auto!important;
+  max-width:200px!important;
+  object-fit:contain!important;
+  margin:0 auto!important;
+}
+
+.hero{
+  min-height:760px!important;
+  display:grid!important;
+  grid-template-columns:1.05fr .95fr!important;
+  gap:70px!important;
+  align-items:center!important;
+}
+
+.hero-visual{
+  display:block!important;
+}
+
+.command-shell{
+  display:block!important;
+  min-height:520px!important;
+}
