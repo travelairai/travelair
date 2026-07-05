@@ -486,3 +486,30 @@ font-weight:900;
     transform:translateY(-3px);
     box-shadow:0 16px 45px rgba(255,183,0,.5);
 }
+
+/* ---------- TravelAir Gold Wing Logo ---------- */
+
+.brand{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+}
+
+.brand-logo{
+    height:52px;
+    width:auto;
+    display:block;
+    transition:.3s ease;
+}
+
+.brand-logo:hover{
+    transform:scale(1.03);
+}
+
+.footer-logo{
+    height:42px;
+}
+
+.site-header{
+    min-height:92px;
+}
