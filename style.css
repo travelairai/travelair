@@ -2026,3 +2026,78 @@ font-size:42px;
     padding: 72px 6%;
   }
 }
+/* ===== Executive Dashboard ===== */
+
+.dashboard-section{
+    padding:90px 8%;
+    background:#080808;
+}
+
+.dashboard-section h2{
+    max-width:850px;
+    margin:12px 0 40px;
+    font-size:clamp(2rem,4vw,3.5rem);
+}
+
+.dashboard-panel{
+    background:#111;
+    border:1px solid rgba(212,175,55,.18);
+    border-radius:24px;
+    padding:32px;
+}
+
+.dashboard-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#d4af37;
+    margin-bottom:28px;
+    font-weight:600;
+}
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.dashboard-card{
+    background:#161616;
+    border:1px solid rgba(212,175,55,.15);
+    border-radius:18px;
+    padding:24px;
+    transition:.25s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-6px);
+    border-color:#d4af37;
+}
+
+.dashboard-card p{
+    color:#d4af37;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.dashboard-card h3{
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.dashboard-card span{
+    color:rgba(255,255,255,.7);
+    line-height:1.6;
+}
+
+@media(max-width:900px){
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+}
