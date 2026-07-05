@@ -1478,3 +1478,188 @@ scroll-behavior:auto!important;
 }
 
 }
+
+.hero{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  gap:70px!important;
+  align-items:center!important;
+}
+
+.hero-proof{
+  margin-top:48px!important;
+  display:grid!important;
+  grid-template-columns:repeat(3,1fr)!important;
+  gap:18px!important;
+}
+
+.hero-proof div{
+  padding:22px!important;
+  border-radius:22px!important;
+  background:rgba(255,255,255,.05)!important;
+  border:1px solid rgba(212,175,55,.25)!important;
+}
+
+.hero-proof strong{
+  display:block!important;
+  color:#f6d76d!important;
+  font-size:28px!important;
+  margin-bottom:8px!important;
+}
+
+.hero-proof span{
+  display:block!important;
+  color:#c8c1af!important;
+}
+
+.hero-visual{
+  display:block!important;
+}
+
+.command-shell{
+  display:block!important;
+  padding:34px!important;
+  border-radius:34px!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03))!important;
+  border:1px solid rgba(212,175,55,.32)!important;
+  box-shadow:0 35px 100px rgba(0,0,0,.55)!important;
+}
+
+.gold-globe{
+  height:320px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  position:relative!important;
+}
+
+.globe-core{
+  width:130px!important;
+  height:130px!important;
+  border-radius:50%!important;
+  background:radial-gradient(circle,#f6d76d,#d4af37,#7c5d10)!important;
+  box-shadow:0 0 90px rgba(212,175,55,.55)!important;
+}
+
+.ring{
+  position:absolute!important;
+  border:1px solid rgba(212,175,55,.35)!important;
+  border-radius:50%!important;
+}
+
+.ring-one{width:280px!important;height:280px!important;}
+.ring-two{width:220px!important;height:310px!important;}
+.ring-three{width:340px!important;height:190px!important;}
+
+.globe-dot{
+  position:absolute!important;
+  width:13px!important;
+  height:13px!important;
+  border-radius:50%!important;
+  background:#f6d76d!important;
+  box-shadow:0 0 20px #d4af37!important;
+}
+
+.dot-one{top:55px!important;left:45%!important;}
+.dot-two{top:120px!important;right:22%!important;}
+.dot-three{bottom:75px!important;left:28%!important;}
+.dot-four{bottom:110px!important;right:35%!important;}
+
+.live-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,1fr)!important;
+  gap:16px!important;
+}
+
+.live-grid div{
+  padding:20px!important;
+  border-radius:20px!important;
+  background:rgba(0,0,0,.45)!important;
+  border:1px solid rgba(212,175,55,.2)!important;
+}
+
+.live-grid small{
+  display:block!important;
+  color:#999!important;
+  font-size:11px!important;
+  text-transform:uppercase!important;
+  letter-spacing:2px!important;
+  margin-bottom:8px!important;
+}
+
+.live-grid strong{
+  display:block!important;
+  color:white!important;
+  font-size:22px!important;
+}
+
+.card-grid{
+  display:grid!important;
+  gap:26px!important;
+}
+
+.card-grid.three{
+  grid-template-columns:repeat(3,1fr)!important;
+}
+
+.card-grid.four{
+  grid-template-columns:repeat(4,1fr)!important;
+}
+
+.card-grid article,
+.signal-stack article,
+.workflow div{
+  padding:34px!important;
+  border-radius:28px!important;
+  background:rgba(255,255,255,.055)!important;
+  border:1px solid rgba(212,175,55,.22)!important;
+  box-shadow:0 25px 80px rgba(0,0,0,.35)!important;
+}
+
+.command-grid{
+  display:grid!important;
+  grid-template-columns:1.35fr .65fr!important;
+  gap:34px!important;
+}
+
+.map-panel{
+  padding:34px!important;
+  border-radius:34px!important;
+  background:rgba(255,255,255,.055)!important;
+  border:1px solid rgba(212,175,55,.22)!important;
+}
+
+.network-map{
+  height:430px!important;
+  border-radius:28px!important;
+  background:#0b0b0b!important;
+  border:1px solid rgba(212,175,55,.18)!important;
+  position:relative!important;
+}
+
+.signal-stack{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:22px!important;
+}
+
+.workflow{
+  display:grid!important;
+  grid-template-columns:repeat(4,1fr)!important;
+  gap:24px!important;
+}
+
+@media(max-width:900px){
+  .hero,
+  .command-grid{
+    grid-template-columns:1fr!important;
+  }
+
+  .card-grid.three,
+  .card-grid.four,
+  .workflow,
+  .hero-proof,
+  .live-grid{
+    grid-template-columns:1fr!important;
+  }
+}
