@@ -2214,3 +2214,61 @@ v.dashboard-section{
         grid-template-columns:1fr;
     }
 }
+/* ===== Premium Motion ===== */
+
+section {
+  animation: sectionFadeUp .8s ease both;
+}
+
+@keyframes sectionFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.platform-card,
+.dashboard-card,
+.kpi-card,
+.workflow-step,
+.advantage-card {
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.platform-card:hover,
+.dashboard-card:hover,
+.kpi-card:hover,
+.workflow-step:hover,
+.advantage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 55px rgba(0,0,0,.55);
+}
+
+.button,
+.button-gold {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.button:hover,
+.button-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 28px rgba(212,175,55,.65);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  section,
+  .platform-card,
+  .dashboard-card,
+  .kpi-card,
+  .workflow-step,
+  .advantage-card,
+  .button,
+  .button-gold {
+    animation: none;
+    transition: none;
+  }
+}
