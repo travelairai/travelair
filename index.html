@@ -4,20 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TravelAir.ai™ — The Future of Travel Starts Here</title>
-  <meta name="description" content="AI trip planning for flights, hotels, cruises, private jets, cars, yachts & more.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-[#0a0c10] text-slate-200">
-
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 py-5 bg-black/90 backdrop-blur-md border-b border-white/10">
+  <nav class="fixed top-0 left-0 right-0 z-50 py-5 bg-black/90 backdrop-blur border-b border-white/10">
     <div class="max-w-screen-2xl mx-auto px-8 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <div class="w-9 h-9 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex items-center justify-center text-black text-2xl">✈️</div>
         <div class="text-3xl font-bold tracking-tighter">TravelAir<span class="text-amber-400">.ai</span><sup class="text-xs">™</sup></div>
       </div>
-      <div class="hidden md:flex items-center gap-8 text-sm">
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="#" class="hover:text-amber-400">Home</a>
         <a href="#" class="hover:text-amber-400">Trips</a>
         <a href="#" class="hover:text-amber-400">Flights</a>
@@ -29,17 +27,16 @@
         <a href="#" class="hover:text-amber-400">About</a>
       </div>
       <div class="flex items-center gap-4">
-        <button class="hidden sm:block text-sm font-medium">Sign In</button>
+        <button class="hidden sm:block text-sm">Sign In</button>
         <button class="bg-amber-400 hover:bg-amber-300 text-black px-6 py-2.5 rounded-2xl font-semibold">Join Free — It's Free to Plan</button>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero pt-20 relative">
-    <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/70 to-black"></div>
+  <section class="hero pt-20 relative" style="background-image: url('hero-bg.jpg'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black"></div>
     <div class="max-w-screen-2xl mx-auto px-8 pt-12 grid lg:grid-cols-12 gap-12 relative z-10">
-      <!-- Left -->
       <div class="lg:col-span-7">
         <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full text-sm mb-6">
           <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
@@ -48,28 +45,24 @@
         <h1 class="text-6xl lg:text-7xl font-bold tracking-tighter leading-none">The Future of<br>Travel Starts Here</h1>
         <p class="mt-6 text-xl max-w-lg">AI trip planning for flights, hotels, cruises, private jets, cars, yachts & more. One conversation. One itinerary. Completely free.</p>
         
-        <div class="mt-8 bg-white/10 border border-white/20 rounded-3xl p-2 flex">
+        <div class="mt-8 bg-white/10 border border-white/20 rounded-3xl p-2 flex items-center">
           <input id="hero-search" type="text" class="flex-1 bg-transparent px-6 py-4 outline-none text-lg" placeholder="Where do you want to go?">
-          <button onclick="alert('Chat opened! In full version this triggers the AI chat.')" class="bg-amber-400 text-black px-8 rounded-3xl font-semibold">Plan</button>
+          <button onclick="alert('Chat triggered in full version')" class="bg-amber-400 text-black px-8 py-4 rounded-3xl font-semibold">Plan</button>
         </div>
       </div>
 
-      <!-- Chat Panel -->
+      <!-- Chat -->
       <div class="lg:col-span-5">
-        <div class="bg-[#111317] border border-white/10 rounded-3xl p-6 shadow-2xl">
+        <div class="bg-[#111317] border border-white/10 rounded-3xl p-6 shadow-2xl h-full">
           <div class="flex items-center gap-3 mb-6">
             <div class="w-8 h-8 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex items-center justify-center text-black font-bold">TA</div>
             <div>
               <div class="font-semibold">TravelAir AI</div>
-              <div class="text-emerald-400 text-sm">● Online</div>
+              <div class="text-emerald-400 text-sm flex items-center gap-1"><span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>Online</div>
             </div>
           </div>
-          <div class="h-80 bg-[#0a0c10] rounded-2xl p-4 overflow-y-auto text-sm" id="chat-window">
-            <p class="mb-4">Hi! I'm your AI Travel Assistant. I'll create the perfect trip for you.</p>
-          </div>
-          <div class="mt-4 flex gap-2">
-            <input type="text" class="flex-1 bg-[#1f2937] border border-white/10 rounded-2xl px-5 py-3 text-sm" placeholder="Ask me anything...">
-            <button class="bg-amber-400 text-black px-6 rounded-2xl">Send</button>
+          <div class="h-80 bg-[#0a0c10] rounded-2xl p-4 text-sm overflow-y-auto" id="chat-window">
+            Hi! I'm your AI Travel Assistant. I'll create the perfect trip for you.
           </div>
         </div>
       </div>
