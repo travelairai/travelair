@@ -692,3 +692,133 @@ document.addEventListener("DOMContentLoaded", function () {
       .replaceAll("'", "&#039;");
   }
 });
+
+/* TravelAir.ai — Planner Upgrade Add-On Phase 2 */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const plannerButtons = document.querySelectorAll(
+    ".destination-card, .trip-card, .travel-card, .option-card"
+  );
+
+  plannerButtons.forEach(function (card) {
+    card.addEventListener("click", function () {
+      plannerButtons.forEach(function (item) {
+        item.classList.remove("selected");
+      });
+
+      card.classList.add("selected");
+
+      const destinationInput =
+        document.querySelector("#destination") ||
+        document.querySelector('[name="destination"]');
+
+      const cardTitle =
+        card.querySelector("h3") ||
+        card.querySelector("h4") ||
+        card.querySelector(".card-title");
+
+      if (destinationInput && cardTitle) {
+        destinationInput.value = cardTitle.textContent.trim();
+      }
+    });
+  });
+
+  const allInputs = document.querySelectorAll(
+    "#destination, #travelers, #days, #budget, #travelStyle, #travel-style, .planner-form input, .planner-form select, .trip-form input, .trip-form select"
+  );
+
+  allInputs.forEach(function (input) {
+    input.addEventListener("input", updateLivePlannerPreview);
+    input.addEventListener("change", updateLivePlannerPreview);
+  });
+
+  function updateLivePlannerPreview() {
+    const preview =
+      document.querySelector("#livePlannerPreview") ||
+      document.querySelector(".live-planner-preview");
+
+    if (!preview) return;
+
+    const destination =
+      getValue("#destination") ||
+      getValue('[name="destination"]') ||
+      "your destination";
+
+    const travelers =
+      Number(getValue("#travelers") || getValue('[name="travelers"]')) || 2;
+
+    const days =
+      Number(getValue("#days") || getValue('[name="days"]')) || 5;
+
+    const budget =
+      getValue("#budget") ||
+      getValue('[name="budget"]') ||
+      "premium";
+
+    const style =
+      getValue("#travelStyle") ||
+      getValue("#travel-style") ||
+      getValue('[name="travelStyle"]') ||
+      "luxury";
+
+    const estimate = getPlannerEstimate(budget, travelers, days);
+
+    preview.innerHTML = `
+      <div class="live-preview-card">
+        <span>Live AI Preview</span>
+        <h3>${cleanText(destination)}</h3>
+        <p>${days} days · ${travelers} traveler${travelers === 1 ? "" : "s"} · ${cleanText(style)} travel</p>
+        <strong>$${estimate.total.toLocaleString()}</strong>
+      </div>
+    `;
+  }
+
+  function getPlannerEstimate(budget, travelers, days) {
+    const rates = {
+      value: 175,
+      standard: 300,
+      premium: 550,
+      luxury: 950,
+      executive: 1250
+    };
+
+    const selectedRate = rates[String(budget).toLowerCase()] || rates.premium;
+
+    return {
+      total: Math.round(selectedRate * travelers * days)
+    };
+  }
+
+  function getValue(selector) {
+    const element = document.querySelector(selector);
+    return element ? element.value.trim() : "";
+  }
+
+  function cleanText(value) {
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  updateLivePlannerPreview();
+
+  const fakeAiButtons = document.querySelectorAll(
+    ".generate-btn, .planner-submit, .ai-plan-btn, .build-trip-btn"
+  );
+
+  fakeAiButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      button.classList.add("loading");
+      const originalText = button.textContent;
+      button.textContent = "Building AI Trip...";
+
+      setTimeout(function () {
+        button.classList.remove("loading");
+        button.textContent = originalText;
+      }, 1200);
+    });
+  });
+});
