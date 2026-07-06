@@ -822,3 +822,141 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+[8:51 PM, 7/5/2026] ..: /* TravelAir.ai — Planner Upgrade Styles Phase 2 */
+
+.destination-card,
+.trip-card,
+.travel-card,
+.option-card {
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.destination-card:hover,
+.trip-card:hover,
+.travel-card:hover,
+.option-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 209, 102, 0.5);
+  box-shadow: 0 22px 60px rgba(255, 209, 102, 0.12);
+}
+
+.destination-card.selected,
+.trip-card.selected,
+.travel-card.selected,
+.option-card.selected {
+  border-color: rgba(255, 209, 102, 0.9);
+  box-shadow:
+    0 0 0 1px rgba(255, 209, 102, 0.45),
+    0 24px 70px rgba(255, 209, 102, 0.18);
+}
+
+.live-preview-card {
+  margin-top: 18px;
+  padding: 22px;
+  border-radius: 24px;
+  border: 1px so…
+[8:52 PM, 7/5/2026] ..: /* ===== TravelAir.ai AI Engine Phase 3 ===== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+const destinations = {
+"Miami":{
+hotel:"The Setai Miami Beach",
+airport:"MIA",
+flight:"$325",
+weather:"86°F",
+highlights:["South Beach","Brickell","Little Havana","Luxury Yacht Charter"]
+},
+"Paris":{
+hotel:"Four Seasons George V",
+airport:"CDG",
+flight:"$1,140",
+weather:"74°F",
+highlights:["Eiffel Tower","Louvre","Seine River Cruise","Michelin Dining"]
+},
+"Dubai":{
+hotel:"Burj Al Arab",
+airport:"DXB",
+flight:"$1,390",
+weather:"101°F",
+highlights:["Burj Khalifa","Desert Safari","Dubai Marina","Luxury Shopping"]
+},
+"Tokyo":{
+hotel:"Aman Tokyo",
+airport:"HND",
+flight:"$1,260",
+weather:"82°F",
+highlights:["Shibuya","Mt. Fuji","Tsukiji","Akihabara"]
+},
+"London":{
+hotel:"The Savoy",
+airport:"LHR",
+flight:"$960",
+weather:"69°F",
+highlights:["Big Ben","Buckingham Palace","Tower Bridge","West End"]
+}
+};
+
+const destinationInput=document.querySelector("#destination");
+
+if(!destinationInput) return;
+
+const planner=document.querySelector("#tripResult");
+
+destinationInput.addEventListener("change",updateDestination);
+
+destinationInput.addEventListener("keyup",updateDestination);
+
+function updateDestination(){
+
+const value=destinationInput.value.trim();
+
+if(!destinations[value]) return;
+
+const trip=destinations[value];
+
+planner.innerHTML=`
+
+<div class="ai-trip-preview">
+
+<div class="ai-header">
+<h2>${value}</h2>
+<p>${trip.weather}</p>
+</div>
+
+<div class="ai-grid">
+
+<div class="ai-box">
+<span>Airport</span>
+<strong>${trip.airport}</strong>
+</div>
+
+<div class="ai-box">
+<span>Estimated Flight</span>
+<strong>${trip.flight}</strong>
+</div>
+
+<div class="ai-box">
+<span>Recommended Hotel</span>
+<strong>${trip.hotel}</strong>
+</div>
+
+</div>
+
+<h3>Top Experiences</h3>
+
+<ul class="experience-list">
+
+${trip.highlights.map(item=><li>${item}</li>).join("")}
+
+</ul>
+
+</div>
+
+`;
+
+}
+
+});
