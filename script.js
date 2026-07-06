@@ -406,3 +406,289 @@ function bootTravelAir() {
 }
 
 document.addEventListener("DOMContentLoaded", bootTravelAir);
+
+/* TravelAir.ai — Interactive Upgrade Add-On */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const $ = (selector) => document.querySelector(selector);
+  const $$ = (selector) => document.querySelectorAll(selector);
+
+  const year = $("#year");
+  if (year) year.textContent = new Date().getFullYear();
+
+  const navToggle = $(".nav-toggle");
+  const navMenu = $(".nav-menu");
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("click", function () {
+      navToggle.classList.toggle("active");
+      navMenu.classList.toggle("active");
+      document.body.classList.toggle("nav-open");
+    });
+
+    $$(".nav-menu a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navToggle.classList.remove("active");
+        navMenu.classList.remove("active");
+        document.body.classList.remove("nav-open");
+      });
+    });
+  }
+
+  $$('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      const targetId = link.getAttribute("href");
+      if (!targetId || targetId === "#") return;
+
+      const target = document.querySelector(targetId);
+      if (!target) return;
+
+      event.preventDefault();
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  });
+
+  const header = $(".site-header") || $("header");
+
+  window.addEventListener("scroll", function () {
+    if (!header) return;
+    header.classList.toggle("scrolled", window.scrollY > 20);
+  });
+
+  const revealItems = $$(
+    "section, .card, .feature-card, .step-card, .dashboard-card, .pricing-card, .hero-card, .stat-card, .contact-card"
+  );
+
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.14 }
+    );
+
+    revealItems.forEach(function (item) {
+      item.classList.add("reveal-ready");
+      revealObserver.observe(item);
+    });
+  } else {
+    revealItems.forEach(function (item) {
+      item.classList.add("is-visible");
+    });
+  }
+
+  const hero =
+    $(".hero") ||
+    $(".hero-section") ||
+    $(".site-hero") ||
+    document.body;
+
+  if (hero && !$(".travelair-live-layer")) {
+    const liveLayer = document.createElement("div");
+    liveLayer.className = "travelair-live-layer";
+    liveLayer.innerHTML = `
+      <div class="live-globe"></div>
+      <div class="flight-path path-one"><span>✈️</span></div>
+      <div class="flight-path path-two"><span>✈️</span></div>
+      <div class="flight-path path-three"><span>✈️</span></div>
+      <div class="gold-orb orb-one"></div>
+      <div class="gold-orb orb-two"></div>
+      <div class="gold-orb orb-three"></div>
+    `;
+    hero.prepend(liveLayer);
+  }
+
+  if (!$(".travelair-particles")) {
+    const particles = document.createElement("div");
+    particles.className = "travelair-particles";
+
+    for (let i = 0; i < 42; i++) {
+      const particle = document.createElement("span");
+      particle.style.left = Math.random() * 100 + "%";
+      particle.style.top = Math.random() * 100 + "%";
+      particle.style.animationDelay = Math.random() * 8 + "s";
+      particle.style.animationDuration = 8 + Math.random() * 12 + "s";
+      particles.appendChild(particle);
+    }
+
+    document.body.appendChild(particles);
+  }
+
+  if (!$(".travelair-cursor-glow")) {
+    const glow = document.createElement("div");
+    glow.className = "travelair-cursor-glow";
+    document.body.appendChild(glow);
+
+    window.addEventListener("mousemove", function (event) {
+      glow.style.left = event.clientX + "px";
+      glow.style.top = event.clientY + "px";
+    });
+  }
+
+  const tripForm =
+    $("#tripForm") ||
+    $("#trip-form") ||
+    $(".trip-form") ||
+    $(".planner-form");
+
+  const tripResult =
+    $("#tripResult") ||
+    $("#trip-result") ||
+    $(".trip-result") ||
+    $(".planner-result");
+
+  if (tripForm && tripResult) {
+    tripForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const destination =
+        ($("#destination") && $("#destination").value.trim()) ||
+        ($('[name="destination"]') && $('[name="destination"]').value.trim()) ||
+        "Your Destination";
+
+      const travelers =
+        Number(($("#travelers") && $("#travelers").value) ||
+        ($('[name="travelers"]') && $('[name="travelers"]').value)) || 2;
+
+      const days =
+        Number(($("#days") && $("#days").value) ||
+        ($('[name="days"]') && $('[name="days"]').value)) || 5;
+
+      const budgetValue =
+        ($("#budget") && $("#budget").value) ||
+        ($('[name="budget"]') && $('[name="budget"]').value) ||
+        "premium";
+
+      const styleValue =
+        ($("#travelStyle") && $("#travelStyle").value) ||
+        ($("#travel-style") && $("#travel-style").value) ||
+        ($('[name="travelStyle"]') && $('[name="travelStyle"]').value) ||
+        "luxury";
+
+      const budget = calculateTravelBudget(budgetValue, travelers, days);
+
+      tripResult.innerHTML = `
+        <div class="generated-trip-card">
+          <div class="generated-trip-kicker">AI Trip Preview Generated</div>
+          <h3>${escapeHtml(destination)}</h3>
+          <p>
+            TravelAir.ai created a ${days}-day ${escapeHtml(styleValue)} itinerary for ${travelers}
+            traveler${travelers === 1 ? "" : "s"}.
+          </p>
+
+          <div class="generated-trip-grid">
+            <div>
+              <span>Total Estimate</span>
+              <strong>$${budget.total.toLocaleString()}</strong>
+            </div>
+            <div>
+              <span>Hotel Estimate</span>
+              <strong>$${budget.hotel.toLocaleString()}</strong>
+            </div>
+            <div>
+              <span>Dining & Experiences</span>
+              <strong>$${budget.experiences.toLocaleString()}</strong>
+            </div>
+          </div>
+
+          <div class="generated-itinerary">
+            ${buildItinerary(destination, days, styleValue)}
+          </div>
+
+          <button type="button" class="save-trip-btn">Save Trip Preview</button>
+        </div>
+      `;
+
+      tripResult.classList.add("active");
+      tripResult.scrollIntoView({ behavior: "smooth", block: "center" });
+
+      const saveBtn = $(".save-trip-btn");
+      if (saveBtn) {
+        saveBtn.addEventListener("click", function () {
+          saveBtn.textContent = "Trip Preview Saved";
+          saveBtn.classList.add("saved");
+        });
+      }
+    });
+  }
+
+  $$(".demo-btn, .book-demo-btn, .request-demo-btn, .cta-button, .primary-btn").forEach(function (button) {
+    button.addEventListener("click", function (event) {
+      const href = button.getAttribute("href");
+
+      if (href && href.startsWith("#")) return;
+
+      const contact =
+        $("#contact") ||
+        $(".contact") ||
+        $(".contact-section") ||
+        $(".demo-section");
+
+      if (contact) {
+        event.preventDefault();
+        contact.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+
+  function calculateTravelBudget(tier, travelers, days) {
+    const cleanTier = String(tier).toLowerCase();
+
+    const dailyRates = {
+      value: 175,
+      standard: 300,
+      premium: 550,
+      luxury: 950,
+      executive: 1250
+    };
+
+    const rate = dailyRates[cleanTier] || dailyRates.premium;
+    const total = Math.round(rate * travelers * days);
+    const hotel = Math.round(total * 0.42);
+    const experiences = Math.round(total * 0.34);
+
+    return {
+      total: total,
+      hotel: hotel,
+      experiences: experiences
+    };
+  }
+
+  function buildItinerary(destination, days, style) {
+    const safeDestination = escapeHtml(destination);
+    const safeStyle = escapeHtml(style);
+    const totalDays = Math.max(1, Math.min(Number(days) || 5, 14));
+
+    let html = "<ul>";
+
+    for (let day = 1; day <= totalDays; day++) {
+      if (day === 1) {
+        html += <li><strong>Day ${day}:</strong> Arrive in ${safeDestination}, check into your hotel, enjoy a welcome dinner, and explore the area.</li>;
+      } else if (day === totalDays) {
+        html += <li><strong>Day ${day}:</strong> Final breakfast, checkout, airport transfer, and optional last experience before departure.</li>;
+      } else {
+        html += <li><strong>Day ${day}:</strong> Curated ${safeStyle} experience with sightseeing, dining, local culture, and flexible downtime.</li>;
+      }
+    }
+
+    html += "</ul>";
+    return html;
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+});
