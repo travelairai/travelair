@@ -692,3 +692,143 @@ function escapeHTML(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 }                            
+
+  /* TravelAir.ai — Emergency Layout Fix */
+
+body {
+  line-height: 1.5;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  clear: both;
+  overflow: hidden;
+}
+
+.hero {
+  min-height: auto;
+  padding-top: 150px;
+  padding-bottom: 80px;
+  align-items: start;
+}
+
+.hero h1,
+.section-heading h2,
+.future-left h2,
+.waitlist-card h2 {
+  line-height: 0.98 !important;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.hero-copy,
+.section-heading p,
+.future-left p,
+.waitlist-card p,
+.feature-card p,
+.future-card p {
+  line-height: 1.65 !important;
+}
+
+.hero-left {
+  padding-top: 40px;
+}
+
+.hero-ai-panel {
+  max-height: none;
+  align-self: start;
+}
+
+.ai-chat-window {
+  max-height: 270px;
+}
+
+.explore-strip,
+.planner-section,
+.features-section,
+.saved-trips-section,
+.future-section,
+.waitlist-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.category-row {
+  align-items: stretch;
+}
+
+.category-card {
+  min-width: 150px;
+}
+
+.category-card strong,
+.feature-card h3,
+.future-card h3 {
+  line-height: 1.1;
+}
+
+.planner-form label,
+.planner-form input,
+.planner-form select {
+  line-height: 1.2;
+}
+
+.saved-trips-section .section-heading,
+.future-section,
+.waitlist-section {
+  margin-top: 40px;
+}
+
+.site-header {
+  z-index: 9999;
+}
+
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-ai-panel {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 10vw, 82px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 125px;
+  }
+
+  .hero-left {
+    padding-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .section-heading h2,
+  .future-left h2,
+  .waitlist-card h2 {
+    font-size: 42px;
+  }
+
+  .hero-copy {
+    font-size: 16px;
+  }
+
+  .hero-ai-panel,
+  .planner-form,
+  .planner-output,
+  .waitlist-card {
+    padding: 22px;
+  }
+}
