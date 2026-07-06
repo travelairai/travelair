@@ -1,1 +1,734 @@
+landing page travelair.ai
 
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="TravelAir.ai — Enterprise Travel Intelligence Infrastructure. An AI-native decision layer designed to sit above booking systems, synthesizing inputs into decision-ready outcomes." />
+  <meta name="theme-color" content="#0B2A5B" />
+  <title>TravelAir.ai — Enterprise Travel Intelligence Infrastructure</title>
+
+  <style>
+    :root{
+      --bg0:#061a3a;
+      --bg1:#0a2d63;
+      --bg2:#083a76;
+
+      --ink:#eaf2ff;
+      --muted:rgba(234,242,255,.78);
+      --muted2:rgba(234,242,255,.62);
+
+      --glass:rgba(255,255,255,.08);
+      --glass2:rgba(255,255,255,.06);
+      --stroke:rgba(255,255,255,.16);
+      --stroke2:rgba(255,255,255,.11);
+
+      --accent:#4da3ff;
+      --accent2:#2f7fe6;
+      --chip:rgba(255,255,255,.10);
+
+      --radius-xl:26px;
+      --radius-lg:18px;
+      --radius-md:14px;
+
+      --shadow: 0 18px 55px rgba(0,0,0,.35);
+      --shadow2: 0 12px 35px rgba(0,0,0,.28);
+
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:
+        radial-gradient(900px 500px at 16% 10%, rgba(77,163,255,.28), transparent 60%),
+        radial-gradient(700px 420px at 78% 18%, rgba(145,122,255,.22), transparent 62%),
+        radial-gradient(620px 420px at 70% 78%, rgba(62,255,197,.10), transparent 58%),
+        linear-gradient(180deg, var(--bg0), var(--bg1) 45%, var(--bg2));
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+      padding:34px 0 80px;
+    }
+
+    /* Header */
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:22px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width: 240px;
+    }
+    .logo{
+      width:46px;height:46px;
+      border-radius:14px;
+      background:
+        radial-gradient(14px 14px at 30% 32%, rgba(160,220,255,.95), transparent 60%),
+        radial-gradient(20px 18px at 70% 70%, rgba(165,120,255,.80), transparent 60%),
+        radial-gradient(26px 20px at 55% 40%, rgba(77,163,255,.55), transparent 62%),
+        rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      backdrop-filter: blur(10px);
+    }
+    .brand h1{
+      font-size:18px;
+      line-height:1.15;
+      margin:0;
+      letter-spacing:.2px;
+    }
+    .brand p{
+      margin:3px 0 0;
+      color:var(--muted2);
+      font-size:13.2px;
+    }
+
+    .nav{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav a{
+      font-size:13.5px;
+      color:rgba(234,242,255,.82);
+      padding:8px 10px;
+      border-radius:10px;
+      transition: background .15s ease, color .15s ease;
+    }
+    .nav a:hover{
+      background:rgba(255,255,255,.08);
+      color:rgba(255,255,255,.94);
+    }
+
+    /* Badge row */
+    .badgeRow{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:18px 0 18px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 26px rgba(0,0,0,.22);
+      max-width:100%;
+    }
+    .badge .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(77,163,255,.85) 45%, rgba(155,110,255,.70));
+      box-shadow: 0 0 0 6px rgba(77,163,255,.12);
+      flex:0 0 auto;
+    }
+    .badge span{
+      font-size:13.6px;
+      color:rgba(234,242,255,.86);
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* Main grid */
+    .grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .panel{
+      background: var(--glass);
+      border:1px solid var(--stroke);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .heroCard{
+      padding:22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .heroCard:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(420px 280px at 15% 10%, rgba(77,163,255,.20), transparent 60%),
+        radial-gradient(420px 300px at 70% 30%, rgba(165,120,255,.16), transparent 60%),
+        radial-gradient(420px 300px at 70% 90%, rgba(62,255,197,.08), transparent 60%);
+      pointer-events:none;
+    }
+    .heroInner{position:relative}
+
+    .chips{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+    .chip{
+      background: var(--chip);
+      border:1px solid var(--stroke2);
+      color: rgba(234,242,255,.86);
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:12px;
+      letter-spacing:.15px;
+    }
+
+    .title{
+      margin:0;
+      font-size:46px;
+      line-height:1.02;
+      letter-spacing:-.8px;
+      text-shadow: 0 18px 50px rgba(0,0,0,.35);
+    }
+    .lead{
+      margin:14px 0 0;
+      color: var(--muted);
+      font-size:15.6px;
+      line-height:1.55;
+      max-width: 58ch;
+    }
+    .lead b{color:rgba(255,255,255,.92)}
+
+    .ctaStack{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:18px;
+      width:min(420px, 100%);
+    }
+    .cta{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.90);
+      font-weight:600;
+      letter-spacing:.2px;
+      cursor:pointer;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+    }
+    .cta:hover{
+      background: rgba(255,255,255,.09);
+      border-color: rgba(255,255,255,.18);
+    }
+    .cta:active{transform: translateY(1px)}
+    .cta.primary{
+      background: linear-gradient(135deg, rgba(77,163,255,.80), rgba(47,127,230,.78));
+      border-color: rgba(255,255,255,.22);
+      box-shadow: 0 18px 40px rgba(35,110,210,.30);
+    }
+    .cta.primary:hover{
+      background: linear-gradient(135deg, rgba(77,163,255,.86), rgba(47,127,230,.84));
+    }
+    .arrow{opacity:.85}
+
+    /* Right column cards */
+    .stack{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+    .card{
+      padding:18px;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(16px);
+    }
+    .kicker{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .kicker h3{
+      margin:0;
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color: rgba(234,242,255,.78);
+    }
+    .kicker .mini{
+      font-size:12px;
+      color: rgba(234,242,255,.62);
+      white-space:nowrap;
+    }
+
+    .card p{
+      margin:0;
+      color: rgba(234,242,255,.82);
+      font-size:14.2px;
+      line-height:1.55;
+    }
+    .bullets{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .bullets li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:10px 12px;
+      border-radius:14px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      color: rgba(234,242,255,.84);
+      font-size:13.4px;
+      line-height:1.45;
+    }
+    .bullets li:before{
+      content:"";
+      width:8px;height:8px;border-radius:999px;
+      margin-top:6px;
+      background: rgba(77,163,255,.95);
+      box-shadow: 0 0 0 6px rgba(77,163,255,.10);
+      flex:0 0 auto;
+    }
+
+    /* Sections */
+    section{
+      margin-top:22px;
+    }
+    .sectionGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+    }
+    .sectionCard{
+      padding:18px;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(16px);
+    }
+    .sectionCard h4{
+      margin:0 0 10px;
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color: rgba(234,242,255,.78);
+    }
+    .sectionCard p{
+      margin:0;
+      color: rgba(234,242,255,.80);
+      font-size:14.2px;
+      line-height:1.55;
+    }
+    .miniList{
+      margin:12px 0 0;
+      padding-left:18px;
+      color: rgba(234,242,255,.80);
+      font-size:13.6px;
+      line-height:1.55;
+    }
+    .miniList li{margin:6px 0}
+
+    /* Contact */
+    .contact{
+      margin-top:22px;
+      padding:18px;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(16px);
+    }
+    .contactHead{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:12px;
+    }
+    .contactHead h3{
+      margin:0;
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color: rgba(234,242,255,.78);
+    }
+    .contactHead p{
+      margin:0;
+      color: rgba(234,242,255,.70);
+      font-size:13.2px;
+      max-width: 62ch;
+      line-height:1.45;
+    }
+    form{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:10px;
+    }
+    label{display:block; font-size:12px; color: rgba(234,242,255,.76); margin:0 0 6px}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      color: rgba(255,255,255,.92);
+      outline:none;
+      font-size:14px;
+    }
+    input::placeholder, textarea::placeholder{color: rgba(234,242,255,.46)}
+    textarea{min-height:120px; resize:vertical}
+    .full{grid-column: 1 / -1}
+    .submit{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: linear-gradient(135deg, rgba(77,163,255,.82), rgba(47,127,230,.78));
+      color: rgba(255,255,255,.95);
+      font-weight:700;
+      letter-spacing:.2px;
+      cursor:pointer;
+      transition: transform .08s ease, filter .15s ease;
+    }
+    .submit:active{transform: translateY(1px)}
+    .fineprint{
+      margin-top:10px;
+      font-size:12.2px;
+      color: rgba(234,242,255,.56);
+      line-height:1.45;
+    }
+
+    /* Footer */
+    .foot{
+      margin-top:26px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      color: rgba(234,242,255,.56);
+      font-size:12.5px;
+    }
+    .foot a{color: rgba(234,242,255,.72)}
+    .foot a:hover{color: rgba(255,255,255,.92)}
+
+    /* Floating mark (bottom-right) */
+    .mark{
+      position:fixed;
+      right:18px; bottom:16px;
+      width:44px; height:44px;
+      border-radius:999px;
+      background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.95), rgba(77,163,255,.78) 40%, rgba(62,255,197,.35));
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+      opacity:.34;
+      pointer-events:none;
+      transform: rotate(-10deg);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .grid{grid-template-columns: 1fr}
+      .title{font-size:42px}
+      .nav{justify-content:flex-start}
+    }
+    @media (max-width: 560px){
+      .wrap{width: min(var(--max), calc(100% - 26px)); padding:26px 0 70px}
+      .title{font-size:38px}
+      .heroCard{padding:18px}
+      .card{padding:16px}
+      .sectionGrid{grid-template-columns: 1fr}
+      form{grid-template-columns: 1fr}
+      .badge span{font-size:13.2px}
+    }
+
+    /* Anchor offset for sticky-ish header feel */
+    .anchor{scroll-margin-top: 22px;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>TravelAir.ai</h1>
+          <p>Enterprise Travel Intelligence Infrastructure</p>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#problem">Enterprise Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#positioning">Platform Positioning</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="badgeRow">
+      <div class="badge" role="note" aria-label="Positioning badge">
+        <span class="dot" aria-hidden="true"></span>
+        <span><b>Infrastructure</b> — not a booking platform</span>
+      </div>
+    </div>
+
+    <main class="grid">
+      <!-- Left: hero -->
+      <section class="panel heroCard anchor" id="top">
+        <div class="heroInner">
+          <div class="chips" aria-label="Positioning chips">
+            <span class="chip">Enterprise infrastructure</span>
+            <span class="chip">AI-native decision layer</span>
+            <span class="chip">Private asset</span>
+          </div>
+
+          <h2 class="title">Enterprise Travel<br/>Intelligence<br/>Infrastructure</h2>
+
+          <p class="lead">
+            An <b>AI-driven decision layer</b> for optimizing travel planning, routing, and spend across enterprise environments.
+            Designed to sit <b>above booking</b>, synthesizing inputs into <b>decision-ready outcomes</b>.
+          </p>
+
+          <div class="ctaStack" role="group" aria-label="Primary actions">
+            <button class="cta primary" type="button" data-scroll="#contact">
+              <span>Strategic Inquiries</span>
+              <span class="arrow">→</span>
+            </button>
+            <button class="cta" type="button" data-scroll="#usecases">
+              <span>Enterprise Use Cases</span>
+              <span class="arrow">→</span>
+            </button>
+            <button class="cta" type="button" data-scroll="#positioning">
+              <span>Platform Positioning</span>
+              <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: solution + use cases teaser -->
+      <aside class="stack">
+        <section class="card anchor" id="solution">
+          <div class="kicker">
+            <h3>THE SOLUTION</h3>
+            <div class="mini">Decision layer above travel</div>
+          </div>
+
+          <p>
+            TravelAir.ai is positioned as an <b>AI-native travel intelligence layer</b> that sits above enterprise travel infrastructure —
+            coordinating decisions across policy, pricing, routing, and operational constraints.
+          </p>
+
+          <ul class="bullets" aria-label="Solution bullets">
+            <li><b>Synthesize</b> booking, policy, pricing, and preference signals into a single decision surface.</li>
+            <li><b>Optimize</b> for cost, time, compliance, and traveler experience — with auditable tradeoffs.</li>
+            <li><b>Standardize</b> approvals, exceptions, and control across regions, vendors, and workflows.</li>
+          </ul>
+        </section>
+
+        <section class="card anchor" id="usecases">
+          <div class="kicker">
+            <h3>ENTERPRISE USE CASES</h3>
+            <div class="mini">Built for scale</div>
+          </div>
+
+          <ul class="bullets" aria-label="Enterprise use cases">
+            <li>Policy-aware itinerary optimization across multi-city travel and complex constraints.</li>
+            <li>Spend governance: approval flows, preferred inventory, exceptions, and audit trails.</li>
+            <li>Operational coordination across airlines, hotels, ground, and internal travel programs.</li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+
+    <!-- Problem + Positioning -->
+    <section class="sectionGrid">
+      <div class="sectionCard anchor" id="problem">
+        <h4>THE ENTERPRISE PROBLEM</h4>
+        <p>
+          Enterprise travel decisions are fragmented across booking tools, pricing engines, policies, and human judgment.
+          That fragmentation creates inefficiency at scale.
+        </p>
+        <ul class="miniList" aria-label="Enterprise problems list">
+          <li><b>Inefficient routing</b> — multi-city itineraries degrade without centralized optimization.</li>
+          <li><b>Uncontrolled spend</b> — policy, timing, and preference variables remain uncoordinated.</li>
+          <li><b>Compliance drift</b> — approvals, exceptions, and duty-of-care enforcement are inconsistent.</li>
+          <li><b>Vendor fragmentation</b> — outcomes vary across regions, suppliers, and operational teams.</li>
+        </ul>
+      </div>
+
+      <div class="sectionCard anchor" id="positioning">
+        <h4>PLATFORM POSITIONING</h4>
+        <p>
+          TravelAir.ai is a <b>control layer</b> — not a consumer booking interface. The long-term leverage is in owning the
+          intelligence layer that shapes decisions, enforces policy, and standardizes outcomes.
+        </p>
+        <ul class="miniList" aria-label="Platform positioning list">
+          <li><b>Sits above booking</b> — orchestrates decisions across tools, not within a single tool.</li>
+          <li><b>Enterprise-native</b> — policy, approvals, auditability, and governance by design.</li>
+          <li><b>Outcome-driven</b> — consistent routing, spend discipline, and operational coordination.</li>
+          <li><b>Strategic asset</b> — built for platform-level ownership and acquisition-grade positioning.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Status -->
+    <section class="sectionGrid">
+      <div class="sectionCard">
+        <h4>CURRENT STATUS</h4>
+        <p>
+          Privately owned and positioned for strategic partnerships, platform integration, or acquisition discussions.
+          Inquiry-led conversations only.
+        </p>
+        <ul class="miniList" aria-label="Status list">
+          <li>Architecture and scope are defined at an enterprise layer (policy + decision orchestration).</li>
+          <li>Strategic conversations are evaluated by fit and buyer intent.</li>
+          <li>Design-partner discussions available for qualified enterprise or platform operators.</li>
+        </ul>
+      </div>
+
+      <div class="sectionCard">
+        <h4>WHO THIS IS FOR</h4>
+        <p>
+          Buyers and operators who think in systems: travel platforms, TMCs, large enterprise travel programs,
+          fintech/expense ecosystems, and infrastructure-minded acquirers.
+        </p>
+        <ul class="miniList" aria-label="Audience list">
+          <li>Enterprise travel / spend decision owners</li>
+          <li>Platforms consolidating routing + policy intelligence</li>
+          <li>Acquirers seeking category-defining naming and positioning</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact anchor" id="contact">
+      <div class="contactHead">
+        <div>
+          <h3>CONTACT</h3>
+          <p>
+            Strategic & enterprise inquiries only. If you’re evaluating platform integration, acquisition, or partnership fit,
+            submit a request below.
+          </p>
+        </div>
+      </div>
+
+      <!-- Formspree (locked) -->
+      <form action="https://formspree.io/f/xnjjngql" method="POST">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@company.com" required />
+        </div>
+
+        <div>
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" placeholder="Company / organization" />
+        </div>
+
+        <div>
+          <label for="role">Role</label>
+          <input id="role" name="role" type="text" placeholder="Title / role" />
+        </div>
+
+        <div class="full">
+          <label for="type">Inquiry Type</label>
+          <select id="type" name="inquiry_type" required>
+            <option value="" disabled selected>Select one…</option>
+            <option>Strategic partnership</option>
+            <option>Enterprise platform integration</option>
+            <option>Acquisition / asset discussion</option>
+            <option>Design partner inquiry</option>
+            <option>Other (qualified)</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Share the context, the objective, and what a successful outcome looks like." required></textarea>
+        </div>
+
+        <!-- Helpful metadata -->
+        <input type="hidden" name="asset" value="TravelAir.ai" />
+        <input type="hidden" name="source" value="travelair.ai / github pages" />
+
+        <div class="full">
+          <button class="submit" type="submit">
+            <span>Send inquiry</span>
+            <span class="arrow">→</span>
+          </button>
+          <div class="fineprint">
+            By submitting, you confirm this is a strategic / enterprise inquiry. No consumer support requests.
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <footer class="foot">
+      <div>© <span id="y"></span> TravelAir.ai — Privately owned.</div>
+      <div>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+  </div>
+
+  <div class="mark" aria-hidden="true"></div>
+
+  <script>
+    // Locked behaviors: smooth scroll buttons + year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('[data-scroll]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sel = btn.getAttribute('data-scroll');
+        const el = document.querySelector(sel);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
