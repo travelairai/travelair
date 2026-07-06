@@ -1,526 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>TravelAir.ai | Free AI Travel Planner</title>
-  <meta name="description" content="Plan complete trips for free with TravelAir.ai. Flights, hotels, cruises, rental cars, private jets, yachts, experiences, and AI itineraries in one place." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css" />
+<title>TravelAir.ai | Luxury AI Travel Platform</title>
+
+<meta name="description" content="Plan extraordinary trips with AI. Flights, Hotels, Cruises, Villas, Experiences and more.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-  <div class="site-bg">
-    <div class="star-field"></div>
-    <div class="gold-glow glow-one"></div>
-    <div class="gold-glow glow-two"></div>
-  </div>
 
-  <header class="site-header">
-    <a href="#home" class="brand">
-      <div class="wing-logo">
-        <span>TA</span>
+<div class="background-grid"></div>
+<div class="background-glow"></div>
+<div class="background-particles"></div>
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<div class="logo-icon">
+✦
+</div>
+
+<div class="logo-text">
+
+<h2>TravelAir<span>.ai</span></h2>
+
+<p>Luxury AI Travel Platform</p>
+
+</div>
+
+</div>
+
+<div class="nav-links">
+
+<a href="#">Flights</a>
+<a href="#">Hotels</a>
+<a href="#">Cruises</a>
+<a href="#">Experiences</a>
+<a href="#">Pricing</a>
+
+</div>
+
+<div class="nav-buttons">
+
+<button class="login-btn">
+Login
+</button>
+
+<button class="waitlist-btn">
+Join Waitlist
+</button>
+
+</div>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<div class="badge">
+
+FOUNDING MEMBER ACCESS
+
+</div>
+
+<h1>
+
+The Future of Luxury Travel Powered by Artificial Intelligence
+
+</h1>
+
+<p>
+
+Plan complete vacations in seconds using AI.
+Flights.
+Hotels.
+Cruises.
+Private Jets.
+Yachts.
+Experiences.
+
+All inside one premium platform.
+
+</p>
+
+<div class="hero-search">
+
+<input
+type="text"
+placeholder="Where would you like to travel?"
+>
+
+<button>
+
+Plan My Trip
+
+</button>
+
+</div>
+
+<div class="travel-categories">
+
+<button>Flights</button>
+
+<button>Hotels</button>
+
+<button>Cruises</button>
+
+<button>Private Jets</button>
+
+<button>Villas</button>
+
+<button>Experiences</button>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="hero-globe">
+
+<div class="globe-ring ring1"></div>
+
+<div class="globe-ring ring2"></div>
+
+<div class="globe-ring ring3"></div>
+
+<div class="globe-core"></div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="platform-preview">
+
+  <div class="ai-panel">
+
+    <div class="panel-header">
+      <div>
+        <span class="panel-dot"></span>
+        <span class="panel-title">TravelAir AI Concierge</span>
       </div>
-      <strong>Travel<span>Air</span>.ai</strong>
-    </a>
-
-    <nav class="nav-menu" id="navMenu">
-      <a href="#home">Home</a>
-      <a href="#planner">Trips</a>
-      <a href="#explore">Explore</a>
-      <a href="#features">Features</a>
-      <a href="#waitlist">Join</a>
-    </nav>
-
-    <div class="nav-actions">
-      <a href="#signin" class="btn btn-dark">Sign In</a>
-      <a href="#waitlist" class="btn btn-gold">Join Free</a>
+      <span class="panel-status">Live</span>
     </div>
 
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
+    <div class="chat-window">
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-globe">
-        <div class="globe-core"></div>
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="orbit orbit-three"></div>
-        <span class="plane plane-one">✈️</span>
-        <span class="plane plane-two">✈️</span>
-        <span class="plane plane-three">✈️</span>
+      <div class="chat-message ai">
+        Tell me your destination, dates, budget, and travel style.
       </div>
 
-      <div class="hero-left">
-        <div class="eyebrow">100% Free To Plan</div>
-
-        <h1>
-          The Future of
-          <span>Travel Starts Here</span>
-        </h1>
-
-        <p class="hero-copy">
-          Plan your entire trip with AI for free. Flights. Hotels. Cruises.
-          Rental cars. Private jets. Yachts. Experiences. One conversation.
-          One itinerary.
-        </p>
-
-        <form class="hero-search" id="heroSearch">
-          <span class="spark">✦</span>
-          <input
-            id="heroDestination"
-            type="text"
-            placeholder="Where do you want to go?"
-            autocomplete="off"
-          />
-          <button type="submit" aria-label="Plan trip">➤</button>
-        </form>
-
-        <div class="quick-prompts">
-          <button type="button" data-prompt="7-day Bali trip">🌴 7-day Bali trip</button>
-          <button type="button" data-prompt="Winter in Switzerland">❄️ Winter in Switzerland</button>
-          <button type="button" data-prompt="Italy food and culture">🏛️ Italy food & culture</button>
-          <button type="button" data-prompt="Luxury Greece under 8000">More ideas ›</button>
-        </div>
-
-        <div class="hero-stats">
-          <div>
-            <strong data-count="24842">24,842+</strong>
-            <span>Founding Members</span>
-          </div>
-          <div>
-            <strong data-count="132">132+</strong>
-            <span>Countries Joined</span>
-          </div>
-          <div>
-            <strong data-count="76851">76,851+</strong>
-            <span>Trips Planned</span>
-          </div>
-          <div>
-            <strong>4.9/5</strong>
-            <span>From our members</span>
-          </div>
-        </div>
+      <div class="chat-message user">
+        Plan a luxury 5 day trip to Santorini.
       </div>
 
-      <aside class="hero-ai-panel">
-        <div class="ai-panel-header">
-          <div class="ai-title">
-            <div class="ai-avatar">TA</div>
-            <div>
-              <strong>TravelAir AI</strong>
-              <span><i></i> Online</span>
-            </div>
-          </div>
-          <div class="panel-controls">
-            <span>—</span>
-            <span>×</span>
-          </div>
-        </div>
-
-        <div class="ai-chat-window" id="aiChatWindow">
-          <div class="chat-row bot">
-            <div class="chat-avatar">TA</div>
-            <div class="chat-bubble">
-              <p>Hi. I’m your AI travel assistant. I’ll create the perfect trip for you.</p>
-            </div>
-          </div>
-
-          <div class="chat-row user">
-            <div class="chat-bubble gold">
-              <p>Plan a 7-day luxury trip to Greece under $8,000 for two people.</p>
-            </div>
-          </div>
-
-          <div class="chat-row bot">
-            <div class="chat-avatar">TA</div>
-            <div class="chat-bubble">
-              <p>Perfect. I created a 7-day Greece itinerary with flights, hotels, activities, and daily plans.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="featured-trip-card">
-          <div class="trip-card-top">
-            <strong>Your Greece Itinerary</strong>
-            <span>7 DAYS</span>
-          </div>
-
-          <div class="trip-image greece-image"></div>
-
-          <h3>Athens • Santorini • Mykonos</h3>
-
-          <div class="trip-meta">
-            <span>👥 2 Travelers</span>
-            <span>🛡️ Luxury</span>
-          </div>
-
-          <div class="trip-total">
-            <span>Est. Total</span>
-            <strong id="heroTripTotal">$7,842</strong>
-          </div>
-
-          <button type="button" class="btn btn-gold" id="viewHeroItinerary">
-            View Full Itinerary
-          </button>
-
-          <button type="button" class="btn btn-outline" id="customizeHeroTrip">
-            Customize Trip
-          </button>
-        </div>
-
-        <form class="mini-chat-form" id="miniChatForm">
-          <input id="miniChatInput" type="text" placeholder="Ask me anything..." autocomplete="off" />
-          <button type="submit">➤</button>
-        </form>
-
-        <div class="founding-card">
-          <div class="crown">♛</div>
-          <h3>Be a Founding Member</h3>
-          <p>Join early and get access to new features, private updates, and special launch perks.</p>
-
-          <form id="heroWaitlistForm" action="https://formspree.io/f/mgooobvd" method="POST">
-            <input type="email" name="email" placeholder="Enter your email" required />
-            <button type="submit">Join the Waitlist</button>
-          </form>
-
-          <small>Join 24,842+ other travelers</small>
-        </div>
-      </aside>
-    </section>
-
-    <section class="explore-strip" id="explore">
-      <div class="strip-header">
-        <div>
-          <span>Explore the World Your Way</span>
-          <h2>Everything travel, planned by AI.</h2>
-        </div>
-        <a href="#planner">View All Destinations ›</a>
+      <div class="chat-message ai">
+        I found premium flights, cliffside hotels, private transfers, sunset dining, and yacht options.
       </div>
 
-      <div class="category-row">
-        <button type="button" class="category-card" data-service="Flights">
-          <div class="category-image flights"></div>
-          <span>✈️</span>
-          <strong>Flights</strong>
-          <small>Find the best routes</small>
-        </button>
+    </div>
 
-        <button type="button" class="category-card" data-service="Hotels">
-          <div class="category-image hotels"></div>
-          <span>🏨</span>
-          <strong>Hotels</strong>
-          <small>Handpicked stays</small>
-        </button>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Ask TravelAir AI to plan anything...">
+      <button id="chatSend">Send</button>
+    </div>
 
-        <button type="button" class="category-card" data-service="Cruises">
-          <div class="category-image cruises"></div>
-          <span>🚢</span>
-          <strong>Cruises</strong>
-          <small>Sail in luxury</small>
-        </button>
+  </div>
 
-        <button type="button" class="category-card" data-service="Rental Cars">
-          <div class="category-image cars"></div>
-          <span>🚘</span>
-          <strong>Rental Cars</strong>
-          <small>Drive your journey</small>
-        </button>
+  <div class="trip-card featured-trip">
 
-        <button type="button" class="category-card" data-service="Private Jets">
-          <div class="category-image jets"></div>
-          <span>🛩️</span>
-          <strong>Private Jets</strong>
-          <small>Fly private</small>
-        </button>
+    <div class="trip-top">
+      <span>AI Trip Overview</span>
+      <strong>$4,820 est.</strong>
+    </div>
 
-        <button type="button" class="category-card" data-service="Yachts">
-          <div class="category-image yachts"></div>
-          <span>🛥️</span>
-          <strong>Yachts</strong>
-          <small>Live on the water</small>
-        </button>
+    <h3>Santorini Luxury Escape</h3>
 
-        <button type="button" class="category-card" data-service="Experiences">
-          <div class="category-image experiences"></div>
-          <span>🎟️</span>
-          <strong>Experiences</strong>
-          <small>Unforgettable moments</small>
-        </button>
+    <p>5 days • Flights • Hotel • Yacht • Dining • Experiences</p>
+
+    <div class="trip-progress">
+      <span style="width: 78%;"></span>
+    </div>
+
+    <div class="trip-details">
+      <div>
+        <strong>Flight</strong>
+        <small>Miami to Athens</small>
       </div>
-    </section>
-
-    <section class="planner-section" id="planner">
-      <div class="section-heading">
-        <span>Free AI Trip Planner</span>
-        <h2>Build a complete itinerary in seconds.</h2>
-        <p>Enter your destination, budget, trip length, and travel style. TravelAir AI will generate a complete front-end trip plan instantly.</p>
+      <div>
+        <strong>Hotel</strong>
+        <small>Caldera Suite</small>
       </div>
-
-      <div class="planner-shell">
-        <form class="planner-form" id="tripPlannerForm">
-          <label>
-            Destination
-            <input id="destinationInput" type="text" placeholder="Greece, Bali, Paris, Dubai..." />
-          </label>
-
-          <label>
-            Travelers
-            <select id="travelersInput">
-              <option value="1">1 Traveler</option>
-              <option value="2" selected>2 Travelers</option>
-              <option value="3">3 Travelers</option>
-              <option value="4">4 Travelers</option>
-              <option value="5">5 Travelers</option>
-            </select>
-          </label>
-
-          <label>
-            Trip Length
-            <select id="daysInput">
-              <option value="3">3 Days</option>
-              <option value="5">5 Days</option>
-              <option value="7" selected>7 Days</option>
-              <option value="10">10 Days</option>
-              <option value="14">14 Days</option>
-            </select>
-          </label>
-
-          <label>
-            Travel Style
-            <select id="styleInput">
-              <option value="Luxury" selected>Luxury Getaway</option>
-              <option value="Family">Family Vacation</option>
-              <option value="Business">Business Travel</option>
-              <option value="Adventure">Adventure Trip</option>
-              <option value="Romantic">Romantic Escape</option>
-            </select>
-          </label>
-
-          <label>
-            Estimated Budget
-            <input id="budgetInput" type="number" placeholder="8000" value="8000" />
-          </label>
-
-          <label>
-            Trip Type
-            <select id="tripTypeInput">
-              <option value="Flights + Hotel" selected>Flights + Hotel</option>
-              <option value="All Inclusive">All Inclusive</option>
-              <option value="Private Jet">Private Jet</option>
-              <option value="Yacht + Hotel">Yacht + Hotel</option>
-              <option value="Cruise">Cruise</option>
-            </select>
-          </label>
-
-          <button class="btn btn-gold planner-submit" type="submit">
-            Generate My Free AI Trip Plan
-          </button>
-        </form>
-
-        <div class="planner-output" id="plannerOutput">
-          <div class="empty-plan">
-            <span>TA</span>
-            <h3>Your trip plan will appear here.</h3>
-            <p>Enter your destination and generate a plan to see your itinerary.</p>
-          </div>
-        </div>
+      <div>
+        <strong>Experience</strong>
+        <small>Private Yacht</small>
       </div>
-    </section>
+    </div>
 
-    <section class="features-section" id="features">
+  </div>
 
-      <div class="feature-grid">
+</section>
 
-        <div class="feature-card">
-          <div class="feature-icon">🧠</div>
-          <h3>AI Powered</h3>
-          <p>Smart recommendations built around your destination, budget and travel style.</p>
-        </div>
+<section class="waitlist-section" id="waitlist">
 
-        <div class="feature-card">
-          <div class="feature-icon">🔗</div>
-          <h3>Save & Share</h3>
-          <p>Save your itineraries locally and share them with family or friends.</p>
-        </div>
+  <div class="waitlist-card">
 
-        <div class="feature-card">
-          <div class="feature-icon">🔔</div>
-          <h3>Real-Time Ready</h3>
-          <p>Built to connect to live flights, hotels, weather and travel APIs.</p>
-        </div>
+    <span class="section-label">EARLY ACCESS</span>
 
-        <div class="feature-card">
-          <div class="feature-icon">🛡️</div>
-          <h3>Secure & Private</h3>
-          <p>Your data stays private while your trips remain organized in one place.</p>
-        </div>
+    <h2>Join the TravelAir.ai Founding Member Waitlist</h2>
 
+    <p>
+      Be first to access the AI travel platform built for flights, hotels,
+      cruises, villas, private jets, yachts, and complete luxury itineraries.
+    </p>
+
+    <form class="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+      <input type="text" name="name" placeholder="Your name" required>
+
+      <input type="email" name="email" placeholder="Email address" required>
+
+      <select name="travel_interest" required>
+        <option value="">What are you interested in?</option>
+        <option>Flights</option>
+        <option>Hotels</option>
+        <option>Cruises</option>
+        <option>Private Jets</option>
+        <option>Luxury Villas</option>
+        <option>AI Trip Planning</option>
+      </select>
+
+      <button type="submit">Join Waitlist</button>
+
+    </form>
+
+    <div class="waitlist-stats">
+
+      <div>
+        <strong>2,400+</strong>
+        <span>Founding interest</span>
       </div>
 
-    </section>
-
-    <section class="saved-trips-section">
-
-      <div class="section-heading">
-        <span>Saved Trips</span>
-        <h2>Your AI travel plans.</h2>
-        <p>Every itinerary you save appears below instantly.</p>
+      <div>
+        <strong>8</strong>
+        <span>Travel categories</span>
       </div>
 
-      <div id="savedTrips" class="saved-trips-grid">
+      <div>
+        <strong>24/7</strong>
+        <span>AI planning</span>
       </div>
 
-    </section>
+    </div>
 
-    <section class="future-section">
+  </div>
 
-      <div class="future-left">
+</section>
 
-        <span>Built For The World</span>
+<section class="features-section">
 
-        <h2>
-          A free AI travel planner today.
-          A complete travel platform tomorrow.
-        </h2>
+  <div class="section-heading">
+    <span class="section-label">TRAVELAIR PLATFORM</span>
+    <h2>Everything for the modern traveler</h2>
+    <p>Search, plan, compare, and organize your entire trip with one AI travel system.</p>
+  </div>
+
+  <div class="feature-grid">
+
+    <div class="feature-card">
+      <span>✈️</span>
+      <h3>Flights</h3>
+      <p>Find routes, price ranges, upgrades, and smarter travel windows.</p>
+    </div>
+
+    <div class="feature-card">
+      <span>🏨</span>
+      <h3>Hotels</h3>
+      <p>Compare luxury stays, boutique hotels, resorts, and suites.</p>
+    </div>
+
+    <div class="feature-card">
+      <span>🛳️</span>
+      <h3>Cruises</h3>
+      <p>Discover cruise routes, ports, ships, cabins, and package ideas.</p>
+    </div>
+
+    <div class="feature-card">
+      <span>🛩️</span>
+      <h3>Private Jets</h3>
+      <p>Explore premium aviation options for executive and luxury travel.</p>
+    </div>
+
+    <div class="feature-card">
+      <span>🏝️</span>
+      <h3>Villas</h3>
+      <p>Plan private villa stays, beach homes, and luxury group escapes.</p>
+    </div>
+
+    <div class="feature-card">
+      <span>🍽️</span>
+      <h3>Experiences</h3>
+      <p>Build itineraries with dining, nightlife, tours, yachts, and events.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="dashboard-section">
+
+  <div class="dashboard-left">
+    <span class="section-label">LIVE TRIP DASHBOARD</span>
+    <h2>Your entire trip in one command center</h2>
+    <p>
+      TravelAir.ai turns scattered travel planning into one organized dashboard
+      with flights, stays, alerts, budgets, and AI recommendations.
+    </p>
+
+    <button class="primary-action">Explore Dashboard</button>
+  </div>
+
+  <div class="dashboard-mockup">
+
+    <div class="dash-card wide">
+      <span>Upcoming Trip</span>
+      <h3>Miami → Santorini</h3>
+      <p>June 14 to June 19 • Luxury Escape</p>
+    </div>
+
+    <div class="dash-grid">
+
+      <div class="dash-card">
+        <span>Flight Status</span>
+        <h3>On Time</h3>
+        <p>MIA → ATH</p>
+      </div>
+
+      <div class="dash-card">
+        <span>Hotel</span>
+        <h3>Confirmed</h3>
+        <p>Caldera Suite</p>
+      </div>
+
+      <div class="dash-card">
+        <span>Budget</span>
+        <h3>$4,820</h3>
+        <p>Estimated total</p>
+      </div>
+
+      <div class="dash-card">
+        <span>AI Alert</span>
+        <h3>Upgrade Found</h3>
+        <p>Better hotel view available</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="destinations-section">
+
+    <div class="section-heading">
+
+        <span class="section-label">POPULAR DESTINATIONS</span>
+
+        <h2>Discover extraordinary places</h2>
 
         <p>
-          TravelAir.ai begins as a free AI travel planner.
-          Future versions will include accounts,
-          saved trips, live pricing,
-          hotel booking,
-          flights,
-          cruises,
-          rental cars,
-          private aviation,
-          yachts,
-          experiences,
-          and enterprise travel intelligence.
+            Explore destinations curated by TravelAir AI based on luxury,
+            adventure, family, business, and relaxation.
         </p>
 
-      </div>
+    </div>
 
-      <div class="future-right">
+    <div class="destination-grid">
 
-        <div class="future-card">
-          <strong>01</strong>
-          <h3>Free Planning</h3>
-          <p>Anyone can generate AI itineraries at no cost.</p>
+        <div class="destination-card">
+            <div class="destination-image destination-1"></div>
+            <div class="destination-content">
+                <h3>Santorini</h3>
+                <p>Luxury • Greece</p>
+            </div>
         </div>
 
-        <div class="future-card">
-          <strong>02</strong>
-          <h3>AI Itineraries</h3>
-          <p>Personalized daily travel plans and recommendations.</p>
+        <div class="destination-card">
+            <div class="destination-image destination-2"></div>
+            <div class="destination-content">
+                <h3>Maldives</h3>
+                <p>Private Islands</p>
+            </div>
         </div>
 
-        <div class="future-card">
-          <strong>03</strong>
-          <h3>Accounts</h3>
-          <p>Save trips and sync across every device.</p>
+        <div class="destination-card">
+            <div class="destination-image destination-3"></div>
+            <div class="destination-content">
+                <h3>Tokyo</h3>
+                <p>Modern Culture</p>
+            </div>
         </div>
 
-        <div class="future-card">
-          <strong>04</strong>
-          <h3>Future Booking</h3>
-          <p>Flights, hotels, cruises, cars and luxury experiences.</p>
+        <div class="destination-card">
+            <div class="destination-image destination-4"></div>
+            <div class="destination-content">
+                <h3>Dubai</h3>
+                <p>Luxury Lifestyle</p>
+            </div>
         </div>
 
-      </div>
+    </div>
 
-    </section>
+</section>
 
-    <section id="waitlist" class="waitlist-section">
+<footer>
 
-      <div class="waitlist-card">
+    <div class="footer-logo">
 
-        <span>Join The Future Of Travel</span>
-
-        <h2>Be part of the first TravelAir.ai community.</h2>
+        <h2>TravelAir<span>.ai</span></h2>
 
         <p>
-          Join early and receive product updates,
-          private previews,
-          early access,
-          and launch announcements.
+            The luxury AI platform built to help travelers discover,
+            organize, and experience the world.
         </p>
-
-        <form
-          id="waitlistForm"
-          action="https://formspree.io/f/mgooobvd"
-          method="POST"
-        >
-
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            required
-          >
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            required
-          >
-
-          <button
-            class="btn btn-gold"
-            type="submit">
-            Join Free
-          </button>
-
-        </form>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-
-    <div class="footer-brand">
-
-      <div class="wing-logo">
-        <span>TA</span>
-      </div>
-
-      <strong>
-        Travel<span>Air</span>.ai
-      </strong>
 
     </div>
 
     <div class="footer-links">
 
-      <a href="#home">Home</a>
-
-      <a href="#planner">Planner</a>
-
-      <a href="#explore">Explore</a>
-
-      <a href="#features">Features</a>
-
-      <a href="#waitlist">Join</a>
+        <a href="#">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Support</a>
+        <a href="#">Contact</a>
 
     </div>
 
-    <div class="copyright">
-      © <span id="year"></span> TravelAir.ai
-      • Built for the future of AI travel.
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 TravelAir.ai • All Rights Reserved.
+        </p>
+
     </div>
 
-  </footer>
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
