@@ -1,485 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>TravelAir.ai | Luxury AI Travel Platform</title>
-
-<meta name="description" content="Plan extraordinary trips with AI. Flights, Hotels, Cruises, Villas, Experiences and more.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelAir.ai — The Future of Travel Starts Here</title>
+    <meta name="description" content="Plan your entire trip with AI for free. Flights. Hotels. Cruises. Rental Cars. Private Jets. Yachts. Experiences. One conversation. One perfect itinerary.">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
-<body>
-
-<div class="background-grid"></div>
-<div class="background-glow"></div>
-<div class="background-particles"></div>
-
-<header>
-
-<nav class="navbar">
-
-<div class="logo">
-
-<div class="logo-icon">
-*
-</div>
-
-<div class="logo-text">
-
-<h2>TravelAir<span>.ai</span></h2>
-
-<p>Luxury AI Travel Platform</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="nav-links">
-
-<a href="#">Flights</a>
-<a href="#">Hotels</a>
-<a href="#">Cruises</a>
-<a href="#">Experiences</a>
-<a href="#">Pricing</a>
-
-</div>
-
-<div class="nav-buttons">
-
-<button class="login-btn">
-Login
-</button>
-
-<button class="waitlist-btn">
-Join Waitlist
-</button>
-
-</div>
-
-</nav>
-
-</header>
-
-<section class="hero">
-
-<div class="hero-left">
-
-<div class="badge">
-
-FOUNDING MEMBER ACCESS
-
-</div>
-
-<h1>
-
-The Future of Luxury Travel Powered by Artificial Intelligence
-
-</h1>
-
-<p>
-
-Plan complete vacations in seconds using AI.
-Flights.
-Hotels.
-Cruises.
-Private Jets.
-Yachts.
-Experiences.
-
-All inside one premium platform.
-
-</p>
-
-<div class="hero-search">
-
-<input
-type="text"
-placeholder="Where would you like to travel?"
->
-
-<button>
-
-Plan My Trip
-
-</button>
-
-</div>
-
-<div class="travel-categories">
-
-<button>Flights</button>
-
-<button>Hotels</button>
-
-<button>Cruises</button>
-
-<button>Private Jets</button>
-
-<button>Villas</button>
-
-<button>Experiences</button>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<div class="earth-stage">
-
-    <div class="sun-glow"></div>
-
-    <div class="earth">
-
-        <div class="earth-map"></div>
-
-        <div class="earth-grid"></div>
-
-        <div class="flight-path path-one"></div>
-
-        <div class="flight-path path-two"></div>
-
-        <div class="plane plane-one">✈️</div>
-
-        <div class="plane plane-two">✈️</div>
-
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="platform-preview">
-
-  <div class="ai-panel">
-
-    <div class="panel-header">
-      <div>
-        <span class="panel-dot"></span>
-        <span class="panel-title">TravelAir AI Concierge</span>
-      </div>
-      <span class="panel-status">Live</span>
-    </div>
-
-    <div class="chat-window">
-
-      <div class="chat-message ai">
-        Tell me your destination, dates, budget, and travel style.
-      </div>
-
-      <div class="chat-message user">
-        Plan a luxury 5 day trip to Santorini.
-      </div>
-
-      <div class="chat-message ai">
-        I found premium flights, cliffside hotels, private transfers, sunset dining, and yacht options.
-      </div>
-
-    </div>
-
-    <div class="chat-input-row">
-      <input type="text" id="chatInput" placeholder="Ask TravelAir AI to plan anything...">
-      <button id="chatSend">Send</button>
-    </div>
-
-  </div>
-
-  <div class="trip-card featured-trip">
-
-    <div class="trip-top">
-      <span>AI Trip Overview</span>
-      <strong>$4,820 est.</strong>
-    </div>
-
-    <h3>Santorini Luxury Escape</h3>
-
-    <p>5 days • Flights • Hotel • Yacht • Dining • Experiences</p>
-
-    <div class="trip-progress">
-      <span style="width: 78%;"></span>
-    </div>
-
-    <div class="trip-details">
-      <div>
-        <strong>Flight</strong>
-        <small>Miami to Athens</small>
-      </div>
-      <div>
-        <strong>Hotel</strong>
-        <small>Caldera Suite</small>
-      </div>
-      <div>
-        <strong>Experience</strong>
-        <small>Private Yacht</small>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="waitlist-section" id="waitlist">
-
-  <div class="waitlist-card">
-
-    <span class="section-label">EARLY ACCESS</span>
-
-    <h2>Join the TravelAir.ai Founding Member Waitlist</h2>
-
-    <p>
-      Be first to access the AI travel platform built for flights, hotels,
-      cruises, villas, private jets, yachts, and complete luxury itineraries.
-    </p>
-
-<form class="waitlist-form"
-      action="https://formspree.io/f/mgooobvd"
-      method="POST">
-      <input type="text" name="name" placeholder="Your name" required>
-
-      <input type="email" name="email" placeholder="Email address" required>
-
-      <select name="travel_interest" required>
-        <option value="">What are you interested in?</option>
-        <option>Flights</option>
-        <option>Hotels</option>
-        <option>Cruises</option>
-        <option>Private Jets</option>
-        <option>Luxury Villas</option>
-        <option>AI Trip Planning</option>
-      </select>
-
-      <button type="submit">Join Waitlist</button>
-
-    </form>
-
-    <div class="waitlist-stats">
-
-      <div>
-        <strong>2,400+</strong>
-        <span>Founding interest</span>
-      </div>
-
-      <div>
-        <strong>8</strong>
-        <span>Travel categories</span>
-      </div>
-
-      <div>
-        <strong>24/7</strong>
-        <span>AI planning</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="features-section">
-
-  <div class="section-heading">
-    <span class="section-label">TRAVELAIR PLATFORM</span>
-    <h2>Everything for the modern traveler</h2>
-    <p>Search, plan, compare, and organize your entire trip with one AI travel system.</p>
-  </div>
-
-  <div class="feature-grid">
-
-    <div class="feature-card">
-      <span>✈️</span>
-      <h3>Flights</h3>
-      <p>Find routes, price ranges, upgrades, and smarter travel windows.</p>
-    </div>
-
-    <div class="feature-card">
-      <span>🏨</span>
-      <h3>Hotels</h3>
-      <p>Compare luxury stays, boutique hotels, resorts, and suites.</p>
-    </div>
-
-    <div class="feature-card">
-      <span>🛳️</span>
-      <h3>Cruises</h3>
-      <p>Discover cruise routes, ports, ships, cabins, and package ideas.</p>
-    </div>
-
-    <div class="feature-card">
-      <span>🛩️</span>
-      <h3>Private Jets</h3>
-      <p>Explore premium aviation options for executive and luxury travel.</p>
-    </div>
-
-    <div class="feature-card">
-      <span>🏝️</span>
-      <h3>Villas</h3>
-      <p>Plan private villa stays, beach homes, and luxury group escapes.</p>
-    </div>
-
-    <div class="feature-card">
-      <span>🍽️</span>
-      <h3>Experiences</h3>
-      <p>Build itineraries with dining, nightlife, tours, yachts, and events.</p>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="dashboard-section">
-
-  <div class="dashboard-left">
-    <span class="section-label">LIVE TRIP DASHBOARD</span>
-    <h2>Your entire trip in one command center</h2>
-    <p>
-      TravelAir.ai turns scattered travel planning into one organized dashboard
-      with flights, stays, alerts, budgets, and AI recommendations.
-    </p>
-
-    <button class="primary-action">Explore Dashboard</button>
-  </div>
-
-  <div class="dashboard-mockup">
-
-    <div class="dash-card wide">
-      <span>Upcoming Trip</span>
-      <h3>Miami → Santorini</h3>
-      <p>June 14 to June 19 • Luxury Escape</p>
-    </div>
-
-    <div class="dash-grid">
-
-      <div class="dash-card">
-        <span>Flight Status</span>
-        <h3>On Time</h3>
-        <p>MIA → ATH</p>
-      </div>
-
-      <div class="dash-card">
-        <span>Hotel</span>
-        <h3>Confirmed</h3>
-        <p>Caldera Suite</p>
-      </div>
-
-      <div class="dash-card">
-        <span>Budget</span>
-        <h3>$4,820</h3>
-        <p>Estimated total</p>
-      </div>
-
-      <div class="dash-card">
-        <span>AI Alert</span>
-        <h3>Upgrade Found</h3>
-        <p>Better hotel view available</p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="destinations-section">
-
-    <div class="section-heading">
-
-        <span class="section-label">POPULAR DESTINATIONS</span>
-
-        <h2>Discover extraordinary places</h2>
-
-        <p>
-            Explore destinations curated by TravelAir AI based on luxury,
-            adventure, family, business, and relaxation.
-        </p>
-
-    </div>
-
-    <div class="destination-grid">
-
-        <div class="destination-card">
-            <div class="destination-image destination-1"></div>
-            <div class="destination-content">
-                <h3>Santorini</h3>
-                <p>Luxury • Greece</p>
+<body class="bg-zinc-950 text-white overflow-x-hidden">
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/95 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo with TM -->
+            <div class="flex items-center gap-x-3">
+                <div class="relative flex items-center justify-center w-9 h-9">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 18C4 18 8 10 18 10C28 10 32 18 32 18" stroke="#FACC15" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M8 22C8 22 11 16 18 16C25 16 28 22 28 22" stroke="#FACC15" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="18" cy="18" r="3" fill="#FACC15"/>
+                        <path d="M18 8L22 4L26 8" stroke="#FACC15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="flex items-baseline">
+                    <span class="font-bold text-2xl tracking-tighter">TravelAir</span>
+                    <span class="font-bold text-2xl tracking-tighter text-yellow-400">.ai</span>
+                    <span class="ml-0.5 text-[10px] font-medium text-yellow-400/70 align-super">™</span>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-yellow-400 transition-colors">Home</a>
+                <a href="#trips" class="hover:text-yellow-400 transition-colors">Trips</a>
+                <a href="#explore" class="hover:text-yellow-400 transition-colors">Explore</a>
+                <a href="#inspiration" class="hover:text-yellow-400 transition-colors">Inspiration</a>
+                <a href="#deals" class="hover:text-yellow-400 transition-colors">Deals</a>
+                <a href="#about" class="hover:text-yellow-400 transition-colors">About</a>
+            </div>
+
+            <!-- Auth Buttons -->
+            <div class="flex items-center gap-x-3">
+                <button onclick="showSignInModal()" class="px-5 py-2 text-sm font-medium rounded-full border border-white/20 hover:bg-white/5 transition-all">Sign In</button>
+                <button onclick="showJoinModal()" class="px-6 py-2 text-sm font-semibold rounded-full bg-yellow-400 hover:bg-yellow-300 text-zinc-950 transition-all flex items-center gap-x-2">
+                    <span>Join Free</span>
+                    <span class="text-xs opacity-75">— It's Free to Plan</span>
+                </button>
+                <button class="md:hidden w-9 h-9 flex items-center justify-center text-xl" onclick="toggleMobileNav()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
+    </nav>
 
-        <div class="destination-card">
-            <div class="destination-image destination-2"></div>
-            <div class="destination-content">
-                <h3>Maldives</h3>
-                <p>Private Islands</p>
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[100dvh] pt-16 flex items-center bg-zinc-950">
+        <div class="absolute inset-0 bg-[radial-gradient(#27272a_0.8px,transparent_1px)] bg-[length:4px_4px]"></div>
+        <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1015/2000/1200')] bg-cover bg-center opacity-60"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/70 via-zinc-950/60 to-zinc-950"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 pt-12 pb-20 grid lg:grid-cols-12 gap-10 items-center">
+            <!-- Left Content -->
+            <div class="lg:col-span-7 xl:col-span-7 max-w-2xl">
+                <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm mb-6">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span class="font-medium">100% FREE TO PLAN</span>
+                </div>
+
+                <h1 class="text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.05]">
+                    The Future of<br>
+                    <span class="bg-gradient-to-r from-white to-yellow-300 bg-clip-text text-transparent">Travel Starts Here</span>
+                </h1>
+                
+                <p class="mt-6 text-xl text-white/80 max-w-lg">
+                    Plan your entire trip with AI for free.<br>
+                    Flights. Hotels. Cruises. Rental Cars. Private Jets.<br>
+                    Yachts. Experiences. <span class="font-semibold text-white">One conversation. One itinerary.</span>
+                </p>
+
+                <!-- Search Bar -->
+                <div class="mt-8 max-w-xl">
+                    <div class="flex items-center bg-zinc-900 border border-white/20 focus-within:border-yellow-400/60 transition-all rounded-2xl px-5 py-3.5 shadow-xl">
+                        <i class="fa-solid fa-search text-yellow-400 mr-4 text-lg"></i>
+                        <input id="hero-search" type="text" placeholder="Where do you want to go?" 
+                               class="flex-1 bg-transparent text-lg placeholder:text-white/50 focus:outline-none" 
+                               onkeypress="if (event.key === 'Enter') handleHeroSearch()">
+                        <button onclick="handleHeroSearch()" 
+                                class="ml-3 w-11 h-11 flex-shrink-0 bg-yellow-400 hover:bg-yellow-300 text-zinc-950 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-paper-plane text-xl"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Quick Chips -->
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <button onclick="quickPlan('7-day luxury trip to Bali')" class="px-4 py-1.5 text-xs rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center gap-x-2 transition-all">
+                            <i class="fa-solid fa-umbrella-beach text-yellow-400"></i> <span>7-day Bali trip</span>
+                        </button>
+                        <button onclick="quickPlan('Winter escape to Switzerland')" class="px-4 py-1.5 text-xs rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center gap-x-2 transition-all">
+                            <i class="fa-solid fa-snowflake text-blue-400"></i> <span>Winter in Switzerland</span>
+                        </button>
+                        <button onclick="quickPlan('Italy food & culture trip')" class="px-4 py-1.5 text-xs rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center gap-x-2 transition-all">
+                            <i class="fa-solid fa-utensils text-orange-400"></i> <span>Italy food & culture</span>
+                        </button>
+                        <button onclick="showMoreIdeas()" class="px-4 py-1.5 text-xs rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center gap-x-1.5 transition-all">
+                            More ideas <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-y-6 text-sm">
+                    <div><div class="font-mono text-3xl font-semibold tracking-tighter">24,842+</div><div class="text-white/60 text-xs tracking-wider">FOUNDING MEMBERS</div></div>
+                    <div><div class="font-mono text-3xl font-semibold tracking-tighter">132+</div><div class="text-white/60 text-xs tracking-wider">COUNTRIES JOINED</div></div>
+                    <div><div class="font-mono text-3xl font-semibold tracking-tighter">76,851+</div><div class="text-white/60 text-xs tracking-wider">TRIPS PLANNED</div></div>
+                    <div><div class="flex items-baseline gap-x-1"><span class="font-mono text-3xl font-semibold tracking-tighter">4.9</span><span class="text-yellow-400">/5</span></div><div class="text-white/60 text-xs tracking-wider">FROM OUR MEMBERS</div></div>
+                </div>
+            </div>
+
+            <!-- Right Side Chat Widget -->
+            <div class="lg:col-span-5 xl:col-span-5 hidden lg:block">
+                <div class="bg-zinc-900 border border-white/10 rounded-3xl shadow-2xl overflow-hidden w-full max-w-[380px] ml-auto">
+                    <!-- Chat Header -->
+                    <div class="px-5 py-4 bg-zinc-950 border-b border-white/10 flex items-center justify-between">
+                        <div class="flex items-center gap-x-3">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-zinc-950 font-bold text-sm ring-2 ring-yellow-400/30">TA</div>
+                            <div>
+                                <div class="font-semibold flex items-center gap-x-1.5">TravelAir AI <span class="inline-block w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span></div>
+                                <div class="text-[10px] text-emerald-400 -mt-0.5">Online</div>
+                            </div>
+                        </div>
+                        <button onclick="resetChat()" class="text-xs px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 transition-colors">Reset</button>
+                    </div>
+
+                    <!-- Messages -->
+                    <div id="chat-messages" class="h-[380px] overflow-y-auto p-4 space-y-4 bg-zinc-950/60 text-sm custom-scroll"></div>
+
+                    <!-- Itinerary Preview Card -->
+                    <div id="itinerary-preview" class="hidden border-t border-white/10 p-4 bg-zinc-900">
+                        <div class="flex gap-3">
+                            <img id="itinerary-img" src="https://picsum.photos/id/1016/120/80" class="w-20 h-14 rounded-xl object-cover ring-1 ring-white/10" alt="Greece">
+                            <div class="flex-1 min-w-0">
+                                <div id="itinerary-title" class="font-semibold text-sm">7-Day Greece Getaway</div>
+                                <div id="itinerary-meta" class="text-xs text-white/60 mt-0.5">Athens • Santorini • Mykonos • 2 Travelers • Luxury</div>
+                                <div class="mt-1 flex items-center justify-between">
+                                    <div id="itinerary-price" class="font-mono text-yellow-400 text-sm font-semibold">$7,842</div>
+                                    <button onclick="viewFullItinerary()" class="text-[10px] px-3 py-1 bg-yellow-400 hover:bg-yellow-300 text-zinc-950 rounded-lg font-medium">View Full Itinerary</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="customizeTrip()" class="mt-3 w-full text-xs py-2 border border-white/20 rounded-xl hover:bg-white/5">Customize Trip</button>
+                    </div>
+
+                    <!-- Chat Input -->
+                    <div class="p-4 border-t border-white/10 bg-zinc-900">
+                        <div class="flex gap-2">
+                            <input id="chat-input" type="text" placeholder="Ask me anything... Plan a 7-day luxury trip to Greece under $8,000" 
+                                   class="flex-1 bg-zinc-950 border border-white/20 focus:border-yellow-400/70 rounded-2xl px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none" 
+                                   onkeypress="if (event.key === 'Enter') sendChatMessage()">
+                            <button onclick="sendChatMessage()" class="w-11 h-11 flex-shrink-0 bg-yellow-400 hover:bg-yellow-300 text-zinc-950 rounded-2xl flex items-center justify-center">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="destination-card">
-            <div class="destination-image destination-3"></div>
-            <div class="destination-content">
-                <h3>Tokyo</h3>
-                <p>Modern Culture</p>
+    <!-- Explore Section -->
+    <section id="explore" class="max-w-7xl mx-auto px-6 pb-16">
+        <div class="flex items-end justify-between mb-6">
+            <div>
+                <h2 class="text-3xl font-semibold tracking-tight">Explore the World Your Way</h2>
+                <p class="text-white/60">Choose your travel style. AI handles the rest.</p>
             </div>
+            <a href="#" class="hidden sm:flex items-center gap-x-2 text-sm font-medium text-yellow-400 hover:text-yellow-300">View All Destinations <i class="fa-solid fa-arrow-right ml-1"></i></a>
         </div>
 
-        <div class="destination-card">
-            <div class="destination-image destination-4"></div>
-            <div class="destination-content">
-                <h3>Dubai</h3>
-                <p>Luxury Lifestyle</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            <!-- Category Cards (clickable) -->
+            <div onclick="planCategory('Flights')" class="group cursor-pointer bg-zinc-900 hover:bg-zinc-800 border border-white/10 rounded-3xl p-4 transition-all active:scale-[0.985]">
+                <div class="aspect-video rounded-2xl overflow-hidden mb-4"><img src="https://picsum.photos/id/1018/300/180" class="w-full h-full object-cover group-hover:scale-105 transition-transform"></div>
+                <div class="flex items-center gap-x-3"><i class="fa-solid fa-plane text-yellow-400 w-5"></i><div><div class="font-semibold">Flights</div><div class="text-xs text-white/50">Find the best routes</div></div></div>
+            </div>
+            <div onclick="planCategory('Hotels')" class="group cursor-pointer bg-zinc-900 hover:bg-zinc-800 border border-white/10 rounded-3xl p-4 transition-all active:scale-[0.985]">
+                <div class="aspect-video rounded-2xl overflow-hidden mb-4"><img src="https://picsum.photos/id/160/300/180" class="w-full h-full object-cover group-hover:scale-105 transition-transform"></div>
+                <div class="flex items-center gap-x-3"><i class="fa-solid fa-hotel text-yellow-400 w-5"></i><div><div class="font-semibold">Hotels</div><div class="text-xs text-white/50">Handpicked stays</div></div></div>
+            </div>
+            <div onclick="planCategory('Cruises')" class="group cursor-pointer bg-zinc-900 hover:bg-zinc-800 border border-white/10 rounded-3xl p-4 transition-all active:scale-[0.985]">
+                <div class="aspect-video rounded-2xl overflow-hidden mb-4"><img src="https://picsum.photos/id/251/300/180" class="w-full h-full object-cover group-hover:scale-105 transition-transform"></div>
+                <div class="flex items-center gap-x-3"><i class="fa-solid fa-ship text-yellow-400 w-5"></i><div><div class="font-semibold">Cruises</div><div class="text-xs text-white/50">Sail in luxury</div></div></div>
+            </div>
+            <div onclick="planCategory('Rental Cars')" class="group cursor-pointer bg-zinc-900 hover:bg-zinc-800 border border-white/10 rounded-3xl p-4 transition-all active:scale-[0.985]">
+                <div class="aspect-video rounded-2xl overflow-hidden mb-4"><img src="https://picsum.photos/id/201/300/180" class="w-full h-full object-cover group-hover:scale-105 transition-transform"></div>
+                <div class="flex items-center gap-x-3"><i class="fa-solid fa-car text-yellow-400 w-5"></i><div><div class="font-semibold">Rental Cars</div><div class="text-xs text-white/50">Drive your journey</div></div></div>
+            </div>
+            <div onclick="planCategory('Private Jets')" class="group cursor-pointer bg-zinc-900 hover:bg-zinc-800 border border-white/10 rounded-3xl p-4 transition-all active:scale-[0.985]">
+                <div class="aspect-video rounded-2xl overflow-hidden mb-4"><img src="https://picsum.photos/id/1005/300/180" class="w-full h-full object-cover group-hover:scale-105 transition-transform"></div>
+                <div class="flex items-center gap-x-3"><i class="fa-solid fa-plane-departure text-yellow-400 w-5"></i><div><div class="font-semibold">Private Jets</div><div class="text-xs text-white/50">Fly private</div></div></div>
+            </div>
+            <div onclick="planCategory('Yachts')" class="group cursor-pointer bg-zinc-900 hover:bg-zinc-800 border border-white/10 rounded-3xl p-4 transition-all active:scale-[0.985]">
+                <div class="aspect-video rounded-2xl overflow-hidden mb-4"><img src="https://picsum.photos/id/1033/300/180" class="w-full h-full object-cover group-hover:scale-105 transition-transform"></div>
+                <div class="flex items-center gap-x-3"><i class="fa-solid fa-water text-yellow-400 w-5"></i><div><div class="font-semibold">Yachts</div><div class="text-xs text-white/50">Live on the water</div></div></div>
+            </div>
+            <div onclick="planCategory('Experiences')" class="group cursor-pointer bg-zinc-900 hover:bg-zinc-800 border border-white/10 rounded-3xl p-4 transition-all active:scale-[0.985]">
+                <div class="aspect-video rounded-2xl overflow-hidden mb-4"><img src="https://picsum.photos/id/1009/300/180" class="w-full h-full object-cover group-hover:scale-105 transition-transform"></div>
+                <div class="flex items-center gap-x-3"><i class="fa-solid fa-mountain text-yellow-400 w-5"></i><div><div class="font-semibold">Experiences</div><div class="text-xs text-white/50">Unforgettable moments</div></div></div>
             </div>
         </div>
+    </section>
 
+    <!-- Features -->
+    <section class="border-y border-white/10 bg-zinc-900/50">
+        <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-y-8 text-sm">
+            <div class="flex gap-x-4"><i class="fa-solid fa-robot text-yellow-400 text-2xl mt-0.5"></i><div><div class="font-semibold">AI Powered</div><div class="text-white/60 text-xs">Smart recommendations just for you.</div></div></div>
+            <div class="flex gap-x-4"><i class="fa-solid fa-share-alt text-yellow-400 text-2xl mt-0.5"></i><div><div class="font-semibold">Save &amp; Share</div><div class="text-white/60 text-xs">Save itineraries and share with friends.</div></div></div>
+            <div class="flex gap-x-4"><i class="fa-solid fa-bell text-yellow-400 text-2xl mt-0.5"></i><div><div class="font-semibold">Real-Time Updates</div><div class="text-white/60 text-xs">Live alerts on flights &amp; weather.</div></div></div>
+            <div class="flex gap-x-4"><i class="fa-solid fa-shield-halved text-yellow-400 text-2xl mt-0.5"></i><div><div class="font-semibold">Secure &amp; Private</div><div class="text-white/60 text-xs">Your data is safe and protected.</div></div></div>
+        </div>
+    </section>
+
+    <!-- Waitlist / Founding Member -->
+    <section id="waitlist" class="max-w-7xl mx-auto px-6 py-16">
+        <div class="bg-gradient-to-br from-zinc-900 to-black border border-white/10 rounded-3xl p-10 md:p-14 flex flex-col md:flex-row gap-10 items-center">
+            <div class="flex-1">
+                <div class="inline-flex items-center px-4 py-1 rounded-full bg-yellow-400/10 text-yellow-400 text-xs font-medium tracking-widest mb-4">EXCLUSIVE</div>
+                <h3 class="text-4xl font-semibold tracking-tight">Be a Founding Member</h3>
+                <p class="mt-3 text-white/70 max-w-md">Join early and get exclusive access to new features, invites, and special perks.</p>
+            </div>
+
+            <!-- Formspree Form -->
+            <form id="waitlist-form" action="https://formspree.io/f/mgoobvd" method="POST" class="w-full md:w-auto md:min-w-[320px]">
+                <div class="flex flex-col gap-y-3">
+                    <input type="email" name="email" required placeholder="Enter your email" class="w-full px-5 py-3.5 bg-zinc-950 border border-white/20 focus:border-yellow-400 rounded-2xl text-sm placeholder:text-white/40 outline-none">
+                    <input type="hidden" name="_subject" value="New Founding Member - TravelAir.ai">
+                    <button type="submit" class="w-full py-3.5 rounded-2xl font-semibold bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-500 text-zinc-950 transition-all flex items-center justify-center gap-x-2">
+                        Join the Waitlist <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 py-10 text-xs text-white/50">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-y-4">
+            <div>© 2026 TravelAir.ai — All rights reserved.</div>
+            <div class="flex gap-x-5"><a href="#" class="hover:text-white">Privacy</a><a href="#" class="hover:text-white">Terms</a></div>
+        </div>
+    </footer>
+
+    <!-- Modals (Sign In, Join, Itinerary) -->
+    <div id="signin-modal" onclick="if (event.target.id === 'signin-modal') hideModals()" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+        <!-- Sign In content (same as before) -->
+        <div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 border border-white/10 w-full max-w-sm rounded-3xl p-8">
+            <h3 class="text-2xl font-semibold mb-1">Welcome back</h3>
+            <form onsubmit="fakeLogin(event)">
+                <div class="space-y-4 mt-4">
+                    <input type="email" value="you@travelair.ai" class="w-full bg-zinc-950 border border-white/20 rounded-2xl px-4 py-3 text-sm">
+                    <input type="password" value="demo2026" class="w-full bg-zinc-950 border border-white/20 rounded-2xl px-4 py-3 text-sm">
+                </div>
+                <button type="submit" class="mt-6 w-full py-3.5 bg-yellow-400 hover:bg-yellow-300 text-zinc-950 font-semibold rounded-2xl">Sign In</button>
+            </form>
+        </div>
     </div>
 
-</section>
-
-<footer>
-
-    <div class="footer-logo">
-
-        <h2>TravelAir<span>.ai</span></h2>
-
-        <p>
-            The luxury AI platform built to help travelers discover,
-            organize, and experience the world.
-        </p>
-
+    <div id="join-modal" onclick="if (event.target.id === 'join-modal') hideModals()" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+        <!-- Join modal content -->
+        <div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 border border-white/10 w-full max-w-sm rounded-3xl p-8">
+            <h3 class="text-2xl font-semibold mb-1">Create your free account</h3>
+            <form onsubmit="fakeSignup(event)">
+                <div class="space-y-4 mt-4">
+                    <input type="email" value="you@travelair.ai" class="w-full bg-zinc-950 border border-white/20 rounded-2xl px-4 py-3 text-sm">
+                </div>
+                <button type="submit" class="mt-6 w-full py-3.5 bg-yellow-400 hover:bg-yellow-300 text-zinc-950 font-semibold rounded-2xl">Create Free Account</button>
+            </form>
+        </div>
     </div>
 
-    <div class="footer-links">
-
-        <a href="#">About</a>
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Support</a>
-        <a href="#">Contact</a>
-
+    <div id="itinerary-modal" onclick="if (event.target.id === 'itinerary-modal') hideModals()" class="hidden fixed inset-0 bg-black/80 z-[110] flex items-center justify-center p-4">
+        <!-- Itinerary modal populated by JS -->
+        <div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 border border-white/10 w-full max-w-2xl rounded-3xl overflow-hidden">
+            <!-- Content filled dynamically by script.js -->
+        </div>
     </div>
 
-    <div class="footer-bottom">
-
-        <p>
-            © 2026 TravelAir.ai • All Rights Reserved.
-        </p>
-
-    </div>
-
-</footer>
-
-<script src="script.js"></script>
-
+    <script src="js/script.js"></script>
 </body>
 </html>
