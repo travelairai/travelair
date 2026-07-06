@@ -4,105 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TravelAir.ai™ — The Future of Travel Starts Here</title>
-  <meta name="description" content="AI trip planning for flights, hotels, cruises, private jets, cars, yachts & more. One conversation. One itinerary.">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="AI trip planning for flights, hotels, cruises, private jets, cars, yachts & more.">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-[#0a0c10] text-slate-200 overflow-x-hidden">
+<body class="bg-[#0a0c10] text-slate-200">
 
   <!-- NAV -->
-  <nav class="navbar fixed top-0 left-0 right-0 z-50 py-4 bg-black/90 backdrop-blur-lg border-b border-white/10">
+  <nav class="fixed top-0 left-0 right-0 z-50 py-5 bg-black/90 backdrop-blur-md border-b border-white/10">
     <div class="max-w-screen-2xl mx-auto px-8 flex items-center justify-between">
-      <div class="flex items-center gap-x-3">
-        <div class="w-8 h-8 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-xl flex items-center justify-center">
-          <span class="text-[#111317] font-bold text-xl">✈️</span>
-        </div>
-        <div class="font-semibold text-2xl tracking-tight">TravelAir<span class="text-amber-400">.ai</span><sup class="text-xs text-amber-400/70 ml-0.5">™</sup></div>
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex items-center justify-center text-black text-2xl">✈️</div>
+        <div class="text-3xl font-bold tracking-tighter">TravelAir<span class="text-amber-400">.ai</span><sup class="text-xs">™</sup></div>
       </div>
-
-      <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-        <a href="#" class="hover:text-amber-400 transition-colors">Home</a>
-        <a href="#" class="hover:text-amber-400 transition-colors">Trips</a>
-        <a href="#" class="hover:text-amber-400 transition-colors">Flights</a>
-        <a href="#" class="hover:text-amber-400 transition-colors">Hotels</a>
-        <a href="#" class="hover:text-amber-400 transition-colors">Cruises</a>
-        <a href="#" class="hover:text-amber-400 transition-colors">Cars</a>
-        <a href="#" class="hover:text-amber-400 transition-colors">Experiences</a>
-        <a href="#" class="hover:text-amber-400 transition-colors">Deals</a>
-        <a href="#" class="hover:text-amber-400 transition-colors">About</a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#" class="hover:text-amber-400">Home</a>
+        <a href="#" class="hover:text-amber-400">Trips</a>
+        <a href="#" class="hover:text-amber-400">Flights</a>
+        <a href="#" class="hover:text-amber-400">Hotels</a>
+        <a href="#" class="hover:text-amber-400">Cruises</a>
+        <a href="#" class="hover:text-amber-400">Cars</a>
+        <a href="#" class="hover:text-amber-400">Experiences</a>
+        <a href="#" class="hover:text-amber-400">Deals</a>
+        <a href="#" class="hover:text-amber-400">About</a>
       </div>
-
-      <div class="flex items-center gap-x-4">
-        <button onclick="showSignInModal()" class="hidden sm:block text-sm font-medium hover:text-white">Sign In</button>
-        <button onclick="showJoinModal()" class="gold-btn px-6 py-2.5 rounded-2xl text-sm font-semibold">Join Free — It's Free to Plan</button>
+      <div class="flex items-center gap-4">
+        <button class="hidden sm:block text-sm font-medium">Sign In</button>
+        <button class="bg-amber-400 hover:bg-amber-300 text-black px-6 py-2.5 rounded-2xl font-semibold">Join Free — It's Free to Plan</button>
       </div>
     </div>
   </nav>
 
-  <!-- HERO + CHAT -->
-  <section class="hero min-h-screen pt-20 relative flex items-center" style="background-image: url('hero-bg.jpg'); background-size: cover; background-position: center;">
-    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/90"></div>
-    
-    <div class="max-w-screen-2xl mx-auto px-8 grid lg:grid-cols-12 gap-12 items-center relative z-10">
-      <!-- Left Content -->
+  <!-- HERO -->
+  <section class="hero pt-20 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/70 to-black"></div>
+    <div class="max-w-screen-2xl mx-auto px-8 pt-12 grid lg:grid-cols-12 gap-12 relative z-10">
+      <!-- Left -->
       <div class="lg:col-span-7">
-        <div class="inline-flex items-center bg-white/10 backdrop-blur px-4 py-1 rounded-full text-xs tracking-widest mb-6">100% FREE TO PLAN</div>
-        
+        <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full text-sm mb-6">
+          <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+          100% FREE TO PLAN
+        </div>
         <h1 class="text-6xl lg:text-7xl font-bold tracking-tighter leading-none">The Future of<br>Travel Starts Here</h1>
-        <p class="mt-6 text-xl text-slate-300 max-w-lg">AI trip planning for flights, hotels, cruises, private jets, cars, yachts & more. One conversation. One itinerary. Completely free.</p>
+        <p class="mt-6 text-xl max-w-lg">AI trip planning for flights, hotels, cruises, private jets, cars, yachts & more. One conversation. One itinerary. Completely free.</p>
         
-        <!-- Search -->
-        <div class="mt-8 flex items-center bg-white/10 backdrop-blur border border-white/20 rounded-3xl px-6 py-4">
-          <input id="hero-search" type="text" class="flex-1 bg-transparent outline-none text-lg placeholder:text-slate-400" placeholder="Where do you want to go?">
-          <button onclick="triggerChatSearch()" class="w-12 h-12 bg-amber-400 hover:bg-amber-300 text-black rounded-2xl flex items-center justify-center">→</button>
-        </div>
-
-        <!-- Quick buttons -->
-        <div class="flex flex-wrap gap-3 mt-6">
-          <button onclick="quickTrip('Bali')" class="quick-btn px-5 py-2 bg-white/10 hover:bg-white/20 rounded-3xl text-sm">7-Day Bali Escape</button>
-          <button onclick="quickTrip('Switzerland')" class="quick-btn px-5 py-2 bg-white/10 hover:bg-white/20 rounded-3xl text-sm">Swiss Alps Winter Trip</button>
-          <button onclick="quickTrip('Italy')" class="quick-btn px-5 py-2 bg-white/10 hover:bg-white/20 rounded-3xl text-sm">Italy Food & Culture</button>
-        </div>
-
-        <!-- Stats -->
-        <div class="mt-12 grid grid-cols-4 gap-8 text-center">
-          <div><div class="text-3xl font-mono font-bold">24,842+</div><div class="text-xs tracking-widest text-slate-400">Founding Members</div></div>
-          <div><div class="text-3xl font-mono font-bold">132+</div><div class="text-xs tracking-widest text-slate-400">Countries Joined</div></div>
-          <div><div class="text-3xl font-mono font-bold">76,851+</div><div class="text-xs tracking-widest text-slate-400">Trips Planned</div></div>
-          <div><div class="text-3xl font-mono font-bold">4.9/5</div><div class="text-xs tracking-widest text-slate-400">From Our Members</div></div>
+        <div class="mt-8 bg-white/10 border border-white/20 rounded-3xl p-2 flex">
+          <input id="hero-search" type="text" class="flex-1 bg-transparent px-6 py-4 outline-none text-lg" placeholder="Where do you want to go?">
+          <button onclick="alert('Chat opened! In full version this triggers the AI chat.')" class="bg-amber-400 text-black px-8 rounded-3xl font-semibold">Plan</button>
         </div>
       </div>
 
       <!-- Chat Panel -->
       <div class="lg:col-span-5">
-        <div class="chat-panel bg-[#111317] border border-white/10 rounded-3xl shadow-2xl overflow-hidden max-w-md mx-auto lg:mx-0">
-          <!-- Header -->
-          <div class="p-5 border-b border-white/10 flex items-center gap-3">
+        <div class="bg-[#111317] border border-white/10 rounded-3xl p-6 shadow-2xl">
+          <div class="flex items-center gap-3 mb-6">
             <div class="w-8 h-8 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex items-center justify-center text-black font-bold">TA</div>
             <div>
               <div class="font-semibold">TravelAir AI</div>
-              <div class="text-xs text-emerald-400 flex items-center gap-1"><span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span> Online</div>
+              <div class="text-emerald-400 text-sm">● Online</div>
             </div>
           </div>
-
-          <!-- Messages -->
-          <div id="chat-messages" class="h-96 p-5 overflow-y-auto space-y-4 bg-[#0a0c10]">
-            <!-- Initial messages populated by JS -->
+          <div class="h-80 bg-[#0a0c10] rounded-2xl p-4 overflow-y-auto text-sm" id="chat-window">
+            <p class="mb-4">Hi! I'm your AI Travel Assistant. I'll create the perfect trip for you.</p>
           </div>
-
-          <!-- Input -->
-          <div class="p-4 border-t border-white/10">
-            <div class="flex gap-2">
-              <input id="chat-input" type="text" class="flex-1 bg-[#1f2937] border border-white/10 rounded-2xl px-5 py-3 text-sm" placeholder="Ask anything...">
-              <button onclick="sendChatMessage()" class="bg-amber-400 text-black px-6 rounded-2xl font-medium">Send</button>
-            </div>
+          <div class="mt-4 flex gap-2">
+            <input type="text" class="flex-1 bg-[#1f2937] border border-white/10 rounded-2xl px-5 py-3 text-sm" placeholder="Ask me anything...">
+            <button class="bg-amber-400 text-black px-6 rounded-2xl">Send</button>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- More sections would go here - let me know if you need the full expanded version -->
 
   <script src="script.js"></script>
 </body>
