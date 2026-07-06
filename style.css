@@ -1795,3 +1795,74 @@ header.scrolled {
     display: none;
   }
 }
+
+/* TravelAir.ai — Planner Upgrade Styles Phase 2 */
+
+.destination-card,
+.trip-card,
+.travel-card,
+.option-card {
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.destination-card:hover,
+.trip-card:hover,
+.travel-card:hover,
+.option-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 209, 102, 0.5);
+  box-shadow: 0 22px 60px rgba(255, 209, 102, 0.12);
+}
+
+.destination-card.selected,
+.trip-card.selected,
+.travel-card.selected,
+.option-card.selected {
+  border-color: rgba(255, 209, 102, 0.9);
+  box-shadow:
+    0 0 0 1px rgba(255, 209, 102, 0.45),
+    0 24px 70px rgba(255, 209, 102, 0.18);
+}
+
+.live-preview-card {
+  margin-top: 18px;
+  padding: 22px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 209, 102, 0.28);
+  background:
+    linear-gradient(135deg, rgba(255, 209, 102, 0.14), rgba(255, 255, 255, 0.03)),
+    rgba(8, 8, 10, 0.88);
+}
+
+.live-preview-card span {
+  color: #ffd166;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.live-preview-card h3 {
+  margin: 10px 0 8px;
+  color: #fff6d8;
+  font-size: 28px;
+}
+
+.live-preview-card p {
+  margin: 0 0 12px;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.live-preview-card strong {
+  color: #ffd166;
+  font-size: 30px;
+}
+
+.generate-btn.loading,
+.planner-submit.loading,
+.ai-plan-btn.loading,
+.build-trip-btn.loading {
+  opacity: 0.75;
+  pointer-events: none;
+}
