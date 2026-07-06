@@ -1373,3 +1373,242 @@ footer {
   transform: translateY(0);
   transition: opacity 0.75s ease, transform 0.75s ease;
 }
+
+/* ===========================
+   NEW HERO EARTH
+=========================== */
+
+.earth-stage{
+    position:relative;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.sun-glow{
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,223,125,.65) 0%,
+    rgba(255,210,95,.30) 28%,
+    rgba(255,180,60,.10) 55%,
+    transparent 75%);
+
+    filter:blur(35px);
+
+    animation:sunPulse 6s ease-in-out infinite;
+
+}
+
+.earth{
+
+    position:relative;
+
+    width:520px;
+    height:520px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:2px solid rgba(255,217,120,.22);
+
+    background:
+    radial-gradient(circle at 30% 25%,
+    rgba(255,235,170,.18),
+    rgba(15,15,15,.95));
+
+    box-shadow:
+
+    0 0 45px rgba(255,215,120,.28),
+
+    0 0 140px rgba(255,170,40,.16);
+
+}
+
+.earth-map{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+url("https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    opacity:.18;
+
+    filter:
+
+    sepia(1)
+
+    saturate(5)
+
+    hue-rotate(-12deg)
+
+    brightness(2);
+
+}
+
+.earth-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    background:
+
+repeating-radial-gradient(circle,
+transparent 0,
+transparent 38px,
+rgba(255,217,120,.09) 39px),
+
+repeating-linear-gradient(
+90deg,
+transparent 0,
+transparent 48px,
+rgba(255,217,120,.07) 49px);
+
+}
+
+.flight-path{
+
+    position:absolute;
+
+    border-top:2px dashed rgba(255,217,120,.45);
+
+    border-radius:50%;
+
+}
+
+.path-one{
+
+    width:380px;
+
+    height:180px;
+
+    top:120px;
+
+    left:60px;
+
+    transform:rotate(12deg);
+
+}
+
+.path-two{
+
+    width:320px;
+
+    height:260px;
+
+    left:95px;
+
+    top:90px;
+
+    transform:rotate(-22deg);
+
+}
+
+.plane{
+
+    position:absolute;
+
+    font-size:22px;
+
+    color:#ffd978;
+
+    text-shadow:
+
+    0 0 15px rgba(255,215,120,.9);
+
+}
+
+.plane-one{
+
+    animation:flyOne 12s linear infinite;
+
+}
+
+.plane-two{
+
+    animation:flyTwo 16s linear infinite;
+
+}
+
+@keyframes flyOne{
+
+0%{
+
+left:60px;
+top:300px;
+
+}
+
+100%{
+
+left:360px;
+top:100px;
+
+}
+
+}
+
+@keyframes flyTwo{
+
+0%{
+
+left:390px;
+top:340px;
+
+}
+
+100%{
+
+left:80px;
+top:120px;
+
+}
+
+}
+
+@keyframes sunPulse{
+
+0%{
+
+transform:scale(.95);
+
+opacity:.7;
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scale(.95);
+
+opacity:.7;
+
+}
+
+}
