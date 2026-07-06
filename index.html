@@ -3,33 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelAir.ai — The Future of Travel Starts Here</title>
+    <title>TravelAir.ai™</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
-        body { font-family: 'Inter', system_ui, sans-serif; }
-        .heading { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; letter-spacing: -0.03em; }
-        .gold-gradient { background: linear-gradient(90deg, #d4af37, #f5d76e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-bg { position: relative; overflow: hidden; }
-        #globe-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.85; }
-        .ai-chat-panel { background: #111; border: 1px solid #27272a; box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4); }
-        .chat-bubble-ai { background: #1f2937; border-radius: 18px 18px 18px 4px; }
-        .chat-bubble-user { background: linear-gradient(135deg, #d4af37, #f5d76e); color: #111; border-radius: 18px 18px 4px 18px; }
-        .destination-card { border: 1px solid #27272a; transition: all 0.3s; }
-        .destination-card:hover { transform: translateY(-6px); border-color: #d4af37; }
-        .wing-logo { width: 48px; height: 38px; background: linear-gradient(135deg, #d4af37, #f5d76e); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); box-shadow: 0 0 15px rgba(212,175,55,0.6); }
-    </style>
 </head>
-<body class="bg-zinc-950 text-white">
-    <!-- Navbar -->
+<body>
+    <!-- Navbar with wing logo + TM -->
     <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
         <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
             <div class="flex items-center gap-x-3">
                 <div class="wing-logo"></div>
-                <div class="font-semibold text-3xl tracking-[-1.2px]">TravelAir<span class="text-amber-400 font-bold">.ai</span></div>
+                <div class="font-semibold text-3xl tracking-[-1.2px]">TravelAir<span class="text-amber-400 font-bold">.ai</span><span class="text-xs align-super ml-0.5">™</span></div>
             </div>
+            <!-- Menu -->
             <div class="hidden lg:flex items-center gap-x-8 text-sm font-medium">
                 <a href="#" class="hover:text-amber-400">Home</a>
                 <a href="#" class="hover:text-amber-400">Trips</a>
@@ -52,101 +39,34 @@
     <div class="hero-bg min-h-[92vh] relative flex items-center">
         <canvas id="globe-canvas" class="absolute inset-0"></canvas>
         <div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            <!-- Left -->
+            <!-- Left content -->
             <div class="lg:col-span-7">
-                <div class="inline-flex items-center gap-x-2 bg-zinc-900/70 px-5 py-1.5 rounded-full mb-8">
-                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                    <span class="text-emerald-400 text-xs font-bold">100% FREE TO PLAN</span>
-                </div>
-                <h1 class="heading text-6xl lg:text-7xl leading-none tracking-[-3px] mb-6">The Future of<br><span class="gold-gradient">Travel Starts Here</span></h1>
-                <p class="max-w-lg text-lg text-zinc-300">AI trip planning for flights, hotels, cruises, private jets, cars, yachts &amp; more. One conversation. One itinerary. Completely free.</p>
-                <!-- Search and quick trips -->
+                <div class="inline-flex items-center gap-x-2 bg-zinc-900/70 px-5 py-1.5 rounded-full mb-8">100% FREE TO PLAN</div>
+                <h1 class="heading text-6xl lg:text-7xl leading-none tracking-[-3px]">The Future of<br><span class="gold-gradient">Travel Starts Here</span></h1>
+                <p class="max-w-lg text-[17px] text-zinc-300">AI trip planning for flights, hotels, cruises, private jets, cars, yachts &amp; more. One conversation. One itinerary. Completely free.</p>
+                <!-- Search -->
                 <div class="mt-8 max-w-md">
                     <div class="relative">
-                        <input id="hero-search" placeholder="Where do you want to go?" class="w-full bg-zinc-900 border border-zinc-700 focus:border-amber-400 px-6 py-4 rounded-3xl text-lg outline-none">
-                        <button onclick="triggerSearch()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-amber-400 text-black w-11 h-11 rounded-2xl">→</button>
+                        <input id="hero-search" type="text" placeholder="Where do you want to go?" class="w-full bg-zinc-900 border border-zinc-700 focus:border-amber-400 pl-14 pr-16 py-4 rounded-3xl text-lg placeholder:text-zinc-500 outline-none">
+                        <button onclick="triggerSearch()" class="absolute right-2.5 top-1/2 -translate-y-1/2 w-11 h-11 bg-gradient-to-r from-amber-400 to-yellow-500 text-zinc-950 rounded-2xl flex items-center justify-center">→</button>
                     </div>
                 </div>
             </div>
-            <!-- Right Chat -->
+            <!-- Chat -->
             <div class="lg:col-span-5">
                 <div class="ai-chat-panel rounded-3xl overflow-hidden">
-                    <div id="chat-messages" class="h-[320px] p-5 overflow-y-auto space-y-4"></div>
-                    <div class="p-4 border-t border-zinc-800">
-                        <input id="chat-input" placeholder="Ask me anything..." class="w-full bg-zinc-950 border border-zinc-700 px-5 py-3 rounded-2xl" onkeypress="if(event.key==='Enter') sendChatMessage()">
+                    <div id="chat-messages" class="h-[305px] p-5 space-y-4 overflow-y-auto bg-zinc-950 text-sm"></div>
+                    <div class="p-4 bg-zinc-900 border-t border-zinc-800">
+                        <input id="chat-input" type="text" placeholder="Ask me anything..." class="w-full bg-zinc-950 border border-zinc-700 focus:border-amber-400 px-5 py-3 rounded-2xl text-sm outline-none" onkeypress="if(event.key==='Enter') sendChatMessage()">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Other sections (stats, destinations, features, Formspree, footer) can be added similarly -->
+    <!-- Stats, Destinations, Features, Founding Formspree CTA, Footer -->
+    <!-- Add full sections from screenshot here -->
 
-    <script>
-        // Tailwind script + Three.js Globe
-        let scene, camera, renderer, globe;
-        function initThreeGlobe() {
-            const canvas = document.getElementById('globe-canvas');
-            scene = new THREE.Scene();
-            camera = new THREE.PerspectiveCamera(50, window.innerWidth / 2 / window.innerHeight, 0.1, 100);
-            renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-            renderer.setSize(window.innerWidth / 2, window.innerHeight * 0.9);
-            const geometry = new THREE.SphereGeometry(5, 64, 64);
-            const material = new THREE.MeshPhongMaterial({ color: 0x112244, emissive: 0x223366 });
-            globe = new THREE.Mesh(geometry, material);
-            scene.add(globe);
-            const light = new THREE.DirectionalLight(0xffdd88, 1.5);
-            light.position.set(8, 5, 10);
-            scene.add(light);
-            camera.position.z = 12;
-            function animate() {
-                requestAnimationFrame(animate);
-                globe.rotation.y += 0.002;
-                renderer.render(scene, camera);
-            }
-            animate();
-        }
-
-        // Chat demo matching screenshot
-        function initChat() {
-            const chat = document.getElementById('chat-messages');
-            chat.innerHTML = `
-                <div class="flex gap-3"><div class="chat-bubble-ai p-3 max-w-[75%]">Hi! I'm your AI Travel Assistant. 👋 I'll create the perfect trip for you.</div></div>
-                <div class="flex justify-end"><div class="chat-bubble-user p-3 max-w-[75%]">Plan a 7-day luxury trip to Greece under $8,000 for two people.</div></div>
-                <div class="flex gap-3"><div class="chat-bubble-ai p-3 max-w-[75%]">Perfect! I've created a 7-day Greece itinerary for you.</div></div>
-            `;
-        }
-
-        function sendChatMessage() {
-            const input = document.getElementById('chat-input');
-            const value = input.value.trim();
-            if (!value) return;
-            const chat = document.getElementById('chat-messages');
-            chat.innerHTML += <div class="flex justify-end"><div class="chat-bubble-user p-3">${value}</div></div>;
-            input.value = '';
-            chat.scrollTop = chat.scrollHeight;
-            setTimeout(() => {
-                chat.innerHTML += <div class="flex gap-3"><div class="chat-bubble-ai p-3">Great! I've updated your itinerary.</div></div>;
-                chat.scrollTop = chat.scrollHeight;
-            }, 800);
-        }
-
-        function triggerSearch() {
-            const val = document.getElementById('hero-search').value;
-            if (val) {
-                document.getElementById('chat-input').value = val;
-                sendChatMessage();
-            }
-        }
-
-        function showSignInModal() {
-            alert('Sign in demo - Welcome back!');
-        }
-
-        window.onload = () => {
-            initThreeGlobe();
-            initChat();
-        };
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
