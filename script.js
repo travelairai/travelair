@@ -1,132 +1,71 @@
-// TravelAir.ai Demo Planner
-
-const form = document.getElementById("tripForm");
-const result = document.getElementById("tripResult");
 const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();
 
-if (year) {
-  year.textContent = new Date().getFullYear();
-}
+const tripForm = document.getElementById("tripForm");
+const tripResult = document.getElementById("tripResult");
+const destinationInput = document.getElementById("destination");
 
-const itineraries = {
-  Greece: {
-    hotel: "Canaves Oia Suites",
-    airport: "Athens (ATH)",
-    highlight: "Santorini Sunset Cruise",
-    food: "Traditional Greek Taverns"
-  },
-  Japan: {
-    hotel: "Park Hyatt Tokyo",
-    airport: "Tokyo (HND)",
-    highlight: "Mount Fuji Day Tour",
-    food: "Sushi & Ramen Experience"
-  },
-  Dubai: {
-    hotel: "Atlantis The Royal",
-    airport: "Dubai (DXB)",
-    highlight: "Burj Khalifa & Desert Safari",
-    food: "Luxury Dining"
-  },
-  Italy: {
-    hotel: "Hotel Eden Rome",
-    airport: "Rome (FCO)",
-    highlight: "Colosseum & Amalfi Coast",
-    food: "Authentic Italian Cuisine"
-  },
-  Brazil: {
-    hotel: "Copacabana Palace",
-    airport: "Rio (GIG)",
-    highlight: "Christ the Redeemer",
-    food: "Brazilian Churrasco"
-  },
-  Maldives: {
-    hotel: "Soneva Jani",
-    airport: "Malé (MLE)",
-    highlight: "Overwater Villa",
-    food: "Private Beach Dinner"
-  }
+const destinationData = {
+  Greece: ["Athens arrival", "Acropolis tour", "Santorini sunset", "Beach day", "Island dinner"],
+  Japan: ["Tokyo arrival", "Shibuya and sushi", "Kyoto temples", "Osaka food tour", "Mount Fuji views"],
+  Italy: ["Rome arrival", "Colosseum tour", "Florence day trip", "Venice canals", "Wine and dinner"],
+  Dubai: ["Luxury hotel check-in", "Burj Khalifa", "Desert safari", "Beach club", "Marina dinner"],
+  Maldives: ["Resort arrival", "Snorkeling", "Spa day", "Island hopping", "Sunset dinner"],
+  Brazil: ["Rio arrival", "Christ the Redeemer", "Copacabana beach", "Sugarloaf Mountain", "Brazilian dinner"]
 };
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+function generateTrip(place, budget, days, style) {
+  const ideas = destinationData[place] || [
+    ${place} arrival,
+    "Explore top attractions",
+    "Local food and culture",
+    "Relaxation and flexible time",
+    "Final day highlights"
+  ];
 
-  const destination = document.getElementById("destination").value.trim();
-  const budget = document.getElementById("budget").value;
-  const days = document.getElementById("days").value;
-  const style = document.getElementById("style").value;
+  const flight = Math.round(budget * 0.32);
+  const hotel = Math.round(budget * 0.38);
+  const food = Math.round(budget * 0.15);
+  const activities = Math.round(budget * 0.15);
 
-  const trip = itineraries[destination] || {
-    hotel: "Luxury Hotel",
-    airport: "International Airport",
-    highlight: "Top Local Attractions",
-    food: "Local Restaurants"
-  };
+  let dailyPlan = "";
+  for (let i = 0; i < days; i++) {
+    dailyPlan += <li><strong>Day ${i + 1}:</strong> ${ideas[i % ideas.length]}</li>;
+  }
 
-  result.innerHTML = `
-    <h3>${destination} ${days}-Day AI Vacation Plan</h3>
-
-    <p><strong>Estimated Budget:</strong> $${budget}</p>
-
-    <p><strong>Travel Style:</strong> ${style}</p>
-
-    <hr>
-
-    <p>✈️ Flight Arrival: ${trip.airport}</p>
-
-    <p>🏨 Hotel: ${trip.hotel}</p>
-
-    <p>📍 Must Do: ${trip.highlight}</p>
-
-    <p>🍽️ Food: ${trip.food}</p>
-
-    <hr>
-
-    <h4>Sample Itinerary</h4>
-
-    <p><strong>Day 1:</strong> Arrival • Hotel Check-in • Welcome Dinner</p>
-
-    <p><strong>Day 2:</strong> Explore top attractions • Local food • Nightlife</p>
-
-    <p><strong>Day 3:</strong> Excursions • Shopping • Relaxation</p>
-
-    <p><strong>Day 4:</strong> Hidden gems • Beach or Adventure</p>
-
-    <p><strong>Day 5:</strong> Breakfast • Souvenir Shopping • Flight Home</p>
-
-    <hr>
-
-    <p style="color:#d8b04d;">
-      ✔️ Flights Estimated<br>
-      ✔️ Hotel Suggested<br>
-      ✔️ Activities Planned<br>
-      ✔️ Budget Organized
-    </p>
+  tripResult.innerHTML = `
+    <h3>${style} ${days}-day trip to ${place}</h3>
+    <p>Estimated sample budget: <strong>$${budget.toLocaleString()}</strong></p>
+    <ul>${dailyPlan}</ul>
+    <div class="budget-row"><span>Flights</span><strong>$${flight.toLocaleString()}</strong></div>
+    <div class="budget-row"><span>Hotels</span><strong>$${hotel.toLocaleString()}</strong></div>
+    <div class="budget-row"><span>Food</span><strong>$${food.toLocaleString()}</strong></div>
+    <div class="budget-row"><span>Activities</span><strong>$${activities.toLocaleString()}</strong></div>
   `;
-});
+}
 
-document.querySelectorAll(".destination-grid button").forEach((button) => {
-  button.addEventListener("click", () => {
-    document.getElementById("destination").value =
-      button.dataset.place;
+if (tripForm) {
+  tripForm.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-    document
-      .getElementById("planner")
-      .scrollIntoView({
-        behavior: "smooth"
-      });
+    const place = destinationInput.value.trim() || "Greece";
+    const budget = Number(document.getElementById("budget").value) || 4000;
+    const days = Number(document.getElementById("days").value) || 5;
+    const style = document.getElementById("style").value || "Luxury";
+
+    generateTrip(place, budget, days, style);
   });
-});
+}
 
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", (e) => {
-    const target = document.querySelector(link.getAttribute("href"));
+document.querySelectorAll(".destination-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    const place = card.dataset.place;
+    destinationInput.value = place;
+    document.getElementById("budget").value = 4000;
+    document.getElementById("days").value = 5;
+    document.getElementById("style").value = "Luxury";
 
-    if (target) {
-      e.preventDefault();
-
-      target.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
+    generateTrip(place, 4000, 5, "Luxury");
+    document.getElementById("planner").scrollIntoView({ behavior: "smooth" });
   });
 });
