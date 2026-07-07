@@ -841,3 +841,109 @@ grid-template-columns:1fr;
 .stat-card h3{
 font-size:42px;
 }
+
+/* ===========================
+   AI Command Center
+=========================== */
+
+.ai-command-center {
+    padding: 100px 7%;
+}
+
+.command-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 50px;
+}
+
+.command-panel {
+    padding: 26px;
+    border-radius: 26px;
+    background: rgba(255,255,255,.055);
+    border: 1px solid rgba(245,197,91,.18);
+    box-shadow: 0 24px 70px rgba(0,0,0,.38);
+    backdrop-filter: blur(18px);
+}
+
+.command-panel h3 {
+    color: var(--gold);
+    margin-bottom: 18px;
+}
+
+.command-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.command-panel li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    color: #e8e8e8;
+}
+
+.command-panel li:last-child {
+    border-bottom: none;
+}
+
+.command-panel strong {
+    color: var(--gold);
+}
+
+.status-item {
+    margin-bottom: 18px;
+}
+
+.status-item span {
+    display: block;
+    margin-bottom: 8px;
+    color: #e8e8e8;
+    font-weight: 700;
+}
+
+.status-bar {
+    height: 9px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(255,255,255,.12);
+}
+
+.fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #f5c55b, #fff1a8);
+    animation: commandLoad 2.8s ease-in-out infinite alternate;
+}
+
+.fill1 { width: 82%; }
+.fill2 { width: 68%; }
+.fill3 { width: 91%; }
+.fill4 { width: 74%; }
+
+@keyframes commandLoad {
+    from {
+        opacity: .65;
+        filter: brightness(.9);
+    }
+
+    to {
+        opacity: 1;
+        filter: brightness(1.25);
+    }
+}
+
+@media (max-width: 1000px) {
+    .command-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .command-grid {
+        grid-template-columns: 1fr;
+    }
+}
