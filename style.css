@@ -56,20 +56,19 @@ a {
 }
 
 .site-bg::after {
-  content: "";
-  position: absolute;
-  width: 720px;
-  height: 720px;
-  border-radius: 50%;
-  left: 50%;
-  top: 120px;
-  transform: translateX(-50%);
-  border: 1px solid rgba(245, 197, 91, 0.14);
-  box-shadow:
-    inset 0 0 70px rgba(245, 197, 91, 0.08),
-    0 0 120px rgba(245, 197, 91, 0.08);
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, #050505 0%, rgba(5,5,5,.72) 36%, rgba(5,5,5,.25) 70%),
+        linear-gradient(180deg, rgba(5,5,5,.15), #050505 92%),
+        url("travelair-globe-bg.png");
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    opacity: .9;
+    animation: globeMove 18s ease-in-out infinite alternate;
 }
-
 .gold-orb {
   position: absolute;
   border-radius: 50%;
@@ -642,4 +641,16 @@ footer {
   height: 145%;
   object-fit: cover;
   padding: 0;
+}
+
+@keyframes globeMove {
+    from {
+        transform: scale(1) translateX(0);
+        filter: brightness(.95) saturate(1.1);
+    }
+
+    to {
+        transform: scale(1.06) translateX(-18px);
+        filter: brightness(1.12) saturate(1.25);
+    }
 }
