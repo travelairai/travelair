@@ -1,84 +1,205 @@
-const year = document.getElementById("year");
-if (year) year.textContent = new Date().getFullYear();
+// ======================================
+// TravelAir.ai V11
+// ======================================
 
+// Footer Year
+const year = document.getElementById("year");
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
+
+// Planner Elements
 const tripForm = document.getElementById("tripForm");
 const tripResult = document.getElementById("tripResult");
-const destinationInput = document.getElementById("destination");
 
-const destinationData = {
-  Greece: ["Athens arrival", "Acropolis tour", "Santorini sunset", "Beach day", "Island dinner"],
-  Japan: ["Tokyo arrival", "Shibuya and sushi", "Kyoto temples", "Osaka food tour", "Mount Fuji views"],
-  Italy: ["Rome arrival", "Colosseum tour", "Florence day trip", "Venice canals", "Wine and dinner"],
-  Dubai: ["Luxury hotel check-in", "Burj Khalifa", "Desert safari", "Beach club", "Marina dinner"],
-  Maldives: ["Resort arrival", "Snorkeling", "Spa day", "Island hopping", "Sunset dinner"],
-  Brazil: ["Rio arrival", "Christ the Redeemer", "Copacabana beach", "Sugarloaf Mountain", "Brazilian dinner"],
-  Paris: ["Paris arrival", "Eiffel Tower", "Louvre Museum", "Seine dinner cruise", "Montmartre walk"],
-  Thailand: ["Bangkok arrival", "Temple tour", "Island transfer", "Beach day", "Night market"]
-};
+const fromAirport = document.getElementById("fromAirport");
+const destination = document.getElementById("destination");
+const budget = document.getElementById("budget");
+const travelers = document.getElementById("travelers");
+const days = document.getElementById("days");
+const style = document.getElementById("style");
 
-function generateTrip(place, from, budget, travelers, days, style) {
-  const ideas = destinationData[place] || [
-    ${place} arrival,
-    "Explore top attractions",
-    "Local food and culture",
-    "Relaxation and flexible time",
-    "Final day highlights"
-  ];
+// Sample Destination Data
+const trips = {
 
-  const flight = Math.round(budget * 0.32);
-  const hotel = Math.round(budget * 0.38);
-  const food = Math.round(budget * 0.15);
-  const activities = Math.round(budget * 0.15);
+  Greece:{
+    hotel:"Canaves Oia Suites",
+    airport:"ATH",
+    highlights:[
+      "Athens Walking Tour",
+      "Acropolis",
+      "Santorini Sunset",
+      "Beach Day",
+      "Island Dinner"
+    ]
+  },
 
-  let dailyPlan = "";
-  for (let i = 0; i < days; i++) {
-    dailyPlan += <li><strong>Day ${i + 1}:</strong> ${ideas[i % ideas.length]}</li>;
+  Japan:{
+    hotel:"Aman Tokyo",
+    airport:"HND",
+    highlights:[
+      "Shibuya Crossing",
+      "Sushi Experience",
+      "Kyoto Temples",
+      "Mount Fuji",
+      "Osaka Food Tour"
+    ]
+  },
+
+  Italy:{
+    hotel:"Hotel Hassler",
+    airport:"FCO",
+    highlights:[
+      "Colosseum",
+      "Vatican",
+      "Florence",
+      "Venice",
+      "Wine Tour"
+    ]
+  },
+
+  Dubai:{
+    hotel:"Atlantis The Royal",
+    airport:"DXB",
+    highlights:[
+      "Burj Khalifa",
+      "Desert Safari",
+      "Luxury Shopping",
+      "Beach Club",
+      "Dubai Marina"
+    ]
+  },
+
+  Brazil:{
+    hotel:"Copacabana Palace",
+    airport:"GIG",
+    highlights:[
+      "Christ the Redeemer",
+      "Sugarloaf Mountain",
+      "Copacabana",
+      "Ipanema",
+      "Brazilian Steakhouse"
+    ]
+  },
+
+  Maldives:{
+    hotel:"Soneva Jani",
+    airport:"MLE",
+    highlights:[
+      "Overwater Villa",
+      "Snorkeling",
+      "Private Beach",
+      "Spa",
+      "Sunset Cruise"
+    ]
   }
 
-  tripResult.innerHTML = `
-    <h3>${style} ${days}-day trip to ${place}</h3>
-    <p>
-      Sample plan for <strong>${travelers}</strong> traveler${travelers > 1 ? "s" : ""}
-      ${from ? leaving from <strong>${from}</strong> : ""}.
-      Estimated budget: <strong>$${budget.toLocaleString()}</strong>.
-    </p>
+};
 
-    <ul>${dailyPlan}</ul>
+// Planner
+tripForm?.addEventListener("submit",(e)=>{
 
-    <div class="budget-row"><span>Flights</span><strong>$${flight.toLocaleString()}</strong></div>
-    <div class="budget-row"><span>Hotels</span><strong>$${hotel.toLocaleString()}</strong></div>
-    <div class="budget-row"><span>Food</span><strong>$${food.toLocaleString()}</strong></div>
-    <div class="budget-row"><span>Activities</span><strong>$${activities.toLocaleString()}</strong></div>
-  `;
-}
+    e.preventDefault();
 
-if (tripForm) {
-  tripForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+    const place = destination.value.trim();
 
-    const from = document.getElementById("fromAirport").value.trim();
-    const place = destinationInput.value.trim() || "Greece";
-    const budget = Number(document.getElementById("budget").value) || 4000;
-    const travelers = Number(document.getElementById("travelers").value) || 2;
-    const days = Number(document.getElementById("days").value) || 5;
-    const style = document.getElementById("style").value || "Luxury";
+    const data = trips[place] || trips.Greece;
 
-    generateTrip(place, from, budget, travelers, days, style);
-  });
-}
+    const budgetValue = Number(budget.value || 4000);
 
-document.querySelectorAll(".destination-card").forEach((card) => {
-  card.addEventListener("click", () => {
-    const place = card.dataset.place;
+    const hotel = Math.round(budgetValue*.40);
 
-    destinationInput.value = place;
-    document.getElementById("fromAirport").value = "Miami";
-    document.getElementById("budget").value = 4000;
-    document.getElementById("travelers").value = 2;
-    document.getElementById("days").value = 5;
-    document.getElementById("style").value = "Luxury";
+    const flights = Math.round(budgetValue*.30);
 
-    generateTrip(place, "Miami", 4000, 2, 5, "Luxury");
-    document.getElementById("planner").scrollIntoView({ behavior: "smooth" });
-  });
+    const food = Math.round(budgetValue*.15);
+
+    const activities = Math.round(budgetValue*.15);
+
+    tripResult.innerHTML=`
+
+<h3>${place} Vacation Plan</h3>
+
+<p>
+Leaving from <strong>${fromAirport.value || "Your Airport"}</strong><br>
+${travelers.value} Traveler(s)<br>
+${days.value}<br>
+${style.value}
+</p>
+
+<hr>
+
+<h4>Recommended Hotel</h4>
+
+<p>${data.hotel}</p>
+
+<h4>Airport</h4>
+
+<p>${data.airport}</p>
+
+<h4>Sample Itinerary</h4>
+
+<ul>
+
+${data.highlights.map(item=><li>${item}</li>).join("")}
+
+</ul>
+
+<hr>
+
+<h4>Estimated Budget</h4>
+
+<p>
+
+Flights: $${flights.toLocaleString()}<br>
+
+Hotel: $${hotel.toLocaleString()}<br>
+
+Food: $${food.toLocaleString()}<br>
+
+Activities: $${activities.toLocaleString()}
+
+</p>
+
+`;
+
+});
+
+// Destination Cards
+
+document.querySelectorAll(".destination-card").forEach(card=>{
+
+    card.addEventListener("click",()=>{
+
+        destination.value=card.dataset.place;
+
+        document.getElementById("planner").scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    });
+
+});
+
+// Floating Animation
+
+document.querySelectorAll(".floating-card").forEach((card,index)=>{
+
+    card.animate([
+
+        {transform:"translateY(0px)"},
+
+        {transform:"translateY(-10px)"},
+
+        {transform:"translateY(0px)"}
+
+    ],{
+
+        duration:3500+(index*800),
+
+        iterations:Infinity
+
+    });
+
 });
