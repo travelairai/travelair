@@ -745,3 +745,101 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===========================
+   Travel Intelligence
+=========================== */
+
+.travel-stats{
+    padding:90px 7%;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin:50px 0;
+}
+
+.stat-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,215,100,.18);
+    border-radius:22px;
+    padding:35px;
+    text-align:center;
+    transition:.35s;
+    backdrop-filter:blur(10px);
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
+    border-color:#f5c55b;
+    box-shadow:0 0 35px rgba(245,197,91,.25);
+}
+
+.stat-card h3{
+    font-size:52px;
+    color:var(--gold);
+    margin-bottom:10px;
+    font-weight:900;
+}
+
+.stat-card p{
+    color:#d6d6d6;
+    font-size:17px;
+}
+
+.ai-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.ai-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,215,100,.18);
+    border-radius:22px;
+    padding:35px;
+    transition:.35s;
+}
+
+.ai-card:hover{
+    transform:translateY(-6px);
+    border-color:#f5c55b;
+    box-shadow:0 0 30px rgba(245,197,91,.22);
+}
+
+.ai-card h3{
+    color:var(--gold);
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.ai-card p{
+    color:#d9d9d9;
+    line-height:1.7;
+}
+
+@media(max-width:900px){
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.ai-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:600px){
+
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+.stat-card h3{
+font-size:42px;
+}
+
+}
