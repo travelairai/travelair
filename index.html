@@ -3,24 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="TravelAir.ai — Free AI travel planning for vacations, itineraries, budgets, hotels, flights, and destination ideas." />
+  <meta name="description" content="TravelAir.ai is a free AI travel planning platform for vacations, itineraries, budgets, hotels, flights, and destination ideas." />
   <meta name="theme-color" content="#050505" />
-  <title>TravelAir.ai — Free AI Travel Planner</title>
-  <link rel="stylesheet" href="style.css?v=3" />
+  <title>TravelAir.ai | Free AI Travel Planner</title>
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 
 <body>
   <div class="site-bg">
-    <div class="bg-glow glow-one"></div>
-    <div class="bg-glow glow-two"></div>
-    <div class="flight-path path-one"></div>
-    <div class="flight-path path-two"></div>
+    <div class="global-glow"></div>
+    <div class="flight-ring ring-one"></div>
+    <div class="flight-ring ring-two"></div>
+    <div class="flight-ring ring-three"></div>
     <div class="plane plane-one">✈️</div>
     <div class="plane plane-two">✈️</div>
+    <div class="plane plane-three">✈️</div>
   </div>
 
   <header class="header">
-    <a class="brand" href="#top" aria-label="TravelAir.ai home">
+    <a class="brand" href="#top">
       <img src="travelair-logo.png" alt="TravelAir.ai logo" />
       <div>
         <strong>TravelAir.ai</strong>
@@ -29,11 +30,13 @@
     </a>
 
     <nav class="nav">
-      <a href="#planner">Plan Trip</a>
-      <a href="#ideas">Ideas</a>
+      <a href="#planner">Planner</a>
+      <a href="#destinations">Destinations</a>
       <a href="#dashboard">Preview</a>
       <a href="#waitlist">Waitlist</a>
     </nav>
+
+    <a class="nav-cta" href="#planner">Start Planning</a>
   </header>
 
   <main id="top">
@@ -41,73 +44,77 @@
       <div class="hero-copy">
         <div class="eyebrow">
           <span></span>
-          Free AI vacation planning platform
+          AI powered vacation planning
         </div>
 
-        <h1>Plan smarter trips with AI.</h1>
+        <h1>Plan your next vacation with AI.</h1>
 
         <p>
-          Build vacation ideas, day-by-day itineraries, budget estimates, hotel options, flight notes,
-          and trip plans in one simple travel workspace.
+          Discover destinations, estimate budgets, organize itineraries, compare hotel ideas,
+          and build smarter trip plans before you book.
         </p>
 
         <div class="hero-actions">
-          <a href="#planner" class="btn primary">Start Planning</a>
-          <a href="#ideas" class="btn secondary">Explore Destinations</a>
+          <a href="#planner" class="btn primary">Build My Trip</a>
+          <a href="#destinations" class="btn secondary">Explore Ideas</a>
         </div>
 
-        <div class="trust-row">
+        <div class="hero-points">
           <div>
             <strong>Free</strong>
-            <span>Trip planning tools</span>
+            <span>No signup required to start</span>
           </div>
           <div>
-            <strong>AI</strong>
-            <span>Itinerary builder</span>
+            <strong>Fast</strong>
+            <span>Instant sample itineraries</span>
           </div>
           <div>
-            <strong>Early</strong>
-            <span>Booking tools coming later</span>
+            <strong>Smart</strong>
+            <span>Budget and travel planning</span>
           </div>
         </div>
       </div>
 
-      <div class="hero-preview">
-        <div class="preview-top">
-          <span>TravelAir AI Preview</span>
-          <small>Sample itinerary</small>
-        </div>
-
-        <div class="message user">Plan a 5-day Greece trip under $4,000.</div>
-        <div class="message ai">
-          Here is a sample plan with Athens, Santorini, hotel ideas, activities, meals, and a budget estimate.
-        </div>
-
-        <div class="itinerary-list">
-          <div>
-            <strong>Day 1</strong>
-            <span>Athens arrival, hotel check-in, Plaka dinner</span>
+      <div class="hero-visual">
+        <div class="globe-card">
+          <div class="globe-core">
+            <img src="travelair-global-bg.png" alt="Travel globe" />
           </div>
-          <div>
-            <strong>Day 2</strong>
-            <span>Acropolis, museum, rooftop sunset drinks</span>
+
+          <div class="ai-float-card card-one">
+            <span>Searching destinations</span>
+            <strong>Greece • Japan • Dubai</strong>
           </div>
-          <div>
-            <strong>Day 3</strong>
-            <span>Fly to Santorini, caldera walk, beach club</span>
+
+          <div class="ai-float-card card-two">
+            <span>Budget estimate</span>
+            <strong>$4,000 sample plan</strong>
+          </div>
+
+          <div class="ai-float-card card-three">
+            <span>AI itinerary</span>
+            <strong>5 days generated</strong>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="planner" id="planner">
+    <section class="planner-section" id="planner">
       <div class="section-head">
         <span>AI Trip Planner</span>
-        <h2>Build a vacation plan in seconds.</h2>
-        <p>Enter your destination, budget, length, and travel style. TravelAir.ai will generate a sample trip plan instantly.</p>
+        <h2>Build a smarter vacation plan.</h2>
+        <p>
+          Enter your trip details and TravelAir.ai will create a sample itinerary,
+          budget breakdown, and travel planning preview.
+        </p>
       </div>
 
       <form class="planner-box" id="tripForm">
+        <div>
+          <label for="fromAirport">Leaving From</label>
+          <input id="fromAirport" type="text" placeholder="Miami, New York, Los Angeles..." />
+        </div>
+
         <div>
           <label for="destination">Destination</label>
           <input id="destination" type="text" placeholder="Greece, Japan, Dubai..." required />
@@ -116,6 +123,17 @@
         <div>
           <label for="budget">Budget</label>
           <input id="budget" type="number" placeholder="4000" required />
+        </div>
+
+        <div>
+          <label for="travelers">Travelers</label>
+          <select id="travelers">
+            <option value="1">1 traveler</option>
+            <option value="2" selected>2 travelers</option>
+            <option value="3">3 travelers</option>
+            <option value="4">4 travelers</option>
+            <option value="5">5+ travelers</option>
+          </select>
         </div>
 
         <div>
@@ -136,78 +154,85 @@
             <option>Family</option>
             <option>Adventure</option>
             <option>Budget Friendly</option>
+            <option>Food & Culture</option>
           </select>
         </div>
 
         <button type="submit">Generate Trip</button>
       </form>
 
-      <div class="result-card" id="tripResult">
+      <div class="trip-output" id="tripResult">
         <h3>Your AI trip plan will appear here.</h3>
-        <p>Try Greece, Japan, Dubai, Italy, Brazil, Maldives, or Thailand.</p>
+        <p>Try Greece, Japan, Dubai, Italy, Brazil, Maldives, Paris, or Thailand.</p>
       </div>
     </section>
 
-    <section class="destinations" id="ideas">
+    <section class="destinations" id="destinations">
 
       <div class="section-head">
         <span>Featured Destinations</span>
-        <h2>Where would you like to go?</h2>
+        <h2>Choose your next adventure.</h2>
         <p>
-          Explore popular destinations and generate a personalized vacation
-          itinerary with one click.
+          Browse popular destinations and let TravelAir.ai build a personalized
+          vacation plan around your travel style and budget.
         </p>
       </div>
 
       <div class="destination-grid">
 
-        <div class="destination-card" data-place="Greece">
+        <article class="destination-card" data-place="Greece">
+          <img src="greece.jpg" alt="Santorini, Greece">
           <div class="destination-overlay">
             <h3>🇬🇷 Greece</h3>
-            <p>Santorini • Athens • Mykonos</p>
-            <button>Plan This Trip</button>
+            <p>Athens • Santorini • Mykonos</p>
+            <button type="button">Plan This Trip</button>
           </div>
-        </div>
+        </article>
 
-        <div class="destination-card" data-place="Japan">
+        <article class="destination-card" data-place="Japan">
+          <img src="japan.jpg" alt="Tokyo, Japan">
           <div class="destination-overlay">
             <h3>🇯🇵 Japan</h3>
             <p>Tokyo • Kyoto • Osaka</p>
-            <button>Plan This Trip</button>
+            <button type="button">Plan This Trip</button>
           </div>
-        </div>
+        </article>
 
-        <div class="destination-card" data-place="Italy">
+        <article class="destination-card" data-place="Italy">
+          <img src="italy.jpg" alt="Italy">
           <div class="destination-overlay">
             <h3>🇮🇹 Italy</h3>
             <p>Rome • Florence • Venice</p>
-            <button>Plan This Trip</button>
+            <button type="button">Plan This Trip</button>
           </div>
-        </div>
+        </article>
 
-        <div class="destination-card" data-place="Dubai">
+        <article class="destination-card" data-place="Dubai">
+          <img src="dubai.jpg" alt="Dubai">
           <div class="destination-overlay">
             <h3>🇦🇪 Dubai</h3>
             <p>Luxury • Desert • Skyline</p>
-            <button>Plan This Trip</button>
+            <button type="button">Plan This Trip</button>
           </div>
-        </div>
+        </article>
 
-        <div class="destination-card" data-place="Maldives">
+        <article class="destination-card" data-place="Maldives">
+          <img src="maldives.jpg" alt="Maldives">
           <div class="destination-overlay">
             <h3>🇲🇻 Maldives</h3>
             <p>Overwater Villas • Beaches</p>
-            <button>Plan This Trip</button>
+            <button type="button">Plan This Trip</button>
           </div>
-        </div>
+        </article>
 
-        <div class="destination-card" data-place="Brazil">
+        <article class="destination-card" data-place="Brazil">
+          <img src="brazil.jpg" alt="Rio de Janeiro, Brazil">
           <div class="destination-overlay">
             <h3>🇧🇷 Brazil</h3>
             <p>Rio • São Paulo • Iguazu</p>
-            <button>Plan This Trip</button>
+            <button type="button">Plan This Trip</button>
           </div>
-        </div>
+        </article>
 
       </div>
 
@@ -215,14 +240,41 @@
 
     <section class="dashboard" id="dashboard">
       <div class="section-head">
-        <span>Travel Planning Preview</span>
-        <h2>Everything organized before you book.</h2>
-        <p>Use TravelAir.ai to draft trip ideas, compare options, estimate costs, and keep vacation details in one place.</p>
+        <span>Planning Preview</span>
+        <h2>Your trip organized before you book.</h2>
+        <p>
+          TravelAir.ai helps you draft itineraries, estimate budgets, compare ideas,
+          and organize the details of your vacation in one place.
+        </p>
       </div>
 
-      <div class="dashboard-grid">
-        <div class="dash-card large">
-          <h3>Sample Budget Breakdown</h3>
+      <div class="dashboard-shell">
+        <div class="dash-main">
+          <div class="dash-top">
+            <span>AI Travel Workspace</span>
+            <strong>Sample Greece Plan</strong>
+          </div>
+
+          <div class="dash-progress">
+            <div>
+              <span>Destination Match</span>
+              <div class="bar"><i style="width: 92%"></i></div>
+            </div>
+
+            <div>
+              <span>Hotel Ideas</span>
+              <div class="bar"><i style="width: 78%"></i></div>
+            </div>
+
+            <div>
+              <span>Itinerary Build</span>
+              <div class="bar"><i style="width: 86%"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-side">
+          <h3>Sample Budget</h3>
           <div class="budget-row"><span>Flights</span><strong>$1,180</strong></div>
           <div class="budget-row"><span>Hotels</span><strong>$1,950</strong></div>
           <div class="budget-row"><span>Food</span><strong>$620</strong></div>
@@ -231,25 +283,25 @@
 
         <div class="dash-card">
           <h3>Hotel Ideas</h3>
-          <p>Luxury, boutique, family, romantic, or budget-friendly stays.</p>
+          <p>Luxury resorts, boutique hotels, family stays, and budget options.</p>
         </div>
 
         <div class="dash-card">
           <h3>Flight Notes</h3>
-          <p>Compare sample routes, timing, airports, and travel preferences.</p>
+          <p>Compare sample airports, routes, timing, and travel preferences.</p>
         </div>
 
         <div class="dash-card">
-          <h3>Daily Plan</h3>
-          <p>Build a simple day-by-day itinerary before booking.</p>
+          <h3>Daily Itinerary</h3>
+          <p>Organize activities, meals, transportation, and flexible free time.</p>
         </div>
       </div>
     </section>
 
-    <section class="features" id="features">
+    <section class="features">
       <div class="feature-card">
         <h3>Smart Itineraries</h3>
-        <p>Create sample day-by-day plans for activities, meals, hotels, flights, and transportation.</p>
+        <p>Create sample day-by-day plans for activities, meals, hotels, flights, transportation, and free time.</p>
       </div>
 
       <div class="feature-card">
@@ -259,81 +311,44 @@
 
       <div class="feature-card">
         <h3>Trip Organization</h3>
-        <p>Keep destination ideas, travel style, timing, and budget notes organized in one place.</p>
+        <p>Keep destination ideas, travel style, timing, budget, and itinerary notes organized in one place.</p>
       </div>
     </section>
 
     <section class="waitlist" id="waitlist">
-
       <div class="waitlist-content">
-
         <span>Founding Member Access</span>
-
         <h2>Join the TravelAir.ai Early Access List</h2>
-
         <p>
-          Be among the first to experience new travel planning features as they
-          are released. Future updates will include saved trips, collaborative
-          itineraries, hotel comparisons, flight integrations, and more.
+          Get notified as new travel planning features launch, including saved trips,
+          hotel comparisons, flight integrations, collaborative itineraries, and AI booking tools.
         </p>
 
         <ul class="launch-list">
-          <li>✓ AI Trip Planner</li>
-          <li>✓ Budget Estimates</li>
-          <li>✓ Personalized Itineraries</li>
-          <li>✓ Saved Trips (Coming Soon)</li>
-          <li>✓ Flight & Hotel Integrations (Coming Soon)</li>
+          <li>✓ Free AI trip planner</li>
+          <li>✓ Budget estimates</li>
+          <li>✓ Personalized itineraries</li>
+          <li>✓ Saved trips coming soon</li>
+          <li>✓ Flight and hotel integrations coming soon</li>
         </ul>
-
       </div>
 
-      <form
-        action="https://formspree.io/f/xnjjngql"
-        method="POST"
-        class="waitlist-form"
-      >
-
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          required
-        >
-
-        <input
-          type="hidden"
-          name="source"
-          value="TravelAir.ai Website"
-        >
-
-        <button type="submit">
-          Join Free Early Access
-        </button>
-
+      <form action="https://formspree.io/f/xnjjngql" method="POST" class="waitlist-form">
+        <input type="email" name="email" placeholder="Enter your email" required />
+        <input type="hidden" name="source" value="TravelAir.ai V4 Website" />
+        <button type="submit">Join Free Early Access</button>
       </form>
-
     </section>
-
   </main>
 
   <footer class="footer">
-
-    <div class="footer-logo">
-      <img src="travelair-logo.png" alt="TravelAir.ai">
-    </div>
-
-    <p>
-      © <span id="year"></span> TravelAir.ai
-    </p>
-
+    <img src="travelair-logo.png" alt="TravelAir.ai logo" />
+    <p>© <span id="year"></span> TravelAir.ai</p>
     <p class="footer-text">
-      AI powered travel planning. Build vacation ideas, itineraries, and budget
-      estimates before you book.
+      Free AI travel planning for vacation ideas, itineraries, and budget estimates.
     </p>
-
   </footer>
 
   <script src="script.js"></script>
-
 </body>
 </html>
