@@ -654,3 +654,15 @@ footer {
         filter: brightness(1.12) saturate(1.25);
     }
 }
+
+@keyframes globeMove {
+    from {
+        transform: scale(1) translateX(0);
+        filter: brightness(.95) saturate(1.1);
+    }
+
+    to {
+        transform: scale(1.06) translateX(-18px);
+        filter: brightness(1.12) saturate(1.25);
+    }
+}
