@@ -626,20 +626,20 @@ footer {
 }
 
 .brand-logo {
-  width: 64px;
-  height: 64px;
-  border-radius: 18px;
+  width: 70px;
+  height: 70px;
+  border-radius: 22px;
   overflow: hidden;
   display: grid;
   place-items: center;
-  background: rgba(245, 197, 91, 0.08);
-  border: 1px solid rgba(245, 197, 91, 0.22);
+  background: #050505;
+  border: 1px solid rgba(245, 197, 91, 0.28);
   box-shadow: 0 18px 50px rgba(245, 197, 91, 0.24);
 }
 
 .brand-logo img {
-  width: 180%;
-  height: 180%;
-  object-fit: contain;
+  width: 145%;
+  height: 145%;
+  object-fit: cover;
   padding: 0;
 }
