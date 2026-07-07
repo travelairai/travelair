@@ -977,17 +977,24 @@ input::placeholder {
   }
 }
 
-/* FULL HERO GLOBE BACKGROUND */
+/* FIX HERO GLOBE WALLPAPER */
 
 .hero {
-    background:
-        linear-gradient(rgba(5,5,5,.78), rgba(5,5,5,.78)),
-        url("travelair-global-bg.png");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(7,7,7,0.92) 0%, rgba(7,7,7,0.78) 42%, rgba(7,7,7,0.45) 100%),
+    url("travelair-global-bg.png") center right / cover no-repeat !important;
+}
+
+.hero-ill {
+  background: transparent !important;
 }
 
 .earth {
-    display: none;
+  display: none !important;
+}
+
+.floating-card {
+  display: none !important;
 }
