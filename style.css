@@ -625,8 +625,8 @@ footer {
 }
 
 .brand-logo {
-    width: 110px;
-    height: 110px;
+    width: 130px;
+    height: 130px;
     overflow: visible;
     display: flex;
     align-items: center;
@@ -638,12 +638,13 @@ footer {
 }
 
 .brand-logo img {
-    width: 110px;
-    height: 110px;
+    width: 130px;
+    height: 130px;
     object-fit: contain;
     display: block;
     padding: 0;
 }
+
 @keyframes globeMove {
     from {
         transform: scale(1) translateX(0);
