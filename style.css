@@ -976,3 +976,18 @@ input::placeholder {
     padding: 30px;
   }
 }
+
+/* FULL HERO GLOBE BACKGROUND */
+
+.hero {
+    background:
+        linear-gradient(rgba(5,5,5,.78), rgba(5,5,5,.78)),
+        url("travelair-global-bg.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.earth {
+    display: none;
+}
