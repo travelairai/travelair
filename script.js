@@ -240,29 +240,29 @@ day++
 
 if(day===1){
 
-
 plan.push(
-
 Day ${day}: Arrive in ${place}. Check in and begin exploring.
-
 );
-
 
 }
 
 
 else if(day===days){
 
-
 plan.push(
-
 Day ${day}: Final experiences and prepare for departure.
-
 );
-
 
 }
 
+
+else{
+
+plan.push(
+Day ${day}: ${style} activities, dining, and personalized exploration.
+);
+
+}
 
 else{
 
