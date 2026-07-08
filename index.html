@@ -1,1 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>TravelAir.ai™ | AI Travel Planning</title>
+<meta name="description" content="TravelAir.ai helps you plan smarter trips with AI-powered itineraries, budget estimates, and travel organization tools.">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+<img src="travelair-logo.png" alt="TravelAir.ai Logo">
+<span>TravelAir.ai™</span>
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#planner">AI Planner</a>
+<a href="#features">Features</a>
+<a href="#destinations">Destinations</a>
+<a href="#waitlist">Early Access</a>
+</nav>
+
+<button class="nav-btn">Start Planning Free</button>
+
+</header>
+
+
+<main>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>
+The Future of Travel Starts Here
+</h1>
+
+<p>
+Plan your next journey with AI-powered travel intelligence.
+Create itineraries, estimate budgets, and organize your trips in one place.
+</p>
+
+<div class="hero-buttons">
+<button class="primary-btn">Start Planning Free</button>
+<button class="secondary-btn">Join Early Access</button>
+</div>
+
+</div>
+
+
+<div class="hero-ai-panel">
+
+<div class="ai-header">
+<span class="status-dot"></span>
+TravelAir AI Planner
+</div>
+
+<div class="ai-message">
+Tell me where you want to go, your travel style, and your budget.
+</div>
+
+<div class="planner-preview">
+
+<div>
+<strong>Destination</strong>
+<p>Greece</p>
+</div>
+
+<div>
+<strong>Style</strong>
+<p>Luxury Experience</p>
+</div>
+
+<div>
+<strong>Trip Length</strong>
+<p>7 Days</p>
+</div>
+
+</div>
+
+<button class="generate-btn">
+Generate Itinerary
+</button>
+
+</div>
+
+</section>
+
+<section class="planner-section" id="planner">
+
+<div class="section-title">
+<h2>AI Trip Planner</h2>
+<p>Create a personalized travel plan in seconds.</p>
+</div>
+
+
+<div class="planner-box">
+
+<div class="planner-input">
+
+<label>Where do you want to go?</label>
+<input type="text" id="destination" placeholder="Example: Italy, Japan, Greece">
+
+</div>
+
+
+<div class="planner-grid">
+
+<div>
+<label>Travel Style</label>
+<select id="travelStyle">
+<option>Luxury</option>
+<option>Adventure</option>
+<option>Family</option>
+<option>Business</option>
+<option>Relaxation</option>
+</select>
+</div>
+
+
+<div>
+<label>Trip Length</label>
+<select id="tripLength">
+<option>3 Days</option>
+<option>5 Days</option>
+<option>7 Days</option>
+<option>10 Days</option>
+<option>14 Days</option>
+</select>
+</div>
+
+
+<div>
+<label>Budget</label>
+<select id="budget">
+<option>Budget Friendly</option>
+<option>Moderate</option>
+<option>Premium</option>
+<option>Luxury</option>
+</select>
+</div>
+
+</div>
+
+
+<button class="primary-btn" id="planTrip">
+Create My AI Trip Plan
+</button>
+
+
+<div class="trip-result" id="tripResult">
+
+<h3>Your AI itinerary will appear here</h3>
+
+<p>
+Enter your destination and preferences to generate a personalized travel preview.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="features" id="features">
+
+<div class="section-title">
+
+<h2>Smarter Travel Planning</h2>
+
+<p>
+Everything you need to organize your next adventure.
+</p>
+
+</div>
+
+
+<div class="feature-grid">
+
+
+<div class="feature-card">
+
+<h3>AI Itineraries</h3>
+
+<p>
+Generate organized day-by-day travel plans based on your interests.
+</p>
+
+</div>
+
+
+<div class="feature-card">
+
+<h3>Budget Intelligence</h3>
+
+<p>
+Estimate trip costs and understand your travel options before booking.
+</p>
+
+</div>
+
+
+<div class="feature-card">
+
+<h3>Trip Organization</h3>
+
+<p>
+Keep your travel ideas, plans, and experiences together in one place.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+<section class="destinations" id="destinations">
+
+<div class="section-title">
+
+<h2>Explore Popular Journeys</h2>
+
+<p>
+Discover inspiration for your next adventure.
+</p>
+
+</div>
+
+
+<div class="destination-grid">
+
+
+<div class="destination-card">
+<h3>Greece</h3>
+<p>Island escapes, history, and luxury experiences.</p>
+<button class="destination-btn">Plan Greece Trip</button>
+</div>
+
+
+<div class="destination-card">
+<h3>Japan</h3>
+<p>Culture, technology, food, and unforgettable cities.</p>
+<button class="destination-btn">Plan Japan Trip</button>
+</div>
+
+
+<div class="destination-card">
+<h3>Italy</h3>
+<p>Art, cuisine, coastlines, and timeless destinations.</p>
+<button class="destination-btn">Plan Italy Trip</button>
+</div>
+
+
+<div class="destination-card">
+<h3>Dubai</h3>
+<p>Luxury experiences, innovation, and adventure.</p>
+<button class="destination-btn">Plan Dubai Trip</button>
+</div>
+
+
+<div class="destination-card">
+<h3>Switzerland</h3>
+<p>Mountains, scenic journeys, and premium escapes.</p>
+<button class="destination-btn">Plan Switzerland Trip</button>
+</div>
+
+
+<div class="destination-card">
+<h3>Bali</h3>
+<p>Relaxation, nature, and unique experiences.</p>
+<button class="destination-btn">Plan Bali Trip</button>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="how-it-works">
+
+<div class="section-title">
+
+<h2>How TravelAir.ai Works</h2>
+
+<p>
+A simpler way to plan your next journey.
+</p>
+
+</div>
+
+
+<div class="steps-grid">
+
+
+<div class="step-card">
+<span>01</span>
+<h3>Choose Your Destination</h3>
+<p>Tell us where you want to travel.</p>
+</div>
+
+
+<div class="step-card">
+<span>02</span>
+<h3>Customize Your Trip</h3>
+<p>Select your style, budget, and preferences.</p>
+</div>
+
+
+<div class="step-card">
+<span>03</span>
+<h3>Generate Your Plan</h3>
+<p>Receive an AI-powered itinerary preview.</p>
+</div>
+
+
+<div class="step-card">
+<span>04</span>
+<h3>Save Your Journey</h3>
+<p>Keep your travel plans organized.</p>
+</div>
+
+
+</div>
+
+</section>
+
+<section class="early-access" id="waitlist">
+
+<div class="waitlist-content">
+
+<h2>Join TravelAir.ai™ Early Access</h2>
+
+<p>
+Be part of the next generation of AI-powered travel planning.
+</p>
+
+
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="waitlist-form">
+
+<input 
+type="email" 
+name="email" 
+placeholder="Enter your email address"
+required
+>
+
+<button type="submit">
+Join Free
+</button>
+
+</form>
+
+<p class="small-text">
+No payment required. Early access updates only.
+</p>
+
+
+</div>
+
+</section>
+
+
+
+<section class="vision">
+
+<div class="vision-box">
+
+<h2>Building the Future of Travel Intelligence</h2>
+
+<p>
+TravelAir.ai is creating smarter tools that help people discover destinations,
+organize journeys, and make better travel decisions with AI.
+</p>
+
+
+<div class="vision-grid">
+
+
+<div>
+<h3>Personalized</h3>
+<p>
+Travel experiences designed around your preferences.
+</p>
+</div>
+
+
+<div>
+<h3>Intelligent</h3>
+<p>
+AI-assisted planning that simplifies complex trips.
+</p>
+</div>
+
+
+<div>
+<h3>Accessible</h3>
+<p>
+Travel planning tools designed for everyone worldwide.
+</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<div class="footer-logo">
+
+<img src="travelair-logo.png" alt="TravelAir.ai Logo">
+
+<span>TravelAir.ai™</span>
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+
+<p>
+© 2026 TravelAir.ai™. Building the future of AI-powered travel planning.
+</p>
+
+
+</footer>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
