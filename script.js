@@ -58,72 +58,86 @@ activityDay: 100
 
 
 
-const destinationInput = document.getElementById("destination");
-const styleInput = document.getElementById("travelStyle");
-const lengthInput = document.getElementById("tripLength");
-const budgetInput = document.getElementById("budget");
-const planButton = document.getElementById("planTrip");
-const resultBox = document.getElementById("tripResult");
+document.addEventListener("DOMContentLoaded", () => {
+
+
+const destinationInput =
+document.getElementById("destination");
+
+const styleInput =
+document.getElementById("travelStyle");
+
+const lengthInput =
+document.getElementById("tripLength");
+
+const planButton =
+document.getElementById("planTrip");
+
+const resultBox =
+document.getElementById("tripResult");
+
+
+
+if(!planButton || !resultBox){
+console.error("Planner elements missing from HTML");
+return;
+}
+
 
 
 
 function findDestination(name){
 
-const key = Object.keys(travelAirData)
-.find(
-item => item.toLowerCase() === name.toLowerCase()
+return Object.keys(travelAirData)
+.find(key =>
+key.toLowerCase() === name.toLowerCase()
 );
-
-return travelAirData[key];
 
 }
 
 
 
-function calculateBudget(destination, days){
+function calculateBudget(data, days){
 
-const data = destination;
-
-let total =
+return Math.round(
 data.flight +
 (data.hotelNight * days) +
 (data.foodDay * days) +
-(data.activityDay * days);
-
-
-return Math.round(total);
+(data.activityDay * days)
+);
 
 }
+
 
 
 
 function createItinerary(place, days, style){
 
+let list = [];
 
-let itinerary = [];
 
 for(let i = 1; i <= days; i++){
 
 
 if(i === 1){
 
-itinerary.push(
-Day ${i}: Arrival in ${place}. Explore local highlights and settle in.
+list.push(
+Day ${i}: Arrive in ${place}. Explore local highlights and begin your journey.
 );
 
 }
 
 else if(i === days){
 
-itinerary.push(
-Day ${i}: Final experiences and departure preparation.
+list.push(
+Day ${i}: Final experiences, memories, and departure preparation.
 );
 
 }
 
 else {
 
-itinerary.push(
+list.push(
 Day ${i}: ${style} activities, dining, and personalized exploration.
 );
 
@@ -133,28 +147,35 @@ Day ${i}: ${style} activities, dining, and personalized exploration.
 }
 
 
-return itinerary;
+return list;
 
 }
 
-planButton.addEventListener("click", () => {
-
-
-const destinationName = destinationInput.value.trim();
-
-const destination = findDestination(destinationName);
 
 
 
-if(!destination){
+
+planButton.addEventListener("click", ()=>{
+
+
+const name =
+destinationInput.value.trim();
+
+
+const key =
+findDestination(name);
+
+
+
+if(!key){
 
 resultBox.innerHTML = `
 
-<h3>Let's build your trip plan</h3>
+<h3>Choose a Destination</h3>
 
 <p>
-Please enter a destination from our supported examples:
-Greece, Japan, Italy, Dubai, Switzerland, or Bali.
+Try:
+Greece, Japan, Italy, Dubai, Switzerland, or Bali
 </p>
 
 `;
@@ -165,26 +186,27 @@ return;
 
 
 
-const selectedLength = parseInt(
-lengthInput.value
-);
+const data =
+travelAirData[key];
 
 
-const days = selectedLength || 7;
+const days =
+parseInt(lengthInput.value) || 7;
 
 
-const style = styleInput.value;
-
-
-const estimatedCost = calculateBudget(
-destination,
-days
-);
+const style =
+styleInput.value || "Luxury";
 
 
 
-const itinerary = createItinerary(
-destinationName,
+const budget =
+calculateBudget(data, days);
+
+
+
+const itinerary =
+createItinerary(
+key,
 days,
 style
 );
@@ -193,14 +215,15 @@ style
 
 resultBox.innerHTML = `
 
+
 <h3>
-${destinationName} AI Travel Preview
+${key} AI Travel Preview
 </h3>
 
 
 <p>
-<strong>Experience:</strong>
-${destination.region}
+<strong>Region:</strong>
+${data.region}
 </p>
 
 
@@ -211,8 +234,8 @@ ${style}
 
 
 <p>
-<strong>Estimated Planning Budget:</strong>
-$${estimatedCost.toLocaleString()}
+<strong>Estimated Trip Budget:</strong>
+$${budget.toLocaleString()}
 </p>
 
 
@@ -223,185 +246,60 @@ Sample Itinerary
 
 <ul>
 
-${itinerary.map(day => 
-<li>${day}</li>
+${itinerary.map(item =>
+<li>${item}</li>
 ).join("")}
 
 </ul>
+
+
+<button id="saveTripBtn" class="primary-btn">
+Save This Trip
+</button>
 
 
 `;
 
 
 
-});
+
+const saveButton =
+document.getElementById("saveTripBtn");
 
 
 
-
-/* DESTINATION BUTTONS */
-
-
-const destinationButtons = document.querySelectorAll(
-".destination-btn"
-);
+saveButton.addEventListener("click", ()=>{
 
 
-destinationButtons.forEach(button => {
-
-
-button.addEventListener("click", () => {
-
-
-const destination = button.textContent
-.replace("Plan ", "")
-.replace(" Trip", "");
+const savedTrips =
+JSON.parse(
+localStorage.getItem("travelAirTrips")
+) || [];
 
 
 
-destinationInput.value = destination;
+savedTrips.unshift({
 
-
-
-document
-.getElementById("planner")
-.scrollIntoView({
-behavior:"smooth"
-});
-
+destination:key,
+style:style,
+days:days,
+budget:budget,
+date:new Date().toLocaleDateString()
 
 });
 
-
-});
-
-
-
-/* HERO BUTTON SCROLL */
-
-
-document.querySelectorAll(
-".primary-btn"
-).forEach(button => {
-
-
-button.addEventListener("click", () => {
-
-
-document
-.getElementById("planner")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-
-});
-
-
-});
-
-// SAVE TRIPS FEATURE
-
-
-function saveTrip(tripData){
-
-let savedTrips =
-JSON.parse(localStorage.getItem("travelAirTrips"))
-|| [];
-
-
-savedTrips.unshift(tripData);
-
-
-if(savedTrips.length > 6){
-
-savedTrips.pop();
-
-}
 
 
 localStorage.setItem(
 "travelAirTrips",
-JSON.stringify(savedTrips)
-);
-
-
-}
-
-
-
-function getSavedTrips(){
-
-return JSON.parse(
-localStorage.getItem("travelAirTrips")
+JSON.stringify(
+savedTrips.slice(0,6)
 )
-|| [];
-
-}
-
-
-
-
-// CREATE TRIP SAVE BUTTON
-
-
-const resultContainer =
-document.getElementById("tripResult");
-
-
-const saveButton =
-document.createElement("button");
-
-
-saveButton.className =
-"primary-btn";
-
-
-saveButton.textContent =
-"Save This Trip";
-
-
-saveButton.style.marginTop =
-"20px";
-
-
-resultContainer.appendChild(
-saveButton
 );
 
 
 
-saveButton.addEventListener(
-"click",
-()=>{
-
-
-const currentTrip = {
-
-destination:
-destinationInput.value,
-
-
-style:
-styleInput.value,
-
-
-length:
-lengthInput.value,
-
-
-created:
-new Date().toLocaleDateString()
-
-};
-
-
-
-saveTrip(currentTrip);
-
-
-
-saveButton.textContent =
+saveButton.innerHTML =
 "Trip Saved ✓";
 
 
@@ -409,38 +307,76 @@ saveButton.textContent =
 
 
 
-
-
-// AI STYLE CHAT RESPONSES
-
-
-const aiPrompts = {
-
-"Luxury":
-"Designing a premium experience with upgraded hotels, dining, and exclusive activities.",
-
-"Adventure":
-"Creating an adventure-focused journey with exploration and outdoor experiences.",
-
-"Family":
-"Building a family-friendly itinerary with comfort and memorable activities.",
-
-"Business":
-"Planning an efficient business trip with productivity and convenience.",
-
-"Relaxation":
-"Creating a peaceful escape focused on wellness and downtime."
-
-};
+});
 
 
 
-function getAIResponse(style){
 
 
-return aiPrompts[style]
-||
-"Creating your personalized travel experience.";
 
-}
+/* QUICK DESTINATION BUTTONS */
 
+
+document.querySelectorAll(".destination-btn")
+.forEach(button=>{
+
+
+button.addEventListener("click",()=>{
+
+
+const name =
+button.textContent
+.replace("Plan","")
+.replace("Trip","")
+.trim();
+
+
+
+destinationInput.value =
+name;
+
+
+
+document
+.getElementById("planner")
+?.scrollIntoView({
+behavior:"smooth"
+});
+
+
+
+});
+
+
+});
+
+
+
+
+
+
+/* HERO BUTTONS */
+
+
+document.querySelectorAll(".primary-btn")
+.forEach(button=>{
+
+
+button.addEventListener("click",()=>{
+
+
+document
+.getElementById("planner")
+?.scrollIntoView({
+behavior:"smooth"
+});
+
+
+});
+
+
+});
+
+
+
+});
